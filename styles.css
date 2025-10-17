@@ -39,10 +39,10 @@ html { font-size: 100%; }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg:#0b0d12;
-    --text:#eef1f5;
-    --muted:#151922;
-    --border:#1f2530;
+    --bg:#1a1d24;
+    --text:#e8eaed;
+    --muted:#232730;
+    --border:#2d323d;
     --shadow: 0 2px 16px rgba(0,0,0,.35);
     color-scheme: dark;
   }
@@ -54,7 +54,7 @@ html { font-size: 100%; }
   color-scheme: light;
 }
 [data-theme="dark"]  {
-  --bg:#0b0d12; --text:#eef1f5; --muted:#151922; --border:#1f2530; --shadow: 0 2px 16px rgba(0,0,0,.35);
+  --bg:#1a1d24; --text:#e8eaed; --muted:#232730; --border:#2d323d; --shadow: 0 2px 16px rgba(0,0,0,.35);
   color-scheme: dark;
 }
 
@@ -282,7 +282,7 @@ body.drawer-open .drawer-backdrop{ opacity:1; }
   position:relative; overflow:hidden;
 }
 [data-theme="dark"] .hero{
-  background: linear-gradient(135deg, #0b0d12 0%, #151922 100%);
+  background: linear-gradient(135deg, #1a1d24 0%, #232730 100%);
 }
 
 /* [S-60B] Hero-kontti kuten alkuperäinen: leveämpi max + sivu-paddingit */
@@ -1104,11 +1104,11 @@ main > section + section {
 }
 
 #skills-tools .card:last-child {
-  background: color-mix(in oklab, var(--muted) 97%, var(--bg));
+  background: var(--muted);
 }
 
 [data-theme="dark"] #skills-tools .card:last-child {
-  background: color-mix(in oklab, var(--muted) 103%, var(--text) 3%);
+  background: var(--muted);
 }
 
 /* List styling with icons */
@@ -1142,7 +1142,7 @@ main > section + section {
 }
 
 [data-theme="dark"] #skills-tools li:hover {
-  background: color-mix(in oklab, var(--muted) 110%, var(--text) 5%);
+  background: color-mix(in oklab, var(--muted) 105%, var(--border) 5%);
 }
 
 /* Icon styling */
