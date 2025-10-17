@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <!-- ========================================================= -->
+    <!-- [S-00A] Perusmetat & otsikot                             -->
+    <!-- ========================================================= -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jan Nässi — UX Designer (Junior)</title>
+    <meta name="description" content="UX portfolio of Jan Nässi. Accessible, minimalist, and fast. Case studies, skills, and contact." />
+    <link rel="canonical" href="./" />
+
+    <!-- ========================================================= -->
+    <!-- [S-00B] Sosiaalimetat / Open Graph                       -->
+    <!-- ========================================================= -->
+    <meta property="og:title" content="Jan Nässi — UX Designer" />
+    <meta property="og:description" content="Accessible, minimalist UX portfolio. Case studies, skills, and contact." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/og-image.svg" />
+    <meta property="og:url" content="./" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#008282" />
+
+    <!-- ========================================================= -->
+    <!-- [S-00C] Ikonit & Webfontit                               -->
+    <!-- ========================================================= -->
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- ========================================================= -->
+    <!-- [S-00D] Tyylit                                            -->
+    <!-- ========================================================= -->
+    <link rel="preload" href="styles.css?v=4" as="style" />
+    <link rel="stylesheet" href="styles.css?v=4" />
+
+    <!-- ========================================================= -->
+    <!-- [S-00E] Schema.org: Person & WebSite                      -->
+    <!-- ========================================================= -->
+    <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"Person","name":"Jan Nässi","jobTitle":"UX Designer (Junior)","url":"https://example.com","sameAs":["https://www.linkedin.com/in/jannassi"]}
+    </script>
+    <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"WebSite","name":"Jan Nässi — UX Portfolio","url":"https://example.com","inLanguage":"en"}
+    </script>
+  </head>
+  <body>
+
+    
+    <!-- ========================================================= -->
+    <!-- [S-50] Skip link (saavutettavuus)                         -->
+    <!-- ========================================================= -->
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- ========================================================= -->
+    <!-- [S-30] Header & navigaatio                                -->
+    <!-- ========================================================= -->
+    <header class="site-header" role="banner">
+      <div class="container cluster" style="justify-content: space-between;">
+        <!-- [S-30A] Logo -->
+        <a class="logo" href="./">Jan Nässi</a>
+
+        <!-- [S-30B] Desktop-nav (>900px) -->
+        <nav id="site-nav" class="site-nav" aria-label="Primary">
+          <ul>
+            <li><a href="#case-studies">Case Studies</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- [S-30C] Oikea reuna: teema + hampurilainen -->
+        <div class="cluster">
+          <!-- [S-40] Teeman vaihto -->
+          <button id="theme-toggle" class="theme-toggle" aria-pressed="false" aria-label="Toggle theme: Light/Dark" title="Toggle theme: Light/Dark">
+            <svg class="theme-icon sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="5"/>
+              <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+            </svg>
+            <svg class="theme-icon moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          </button>
+
+          <!-- [S-30D] Hampurilainen (≤900px) -->
+          <button id="menu-toggle" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer">
+            <span class="sr-only">Open menu</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ========================================================= -->
+    <!-- [S-30E] Mobiilidrawer + backdrop                           -->
+    <!-- ========================================================= -->
+    <nav id="mobile-drawer" class="mobile-drawer" hidden aria-label="Mobile">
+      <ul class="drawer-list">
+        <li><a href="#case-studies">Case Studies</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div id="drawer-backdrop" class="drawer-backdrop" hidden></div>
+
+    <!-- ========================================================= -->
+    <!-- [S-60] Main / Hero + sisältöosiot                          -->
+    <!-- ========================================================= -->
+    <main id="main" tabindex="-1">
+      <!-- [S-60A] Hero (split-screen) -->
+      <section class="hero">
+        <div class="hero-container">
+          <div class="hero-content">
+            <!-- [S-60B] Hero-tekstit -->
+            <div class="hero-text">
+              <h1>Hi, I'm Jan — a UX designer focused on clarity, accessibility, and real user impact.</h1>
+              <p class="hero-intro">I turn research insights into simple, usable interfaces. Currently seeking a UX internship.</p>
+              <div class="hero-ctas">
+                <a class="btn btn-primary" href="#case-studies">View Case Studies</a>
+                <a class="btn btn-outline" href="#contact">Contact</a>
+              </div>
+            </div>
+            <!-- [S-60C] Hero-kuva -->
+            <div class="hero-visual">
+              <figure class="hero-portrait">
+                <img class="hero-avatar" src="IG_kuva1.png" alt="Portrait of Jan Nässi" width="480" height="480" loading="eager" />
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+
+      <!-- ======================================================= -->
+      <!-- [S-70A] About                                           -->
+      <!-- ======================================================= -->
+      <section id="about" class="section-wide" style="padding: 3rem 2rem;">
+        <div class="hero-container">
+          <div class="about-content stack-3">
+            <h2>About</h2>
+            <div class="grid two">
+              <p><strong>Approach:</strong> I study Business Information Technology at Haaga-Helia University of Applied Sciences with a focus on digital services and UX design. My work is driven by curiosity about people and a constant search for clarity in how technology serves them. I aim to design digital experiences that feel natural, reduce friction, and support everyday life in a meaningful way. I enjoy combining structure with creativity and often use AI tools to explore new design directions and ideas efficiently.</p>
+              <p><strong>Strengths:</strong> I bring together technical understanding, visual thinking, and a calm, systematic approach to problem-solving. Nearly ten years of experience in logistics taught me precision, reliability, and how to make processes flow. As a designer, I apply the same mindset to user journeys and product logic. I value progress, enjoy learning new tools, and believe that good design always starts from empathy and ends with clarity.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================= -->
+      <!-- [S-70B] Case Studies                                    -->
+      <!-- ======================================================= -->
+      <section id="case-studies" class="container stack-3">
+        <h2>Case Studies</h2>
+        <ul class="grid two cards">
+          <li>
+            <a href="projects/mentalink.html" class="case-study-card">
+              <div class="card-image">
+                <img src="Mentalink_logo.png" alt="" width="400" height="300" loading="lazy" />
+              </div>
+              <div class="card-content">
+                <h3>Mentalink</h3>
+                <p class="card-meta">UX Research • Figma • 2024</p>
+                <p class="card-description">Therapy matching concept focused on guiding users to the right care.</p>
+                <span class="card-cta">
+                  View case study
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M6 3l5 5-5 5"/>
+                  </svg>
+                </span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="projects/aikani.html" class="case-study-card">
+              <div class="card-image">
+                <img src="aikani_mockup.png" alt="" width="400" height="00" loading="lazy" />
+              </div>
+              <div class="card-content">
+                <h3>Aikani</h3>
+                <p class="card-meta">Digital idea & pitch • Concept</p>
+                <p class="card-description">Time management app redesigned for better task organization and productivity tracking.</p>
+                <span class="card-cta">
+                  View case study
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M6 3l5 5-5 5"/>
+                  </svg>
+                </span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="projects/uxres.html" class="case-study-card">
+              <div class="card-image">
+                <img src="uxresearch.png" alt="" width="400" height="300" loading="lazy" />
+              </div>
+              <div class="card-content">
+                <h3>User Research</h3>
+                <p class="card-meta">UX Research • UI Design • 2024</p>
+                <p class="card-description">Time management app redesigned for better task organization and productivity tracking.</p>
+                <span class="card-cta">
+                  View case study
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M6 3l5 5-5 5"/>
+                  </svg>
+                </span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="projects/logodesign.html" class="case-study-card">
+              <div class="card-image">
+                <img src="logokuvat.png" alt="" width="400" height="300" loading="lazy" />
+              </div>
+              <div class="card-content">
+                <h3>Logo Design</h3>
+                <p class="card-meta">Visual Design • Brand Identity • 2024</p>
+                <p class="card-description">Systematic approach to creating cohesive and scalable brand identities.</p>
+                <span class="card-cta">
+                  View case study
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M6 3l5 5-5 5"/>
+                  </svg>
+                </span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ======================================================= -->
+      <!-- [S-70C] Skills & Tools                                  -->
+      <!-- ======================================================= -->
+      <section id="skills-tools" class="container stack-3">
+        <h2>Skills & Tools</h2>
+        <div class="grid two">
+          <div class="card stack-2">
+            <h3>Skills</h3>
+            <ul>
+              <li>
+                <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                  <line x1="12" y1="22.08" x2="12" y2="12"/>
+                </svg>
+                <span>UX research, usability testing</span>
+              </li>
+              <li>
+                <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                  <line x1="9" y1="9" x2="15" y2="15"/>
+                  <line x1="15" y1="9" x2="9" y2="15"/>
+                </svg>
+                <span>Wireframing, prototyping</span>
+              </li>
+              <li>
+                <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"/>
+                  <line x1="2" y1="12" x2="22" y2="12"/>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+                <span>Information architecture</span>
+              </li>
+            </ul>
+          </div>
+          <div class="card stack-2">
+            <h3>Tools</h3>
+            <ul>
+              <li>
+                <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                  <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+                <span>Figma, Photoshop, Illustrator</span>
+              </li>
+              <li>
+                <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="16 18 22 12 16 6"/>
+                  <polyline points="8 6 2 12 8 18"/>
+                </svg>
+                <span>Basic HTML, CSS, JS</span>
+              </li>
+              <li>
+                <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="16 18 22 12 16 6"/>
+                  <polyline points="8 6 2 12 8 18"/>
+                </svg>
+                <span>Chat GPT, Claude, Copilot</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================= -->
+      <!-- [S-70D] Contact                                         -->
+      <!-- ======================================================= -->
+      <section id="contact">
+        <div class="contact-wrapper">
+          <div class="contact-content">
+            <h2>Contact</h2>
+            <p class="contact-lead">Ready to collaborate? Let's create something meaningful together.</p>
+            
+            <a href="mailto:jan.nassi@outlook.com" class="contact-email">
+              <span>jan.nassi@outlook.com</span>
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M6 3l5 5-5 5"/>
+              </svg>
+            </a>
+            
+            <div class="contact-social">
+              <a href="https://www.linkedin.com/in/jannassi" class="contact-social-link" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                  <rect x="2" y="9" width="4" height="12"/>
+                  <circle cx="4" cy="4" r="2"/>
+                </svg>
+                <span>LinkedIn</span>
+              </a>
+            </div>
+          </div>
+          
+          <figure class="contact-portrait">
+            <img class="contact-avatar" src="IG_kuva1.png" alt="Jan Nässi" width="240" height="240" loading="lazy" />
+          </figure>
+        </div>
+      </section>
+    </main>
+
+    <!-- ========================================================= -->
+    <!-- [S-90] Footer                                              -->
+    <!-- ========================================================= -->
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year"></span> Jan Nässi</p>
+        <ul aria-label="Social links">
+          <li><a href="https://www.linkedin.com/in/jannassi" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- ========================================================= -->
+    <!-- [S-00F] Skriptit                                           -->
+    <!-- ========================================================= -->
+    <script defer src="main.js?v=4"></script>
+  </body>
+</html>

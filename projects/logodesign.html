@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Logo Design — Jan Nässi</title>
+    <meta name="description" content="Logo design portfolio by Jan Nässi. Four projects: Nosara hard techno artist logo, Tuuraaja equine care logo, Mentalink therapy-matching concept logo, and Saumaton fictive UX agency mark. Process, style, colors, and outcomes." />
+    <link rel="canonical" href="/projects/logo-design.html" />
+    <link rel="stylesheet" href="../styles.css" />
+
+    <style>
+     /* Nollaa kaikki varjot logo-kuvissa */
+  figure.bento-image,
+  figure.bento-image *{
+    box-shadow:none !important;
+    filter:none !important;
+    background:transparent !important;
+  }
+  figure.bento-image::before,
+  figure.bento-image::after{ content:none !important; }
+
+  /* Mentalink: vain ohut reuna, ei varjoja */
+  .soft-frame{
+    --ml-border:1px;           /* säädä paksuutta */
+    display:inline-block;
+    border-radius:12px;
+    overflow:hidden;
+    border:var(--ml-border) solid rgba(0,0,0,.16);
+    background:#fff;           /* yhtenäinen valkoinen pohja kuvalle */
+  }
+  .soft-frame img{ display:block; }
+
+      /* Social icon link */
+      .socials{ margin:.25rem 0 .5rem; }
+      .icon-link{ display:inline-flex; align-items:center; gap:.5rem; text-decoration:none; }
+      .icon-link svg{ width:18px; height:18px; stroke:currentColor; }
+      .icon-link:focus-visible{ outline:2px solid currentColor; outline-offset:2px; border-radius:.25rem; }
+
+      /* Tighten content spacing */
+      .bento-content h2{ margin-bottom:.25rem; }
+      .bento-content .muted{ margin-top:0; margin-bottom:1rem; }
+      .bento-content p{ margin-top:.75rem; }
+      .bento-content ul.stack-1 li{ margin:.35rem 0; }
+    </style>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" role="banner">
+      <div class="container cluster" style="justify-content: space-between;">
+        <a href="../index.html#case-studies" class="nav-back">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+          <span>Back to Projects</span>
+        </a>
+        <button id="theme-toggle" class="theme-toggle" aria-pressed="false" aria-label="Toggle theme: Light/Dark" title="Toggle theme: Light/Dark">
+          <svg class="theme-icon sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"/>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+          </svg>
+          <svg class="theme-icon moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <!-- Hero -->
+      <section class="project-hero">
+        <div class="container reveal-content">
+          <h1>Logo Design</h1>
+          <p class="lead">Four concise logo projects. Process, style, and outcomes.</p>
+        </div>
+      </section>
+
+      <!-- Nosara -->
+      <section class="project-section">
+        <div class="container">
+          <div class="bento-grid">
+            <figure class="bento-image reveal-content">
+              <img src="./nosara.png" alt="Nosara artist logo, rough black metal-inspired wordmark" loading="lazy" width="600" height="600" />
+            </figure>
+            <div class="bento-content reveal-content">
+              <h2>Nosara</h2>
+              <div class="socials">
+                <a class="icon-link" href="https://www.instagram.com/nosara.music/" target="_blank" rel="noopener noreferrer" aria-label="Nosara on Instagram">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <path d="M17.5 6.5h.01"></path>
+                  </svg>
+                  <span>Instagram</span>
+                </a>
+              </div>
+              <p class="muted">Hard techno artist identity</p>
+              <p>Brief: design a rough and aggressive artist logotype. We co-created in short feedback cycles. I explored metal band references and presented AI-assisted style studies, then rebuilt the chosen direction in Illustrator and Photoshop.</p>
+              <ul class="stack-1">
+                <li><strong>Style:</strong> harsh, textured, metal-inspired wordmark</li>
+                <li><strong>Colors:</strong> black, gray, white</li>
+                <li><strong>Goal:</strong> raw, bold, high-impact</li>
+                <li><strong>Status:</strong> in use on flyers, digital and print. T-shirt merch produced. Delivery kit with formats and colorways.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Heppahubi -->
+      <section class="project-section alt">
+        <div class="container">
+          <div class="bento-grid">
+            <figure class="bento-image reveal-content">
+              <img src="./heppahubi.png" alt="Tuuraaja equine care logo, minimalist hand holding a horse head icon" loading="lazy" width="600" height="600" />
+            </figure>
+            <div class="bento-content reveal-content">
+              <h2>Heppahubi.fi</h2>
+              <div class="socials">
+                <a class="icon-link" href="https://www.instagram.com/heppahubifi/" target="_blank" rel="noopener noreferrer" aria-label="Heppahubi.fi on Instagram">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <path d="M17.5 6.5h.01"></path>
+                  </svg>
+                  <span>Instagram</span>
+                </a>
+              </div>
+              <p class="muted">Equine care and stand-in service</p>
+              <p>Brief: create a minimalist mark combining a helping hand and a horse head. I drafted multiple options, reviewed with the client, and refined the selected direction to a simple, friendly symbol.</p>
+              <ul class="stack-1">
+                <li><strong>Style:</strong> minimalist line icon with calm geometry</li>
+                <li><strong>Colors:</strong> black and white; green, white, gray variant</li>
+                <li><strong>Goal:</strong> trust, care, clarity at small sizes</li>
+                <li><strong>Status:</strong> delivered and in use. Handover kit with variants and file formats.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mentalink -->
+      <section class="project-section">
+        <div class="container">
+          <div class="bento-grid">
+            <figure class="bento-image reveal-content">
+              <div class="soft-frame">
+                <img src="./mentalink.png" alt="Mentalink logo, blue brain with a link icon in the center" loading="lazy" width="600" height="600" />
+              </div>
+            </figure>
+            <div class="bento-content reveal-content">
+              <h2>Mentalink</h2>
+              <p class="muted">Therapy matching concept - student project</p>
+              <p>Brief: design a logo after the name decision. The idea combines mind and connection. I built a brain symbol with a central link to echo the product promise.</p>
+              <ul class="stack-1">
+                <li><strong>Style:</strong> clean, geometric icon</li>
+                <li><strong>Colors:</strong> blue primary</li>
+                <li><strong>Typography:</strong> Montserrat family</li>
+                <li><strong>Goal:</strong> trust and professionalism</li>
+                <li><strong>Status:</strong> used in the course project assets.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Saumaton -->
+      <section class="project-section alt">
+        <div class="container">
+          <div class="bento-grid">
+            <figure class="bento-image reveal-content">
+              <img src="./saumaton.png" alt="Saumaton logo, circular mark with an S-shaped continuous form" loading="lazy" width="600" height="600" />
+            </figure>
+            <div class="bento-content reveal-content">
+              <h2>Saumaton</h2>
+              <p class="muted">Fictive UX and web agency - course site</p>
+              <p>Brief: create a modern mark referencing the initial S. The symbol uses a continuous form inside a circle to suggest seamless delivery.</p>
+              <ul class="stack-1">
+                <li><strong>Style:</strong> modern monogram mark</li>
+                <li><strong>Colors:</strong> dark gray, white</li>
+                <li><strong>Goal:</strong> professional and sleek</li>
+                <li><strong>Status:</strong> used on the course WordPress site prototype.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container cluster">
+        <p>© <span id="year"></span> Jan Nässi</p>
+        <ul class="cluster" aria-label="Social links">
+          <li><a href="https://www.linkedin.com/in/jannassi">LinkedIn</a></li>
+          <li><a href="https://github.com/jannassi">GitHub</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script defer src="../main.js"></script>
+  </body>
+</html>
+```
