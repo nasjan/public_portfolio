@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Meal Macro Builder, Case Study • Jan Nässi</title>
+    <meta name="description" content="Meal macro builder MVP: UX, UI, and React + Firebase implementation by Jan Nässi." />
+    <link rel="canonical" href="/projects/meal-macro-builder.html" />
+    <link rel="icon" href="../img/pixel_me.png" type="image/png" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" role="banner">
+      <div class="container cluster header-row">
+        <a href="../index.html#case-studies" class="nav-back">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M19 12H5M12 19l-7-7 7-7" />
+          </svg>
+          <span>Back to Projects</span>
+        </a>
+
+        <button id="theme-toggle" class="theme-toggle" aria-pressed="false" aria-label="Toggle theme: Light/Dark" title="Toggle theme: Light/Dark">
+          <svg class="theme-icon sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5" />
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+          </svg>
+          <svg class="theme-icon moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <!-- Hero -->
+      <section class="project-hero project-hero--tight">
+        <div class="container">
+          <h1 class="project-title">Meal Macro Builder</h1>
+          <p class="lead">An MVP web app for building meals and tracking nutrition in real time.</p>
+        </div>
+      </section>
+
+      <!-- Overview -->
+      <section class="project-section project-section--tight-top">
+        <div class="container" style="max-width: 68.75rem;">
+          <!-- Hero Layout -->
+          <div class="grid two project-overview-grid">
+            <figure class="project-overview-figure">
+              <img src="../img/makroniapp.webp" alt="Project cover image" width="600" height="600" />
+            </figure>
+
+            <div class="stack-3">
+              <div>
+                <h2 class="project-subhead">Overview</h2>
+                <p class="project-body">
+                  This project is a beginner level React application designed as a personal everyday tool. The goal was to build something I would genuinely use myself, while learning how a real-world web application is planned, designed, and implemented as an MVP. The concept is familiar and already well established, but the focus was on understanding how such an application is structured and built from scratch.
+                </p>
+
+                <div class="stack-2">
+                  <h3>Test login</h3>
+                  <p class="muted">
+                    <strong>Email:</strong> testi@makroni.fi<br />
+                    <strong>Password:</strong> Makroni123
+                  </p>
+                </div>
+              </div>
+
+              <div class="cluster project-cta-row" style="margin-bottom: 2rem;">
+                <a href="https://nasjan.github.io/Pilvipalvelut_kurssi_Jan/Harjoitusty%C3%B6/app/" class="btn btn-primary btn-inline" target="_blank" rel="noopener noreferrer">
+                  <span>View demo</span>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M6 3l5 5-5 5" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Facts -->
+          <div style="padding-top: clamp(3rem, 6vh, 4rem); border-top: 1px solid var(--border);">
+            <h2 style="margin-bottom: clamp(1.5rem, 2.5vw, 2rem); font-size: clamp(1.75rem, 2.5vw, 2.25rem);">Project facts</h2>
+
+            <div style="max-width: 72ch; line-height: 1.9;">
+              <p style="margin-bottom: 0.875rem;"><strong>Course:</strong> Pilvipalvelut web development (course project)</p>
+              <p style="margin-bottom: 0.875rem;"><strong>School:</strong> Haaga-Helia University of Applied Sciences</p>
+              <p style="margin-bottom: 0.875rem;"><strong>Timeline:</strong> MVP built during the course period</p>
+              <p style="margin-bottom: 0.875rem;"><strong>Team:</strong> Solo project</p>
+              <p style="margin-bottom: 0.875rem;"><strong>My role:</strong> UX, UI, and front-end implementation</p>
+
+              <p style="margin-bottom: 0.875rem;"><strong>Goal:</strong> Build a simple meal builder that calculates nutrition in real time and stores meals per user, while practicing modern front-end fundamentals.</p>
+
+              <p style="margin-bottom: 0.875rem;"><strong>Users:</strong> Personal everyday use, validated with usability testing</p>
+
+              <p style="margin-bottom: 0.875rem;"><strong>Methods:</strong> MVP scoping, iterative UI refinement, usability testing, responsive and cross-browser QA</p>
+
+              <p style="margin-bottom: 0.875rem;"><strong>Tools and tech:</strong> React, Vite, Firebase Authentication, Firestore, Chrome DevTools, Lighthouse</p>
+
+              <p style="margin-bottom: 0.875rem;"><strong>What I built:</strong> Login flow, meal builder UI, real-time calculation logic, saved meals view, user-based Firestore storage</p>
+
+              <div style="margin-bottom: 0;">
+                <p style="margin-bottom: 0.5rem;"><strong>Results:</strong></p>
+                <ul style="list-style-type: disc; padding-left: 1.5rem; margin: 0; line-height: 1.8;">
+                  <li>Usability testing with 7 participants confirmed that the core flow and navigation were easy to understand without instructions</li>
+                  <li>Mobile scaling issues appeared on two devices and were fixed through iterative CSS improvements</li>
+                  <li>Cross-browser testing confirmed correct behavior on Chrome and Edge, and iOS Safari issues were resolved by using at least 16 px input font size</li>
+                  <li>Lighthouse results showed strong performance and accessibility for an MVP</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Problem -->
+          <section class="project-section project-section--inner project-section--mt-lg">
+            <h2 class="project-h2">Problem</h2>
+            <div class="project-prose">
+              <p>
+                Macro tracking is often slow and fragmented. I wanted a lightweight tool where I can quickly build a meal from familiar items, adjust grams, and immediately see the nutritional totals. The UX challenge was to keep the workflow obvious and fast, while still supporting saving and returning to meals later.
+              </p>
+            </div>
+          </section>
+
+          <!-- Solution -->
+          <section class="project-section project-section--inner project-section--mt-md">
+            <h2 class="project-h2">Solution</h2>
+            <div class="project-prose">
+              <p>
+                I designed an MVP around one primary flow. Search and add food items, input grams, review real-time nutrition totals, and save the meal for later. The UI is intentionally minimal so users can understand the system without onboarding or instructions.
+              </p>
+
+              <ul class="project-bullets" style="margin-top: 1rem;">
+                <li>Real-time feedback while editing grams</li>
+                <li>Clear separation between building a meal and reviewing saved meals</li>
+                <li>Consistent navigation and predictable layout across views</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- UX and UI decisions -->
+          <section class="project-section project-section--inner project-section--mt-md">
+            <h2 class="project-h2">UX and UI decisions</h2>
+            <div class="project-prose">
+              <p>
+                The interface was designed for clarity and low cognitive load. Key decisions were guided by Nielsen heuristics, especially system status visibility, error prevention, and user control. The app provides immediate feedback for actions like adding items and saving meals, and the navigation stays consistent across pages.
+              </p>
+
+              <ul class="project-bullets" style="margin-top: 1rem;">
+                <li>Immediate feedback for key actions to reduce uncertainty</li>
+                <li>Predictable patterns across pages to reduce learning effort</li>
+                <li>Readable typography and clear contrast to support basic accessibility needs</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- Technical implementation -->
+          <section class="project-section project-section--inner project-section--mt-md">
+            <h2 class="project-h2">Technical implementation</h2>
+            <div class="project-prose">
+              <p>
+                The application is built with React and Vite. Authentication is handled with Firebase Authentication and user data is stored in Firestore. The data model is intentionally simple to support real-time calculations and maintain readable front-end logic. The focus was on clean structure and maintainable code rather than overengineering.
+              </p>
+
+              <ul class="project-bullets" style="margin-top: 1rem;">
+                <li>React component structure for builder and saved meals views</li>
+                <li>Real-time calculation logic tied to user input</li>
+                <li>Firestore storage scoped per user</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- Testing -->
+          <section class="project-section project-section--inner project-section--mt-md">
+            <h2 class="project-h2">Testing and iteration</h2>
+            <div class="project-prose">
+              <p>
+                Usability was evaluated with seven testers aged 25 to 55. All testers found the idea and navigation clear, and users could move between pages without extra guidance. Two mobile scaling issues were found on specific devices and browsers and were fixed with CSS adjustments. iOS Safari auto-zoom on inputs was resolved by ensuring input font size is at least 16 px.
+              </p>
+
+              <ul class="project-bullets" style="margin-top: 1rem;">
+                <li>Responsive testing with Chrome DevTools across multiple breakpoints</li>
+                <li>Cross-browser testing on Chrome, Edge, and iOS Safari</li>
+                <li>Performance checked with Lighthouse and DevTools Performance recording</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- Performance -->
+          <section class="project-section project-section--inner project-section--mt-md">
+            <h2 class="project-h2">Performance and accessibility</h2>
+            <div class="project-prose">
+              <p>
+                Lighthouse testing showed strong performance and accessibility results for an MVP. Performance recording during typical flows, such as adding items, navigating views, and signing out, showed smooth interactions without noticeable UI jank or long main-thread blocking.
+              </p>
+
+              <ul class="project-bullets" style="margin-top: 1rem;">
+                <li>Desktop and mobile Lighthouse checks for performance and accessibility</li>
+                <li>DevTools Performance recording during typical user flows</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- Future development -->
+          <section class="project-section project-section--inner project-section--mt-md">
+            <h2 class="project-h2">Future development</h2>
+            <div class="project-prose">
+              <p>
+                The project is intended to evolve further as a learning platform. Planned improvements include day-based meal planning, extended history views, continued UI refinement based on testing, and a potential REST API integration later. The next steps are focused on adding value while keeping the product simple and usable.
+              </p>
+
+              <ul class="project-bullets" style="margin-top: 1rem;">
+                <li>Day plans built from multiple meals</li>
+                <li>Extended history and comparison views</li>
+                <li>Potential REST API integration for additional content</li>
+                <li>Further UI refinement through iterative testing</li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-content">
+          <p class="footer-copyright">© <span id="year"></span> Jan Nässi</p>
+          <nav aria-label="Footer navigation">
+            <ul>
+              <li><a href="../index.html#case-studies">Case Studies</a></li>
+              <li><a href="../index.html#about">About</a></li>
+              <li><a href="../index.html#skills-tools">Skills & Tools</a></li>
+              <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+          </nav>
+          <a href="https://www.linkedin.com/in/jannassi" target="_blank" rel="noopener noreferrer" class="footer-linkedin">LinkedIn</a>
+        </div>
+      </div>
+    </footer>
+
+    <script defer src="../main.js"></script>
+  </body>
+</html>
