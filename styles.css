@@ -1439,23 +1439,6 @@ figure.bento-image::after {
 /*  140 — ACCESSIBILITY                                            */
 /* =============================================================== */
 
-/* Skip link */
-.skip-link {
-  position: absolute;
-  left: 0;
-  top: 0;
-  transform: translateY(-100%);
-  background: var(--accent);
-  color: #fff;
-  padding: var(--space-xs) var(--space-sm);
-  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
-  z-index: 200;
-}
-
-.skip-link:focus {
-  transform: translateY(0);
-}
-
 /* Screen-reader only */
 .sr-only {
   position: absolute;

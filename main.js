@@ -156,13 +156,4 @@
     });
   }
 
-  /* ------------------------------------------------------------
-     3) Skip-link: if URL is #main, focus the main element
-     ------------------------------------------------------------ */
-  const main = document.getElementById('main');
-  if (main && window.location.hash === '#main') {
-    // Ensure main is focusable
-    if (!main.hasAttribute('tabindex')) main.setAttribute('tabindex', '-1');
-    main.focus();
-  }
 })();
