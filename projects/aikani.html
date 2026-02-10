@@ -16,7 +16,7 @@
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     
-    <header class="site-header" role="banner">
+    <header class="site-header">
       <div class="container cluster cluster-space-between">
         <a href="../index.html#case-studies" class="nav-back">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -50,17 +50,17 @@
               <p class="line-height-relaxed text-sm text-color-muted-more margin-bottom-sm">Concept ad for Aikani.</p>
               
               <!-- PERFORMANCE: Lightweight YouTube facade -->
-              <div class="youtube-embed" data-video-id="F5RzqKxJ_rU" onclick="loadYouTubeVideo(this)">
+              <button type="button" class="youtube-embed" data-video-id="F5RzqKxJ_rU" aria-label="Play Aikani project presentation video">
                 <img 
                   class="youtube-thumbnail" 
                   src="https://i.ytimg.com/vi/F5RzqKxJ_rU/maxresdefault.jpg" 
-                  alt="Aikani project presentation thumbnail"
+                  alt=""
                   loading="lazy"
                   width="1280"
                   height="720"
                 >
-                <div class="youtube-play-button" aria-label="Play video"></div>
-              </div>
+                <span class="youtube-play-button" aria-hidden="true"></span>
+              </button>
             </div>
           </div>
 
@@ -95,7 +95,7 @@
               <li><a href="../index.html#contact">Contact</a></li>
             </ul>
           </nav>
-          <a href="https://www.linkedin.com/in/jannassi" target="_blank" rel="noopener noreferrer" class="footer-linkedin">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/jannassi" target="_blank" rel="noopener noreferrer" class="footer-linkedin">LinkedIn <span class="sr-only">(opens in new tab)</span></a>
         </div>
       </div>
     </footer>
@@ -110,9 +110,12 @@
         iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
         iframe.allowFullscreen = true;
         iframe.title = 'Aikani project presentation';
-        element.innerHTML = '';
-        element.appendChild(iframe);
+        element.replaceWith(iframe);
       }
+
+      document.querySelectorAll('.youtube-embed').forEach(btn => {
+        btn.addEventListener('click', () => loadYouTubeVideo(btn));
+      });
     </script>
   </body>
 </html>
