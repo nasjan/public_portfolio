@@ -1,87 +1,33 @@
 /* ================================================================
-   main.js — selkeä versio
-   - Teeman vaihto (light/dark) ikonilla ja muistilla
-   - Mobiilivalikko (vasemmalta liukuva drawer)
-   - Vuosiluku footerissa
-   - Skip-linkin fokus (#main)
+   main.js
+   - Mobile drawer navigation (slides from right)
+   - Footer year
+   - Skip-link focus (#main)
    ================================================================ */
 
 (function () {
-  const root = document.documentElement;
-
   /* ------------------------------------------------------------
-     1) VUOSILUKU (esim. footerissa elementti id="year")
+     1) Footer year
      ------------------------------------------------------------ */
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   /* ------------------------------------------------------------
-     2) TEEMAN VAIHTO (light/dark)
-        - kun käyttäjä valitsee, tallennetaan localStorageen
-        - muuten seurataan järjestelmän oletusta
-        - päivitämme myös aria-pressed, aria-label ja title
-     ------------------------------------------------------------ */
-  const THEME_KEY = 'theme';
-  const themeBtn = document.getElementById('theme-toggle');
-
-  // Palauttaa 'light' tai 'dark'
-  function getInitialTheme() {
-    const stored = localStorage.getItem(THEME_KEY);
-    if (stored === 'light' || stored === 'dark') return stored;
-    const prefersDark = window.matchMedia &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches;
-    return prefersDark ? 'dark' : 'light';
-  }
-
-  function applyTheme(mode, persist = false) {
-    root.setAttribute('data-theme', mode);
-    if (persist) localStorage.setItem(THEME_KEY, mode);
-
-    // Päivitä napin tila ja vihjeet
-    if (themeBtn) {
-      const isDark = mode === 'dark';
-      themeBtn.setAttribute('aria-pressed', String(isDark));
-      const nextLabel = isDark ? 'Toggle theme: Light' : 'Toggle theme: Dark';
-      themeBtn.setAttribute('aria-label', nextLabel);
-      themeBtn.setAttribute('title', nextLabel);
-    }
-  }
-
-  // Alustus
-  const initialTheme = getInitialTheme();
-  applyTheme(initialTheme, false);
-
-  // Jos käyttäjä EI ole tehnyt valintaa, kuunnellaan järjestelmämuutoksia
-  if (!localStorage.getItem(THEME_KEY) && window.matchMedia) {
-    const mq = window.matchMedia('(prefers-color-scheme: dark)');
-    mq.addEventListener?.('change', e => applyTheme(e.matches ? 'dark' : 'light', false));
-  }
-
-  // Klikki vaihtaa teemaa ja tallentaa valinnan
-  if (themeBtn) {
-    themeBtn.addEventListener('click', () => {
-      const current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-      const next = current === 'dark' ? 'light' : 'dark';
-      applyTheme(next, true);
-    });
-  }
-
-  /* ------------------------------------------------------------
-     3) MOBIILIVALIKKO (oikealta liukuva drawer)
-        - id="menu-toggle" nappi (hampurilainen)
-        - id="mobile-drawer" nav-paneeli (64px headerista alas)
-        - id="drawer-backdrop" taustahäivytys (headerista alas)
-        - lisää/poista body.drawer-open, hallitse focus ja Esc
+     2) Mobile drawer (slides from right)
+     - #menu-toggle button (hamburger)
+     - #mobile-drawer nav panel
+     - #drawer-backdrop overlay
+     - Toggles body.drawer-open, manages focus trap & Escape
      ------------------------------------------------------------ */
   const menuBtn = document.getElementById('menu-toggle');
   const drawer = document.getElementById('mobile-drawer');
   const backdrop = document.getElementById('drawer-backdrop');
 
-  // Fallback: jos käytössä on vielä vanha pystysuora valikko (site-nav)
+  // Fallback: support for older vertical nav (site-nav)
   const legacyBtn = document.getElementById('nav-toggle');
   const legacyNav = document.getElementById('site-nav');
 
-  // Fokuskelpoiset selektorit drawerissa
+  // Focusable elements inside drawer
   const FOCUSABLE = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
   let lastFocused = null;
 
@@ -100,7 +46,7 @@
       document.body.style.overflow = 'hidden';
     });
 
-    // Focus first link after animation
+    // Focus first link after transition
     setTimeout(() => {
       const first = drawer.querySelector(FOCUSABLE);
       if (first) first.focus();
@@ -110,7 +56,7 @@
     backdrop.addEventListener('click', closeDrawer, { once: true });
     document.addEventListener('click', onDocClick, true);
 
-    // Close drawer when clicking any link inside
+    // Close drawer when clicking any link inside it
     drawer.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', closeDrawer, { once: true });
     });
@@ -124,7 +70,7 @@
     document.body.classList.remove('drawer-open');
     document.body.style.overflow = '';
 
-    // Wait for transition before hiding
+    // Wait for transition before hiding elements
     setTimeout(() => {
       drawer.hidden = true;
       backdrop.hidden = true;
@@ -146,7 +92,7 @@
     }
     if (e.key !== 'Tab') return;
 
-    // Fokusansa drawerin sisällä
+    // Focus trap inside drawer
     const focusables = drawer.querySelectorAll(FOCUSABLE);
     if (!focusables.length) return;
 
@@ -161,13 +107,13 @@
   }
 
   function onDocClick(e) {
-    // Sulje, jos klikataan drawerin ulkopuolelle (ei koske taustaa, se käsitellään erikseen)
+    // Close if clicking outside drawer (backdrop handled separately)
     if (drawer && !drawer.contains(e.target) && e.target !== menuBtn) {
       closeDrawer();
     }
   }
 
-  // Nappilogikka
+  // Button logic
  if (menuBtn && drawer) {
   backdrop && (backdrop.hidden = true);
   drawer.hidden = true;
@@ -177,8 +123,8 @@
     open ? closeDrawer() : openDrawer();
   });
 } else if (legacyBtn && legacyNav) {
-    // ------- VANHA MALLI (pudotusvalikko headerissa) -------
-    // Pidetään kevyt tuki, jos sivulla on vielä nämä id:t.
+    // ------- LEGACY NAV (dropdown in header) -------
+    // Kept for backward compatibility if these IDs still exist.
     let legacyOpen = false;
     function legacyOpenMenu() {
       legacyBtn.setAttribute('aria-expanded', 'true');
@@ -211,11 +157,11 @@
   }
 
   /* ------------------------------------------------------------
-     4) SKIP-LINK: jos osoite on #main, siirrä fokus mainiin
+     3) Skip-link: if URL is #main, focus the main element
      ------------------------------------------------------------ */
   const main = document.getElementById('main');
   if (main && window.location.hash === '#main') {
-    // varmista, että main on fokuskelpoinen (tabindex), jos ei jo ole
+    // Ensure main is focusable
     if (!main.hasAttribute('tabindex')) main.setAttribute('tabindex', '-1');
     main.focus();
   }

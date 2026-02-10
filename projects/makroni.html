@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -20,16 +20,6 @@
           </svg>
           <span>Back to Projects</span>
         </a>
-
-        <button id="theme-toggle" class="theme-toggle" aria-pressed="false" aria-label="Toggle theme: Light/Dark" title="Toggle theme: Light/Dark">
-          <svg class="theme-icon sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="5" />
-            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
-          </svg>
-          <svg class="theme-icon moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-          </svg>
-        </button>
       </div>
     </header>
 
@@ -44,7 +34,7 @@
 
       <!-- Overview -->
       <section class="project-section project-section--tight-top">
-        <div class="container" style="max-width: 68.75rem;">
+        <div class="container container-wide">
           <!-- Hero Layout -->
           <div class="grid two project-overview-grid">
             <figure class="project-overview-figure">
@@ -67,7 +57,7 @@
                 </div>
               </div>
 
-              <div class="cluster project-cta-row" style="margin-bottom: 2rem;">
+              <div class="cluster project-cta-row margin-bottom-2">
                 <a href="https://nasjan.github.io/Pilvipalvelut_kurssi_Jan/Harjoitusty%C3%B6/app/" class="btn btn-primary btn-inline" target="_blank" rel="noopener noreferrer">
                   <span>View demo</span>
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -79,29 +69,29 @@
           </div>
 
           <!-- Project Facts -->
-          <div style="padding-top: clamp(3rem, 6vh, 4rem); border-top: 1px solid var(--border);">
-            <h2 style="margin-bottom: clamp(1.5rem, 2.5vw, 2rem); font-size: clamp(1.75rem, 2.5vw, 2.25rem);">Project facts</h2>
+          <div class="padding-top-divider border-top">
+            <h2 class="text-xl project-facts-title">Project facts</h2>
 
-            <div style="max-width: 72ch; line-height: 1.9;">
-              <p style="margin-bottom: 0.875rem;"><strong>Course:</strong> Pilvipalvelut web development (course project)</p>
-              <p style="margin-bottom: 0.875rem;"><strong>School:</strong> Haaga-Helia University of Applied Sciences</p>
-              <p style="margin-bottom: 0.875rem;"><strong>Timeline:</strong> MVP built during the course period</p>
-              <p style="margin-bottom: 0.875rem;"><strong>Team:</strong> Solo project</p>
-              <p style="margin-bottom: 0.875rem;"><strong>My role:</strong> UX, UI, and front-end implementation</p>
+            <div class="container-narrow line-height-comfortable">
+              <p class="margin-bottom-md"><strong>Course:</strong> Pilvipalvelut web development (course project)</p>
+              <p class="margin-bottom-md"><strong>School:</strong> Haaga-Helia University of Applied Sciences</p>
+              <p class="margin-bottom-md"><strong>Timeline:</strong> MVP built during the course period</p>
+              <p class="margin-bottom-md"><strong>Team:</strong> Solo project</p>
+              <p class="margin-bottom-md"><strong>My role:</strong> UX, UI, and front-end implementation</p>
 
-              <p style="margin-bottom: 0.875rem;"><strong>Goal:</strong> Build a simple meal builder that calculates nutrition in real time and stores meals per user, while practicing modern front-end fundamentals.</p>
+              <p class="margin-bottom-md"><strong>Goal:</strong> Build a simple meal builder that calculates nutrition in real time and stores meals per user, while practicing modern front-end fundamentals.</p>
 
-              <p style="margin-bottom: 0.875rem;"><strong>Users:</strong> Personal everyday use, validated with usability testing</p>
+              <p class="margin-bottom-md"><strong>Users:</strong> Personal everyday use, validated with usability testing</p>
 
-              <p style="margin-bottom: 0.875rem;"><strong>Methods:</strong> MVP scoping, iterative UI refinement, usability testing, responsive and cross-browser QA</p>
+              <p class="margin-bottom-md"><strong>Methods:</strong> MVP scoping, iterative UI refinement, usability testing, responsive and cross-browser QA</p>
 
-              <p style="margin-bottom: 0.875rem;"><strong>Tools and tech:</strong> React, Vite, Firebase Authentication, Firestore, Chrome DevTools, Lighthouse</p>
+              <p class="margin-bottom-md"><strong>Tools and tech:</strong> React, Vite, Firebase Authentication, Firestore, Chrome DevTools, Lighthouse</p>
 
-              <p style="margin-bottom: 0.875rem;"><strong>What I built:</strong> Login flow, meal builder UI, real-time calculation logic, saved meals view, user-based Firestore storage</p>
+              <p class="margin-bottom-md"><strong>What I built:</strong> Login flow, meal builder UI, real-time calculation logic, saved meals view, user-based Firestore storage</p>
 
-              <div style="margin-bottom: 0;">
-                <p style="margin-bottom: 0.5rem;"><strong>Results:</strong></p>
-                <ul style="list-style-type: disc; padding-left: 1.5rem; margin: 0; line-height: 1.8;">
+              <div class="no-margin-bottom">
+                <p class="margin-bottom-half"><strong>Results:</strong></p>
+                <ul class="project-bullets">
                   <li>Usability testing with 7 participants confirmed that the core flow and navigation were easy to understand without instructions</li>
                   <li>Mobile scaling issues appeared on two devices and were fixed through iterative CSS improvements</li>
                   <li>Cross-browser testing confirmed correct behavior on Chrome and Edge, and iOS Safari issues were resolved by using at least 16 px input font size</li>
@@ -129,7 +119,7 @@
                 I designed an MVP around one primary flow. Search and add food items, input grams, review real-time nutrition totals, and save the meal for later. The UI is intentionally minimal so users can understand the system without onboarding or instructions.
               </p>
 
-              <ul class="project-bullets" style="margin-top: 1rem;">
+              <ul class="project-bullets margin-top-md">
                 <li>Real-time feedback while editing grams</li>
                 <li>Clear separation between building a meal and reviewing saved meals</li>
                 <li>Consistent navigation and predictable layout across views</li>
@@ -145,7 +135,7 @@
                 The interface was designed for clarity and low cognitive load. Key decisions were guided by Nielsen heuristics, especially system status visibility, error prevention, and user control. The app provides immediate feedback for actions like adding items and saving meals, and the navigation stays consistent across pages.
               </p>
 
-              <ul class="project-bullets" style="margin-top: 1rem;">
+              <ul class="project-bullets margin-top-md">
                 <li>Immediate feedback for key actions to reduce uncertainty</li>
                 <li>Predictable patterns across pages to reduce learning effort</li>
                 <li>Readable typography and clear contrast to support basic accessibility needs</li>
@@ -161,7 +151,7 @@
                 The application is built with React and Vite. Authentication is handled with Firebase Authentication and user data is stored in Firestore. The data model is intentionally simple to support real-time calculations and maintain readable front-end logic. The focus was on clean structure and maintainable code rather than overengineering.
               </p>
 
-              <ul class="project-bullets" style="margin-top: 1rem;">
+              <ul class="project-bullets margin-top-md">
                 <li>React component structure for builder and saved meals views</li>
                 <li>Real-time calculation logic tied to user input</li>
                 <li>Firestore storage scoped per user</li>
