@@ -13,6 +13,10 @@
   --text-body: color-mix(in oklab, var(--text) 75%, transparent);
 
   /* --- Colours --- */
+  --nav-font: rgb(240, 240, 240);
+  --nav-bg: rgb(48, 48, 48);
+  --nav-hover:#00cfcf;
+
   --bg: #f7f7f7;
   --bg-subtle: #f8fafc;
   --text: #0b0d12;
@@ -20,6 +24,7 @@
   --muted: #eef0f3;
   --border: #e6e8ec;
   --accent: #008282;
+  --accent-hover: #006161;
 
   /* --- Effects --- */
   --shadow-sm: 0 1px 4px rgba(16, 24, 40, 0.04);
@@ -44,7 +49,7 @@
   --container-text: 75ch;
   --container-narrow: 72ch;
   --container-content: var(--site-max-width);
-  --header-h: clamp(3.5rem, 6.5vh, 4.5rem);
+  --header-h: clamp(3.5rem, 7vh, 4.5rem);
   --grid-gap: clamp(1.5rem, 5vw, 3rem);
   --container-pad-inline: clamp(1.5rem, 4vw, 3rem);
   --container-pad-block: clamp(2rem, 4vw, 4rem);
@@ -90,6 +95,7 @@ a {
   text-underline-offset: 3px;
 }
 
+/* Esim. Contact osion linkit */
 a:hover {
   text-decoration-thickness: 2px;
 }
@@ -208,7 +214,7 @@ h3 {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--bg);
+  background: var(--nav-bg);
   border-bottom: 1px solid var(--border);
   min-height: var(--header-h);
   display: flex;
@@ -222,7 +228,7 @@ h3 {
 .logo {
   font-weight: 700;
   text-decoration: none;
-  color: var(--text);
+  color: var(--nav-font);
 }
 
 /* Desktop nav (visible > 900 px) */
@@ -243,15 +249,24 @@ h3 {
 
 .site-nav a {
   text-decoration: none;
-  color: var(--text);
+  color: var(--nav-font);
   padding: var(--space-xs) var(--space-sm);
   border-radius: var(--radius-lg);
   display: inline-block;
+
+  text-decoration: underline;
+  text-decoration-color: transparent;
+
+  transition:  all 0.3s ease;
 }
 
+/* Ylä Navigaation hover säädöt */
 .site-nav a:is(:hover, :focus-visible) {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
+ color: var(--nav-hover);
+  text-decoration-color: var(--accent);
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
 }
 
 @media (min-width: 901px) {
@@ -1016,14 +1031,22 @@ main > section + section {
   color: #fff;
 }
 
+.btn-primary:hover {
+  background: var(--accent-hover);
+  color: #ffffff;
+}
+
 .btn-outline {
   background: transparent;
   color: var(--text);
   border-color: var(--border);
 }
 
+.btn-outline:hover {
+  background: white;
+}
+
 .btn:is(:hover, :focus-visible) {
-  transform: translateY(-1px);
   box-shadow: var(--shadow);
 }
 
@@ -1044,11 +1067,7 @@ main > section + section {
 /* =============================================================== */
 
 .site-footer {
-  background: linear-gradient(
-    180deg,
-    var(--bg) 0%,
-    color-mix(in oklab, var(--bg) 96%, var(--muted)) 100%
-  );
+  background: var(--nav-bg);
   border-top: 1px solid var(--border);
   padding-block: var(--space-lg);
   margin-top: var(--space-xl);
@@ -1067,7 +1086,7 @@ main > section + section {
 
 .site-footer .footer-copyright {
   margin: 0;
-  color: color-mix(in oklab, var(--text) 70%, transparent);
+ color: var(--nav-font);
   font-size: 0.9375rem;
   white-space: nowrap;
 }
@@ -1088,7 +1107,7 @@ main > section + section {
 }
 
 .site-footer a {
-  color: color-mix(in oklab, var(--text) 80%, transparent);
+  color: var(--nav-font);
   text-decoration: underline;
   text-decoration-color: transparent;
   text-underline-offset: 3px;
@@ -1098,7 +1117,7 @@ main > section + section {
 }
 
 .site-footer a:hover {
-  color: var(--accent);
+  color: var(--nav-hover);
   text-decoration-color: var(--accent);
 }
 
