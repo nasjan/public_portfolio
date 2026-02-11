@@ -565,50 +565,70 @@ main > section + section {
   padding-block: clamp(3rem, 6vh, 5rem);
 }
 
+/* Section container: center only what should be centered */
 .skills-inner {
   max-width: 64rem;
   margin-inline: auto;
   padding-inline: var(--space-lg);
-  text-align: center;
 }
 
+/* Heading centered */
 .skills-heading {
   font-size: clamp(1rem, 1.5vw, 1.125rem);
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   margin-bottom: var(--space-lg);
+  text-align: center;
 }
 
+/* Intro centered (block stays centered via margin auto) */
 .skills-intro {
-  max-width: 79ch;
+  max-width: 75ch;
   margin-inline: auto;
   margin-bottom: clamp(2rem, 4vh, 3rem);
   line-height: 1.75;
-  color: color-mix(in oklab, var(--text) 75%, transparent);
   font-size: 1rem;
+  color: color-mix(in oklab, var(--text) 75%, transparent);
+  text-align: center;
 }
 
 .skills-divider {
-  width: 100%;
   height: 1px;
   background: var(--border);
   margin-bottom: clamp(2rem, 4vh, 3rem);
 }
 
+/* Grid centered as a block; text inside left-aligned */
 .skills-columns {
+  
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-xl);
+  
+}
+
+.skills-columns {
+  display: flex;
+  justify-content: center;
+  gap: 10rem;
+}
+
+.skills-column > * {
   text-align: left;
 }
 
+/* Column titles and lists: keep them left to avoid "centered list" look */
 .skills-column h3 {
   font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   margin-bottom: var(--space-md);
+  text-align: center;
+  width: max-content;
+  max-width: 24ch;
+  text-align: center;
 }
 
 .skills-column ul {
@@ -618,13 +638,19 @@ main > section + section {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  text-align: left;
+    width: max-content;
+  max-width: 24ch;
 }
 
 .skills-column li {
   font-size: 1rem;
   line-height: 1.7;
   color: color-mix(in oklab, var(--text) 70%, transparent);
+  text-align: left;
+  
 }
+
 
 @media (max-width: 639px) {
   .skills-columns {
