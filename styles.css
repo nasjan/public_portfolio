@@ -624,10 +624,11 @@ main > section + section {
 
 /* Intro centered (block stays centered via margin auto) */
 .skills-intro {
-  max-width: 80ch;
+  max-width: 79ch;
   margin-inline: auto;
   margin-bottom: clamp(2rem, 4vh, 3rem);
   text-align: center;
+  font-size: 1.1rem;
 }
 
 .skills-divider {
@@ -648,7 +649,7 @@ main > section + section {
 .skills-columns {
   display: flex;
   justify-content: center;
-  gap: 10rem;
+  gap: 14vw;
 }
 
 .skills-column > * {
@@ -657,11 +658,11 @@ main > section + section {
 
 /* Column titles and lists: keep them left to avoid "centered list" look */
 .skills-column h3 {
-  font-size: 1rem;
-  font-weight: 700;
+  font-size: 1.2rem;
+  font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  margin-bottom: var(--space-md);
+  margin-bottom: 1.4rem;
   text-align: center;
   width: max-content;
   max-width: 24ch;
