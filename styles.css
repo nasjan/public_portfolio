@@ -39,10 +39,11 @@
   --space-section: clamp(3rem, 6vh, 6rem);
 
   /* --- Layout --- */
-  --container-wide: 80rem;
+  --site-max-width: 80rem;
+  --container-wide: var(--site-max-width);
   --container-text: 75ch;
   --container-narrow: 72ch;
-  --container-content: 68.75rem;
+  --container-content: var(--site-max-width);
   --header-h: clamp(3.5rem, 6.5vh, 4.5rem);
   --grid-gap: clamp(1.5rem, 5vw, 3rem);
   --container-pad-inline: clamp(1.5rem, 4vw, 3rem);
@@ -147,7 +148,7 @@ h3 {
 
 .container {
   width: 100%;
-  max-width: var(--container-wide);
+  max-width: var(--site-max-width);
   margin-inline: auto;
   padding: var(--container-pad-block) var(--container-pad-inline);
 }
@@ -393,7 +394,7 @@ body.drawer-open .drawer-backdrop { opacity: 1; }
 
 .hero-container {
   width: 100%;
-  max-width: var(--container-wide);
+  max-width: var(--site-max-width);
   margin: 0 auto;
   padding: var(--container-pad-block) var(--container-pad-inline);
 }
@@ -568,7 +569,7 @@ main > section + section {
 }
 
 .cases-section {
-  max-width: 72rem;
+  max-width: var(--site-max-width);
   margin-inline: auto;
   padding-inline: var(--container-pad-inline);
 }
@@ -605,7 +606,7 @@ main > section + section {
 
 /* Section container: center only what should be centered */
 .skills-inner {
-  max-width: 64rem;
+  max-width: var(--site-max-width);
   margin-inline: auto;
   padding-inline: var(--space-lg);
 }
@@ -740,7 +741,7 @@ main > section + section {
 }
 
 .contact-wrapper {
-  max-width: 56rem;
+  max-width: var(--site-max-width);
   margin-inline: auto;
   padding-inline: var(--container-pad-inline);
   display: grid;
@@ -898,7 +899,7 @@ main > section + section {
 }
 
 .case-study-card .card-image {
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
   background: color-mix(in oklab, var(--muted) 90%, var(--border));
 }
@@ -911,17 +912,17 @@ main > section + section {
 }
 
 .case-study-card .card-content {
-  padding: 0.875rem 1rem 1rem;
+  padding: 0.625rem 0.75rem 0.75rem;
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  gap: 0.2rem;
   flex: 1;
 }
 
 .case-study-card h3 {
   margin: 0;
   color: var(--text);
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   line-height: 1.3;
   font-weight: 700;
 }
@@ -935,8 +936,8 @@ main > section + section {
 
 .case-study-card .card-description {
   margin: 0;
-  font-size: 0.9rem;
-  line-height: 1.5;
+  font-size: 0.8125rem;
+  line-height: 1.45;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -948,11 +949,11 @@ main > section + section {
   align-items: center;
   gap: 0.3rem;
   font-weight: 600;
-  font-size: 0.8125rem;
+  font-size: 0.75rem;
   color: var(--accent);
   opacity: 0.8;
   margin-top: auto;
-  padding-top: 0.5rem;
+  padding-top: 0.35rem;
 }
 
 .case-study-card .card-cta svg {
@@ -1449,7 +1450,7 @@ figure.bento-image::after {
 .section-no-padding-y   { padding-top: 0.25rem !important; padding-bottom: 0 !important; }
 
 /* Container modifiers */
-.container-wide   { max-width: var(--container-content); }
+.container-wide   { max-width: var(--site-max-width); }
 .container-narrow { max-width: var(--container-narrow); }
 
 /* Grid modifiers */
