@@ -17,9 +17,20 @@
   --nav-bg: rgb(48, 48, 48);
   --nav-hover:#00cfcf;
 
+  /* sectioneiden taustat */
+  --section-bg: rgba(255, 255, 255, 0.493);
+  --section-bg-light: #0000000e;
+  --section-bg-dark: #0000001c;
+
+  --hero-bg: var(--section-bg-dark);
+  --about-bg: var(--section-bg-light);
+  --cases-bg: #ffffff00;
+  --contact-bg: var(--section-bg);
+
   --bg-img: url(img/background.webp);
   --bg: #fffaff;
   --bg-subtle: #f8fafc;
+
   --text: #0b0d12;
   --text-muted: color-mix(in oklab, var(--text) 65%, transparent);
   --muted: #eef0f3;
@@ -82,6 +93,12 @@ body {
   font-family: var(--font-sans);
   color: var(--text);
   line-height: var(--line-height);
+  background-color: var(--bg);
+  background-image: var(--bg-img);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 img {
@@ -403,7 +420,7 @@ body.drawer-open .drawer-backdrop { opacity: 1; }
   min-height: clamp(40vh, 50vh, 50vh);
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, var(--bg) 0%, var(--bg-subtle) 100%);
+  background: var(--hero-bg);
   position: relative;
   overflow: hidden;
 }
@@ -546,24 +563,24 @@ body.drawer-open .drawer-backdrop { opacity: 1; }
 /* =============================================================== */
 
 main > section + section {
-  margin-top: calc(var(--grid-gap) );
+  /* margin-top: calc(var(--grid-gap) ); */
 }
 
 /* Wide section wrapper */
 .section-wide {
-  background: linear-gradient(
-    180deg,
-    var(--bg) 0%,
-    color-mix(in oklab, var(--bg) 98%, var(--border)) 100%
-  );
   padding-block: var(--space-section);
 }
+
 
 /* --- About (now integrated into Skills) --- */
 .skills-section .about-content {
   opacity: 0;
   transform: translateY(1.5rem);
   animation: aboutFadeIn 0.8s ease-out 0.2s forwards;
+}
+
+#skills-tools {
+  padding: 5rem 0;
 }
 
 @keyframes aboutFadeIn {
@@ -578,11 +595,7 @@ main > section + section {
 
 /* --- Case Studies --- */
 #case-studies {
-  background: linear-gradient(
-    180deg,
-    var(--bg) 0%,
-    color-mix(in oklab, var(--bg) 98%, var(--muted)) 100%
-  );
+  background: var(--cases-bg);
   padding-block: clamp(1rem, 1vh, 2rem);
 }
 
@@ -621,6 +634,7 @@ main > section + section {
 /* --- Skills & Tools --- */
 .skills-section {
   padding-block: clamp(1rem, 4vh, 2rem);
+  background: var(--about-bg);
 }
 
 /* Section container: center only what should be centered */
@@ -755,7 +769,7 @@ main > section + section {
 
 /* --- Contact --- */
 #contact {
-  background: var(--bg);
+  background: var(--contact-bg);
   padding-block: clamp(4rem, 8vh, 6rem);
   border-top: 1px solid color-mix(in oklab, var(--border) 40%, transparent);
 }
@@ -1071,7 +1085,7 @@ main > section + section {
   background: var(--nav-bg);
   border-top: 1px solid var(--border);
   padding-block: var(--space-lg);
-  margin-top: var(--space-xl);
+  margin-top: 0;
 }
 
 .site-footer .container {
@@ -1168,11 +1182,11 @@ main > section + section {
 /* Project sections */
 .project-section {
   padding-block: var(--space-section);
-  background: var(--bg);
+  background: var(--section-bg);
 }
 
 .project-section.alt {
-  background: var(--muted);
+  background: var(--section-bg);
   padding-block: var(--space-xl);
 }
 
