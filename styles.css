@@ -533,33 +533,11 @@ main > section + section {
   padding-block: var(--space-section);
 }
 
-/* --- About --- */
-#about {
-  background: linear-gradient(
-    180deg,
-    var(--bg) 0%,
-    color-mix(in oklab, var(--bg) 97%, var(--muted)) 100%
-  );
-}
-
-#about h2 {
-  margin-bottom: var(--space-lg);
-}
-
-.about-content {
+/* --- About (now integrated into Skills) --- */
+.skills-section .about-content {
   opacity: 0;
   transform: translateY(1.5rem);
   animation: aboutFadeIn 0.8s ease-out 0.2s forwards;
-}
-
-.about-content p {
-  max-width: 55ch;
-  line-height: 1.75;
-}
-
-.about-content strong {
-  font-weight: 600;
-  color: var(--text);
 }
 
 @keyframes aboutFadeIn {
@@ -600,6 +578,15 @@ main > section + section {
   letter-spacing: 0.15em;
   text-transform: uppercase;
   margin-bottom: var(--space-lg);
+}
+
+.skills-intro {
+  max-width: 55ch;
+  margin-inline: auto;
+  margin-bottom: clamp(2rem, 4vh, 3rem);
+  line-height: 1.75;
+  color: color-mix(in oklab, var(--text) 75%, transparent);
+  font-size: 1rem;
 }
 
 .skills-divider {
