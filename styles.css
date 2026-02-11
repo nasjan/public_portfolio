@@ -24,8 +24,8 @@
 
   --hero-bg: var(--section-bg-dark);
   --about-bg: var(--section-bg-light);
-  --cases-bg: #ffffff00;
-  --contact-bg: var(--section-bg);
+  --cases-bg: var(--section-bg-dark);
+  --contact-bg: var(--section-bg-light);
 
   --bg-img: url(img/background.webp);
   --bg: #fffaff;
@@ -596,7 +596,8 @@ main > section + section {
 /* --- Case Studies --- */
 #case-studies {
   background: var(--cases-bg);
-  padding-block: clamp(1rem, 1vh, 2rem);
+  padding-block: clamp(2rem, 4vh, 4rem);
+  width: 100%;
 }
 
 .cases-section {
