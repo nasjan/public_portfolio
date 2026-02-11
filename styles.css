@@ -10,7 +10,8 @@
     Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
   --line-height: 1.75;
   --heading-line-height: 1.1;
-  --text-body: color-mix(in oklab, var(--text) 75%, transparent);
+  --text-body: #0b0d12;
+  --text-body-light: rgb(240, 240, 240);
 
   /* --- Colours --- */
   --nav-font: rgb(240, 240, 240);
@@ -18,14 +19,23 @@
   --nav-hover:#00cfcf;
 
   /* sectioneiden taustat */
-  --section-bg: rgba(255, 255, 255, 0.493);
+  --section-bg: rgba(255, 255, 255, 0.295);
   --section-bg-light: #0000000e;
-  --section-bg-dark: #0000001c;
+  --section-bg-dark: #03030386;
 
-  --hero-bg: var(--section-bg-dark);
-  --about-bg: var(--section-bg-light);
-  --cases-bg: var(--section-bg-dark);
-  --contact-bg: var(--section-bg-light);
+  --hero-bg: var(--section-bg-light);
+  --cases-bg: var(--section-bg-light);
+  --contact-bg: var(--section-bg-dark);
+
+  /* About-section värit */
+  --about-bg: var(--section-bg-dark);
+  --about-text: var(--text-body-light);
+
+  /* sectioneiden fonttien väri */
+  --hero-text: var(--text-body);
+
+  --cases-text: var(--text-body);
+  --contact-text: var(--text-body-light);
 
   --bg-img: url(img/background.webp);
   --bg: #fffaff;
@@ -421,6 +431,7 @@ body.drawer-open .drawer-backdrop { opacity: 1; }
   display: flex;
   align-items: center;
   background: var(--hero-bg);
+
   position: relative;
   overflow: hidden;
 }
@@ -636,6 +647,7 @@ main > section + section {
 .skills-section {
   padding-block: clamp(1rem, 4vh, 2rem);
   background: var(--about-bg);
+  color: var(--about-text);
 }
 
 /* Section container: center only what should be centered */
@@ -662,6 +674,7 @@ main > section + section {
   margin-bottom: clamp(2rem, 4vh, 3rem);
   text-align: center;
   font-size: 1.1rem;
+  color: var(--about-text);
 }
 
 .skills-divider {
@@ -717,7 +730,7 @@ main > section + section {
 .skills-column li {
   font-size: 1rem;
   line-height: 1.75;
-  color: var(--text-body);
+  color: var(--about-text);
   text-align: left;
 }
 
@@ -941,7 +954,7 @@ main > section + section {
   flex-direction: column;
   text-decoration: none;
   color: inherit;
-  background: var(--bg);
+  background: var(--section-bg);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   overflow: hidden;
