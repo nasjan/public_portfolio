@@ -13,7 +13,7 @@
   --text-body: color-mix(in oklab, var(--text) 75%, transparent);
 
   /* --- Colours --- */
-  --bg: #ffffff;
+  --bg: #f7f7f7;
   --bg-subtle: #f8fafc;
   --text: #0b0d12;
   --text-muted: color-mix(in oklab, var(--text) 65%, transparent);
@@ -68,6 +68,7 @@ html {
 html,
 body {
   height: 100%;
+
 }
 
 body {
