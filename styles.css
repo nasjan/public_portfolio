@@ -8,8 +8,9 @@
   /* --- Typography --- */
   --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI,
     Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-  --line-height: 1.65;
+  --line-height: 1.75;
   --heading-line-height: 1.1;
+  --text-body: color-mix(in oklab, var(--text) 75%, transparent);
 
   /* --- Colours --- */
   --bg: #ffffff;
@@ -91,6 +92,12 @@ a:hover {
   text-decoration-thickness: 2px;
 }
 
+p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--text-body);
+}
+
 [hidden] {
   display: none !important;
 }
@@ -125,8 +132,8 @@ h3 {
 
 .lead {
   font-size: clamp(1.2rem, 2vw, 1.4rem);
-  line-height: 1.6;
-  color: var(--text-muted);
+  line-height: 1.75;
+  color: var(--text-body);
 }
 
 .muted {
@@ -423,8 +430,8 @@ body.drawer-open .drawer-backdrop { opacity: 1; }
 
 .hero-intro {
   font-size: clamp(1.2rem, 2.5vw, 1.4rem);
-  line-height: 1.7;
-  color: var(--text-muted);
+  line-height: 1.75;
+  color: var(--text-body);
   margin: 0;
 }
 
@@ -587,9 +594,6 @@ main > section + section {
   max-width: 80ch;
   margin-inline: auto;
   margin-bottom: clamp(2rem, 4vh, 3rem);
-  line-height: 1.75;
-  font-size: 1rem;
-  color: color-mix(in oklab, var(--text) 75%, transparent);
   text-align: center;
 }
 
@@ -645,10 +649,9 @@ main > section + section {
 
 .skills-column li {
   font-size: 1rem;
-  line-height: 1.7;
-  color: color-mix(in oklab, var(--text) 70%, transparent);
+  line-height: 1.75;
+  color: var(--text-body);
   text-align: left;
-  
 }
 
 
@@ -733,9 +736,6 @@ main > section + section {
 }
 
 .contact-lead {
-  font-size: 1.125rem;
-  line-height: 1.7;
-  color: color-mix(in oklab, var(--text) 85%, transparent);
   margin: 0;
   max-width: 42ch;
 }
@@ -915,10 +915,7 @@ main > section + section {
 }
 
 .case-study-card .card-description {
-  color: color-mix(in oklab, var(--text) 80%, transparent);
   margin: 0;
-  font-size: 0.9375rem;
-  line-height: 1.6;
 }
 
 .case-study-card .card-cta {
@@ -1159,9 +1156,6 @@ main > section + section {
 }
 
 .project-body {
-  line-height: 1.8;
-  font-size: 1.0625rem;
-  color: color-mix(in oklab, var(--text) 90%, transparent);
   max-width: 65ch;
 }
 
@@ -1170,7 +1164,6 @@ main > section + section {
 /* Project prose (reading-width, WCAG ≤ 80 char) */
 .project-prose {
   max-width: 65ch;
-  line-height: 1.9;
 }
 
 .project-prose > * { max-width: 65ch; }
