@@ -743,7 +743,7 @@ main > section + section {
 }
 
 .contact-wrapper {
-  max-width: var(--site-max-width);
+  max-width: 56rem;
   margin-inline: auto;
   padding-inline: var(--container-pad-inline);
   display: grid;
@@ -766,7 +766,7 @@ main > section + section {
 }
 
 #contact h2 {
-  margin-bottom: var(--space-xs);
+  margin-bottom: 0;
 }
 
 .contact-lead {
@@ -877,8 +877,23 @@ main > section + section {
 }
 
 @media (max-width: 900px) {
-  .contact-wrapper { max-width: 42rem; }
-  .contact-social { gap: var(--space-lg); }
+  .contact-wrapper {
+    max-width: 42rem;
+    text-align: center;
+  }
+
+  .contact-content {
+    align-items: center;
+  }
+
+  .contact-lead {
+    text-align: center;
+  }
+
+  .contact-social {
+    justify-content: center;
+    gap: var(--space-lg);
+  }
 }
 
 
