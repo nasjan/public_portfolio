@@ -581,7 +581,7 @@ main > section + section {
 }
 
 .skills-intro {
-  max-width: 55ch;
+  max-width: 79ch;
   margin-inline: auto;
   margin-bottom: clamp(2rem, 4vh, 3rem);
   line-height: 1.75;
