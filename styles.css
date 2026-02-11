@@ -584,7 +584,7 @@ main > section + section {
 
 /* Intro centered (block stays centered via margin auto) */
 .skills-intro {
-  max-width: 75ch;
+  max-width: 80ch;
   margin-inline: auto;
   margin-bottom: clamp(2rem, 4vh, 3rem);
   line-height: 1.75;
@@ -657,6 +657,44 @@ main > section + section {
     grid-template-columns: 1fr;
     gap: var(--space-lg);
     text-align: center;
+  }
+}
+
+/* Tablet: ≤ 900px — shrink gap, keep 3 columns */
+@media (max-width: 900px) {
+  .skills-columns {
+    gap: clamp(2rem, 5vw, 4rem);
+  }
+
+  .skills-intro {
+    max-width: 100%;
+  }
+}
+
+/* Small tablet / large phone: ≤ 700px — stack to single column */
+@media (max-width: 700px) {
+  .skills-columns {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xl);
+  }
+
+  .skills-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skills-column ul {
+    align-items: center;
+  }
+
+  .skills-inner {
+    padding-inline: var(--space-md);
+  }
+
+  .skills-intro {
+    font-size: 0.95rem;
   }
 }
 
