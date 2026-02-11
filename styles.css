@@ -17,7 +17,8 @@
   --nav-bg: rgb(48, 48, 48);
   --nav-hover:#00cfcf;
 
-  --bg: #f7f7f7;
+  --bg-img: url(img/background.webp);
+  --bg: #fffaff;
   --bg-subtle: #f8fafc;
   --text: #0b0d12;
   --text-muted: color-mix(in oklab, var(--text) 65%, transparent);
@@ -79,7 +80,6 @@ body {
 body {
   margin: 0;
   font-family: var(--font-sans);
-  background: var(--bg);
   color: var(--text);
   line-height: var(--line-height);
 }
@@ -413,6 +413,7 @@ body.drawer-open .drawer-backdrop { opacity: 1; }
   max-width: var(--site-max-width);
   margin: 0 auto;
   padding: var(--container-pad-block) var(--container-pad-inline);
+
 }
 
 .hero-content {
