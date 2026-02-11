@@ -456,12 +456,13 @@ body.drawer-open .drawer-backdrop { opacity: 1; }
 .hero-avatar {
   width: clamp(300px, 20vw, 480px);
   height: clamp(300px, 20vw, 480px);
-  border-radius: 50%;
+  border-radius: 15%;
   object-fit: cover;
   object-position: center;
   display: block;
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
   transform: translateZ(0);
+
 }
 
 @keyframes heroFadeIn {
@@ -869,7 +870,7 @@ main > section + section {
 .contact-avatar {
   width: clamp(160px, 20vw, 220px);
   height: clamp(160px, 20vw, 220px);
-  border-radius: 50%;
+  border-radius: 25%;
   object-fit: cover;
   object-position: center;
   display: block;
