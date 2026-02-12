@@ -1391,7 +1391,7 @@ main > section + section {
   display: flex;
   gap: var(--space-md);
   flex-wrap: wrap;
-  margin-top: var(--space-xs);
+  margin-top: 1rem;
 }
 
 /* Hero image */
