@@ -45,7 +45,7 @@
   --bg-subtle: #f8fafc;
 
   --text: #0b0d12;
-  --text-muted: #5c5e63;
+  --text-muted: #3d3f44;
   --muted: #eef0f3;
   --border: #e6e8ec;
   --accent: #006060;
@@ -872,7 +872,7 @@ main > section + section {
   gap: var(--space-xs);
   font-size: 0.9375rem;
   font-weight: 600;
-  color: color-mix(in oklab, var(--text) 75%, transparent);
+  color: #3d3f44;
   text-decoration: underline;
   text-decoration-color: transparent;
   text-underline-offset: 3px;
@@ -884,7 +884,7 @@ main > section + section {
 .contact-social-link svg {
   width: 1.125rem;
   height: 1.125rem;
-  opacity: 0.7;
+  opacity: 1;
   transition: opacity 0.2s ease;
 }
 
@@ -1450,7 +1450,7 @@ main > section + section {
 }
 
 .cs-ov-label {
-  font-size: 0.6875rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -1459,7 +1459,7 @@ main > section + section {
 }
 
 .cs-ov-card p:last-child {
-  font-size: 0.9375rem;
+  font-size: 1rem;
   line-height: 1.6;
   margin: 0;
 }
@@ -1622,11 +1622,11 @@ main > section + section {
 }
 
 .cs-toc-heading {
-  font-size: 0.6875rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: color-mix(in oklab, var(--text) 50%, transparent);
+  color: #4a4c52;
   margin: 0 0 var(--space-sm);
 }
 
@@ -1640,8 +1640,8 @@ main > section + section {
 }
 
 .cs-toc-list a {
-  font-size: 0.8125rem;
-  color: color-mix(in oklab, var(--text) 65%, transparent);
+  font-size: 1rem;
+  color: #4a4c52;
   text-decoration: none;
   display: block;
   padding: 0.25em 0 0.25em var(--space-sm);
@@ -1663,11 +1663,11 @@ main > section + section {
 }
 
 .cs-facts dt {
-  font-size: 0.6875rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: color-mix(in oklab, var(--text) 50%, transparent);
+  color: #4a4c52;
   margin-top: var(--space-sm);
 }
 
@@ -1675,7 +1675,7 @@ main > section + section {
 
 .cs-facts dd {
   margin: 0.15em 0 0;
-  font-size: 0.8125rem;
+  font-size: 1rem;
   line-height: 1.5;
   color: var(--text-body);
 }
@@ -1691,7 +1691,7 @@ main > section + section {
 }
 
 .cs-toc-mobile summary {
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   color: var(--text);
@@ -1743,7 +1743,7 @@ main > section + section {
   padding: var(--space-md) var(--space-lg);
   text-decoration: none;
   color: var(--text);
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 600;
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
@@ -1795,7 +1795,7 @@ main > section + section {
 .cs-pager-card--next { text-align: right; }
 
 .cs-pager-label {
-  font-size: 0.6875rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1814,7 +1814,7 @@ main > section + section {
 }
 
 .cs-back a {
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 600;
 }
 
