@@ -43,11 +43,11 @@
           <h1>Meal Macro Builder</h1>
 
           <p class="cs-hero-summary">
-            An MVP web app for building meals and tracking nutrition in real time — designed and built as a solo course project.
+            A simple web app for building meals and tracking nutrition in real time. I designed and built it as a solo course project.
           </p>
 
           <dl class="cs-hero-meta">
-            <div class="cs-meta-item"><dt>Role</dt><dd>UX, UI &amp; Front-end</dd></div>
+            <div class="cs-meta-item"><dt>Role</dt><dd>UX, UI and Front end</dd></div>
             <div class="cs-meta-item"><dt>Timeline</dt><dd>Course period (MVP)</dd></div>
             <div class="cs-meta-item"><dt>Tools</dt><dd>React, Firebase, Figma</dd></div>
             <div class="cs-meta-item"><dt>Team</dt><dd>Solo</dd></div>
@@ -58,13 +58,11 @@
               View demo
               <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
             </a>
-            <!-- <a href="#" class="btn btn-outline">View repo</a> -->
           </div>
 
-          <!-- Replace src with your hero image -->
           <figure class="cs-hero-img">
             <img src="../img/makroniapp.webp"
-                 alt="Meal Macro Builder app — meal building interface"
+                 alt="Meal Macro Builder app showing the meal building interface"
                  width="1200" height="675" />
           </figure>
         </div>
@@ -76,19 +74,19 @@
           <div class="cs-overview-grid">
             <div class="cs-ov-card">
               <p class="cs-ov-label">Problem</p>
-              <p>Macro tracking is slow and fragmented. Existing tools are bloated for everyday meal building.</p>
+              <p>Tracking macros is slow and complicated. Most tools have too many features for everyday use.</p>
             </div>
             <div class="cs-ov-card">
               <p class="cs-ov-label">Goal</p>
-              <p>Build a lightweight meal builder with real-time nutrition calculations and per-user storage.</p>
+              <p>Build a simple meal builder that calculates nutrition in real time and saves meals for each user.</p>
             </div>
             <div class="cs-ov-card">
               <p class="cs-ov-label">My Role</p>
-              <p>UX research, UI design, and complete front-end implementation as a solo developer.</p>
+              <p>I did the UX research, UI design, and all the front end code by myself.</p>
             </div>
             <div class="cs-ov-card">
               <p class="cs-ov-label">Outcome</p>
-              <p>Usability-tested MVP with strong Lighthouse scores. Core flow validated with 7 participants.</p>
+              <p>A tested MVP with good Lighthouse scores. I tested the main flow with 7 people.</p>
             </div>
           </div>
         </div>
@@ -103,24 +101,24 @@
             <summary>Table of Contents</summary>
             <ol class="cs-toc-list">
               <li><a href="#cs-overview">Overview</a></li>
-              <li><a href="#cs-problem">Problem &amp; Context</a></li>
-              <li><a href="#cs-research">Research &amp; Insights</a></li>
-              <li><a href="#cs-ideation">Ideation &amp; Decisions</a></li>
+              <li><a href="#cs-problem">Problem and Context</a></li>
+              <li><a href="#cs-research">Research and Insights</a></li>
+              <li><a href="#cs-ideation">Ideation and Decisions</a></li>
               <li><a href="#cs-solution">Design Solution</a></li>
-              <li><a href="#cs-validation">Validation &amp; Iteration</a></li>
-              <li><a href="#cs-results">Results &amp; Learnings</a></li>
+              <li><a href="#cs-validation">Validation and Iteration</a></li>
+              <li><a href="#cs-results">Results and Learnings</a></li>
             </ol>
           </details>
 
           <div class="cs-body">
-            <!-- ── Main column ── -->
+            <!-- Main column -->
             <div class="cs-main">
 
               <!-- A. Overview -->
               <div id="cs-overview" class="cs-section">
                 <h2>Overview</h2>
-                <p>This project is a beginner-level React application designed as a personal everyday tool. The goal was to build something I would genuinely use myself, while learning how a real-world web application is planned, designed, and implemented as an MVP.</p>
-                <p>The concept — a meal macro calculator — is familiar and already well established. The focus was on understanding how such an application is structured and built from scratch.</p>
+                <p>This is a beginner level React application that I built as a personal tool. I wanted to create something I would actually use every day. At the same time, I wanted to learn how a real web application is planned, designed, and built as an MVP.</p>
+                <p>The idea of a meal macro calculator is not new. My focus was on understanding how to build one from scratch.</p>
 
                 <div class="cs-callout">
                   <p><strong>Test login:</strong> Email: testi@makroni.fi · Password: Makroni123</p>
@@ -131,25 +129,25 @@
 
               <!-- B. Problem & Context -->
               <div id="cs-problem" class="cs-section">
-                <h2>Problem &amp; Context</h2>
-                <p>Macro tracking is often slow and fragmented. I wanted a lightweight tool where I can quickly build a meal from familiar items, adjust grams, and immediately see the nutritional totals.</p>
-                <p>The UX challenge was to keep the workflow obvious and fast, while still supporting saving and returning to meals later. This was a course project at Haaga-Helia University of Applied Sciences for the Pilvipalvelut web development module.</p>
+                <h2>Problem and Context</h2>
+                <p>Tracking macros is often slow and spread across many tools. I wanted a simple app where I can build a meal from familiar foods, change the amount in grams, and see the totals right away.</p>
+                <p>The UX challenge was to make the flow fast and clear. Users should be able to save meals and come back to them later. This was a course project at Haaga Helia University of Applied Sciences for the cloud services web development module.</p>
               </div>
 
               <div class="cs-divider"></div>
 
               <!-- C. Research & Insights -->
               <div id="cs-research" class="cs-section">
-                <h2>Research &amp; Insights</h2>
-                <p>Before building anything I reviewed existing macro tracking tools and identified the common friction points: hidden features behind onboarding, overcomplicated food databases, and multi-step flows just to log a single meal.</p>
+                <h2>Research and Insights</h2>
+                <p>Before building anything, I looked at existing macro tracking tools. I found common problems: features hidden behind sign up steps, complicated food databases, and too many steps just to log one meal.</p>
                 <ul>
-                  <li>Users want immediate feedback when adjusting portion sizes</li>
-                  <li>Navigation between "building" and "reviewing" should be obvious</li>
-                  <li>The app should work instantly without tutorials</li>
+                  <li>Users want to see changes immediately when they adjust portion sizes</li>
+                  <li>Moving between building a meal and reviewing meals should be clear</li>
+                  <li>The app should work right away without a tutorial</li>
                 </ul>
 
                 <div class="cs-callout">
-                  <p><strong>Key insight:</strong> For a personal daily tool, speed and predictability matter more than feature richness. Every extra step is a reason to abandon the flow.</p>
+                  <p><strong>Key insight:</strong> For a daily tool, speed and predictability are more important than having many features. Every extra step makes users want to give up.</p>
                 </div>
               </div>
 
@@ -157,19 +155,13 @@
 
               <!-- D. Ideation & Decisions -->
               <div id="cs-ideation" class="cs-section">
-                <h2>Ideation &amp; Decisions</h2>
-                <p>I designed the MVP around one primary flow: search and add food items → input grams → review real-time nutrition totals → save the meal. The interface decisions were guided by Nielsen heuristics, especially system status visibility, error prevention, and user control.</p>
+                <h2>Ideation and Decisions</h2>
+                <p>I designed the MVP around one main flow: search for food items, enter grams, see nutrition totals update in real time, and save the meal. I used Nielsen heuristics to guide interface decisions. I focused on showing system status, preventing errors, and giving users control.</p>
                 <ul>
-                  <li>Immediate feedback for key actions to reduce uncertainty</li>
-                  <li>Predictable patterns across pages to reduce learning effort</li>
-                  <li>Readable typography and clear contrast for basic accessibility</li>
+                  <li>Show feedback right away for important actions</li>
+                  <li>Use the same patterns on every page so users learn quickly</li>
+                  <li>Use readable fonts and clear contrast for basic accessibility</li>
                 </ul>
-
-                <!-- Replace with wireframe/sketch image -->
-                <!-- <figure class="cs-fig">
-                  <img src="../img/makroni-wireframe.webp" alt="Early wireframe sketches" width="800" height="450" />
-                  <figcaption>Early wireframe exploration for the meal builder flow</figcaption>
-                </figure> -->
               </div>
 
               <div class="cs-divider"></div>
@@ -177,41 +169,31 @@
               <!-- E. Design Solution -->
               <div id="cs-solution" class="cs-section">
                 <h2>Design Solution</h2>
-                <p>The UI is intentionally minimal so users can understand the system without onboarding or instructions. The application is built with React and Vite. Authentication is handled with Firebase Authentication and user data is stored in Firestore.</p>
+                <p>The UI is simple on purpose. Users can understand the app without a tutorial or onboarding. The app is built with React and Vite. Firebase Authentication handles login, and Firestore stores user data.</p>
                 <ul>
-                  <li>React component structure for builder and saved meals views</li>
-                  <li>Real-time calculation logic tied to user input</li>
-                  <li>Firestore storage scoped per user</li>
-                  <li>Clear separation between building a meal and reviewing saved meals</li>
-                  <li>Consistent navigation and predictable layout across views</li>
+                  <li>React components for the meal builder and saved meals views</li>
+                  <li>Real time calculation when users change input values</li>
+                  <li>Firestore storage that keeps each user's data separate</li>
+                  <li>Clear separation between building a meal and viewing saved meals</li>
+                  <li>Same navigation and layout on every page</li>
                 </ul>
-
-                <!-- Replace with actual screenshots -->
-                <!-- <div class="cs-fig-grid">
-                  <figure>
-                    <img src="../img/makroni-builder.webp" alt="Meal builder view" width="600" height="400" />
-                  </figure>
-                  <figure>
-                    <img src="../img/makroni-saved.webp" alt="Saved meals view" width="600" height="400" />
-                  </figure>
-                </div> -->
               </div>
 
               <div class="cs-divider"></div>
 
               <!-- F. Validation & Iteration -->
               <div id="cs-validation" class="cs-section">
-                <h2>Validation &amp; Iteration</h2>
-                <p>Usability was evaluated with seven testers aged 25 to 55. All testers found the idea and navigation clear, and users could move between pages without extra guidance.</p>
+                <h2>Validation and Iteration</h2>
+                <p>I tested the app with seven people aged 25 to 55. All testers said the idea and navigation were clear. They could move between pages without extra help.</p>
                 <ul>
-                  <li>Two mobile scaling issues were found on specific devices and fixed with CSS adjustments</li>
-                  <li>iOS Safari auto-zoom on inputs was resolved by ensuring input font size is at least 16 px</li>
-                  <li>Responsive testing with Chrome DevTools across multiple breakpoints</li>
-                  <li>Cross-browser testing on Chrome, Edge, and iOS Safari</li>
+                  <li>Found two mobile scaling issues on specific devices and fixed them with CSS changes</li>
+                  <li>Fixed iOS Safari auto zoom on inputs by making the font size at least 16px</li>
+                  <li>Tested responsiveness with Chrome DevTools at different screen sizes</li>
+                  <li>Tested on Chrome, Edge, and iOS Safari</li>
                 </ul>
 
                 <div class="cs-callout">
-                  <p><strong>Iteration highlight:</strong> After testing, two participants struggled with input fields on smaller phones. Increasing font size to 16 px solved the iOS Safari zoom issue and improved usability across all mobile devices.</p>
+                  <p><strong>Iteration highlight:</strong> Two testers had trouble with input fields on smaller phones. Making the font size 16px fixed the iOS Safari zoom problem and improved usability on all mobile devices.</p>
                 </div>
               </div>
 
@@ -219,40 +201,40 @@
 
               <!-- G. Results & Learnings -->
               <div id="cs-results" class="cs-section">
-                <h2>Results &amp; Learnings</h2>
-                <p>Lighthouse testing showed strong performance and accessibility results for an MVP. Performance recording during typical flows showed smooth interactions without noticeable UI jank.</p>
+                <h2>Results and Learnings</h2>
+                <p>Lighthouse testing showed good performance and accessibility scores for an MVP. The app ran smoothly during typical use without visible slowdowns.</p>
                 <ul>
-                  <li>Usability testing with 7 participants confirmed the core flow was easy to understand without instructions</li>
-                  <li>Mobile scaling issues on two devices were fixed through iterative CSS improvements</li>
-                  <li>Cross-browser testing confirmed correct behavior on Chrome and Edge</li>
-                  <li>Lighthouse results showed strong performance and accessibility</li>
+                  <li>All 7 testers understood the main flow without instructions</li>
+                  <li>Fixed mobile scaling issues on two devices with CSS improvements</li>
+                  <li>Confirmed correct behavior on Chrome and Edge</li>
+                  <li>Lighthouse scores were strong for both performance and accessibility</li>
                 </ul>
-                <p>Future improvements include day-based meal planning, extended history views, continued UI refinement, and a potential REST API integration.</p>
+                <p>Future improvements include planning meals by day, a history view, more UI improvements, and possibly connecting to a REST API.</p>
               </div>
 
-            </div><!-- /.cs-main -->
+            </div>
 
-            <!-- ── Sidebar ── -->
+            <!-- Sidebar -->
             <aside class="cs-sidebar">
               <div class="cs-toc" aria-label="Table of contents">
                 <p class="cs-toc-heading">On this page</p>
                 <nav>
                   <ol class="cs-toc-list">
                     <li><a href="#cs-overview">Overview</a></li>
-                    <li><a href="#cs-problem">Problem &amp; Context</a></li>
-                    <li><a href="#cs-research">Research &amp; Insights</a></li>
-                    <li><a href="#cs-ideation">Ideation &amp; Decisions</a></li>
+                    <li><a href="#cs-problem">Problem and Context</a></li>
+                    <li><a href="#cs-research">Research and Insights</a></li>
+                    <li><a href="#cs-ideation">Ideation and Decisions</a></li>
                     <li><a href="#cs-solution">Design Solution</a></li>
-                    <li><a href="#cs-validation">Validation &amp; Iteration</a></li>
-                    <li><a href="#cs-results">Results &amp; Learnings</a></li>
+                    <li><a href="#cs-validation">Validation and Iteration</a></li>
+                    <li><a href="#cs-results">Results and Learnings</a></li>
                   </ol>
                 </nav>
 
                 <dl class="cs-facts">
                   <dt>Course</dt>
-                  <dd>Pilvipalvelut web development</dd>
+                  <dd>Cloud services web development</dd>
                   <dt>School</dt>
-                  <dd>Haaga-Helia UAS</dd>
+                  <dd>Haaga Helia UAS</dd>
                   <dt>Stack</dt>
                   <dd>React, Vite, Firebase Auth, Firestore</dd>
                   <dt>Methods</dt>
@@ -261,22 +243,19 @@
               </div>
             </aside>
 
-          </div><!-- /.cs-body -->
+          </div>
         </div>
       </section>
 
       <!-- ===== 4) ARTIFACTS ===== -->
       <section class="project-section">
         <div class="container">
-          <h2 class="cs-toc-heading" style="margin-bottom:var(--space-md)">Artifacts &amp; Links</h2>
+          <h2 class="cs-toc-heading" style="margin-bottom:var(--space-md)">Artifacts and Links</h2>
           <div class="cs-artifacts-grid">
             <a href="https://nasjan.github.io/Pilvipalvelut_kurssi_Jan/Harjoitusty%C3%B6/app/" class="cs-artifact" target="_blank" rel="noopener noreferrer">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               Live demo
             </a>
-            <!-- Add more as needed -->
-            <!-- <a href="#" class="cs-artifact"><svg>…</svg>Figma prototype</a> -->
-            <!-- <a href="#" class="cs-artifact"><svg>…</svg>GitHub repo</a> -->
           </div>
         </div>
       </section>
@@ -286,16 +265,16 @@
         <div class="container">
           <div class="cs-pager">
             <a href="aikani.html" class="cs-pager-card">
-              <span class="cs-pager-label">← Previous</span>
+              <span class="cs-pager-label">Previous</span>
               <span class="cs-pager-title">Aikani</span>
             </a>
             <a href="mentalink.html" class="cs-pager-card cs-pager-card--next">
-              <span class="cs-pager-label">Next →</span>
+              <span class="cs-pager-label">Next</span>
               <span class="cs-pager-title">Mentalink</span>
             </a>
           </div>
           <div class="cs-back">
-            <a href="../index.html#case-studies">← Back to Case Studies</a>
+            <a href="../index.html#case-studies">Back to Case Studies</a>
           </div>
         </div>
       </section>
@@ -311,7 +290,7 @@
             <ul>
               <li><a href="../index.html#case-studies">Case Studies</a></li>
               <li><a href="../index.html#about">About</a></li>
-              <li><a href="../index.html#skills-tools">Skills &amp; Tools</a></li>
+              <li><a href="../index.html#skills-tools">Skills and Tools</a></li>
               <li><a href="../index.html#contact">Contact</a></li>
             </ul>
           </nav>
