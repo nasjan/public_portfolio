@@ -1994,6 +1994,104 @@ figure.bento-image::after {
   border: 1px solid var(--border);
 }
 
+/* Design Explorations — visual link cards */
+.de-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+}
+
+@media (max-width: 640px) {
+  .de-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.de-visual-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.de-visual-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  text-decoration: none;
+}
+
+.de-visual-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.de-visual-card__img {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.de-visual-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: var(--space-lg);
+  transition: transform 0.3s ease;
+}
+
+.de-visual-card:hover .de-visual-card__img img {
+  transform: scale(1.03);
+}
+
+.de-visual-card__body {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  flex: 1;
+}
+
+.de-visual-card__body h2 {
+  font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+  margin: 0;
+  text-align: left;
+  color: var(--text);
+}
+
+.de-visual-card__body p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-body);
+}
+
+.de-visual-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--accent);
+  margin-top: auto;
+  padding-top: var(--space-xs);
+}
+
+.de-visual-card__cta svg {
+  transition: transform 0.2s ease;
+}
+
+.de-visual-card:hover .de-visual-card__cta svg {
+  transform: translateX(3px);
+}
+
 
 /* =============================================================== */
 /*  130 — UTILITY CLASSES                                          */
