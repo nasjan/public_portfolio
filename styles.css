@@ -19,7 +19,7 @@
   --nav-hover:#00cfcf;
 
   /* sectioneiden taustat */
-  --section-bg: rgba(255, 255, 255, 0.295);
+  --section-bg: rgba(255, 255, 255, 0.322);
   --section-bg-light: #ffffff8a;
   --section-bg-dark: #f6f7ef2d;
 
@@ -30,6 +30,9 @@
   /* About-section värit */
   --about-bg: var(--section-bg-dark);
 
+  /* Project-sivujen taustat */
+  --project-hero-bg: var(--section-bg);
+  --project-content-bg: var(--section-bg-light);
 
   /* sectioneiden fonttien väri */
   --hero-text: var(--text-body);
@@ -1176,7 +1179,7 @@ main > section + section {
 
 /* Project hero */
 .project-hero {
-  background: var(--section-bg-dark);
+  background: var(--project-hero-bg);
 
 }
 
@@ -1189,7 +1192,7 @@ main > section + section {
 }
 
 .project-hero--tight {
-  padding-block: clamp(1.5rem, 3vh, 2rem);
+  padding-block: clamp(1rem, 1rem, 1rem);
 }
 
 .project-title {
@@ -1198,26 +1201,23 @@ main > section + section {
 
 /* Project sections */
 .project-section {
-  padding-block: var(--space-section);
-  background: var(--section-bg);
+  padding-block: var(--space-xl);
+  background-color: var(--project-content-bg);
 }
 
 .project-section.alt {
-  background: var(--section-bg);
   padding-block: var(--space-xl);
 }
 
-.project-section--tight-top {
-  padding-top: clamp(1.5rem, 3vh, 2rem);
-}
-
+/* Sisäiset alasektiot: ei omaa taustaa, tiiviimmät välit */
 .project-section--inner {
   padding-inline: 0;
-  padding-bottom: 0;
+  padding-block: 0;
+  background-color: transparent;
 }
 
-.project-section--mt-lg { margin-top: var(--space-xl); }
-.project-section--mt-md { margin-top: clamp(2.5rem, 5vh, 3.5rem); }
+.project-section--mt-lg { margin-top: var(--space-lg); }
+.project-section--mt-md { margin-top: var(--space-md); }
 
 /* Project layout helpers */
 .header-row { justify-content: space-between; }
@@ -1245,21 +1245,25 @@ main > section + section {
 }
 
 .project-body {
-  max-width: 65ch;
+  max-width: 75ch;
 }
 
 .project-h2 { margin-bottom: var(--space-md); }
 
 /* Project prose (reading-width, WCAG ≤ 80 char) */
 .project-prose {
-  max-width: 65ch;
+  max-width: 75ch;
 }
 
-.project-prose > * { max-width: 65ch; }
+.project-prose > * { max-width: 75ch; }
+
+.project-prose > * + * {
+  margin-top: var(--space-md);
+}
 
 .project-prose-item {
-  margin-bottom: var(--space-sm);
-  max-width: 65ch;
+  margin-bottom: var(--space-md);
+  max-width: 75ch;
 }
 
 .project-bullets {
@@ -1267,7 +1271,7 @@ main > section + section {
   padding-left: var(--space-lg);
   margin: 0;
   line-height: 1.8;
-  max-width: 65ch;
+  max-width: 75ch;
 }
 
 /* Project CTA row */
