@@ -1176,14 +1176,16 @@ main > section + section {
 
 /* Project hero */
 .project-hero {
-  background: linear-gradient(to bottom, var(--bg), var(--muted));
+  background: var(--section-bg-dark);
+
 }
 
 .project-hero h1 {
-  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-size: clamp(2.5rem, 3vw, 4rem);
   line-height: var(--heading-line-height);
   color: var(--text);
   max-width: 25ch;
+  
 }
 
 .project-hero--tight {
@@ -1214,7 +1216,7 @@ main > section + section {
   padding-bottom: 0;
 }
 
-.project-section--mt-lg { margin-top: var(--space-2xl); }
+.project-section--mt-lg { margin-top: var(--space-xl); }
 .project-section--mt-md { margin-top: clamp(2.5rem, 5vh, 3.5rem); }
 
 /* Project layout helpers */
