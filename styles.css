@@ -11,12 +11,12 @@
   --line-height: 1.75;
   --heading-line-height: 1.1;
   --text-body: #0b0d12;
-  --text-body-light: rgb(240, 240, 240);
+  --text-body-light: #ffffff;
 
   /* --- Colours --- */
-  --nav-font: rgb(240, 240, 240);
+  --nav-font: #ffffff;
   --nav-bg: rgb(54, 54, 54);
-  --nav-hover:#00cfcf;
+  --nav-hover: #5ef0f0;
 
   /* sectioneiden taustat */
   --section-bg: rgba(255, 255, 255, 0.322);
@@ -45,11 +45,11 @@
   --bg-subtle: #f8fafc;
 
   --text: #0b0d12;
-  --text-muted: color-mix(in oklab, var(--text) 65%, transparent);
+  --text-muted: #5c5e63;
   --muted: #eef0f3;
   --border: #e6e8ec;
-  --accent: #008282;
-  --accent-hover: #006161;
+  --accent: #006060;
+  --accent-hover: #004a4a;
 
   /* --- Effects --- */
   --shadow-sm: 0 1px 4px rgba(16, 24, 40, 0.04);
@@ -262,6 +262,7 @@ h3 {
   text-decoration: none;
   color: var(--nav-font);
   letter-spacing: 0.08em;
+  font-size: 1rem;
 }
 
 /* Desktop nav (visible > 900 px) */
@@ -286,17 +287,16 @@ h3 {
   padding: var(--space-xs) var(--space-sm);
   border-radius: var(--radius-lg);
   display: inline-block;
-
+  font-size: 1rem;
   text-decoration: underline;
   text-decoration-color: transparent;
-
-  transition:  all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 /* Ylä Navigaation hover säädöt */
 .site-nav a:is(:hover, :focus-visible) {
- color: var(--nav-hover);
-  text-decoration-color: var(--accent);
+  color: var(--nav-hover);
+  text-decoration-color: var(--nav-hover);
   text-decoration-line: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 4px;
@@ -317,7 +317,7 @@ h3 {
   border-radius: var(--radius-lg);
   padding: 0.5em;
   position: relative;
-  color: var(--text);
+  color: var(--nav-font);
   cursor: pointer;
   background: transparent;
 }
@@ -991,7 +991,7 @@ main > section + section {
 
 .case-study-card .card-meta {
   font-size: 0.9rem;
-  color: color-mix(in oklab, var(--text) 55%, transparent);
+  color: #4a4c52;
   margin: 0;
   line-height: 1.4;
 }
@@ -1010,9 +1010,9 @@ main > section + section {
   align-items: center;
   gap: 0.3rem;
   font-weight: 600;
-  font-size: 0.75rem;
+  font-size: 1rem;
   color: var(--accent);
-  opacity: 0.8;
+  opacity: 1;
   margin-top: auto;
   padding-top: 0.35rem;
 }
@@ -1048,6 +1048,7 @@ main > section + section {
   border-radius: 0.625rem;
   padding: 0.625rem 1rem;
   font-weight: 600;
+  font-size: 1rem;
   border: 1px solid transparent;
   text-decoration: none;
   transition: transform 0.12s ease, box-shadow 0.12s ease;
@@ -1066,7 +1067,7 @@ main > section + section {
 .btn-outline {
   background: whitesmoke;
   color: var(--text);
-  border-color: rgb(173, 173, 173);
+  border-color: #6b6b6b;
 }
 
 .btn-outline:hover {
@@ -1113,8 +1114,8 @@ main > section + section {
 
 .site-footer .footer-copyright {
   margin: 0;
- color: var(--nav-font);
-  font-size: 0.9375rem;
+  color: var(--nav-font);
+  font-size: 1rem;
   white-space: nowrap;
 }
 
@@ -1139,7 +1140,7 @@ main > section + section {
   text-decoration-color: transparent;
   text-underline-offset: 3px;
   font-weight: 600;
-  font-size: 0.9375rem;
+  font-size: 1rem;
   transition: color 0.2s ease, text-decoration-color 0.2s ease;
 }
 
@@ -1363,8 +1364,8 @@ main > section + section {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-xs) var(--space-xl);
-  font-size: 0.8125rem;
-  color: color-mix(in oklab, var(--text) 60%, transparent);
+  font-size: 1rem;
+  color: #4a4c52;
   margin: 0;
   padding: 0;
 }
@@ -1534,7 +1535,7 @@ main > section + section {
 
 /* Callout */
 .cs-callout {
-  background: rgba(0, 130, 130, 0.05);
+  background: rgba(0, 96, 96, 0.06);
   border-left: 3px solid var(--accent);
   border-radius: 0 var(--radius) var(--radius) 0;
   padding: var(--space-md) var(--space-lg);
@@ -1544,7 +1545,7 @@ main > section + section {
 
 .cs-callout p {
   margin: 0;
-  font-size: 0.9375rem;
+  font-size: 1rem;
   line-height: 1.7;
 }
 
@@ -2033,10 +2034,10 @@ figure.bento-image::after {
 .text-base-lg   { font-size: 1.125rem; }
 .text-base-plus { font-size: 1.0625rem; }
 .text-base      { font-size: 1rem; }
-.text-sm        { font-size: 0.9375rem; }
+.text-sm        { font-size: 1rem; }
 
-.text-color-muted      { color: color-mix(in oklab, var(--text) 90%, transparent); }
-.text-color-muted-more { color: color-mix(in oklab, var(--text) 85%, transparent); }
+.text-color-muted      { color: #3d3f44; }
+.text-color-muted-more { color: #4a4c52; }
 
 .line-height-relaxed     { line-height: 1.8; }
 .line-height-comfortable { line-height: 1.9; }
