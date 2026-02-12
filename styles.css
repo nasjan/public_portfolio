@@ -20,8 +20,8 @@
 
   /* sectioneiden taustat */
   --section-bg: rgba(255, 255, 255, 0.295);
-  --section-bg-light: #0000000e;
-  --section-bg-dark: #03030386;
+  --section-bg-light: #ffffff8a;
+  --section-bg-dark: #f6f7ef2d;
 
   --hero-bg: var(--section-bg-light);
   --cases-bg: var(--section-bg-light);
@@ -29,7 +29,7 @@
 
   /* About-section värit */
   --about-bg: var(--section-bg-dark);
-  --about-text: var(--text-body-light);
+
 
   /* sectioneiden fonttien väri */
   --hero-text: var(--text-body);
@@ -430,7 +430,7 @@ body.drawer-open .drawer-backdrop { opacity: 1; }
   min-height: clamp(40vh, 50vh, 50vh);
   display: flex;
   align-items: center;
-  background: var(--hero-bg);
+  background: var(--section-bg-dark);
 
   position: relative;
   overflow: hidden;
@@ -606,7 +606,7 @@ main > section + section {
 
 /* --- Case Studies --- */
 #case-studies {
-  background: var(--cases-bg);
+   background: var(--section-bg-dark);
   padding-block: clamp(2rem, 4vh, 4rem);
   width: 100%;
 }
@@ -646,8 +646,8 @@ main > section + section {
 /* --- Skills & Tools --- */
 .skills-section {
   padding-block: clamp(1rem, 4vh, 2rem);
-  background: var(--about-bg);
-  color: var(--about-text);
+  background: var(--section-bg-light);
+  color: var(--text-body);
 }
 
 /* Section container: center only what should be centered */
@@ -674,7 +674,7 @@ main > section + section {
   margin-bottom: clamp(2rem, 4vh, 3rem);
   text-align: center;
   font-size: 1.1rem;
-  color: var(--about-text);
+  color: var(--text-body);
 }
 
 .skills-divider {
@@ -730,7 +730,7 @@ main > section + section {
 .skills-column li {
   font-size: 1rem;
   line-height: 1.75;
-  color: var(--about-text);
+  color: var(--text-body);
   text-align: left;
 }
 
@@ -783,7 +783,7 @@ main > section + section {
 
 /* --- Contact --- */
 #contact {
-  background: var(--contact-bg);
+  background: var(--section-bg-light);
   padding-block: clamp(4rem, 8vh, 6rem);
   border-top: 1px solid color-mix(in oklab, var(--border) 40%, transparent);
 }
@@ -1066,9 +1066,9 @@ main > section + section {
 }
 
 .btn-outline {
-  background: transparent;
+  background: whitesmoke;
   color: var(--text);
-  border-color: var(--border);
+  border-color: rgb(173, 173, 173);
 }
 
 .btn-outline:hover {
