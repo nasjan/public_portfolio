@@ -154,11 +154,13 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(2rem, 3vw, 2.75rem);
+  font-size: clamp(1.1rem, 1.5vw, 1.25rem);
   line-height: 1.2;
   font-weight: 700;
-  letter-spacing: -0.01em;
-  margin: 0 0 1em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 var(--space-lg);
+  text-align: center;
 }
 
 h3 {
@@ -652,6 +654,7 @@ main > section + section {
   padding-block: clamp(1rem, 4vh, 2rem);
   background: var(--section-bg-light);
   color: var(--text-body);
+  scroll-margin-top: var(--header-h);
 }
 
 /* Section container: center only what should be centered */
@@ -663,7 +666,7 @@ main > section + section {
 
 /* Heading centered */
 .skills-heading {
-  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  font-size: clamp(1.35rem, 1.5vw, 1.125rem);
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -817,6 +820,7 @@ main > section + section {
 
 #contact h2 {
   margin-bottom: 0;
+  text-align: left;
 }
 
 .contact-lead {
@@ -1510,11 +1514,13 @@ main > section + section {
 }
 
 .cs-section > h2 {
-  font-size: clamp(1.2rem, 1.8vw, 1.4rem);
+  font-size: clamp(1.1rem, 1.5vw, 1.25rem);
   font-weight: 700;
-  letter-spacing: -0.005em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   margin: 0 0 var(--space-md);
   color: var(--text);
+  text-align: left;
 }
 
 .cs-section > p {
