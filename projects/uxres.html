@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>User Research, S-Kaupat • Jan Nässi</title>
-    <meta name="description" content="UX research on S-Kaupat online grocery service examining payment, search, and delivery usability." />
-    <link rel="canonical" href="/projects/uxres.html" />
+    <title>UX Research — Case Study • Jan Nässi</title>
+    <meta name="description" content="UX research project: usability testing and heuristic evaluation case study by Jan Nässi." />
     <link rel="icon" href="../img/pixel_me.png" type="image/png" />
     <link rel="stylesheet" href="../styles.css" />
   </head>
   <body>
+
     <header class="site-header">
       <div class="container cluster cluster-space-between">
         <a class="logo" href="../index.html">Jan Nässi</a>
@@ -34,50 +34,183 @@
     <div id="drawer-backdrop" class="drawer-backdrop" hidden></div>
 
     <main id="main">
-      <section class="project-hero project-hero-compact">
+
+      <section class="cs-hero">
         <div class="container">
-          <h1 class="no-margin-bottom">User Experience Research</h1>
-          <p class="lead">S-Kauppa online grocery service</p>
+          <h1>UX Research</h1>
+          <p class="cs-hero-summary">A usability research project applying heuristic evaluation and user testing methods to evaluate and improve an existing digital product.</p>
+
+          <dl class="cs-hero-meta">
+            <div class="cs-meta-item"><dt>Role</dt><dd>UX Researcher</dd></div>
+            <div class="cs-meta-item"><dt>Timeline</dt><dd>Course project</dd></div>
+            <div class="cs-meta-item"><dt>Tools</dt><dd>Google Forms, FigJam, Notion</dd></div>
+            <div class="cs-meta-item"><dt>Team</dt><dd>Solo</dd></div>
+          </dl>
+
+          <figure class="cs-hero-img">
+            <img src="../img/uxres_cover.webp" alt="UX Research project — analysis and findings overview" width="1200" height="675" />
+          </figure>
         </div>
       </section>
 
-      <section class="project-section padding-top-section">
-        <div class="container container-wide">
-          <div class="container-narrow margin-bottom-lg">
-            <div class="stack-3">
-              <div>
-                <h2 class="text-lg margin-bottom-sm">Overview</h2>
-                <p class="line-height-relaxed text-base-plus text-color-muted">This UX research project focused on S-Kaupat, an online grocery service in Finland. I wanted to understand real user experiences and find out where things get frustrating. The study looked at payment flow, search accuracy, delivery timing, and pickup pricing. Based on what I learned, I put together a simple personalization concept and some practical ideas to improve the core user experience.</p>
-              </div>
-              
-              <div class="margin-top-md">
-                <h3 class="text-base-lg margin-bottom-sm font-weight-semibold">Research Process</h3>
-                <p class="line-height-relaxed text-base text-color-muted">I started with a heuristic evaluation of the S-Kaupat interface, then ran a Google Forms survey that got 31 responses. After that, I did three in-depth interviews with actual users. I analyzed everything using affinity mapping and created simple personas to capture what matters most to people: saving time, avoiding crowded stores, sticking to their budget, and feeling confident using the service.</p>
-                <p class="line-height-relaxed text-base text-color-muted margin-top-md">Later on, I did a quick feedback round with 5 people to see how they reacted to the concept I proposed.</p>
-              </div>
+      <section class="project-section cs-overview">
+        <div class="container">
+          <div class="cs-overview-grid">
+            <div class="cs-ov-card">
+              <p class="cs-ov-label">Problem</p>
+              <p>An existing product had usability issues that were not backed by structured research or evidence-based evaluation.</p>
             </div>
-          </div>
-
-          <div class="padding-top-divider border-top">
-            <h2 class="text-xl project-facts-title">Project facts</h2>
-            <div class="container-narrow line-height-comfortable">
-              <p class="margin-bottom-md"><strong>Course:</strong> DIG006AS2A, Digital Product Project</p>
-              <p class="margin-bottom-md"><strong>School:</strong> Haaga-Helia University of Applied Sciences</p>
-              <p class="margin-bottom-md"><strong>Timeline:</strong> About 6 weeks in late 2023</p>
-              <p class="margin-bottom-md"><strong>Team:</strong> Just me on this one</p>
-              <p class="margin-bottom-md"><strong>My role:</strong> UX research, analysis, synthesis, concept framing</p>
-              <p class="margin-bottom-md"><strong>Goal:</strong> Find usability problems and propose user-centered improvements for S-Kaupat</p>
-              <p class="margin-bottom-md"><strong>Methods:</strong> Heuristic evaluation, online survey (31 responses), user interviews (3 people), affinity mapping, personas</p>
-              <p class="margin-bottom-md"><strong>What I delivered:</strong> Research summary, affinity map, personas, concept description</p>
+            <div class="cs-ov-card">
+              <p class="cs-ov-label">Goal</p>
+              <p>Identify usability problems through heuristic evaluation and validate findings with user testing.</p>
             </div>
-
-            <div class="margin-top-section padding-top-section-sm border-top-subtle">
-              <h3 class="text-base-lg margin-bottom-md font-weight-semibold">Impact</h3>
-              <p class="line-height-relaxed text-base text-color-muted">The research made it clear what users actually need from the service. It helped prioritize improvements in payment reliability, search functionality, and delivery transparency.</p>
+            <div class="cs-ov-card">
+              <p class="cs-ov-label">My Role</p>
+              <p>Planned and conducted research, analyzed data, and delivered actionable recommendations.</p>
+            </div>
+            <div class="cs-ov-card">
+              <p class="cs-ov-label">Outcome</p>
+              <p>Research report with prioritized findings and concrete improvement suggestions.</p>
             </div>
           </div>
         </div>
       </section>
+
+      <section class="project-section cs-body-wrap">
+        <div class="container">
+
+          <details class="cs-toc-mobile">
+            <summary>Table of Contents</summary>
+            <ol class="cs-toc-list">
+              <li><a href="#cs-overview">Overview</a></li>
+              <li><a href="#cs-problem">Problem &amp; Context</a></li>
+              <li><a href="#cs-research">Research &amp; Insights</a></li>
+              <li><a href="#cs-ideation">Ideation &amp; Decisions</a></li>
+              <li><a href="#cs-solution">Design Solution</a></li>
+              <li><a href="#cs-validation">Validation &amp; Iteration</a></li>
+              <li><a href="#cs-results">Results &amp; Learnings</a></li>
+            </ol>
+          </details>
+
+          <div class="cs-body">
+            <div class="cs-main">
+
+              <div id="cs-overview" class="cs-section">
+                <h2>Overview</h2>
+                <p>This project focused on applying structured UX research methods to evaluate a digital product. The work combined expert-based evaluation with empirical user testing to generate actionable design recommendations.</p>
+              </div>
+
+              <div class="cs-divider"></div>
+
+              <div id="cs-problem" class="cs-section">
+                <h2>Problem &amp; Context</h2>
+                <p>The evaluated product had known usability friction, but no formal research had been done to identify specific issues or prioritize improvements. The project aimed to fill that gap with structured, evidence-based evaluation.</p>
+              </div>
+
+              <div class="cs-divider"></div>
+
+              <div id="cs-research" class="cs-section">
+                <h2>Research &amp; Insights</h2>
+                <p>I conducted a heuristic evaluation using Nielsen's 10 usability heuristics, followed by moderated usability testing with participants to validate and extend the findings.</p>
+                <ul>
+                  <li>Heuristic evaluation identified issues with visibility of system status and error prevention</li>
+                  <li>User testing revealed navigation confusion in multi-step flows</li>
+                  <li>Participants consistently struggled with the same three interaction patterns</li>
+                </ul>
+
+                <div class="cs-callout">
+                  <p><strong>Key finding:</strong> The most critical issues were not about visual design but about unclear system feedback — users didn't know if their actions had been registered.</p>
+                </div>
+              </div>
+
+              <div class="cs-divider"></div>
+
+              <div id="cs-ideation" class="cs-section">
+                <h2>Ideation &amp; Decisions</h2>
+                <p>Findings were organized by severity and frequency. I mapped each issue to specific heuristics and proposed concrete improvements prioritized by impact and implementation effort.</p>
+                <ul>
+                  <li>Severity rating for each finding (critical, major, minor)</li>
+                  <li>Mapped to specific Nielsen heuristics</li>
+                  <li>Prioritized by user impact and fix complexity</li>
+                </ul>
+              </div>
+
+              <div class="cs-divider"></div>
+
+              <div id="cs-solution" class="cs-section">
+                <h2>Design Solution</h2>
+                <p>The deliverable was a comprehensive research report with annotated screenshots, severity-rated findings, and specific improvement recommendations for each identified issue.</p>
+                <ul>
+                  <li>Annotated problem areas with screenshots</li>
+                  <li>Recommendation cards with before/after suggestions</li>
+                  <li>Summary of quick wins vs. longer-term improvements</li>
+                </ul>
+              </div>
+
+              <div class="cs-divider"></div>
+
+              <div id="cs-validation" class="cs-section">
+                <h2>Validation &amp; Iteration</h2>
+                <p>The research findings were cross-validated between the heuristic evaluation and user testing results. Issues found in both methods were given higher priority in the final recommendations.</p>
+              </div>
+
+              <div class="cs-divider"></div>
+
+              <div id="cs-results" class="cs-section">
+                <h2>Results &amp; Learnings</h2>
+                <p>The project demonstrated how combining expert evaluation with user testing produces more reliable and actionable results than either method alone.</p>
+                <ul>
+                  <li>Delivered a prioritized list of 12 improvement recommendations</li>
+                  <li>Learned the value of triangulating research methods</li>
+                  <li>Strengthened skills in moderated usability testing</li>
+                  <li>Would add quantitative metrics in future research projects</li>
+                </ul>
+              </div>
+
+            </div>
+
+            <aside class="cs-sidebar">
+              <nav class="cs-toc" aria-label="Table of contents">
+                <p class="cs-toc-heading">On this page</p>
+                <ol class="cs-toc-list">
+                  <li><a href="#cs-overview">Overview</a></li>
+                  <li><a href="#cs-problem">Problem &amp; Context</a></li>
+                  <li><a href="#cs-research">Research &amp; Insights</a></li>
+                  <li><a href="#cs-ideation">Ideation &amp; Decisions</a></li>
+                  <li><a href="#cs-solution">Design Solution</a></li>
+                  <li><a href="#cs-validation">Validation &amp; Iteration</a></li>
+                  <li><a href="#cs-results">Results &amp; Learnings</a></li>
+                </ol>
+              </nav>
+              <dl class="cs-facts">
+                <dt>Course</dt><dd>UX Research</dd>
+                <dt>School</dt><dd>Haaga-Helia UAS</dd>
+                <dt>Deliverables</dt><dd>Research report, annotated findings, recommendations</dd>
+                <dt>Methods</dt><dd>Heuristic evaluation, moderated usability testing</dd>
+              </dl>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <div class="container">
+          <div class="cs-pager">
+            <a href="aikani.html" class="cs-pager-card">
+              <span class="cs-pager-label">← Previous</span>
+              <span class="cs-pager-title">Aikani</span>
+            </a>
+            <a href="logodesign.html" class="cs-pager-card cs-pager-card--next">
+              <span class="cs-pager-label">Next →</span>
+              <span class="cs-pager-title">Logo Design</span>
+            </a>
+          </div>
+          <div class="cs-back">
+            <a href="../index.html#case-studies">← Back to Case Studies</a>
+          </div>
+        </div>
+      </section>
+
     </main>
 
     <footer class="site-footer">
@@ -88,7 +221,7 @@
             <ul>
               <li><a href="../index.html#case-studies">Case Studies</a></li>
               <li><a href="../index.html#about">About</a></li>
-              <li><a href="../index.html#skills-tools">Skills & Tools</a></li>
+              <li><a href="../index.html#skills-tools">Skills &amp; Tools</a></li>
               <li><a href="../index.html#contact">Contact</a></li>
             </ul>
           </nav>

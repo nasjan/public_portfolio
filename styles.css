@@ -1332,6 +1332,481 @@ main > section + section {
 
 
 /* =============================================================== */
+/*  115 — CASE STUDY TEMPLATE                                      */
+/* =============================================================== */
+
+/* --- Hero v2 --- */
+.cs-hero {
+  background: var(--project-hero-bg);
+  padding-block: clamp(2rem, 5vh, 3.5rem);
+}
+
+.cs-hero .container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.cs-hero h1 {
+  font-size: clamp(2rem, 3.5vw, 3.25rem);
+  line-height: var(--heading-line-height);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0;
+  max-width: 22ch;
+}
+
+.cs-hero-summary {
+  font-size: clamp(1rem, 1.15vw, 1.15rem);
+  line-height: 1.7;
+  color: var(--text-body);
+  max-width: 70ch;
+  margin: 0;
+}
+
+/* Meta row */
+.cs-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs) var(--space-xl);
+  font-size: 0.8125rem;
+  color: color-mix(in oklab, var(--text) 60%, transparent);
+  margin: 0;
+  padding: 0;
+}
+
+.cs-meta-item {
+  display: flex;
+  gap: 0.3em;
+}
+
+.cs-meta-item dt {
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+}
+
+.cs-meta-item dt::after { content: none; }
+
+.cs-meta-item dd {
+  margin: 0;
+}
+
+/* CTAs */
+.cs-hero-ctas {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  margin-top: var(--space-xs);
+}
+
+/* Hero image */
+.cs-hero-img {
+  margin: var(--space-md) 0 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  max-height: 26rem;
+}
+
+.cs-hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* --- Overview cards --- */
+.cs-overview {
+  padding-block: var(--space-xl);
+}
+
+.cs-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .cs-overview-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .cs-overview-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cs-ov-card {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.cs-ov-label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0;
+}
+
+.cs-ov-card p:last-child {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- Body layout (main + sidebar) --- */
+.cs-body-wrap {
+  padding-block: var(--space-xl);
+}
+
+.cs-body {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+}
+
+@media (min-width: 960px) {
+  .cs-body {
+    grid-template-columns: 1fr 15rem;
+    gap: clamp(2rem, 4vw, 4rem);
+  }
+}
+
+/* Main column */
+.cs-main {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+/* --- Content sections --- */
+.cs-section {
+  scroll-margin-top: calc(var(--header-h) + 1rem);
+}
+
+.cs-section h2 {
+  font-size: clamp(1.2rem, 1.8vw, 1.4rem);
+  font-weight: 700;
+  letter-spacing: -0.005em;
+  margin: 0 0 var(--space-md);
+  color: var(--text);
+}
+
+.cs-section > p {
+  max-width: 75ch;
+  line-height: 1.8;
+}
+
+.cs-section > p + p {
+  margin-top: var(--space-md);
+}
+
+.cs-section > ul,
+.cs-section > ol {
+  max-width: 75ch;
+  padding-left: var(--space-lg);
+  line-height: 1.8;
+  margin-top: var(--space-sm);
+}
+
+.cs-section > ul { list-style: disc; }
+
+/* Callout */
+.cs-callout {
+  background: rgba(0, 130, 130, 0.05);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: var(--space-md) var(--space-lg);
+  margin-top: var(--space-md);
+  max-width: 75ch;
+}
+
+.cs-callout p {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+}
+
+.cs-callout strong { color: var(--accent); }
+
+/* Image block */
+.cs-fig {
+  margin: var(--space-lg) 0 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  max-width: 75ch;
+}
+
+.cs-fig img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.cs-fig figcaption {
+  font-size: 0.8125rem;
+  color: color-mix(in oklab, var(--text) 50%, transparent);
+  padding: var(--space-xs) 0;
+  text-align: center;
+}
+
+/* 2-up image grid */
+.cs-fig-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  margin: var(--space-lg) 0 0;
+  max-width: 75ch;
+}
+
+@media (max-width: 600px) {
+  .cs-fig-grid { grid-template-columns: 1fr; }
+}
+
+.cs-fig-grid figure {
+  margin: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.cs-fig-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Divider between sections */
+.cs-divider {
+  height: 1px;
+  background: var(--border);
+  max-width: 75ch;
+}
+
+/* --- Sidebar --- */
+.cs-sidebar {
+  display: none;
+}
+
+@media (min-width: 960px) {
+  .cs-sidebar {
+    display: block;
+  }
+}
+
+.cs-toc {
+  position: sticky;
+  top: calc(var(--header-h) + 1.5rem);
+}
+
+.cs-toc-heading {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, var(--text) 50%, transparent);
+  margin: 0 0 var(--space-sm);
+}
+
+.cs-toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.cs-toc-list a {
+  font-size: 0.8125rem;
+  color: color-mix(in oklab, var(--text) 65%, transparent);
+  text-decoration: none;
+  display: block;
+  padding: 0.25em 0 0.25em var(--space-sm);
+  border-left: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.cs-toc-list a:hover,
+.cs-toc-list a:focus-visible {
+  color: var(--accent);
+  border-left-color: var(--accent);
+}
+
+/* Quick facts */
+.cs-facts {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border);
+}
+
+.cs-facts dt {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, var(--text) 50%, transparent);
+  margin-top: var(--space-sm);
+}
+
+.cs-facts dt:first-child { margin-top: 0; }
+
+.cs-facts dd {
+  margin: 0.15em 0 0;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--text-body);
+}
+
+/* --- Mobile TOC --- */
+.cs-toc-mobile {
+  display: block;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md) var(--space-lg);
+  margin-bottom: var(--space-md);
+}
+
+.cs-toc-mobile summary {
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--text);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cs-toc-mobile summary::-webkit-details-marker { display: none; }
+
+.cs-toc-mobile summary::after {
+  content: "+";
+  font-size: 1.125rem;
+  color: var(--accent);
+  transition: transform 0.15s ease;
+}
+
+.cs-toc-mobile[open] summary::after { content: "−"; }
+
+.cs-toc-mobile .cs-toc-list {
+  margin-top: var(--space-sm);
+}
+
+.cs-toc-mobile .cs-toc-list a {
+  border-left: none;
+  padding-left: 0;
+  padding-block: 0.35em;
+}
+
+@media (min-width: 960px) {
+  .cs-toc-mobile { display: none; }
+}
+
+/* --- Artifact cards --- */
+.cs-artifacts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: var(--space-md);
+}
+
+.cs-artifact {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md) var(--space-lg);
+  text-decoration: none;
+  color: var(--text);
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cs-artifact:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+}
+
+.cs-artifact svg {
+  width: 1.125rem;
+  height: 1.125rem;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+/* --- Prev / Next nav --- */
+.cs-pager {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 600px) {
+  .cs-pager { grid-template-columns: 1fr; }
+}
+
+.cs-pager-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  text-decoration: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cs-pager-card:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+}
+
+.cs-pager-card--next { text-align: right; }
+
+.cs-pager-label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.cs-pager-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.cs-back {
+  text-align: center;
+  padding-top: var(--space-md);
+}
+
+.cs-back a {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+
+/* =============================================================== */
 /*  120 — COMPONENTS (bento grid, YouTube embed, logo page)        */
 /* =============================================================== */
 

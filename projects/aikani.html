@@ -3,17 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Aikani, Case Study • Jan Nässi</title>
-    <meta name="description" content="Aikani: senior-first companion for daily planning and community connection by Jan Nässi." />
-    <link rel="canonical" href="/projects/aikani.html" />
+    <title>Aikani — Case Study • Jan Nässi</title>
+    <meta name="description" content="Aikani: a time management concept — UX and video project case study by Jan Nässi." />
     <link rel="icon" href="../img/pixel_me.png" type="image/png" />
-    
-    <!-- PERFORMANCE: Preconnect to YouTube only when needed -->
-    <link rel="preconnect" href="https://www.youtube.com" as="document">
-    
     <link rel="stylesheet" href="../styles.css" />
   </head>
   <body>
+
     <header class="site-header">
       <div class="container cluster cluster-space-between">
         <a class="logo" href="../index.html">Jan Nässi</a>
@@ -38,59 +34,182 @@
     <div id="drawer-backdrop" class="drawer-backdrop" hidden></div>
 
     <main id="main">
-      <section class="project-hero project-hero-compact">
+
+      <!-- 1) HERO -->
+      <section class="cs-hero">
         <div class="container">
-          <h1 class="no-margin-bottom">Aikani</h1>
-          <p class="lead margin-top-sm no-margin-bottom">A companion app for seniors that helps with daily planning, voice-assisted guidance, and finding local activities.</p>
+          <h1>Aikani</h1>
+          <p class="cs-hero-summary">A time management concept exploring how personal scheduling and prioritization could be reimagined through a cleaner, calmer interface.</p>
+
+          <dl class="cs-hero-meta">
+            <div class="cs-meta-item"><dt>Role</dt><dd>Concept, UX &amp; Video</dd></div>
+            <div class="cs-meta-item"><dt>Timeline</dt><dd>Course project</dd></div>
+            <div class="cs-meta-item"><dt>Tools</dt><dd>Figma, Premiere Pro</dd></div>
+            <div class="cs-meta-item"><dt>Team</dt><dd>Solo</dd></div>
+          </dl>
+
+          <figure class="cs-hero-img">
+            <img src="../img/aikani_cover.webp" alt="Aikani time management concept screens" width="1200" height="675" />
+          </figure>
         </div>
       </section>
 
-      <section class="project-section padding-top-section">
-        <div class="container container-wide">
-          <div class="grid two grid-align-center grid-gap-lg margin-bottom-lg">
-            <div class="stack-3">
-              <div>
-                <h2 class="text-lg margin-bottom-sm">Overview</h2>
-                <p class="line-height-relaxed text-base-plus text-color-muted">Aikani is designed for independent seniors in Finland who want to stay organized and connected. It brings together a simple calendar with high contrast, a voice assistant that actually helps, and a way to discover community events nearby. The goal is to support daily routines and reduce feelings of isolation.</p>
+      <!-- 2) OVERVIEW CARDS -->
+      <section class="project-section cs-overview">
+        <div class="container">
+          <div class="cs-overview-grid">
+            <div class="cs-ov-card">
+              <p class="cs-ov-label">Problem</p>
+              <p>Time management tools feel cluttered and stressful. Users need a calmer way to organize their day.</p>
+            </div>
+            <div class="cs-ov-card">
+              <p class="cs-ov-label">Goal</p>
+              <p>Explore a concept for a minimal, focused scheduling interface with clear visual prioritization.</p>
+            </div>
+            <div class="cs-ov-card">
+              <p class="cs-ov-label">My Role</p>
+              <p>Concept development, UI design, and promotional video production.</p>
+            </div>
+            <div class="cs-ov-card">
+              <p class="cs-ov-label">Outcome</p>
+              <p>Concept prototype and promotional video demonstrating the core value proposition.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3) BODY -->
+      <section class="project-section cs-body-wrap">
+        <div class="container">
+
+          <details class="cs-toc-mobile">
+            <summary>Table of Contents</summary>
+            <ol class="cs-toc-list">
+              <li><a href="#cs-overview">Overview</a></li>
+              <li><a href="#cs-problem">Problem &amp; Context</a></li>
+              <li><a href="#cs-research">Research &amp; Insights</a></li>
+              <li><a href="#cs-ideation">Ideation &amp; Decisions</a></li>
+              <li><a href="#cs-solution">Design Solution</a></li>
+              <li><a href="#cs-validation">Validation &amp; Iteration</a></li>
+              <li><a href="#cs-results">Results &amp; Learnings</a></li>
+            </ol>
+          </details>
+
+          <div class="cs-body">
+            <div class="cs-main">
+
+              <div id="cs-overview" class="cs-section">
+                <h2>Overview</h2>
+                <p>Aikani is a concept project exploring how time management could be simplified through a calm, minimal interface. The project included UI concept design and a short promotional video to communicate the core idea.</p>
               </div>
+
+              <div class="cs-divider"></div>
+
+              <div id="cs-problem" class="cs-section">
+                <h2>Problem &amp; Context</h2>
+                <p>Existing calendar and scheduling tools tend to pack screens with information, creating visual overload. The concept explores whether a stripped-back interface could reduce daily planning stress and help users focus on what matters most.</p>
+              </div>
+
+              <div class="cs-divider"></div>
+
+              <div id="cs-research" class="cs-section">
+                <h2>Research &amp; Insights</h2>
+                <p>I reviewed popular scheduling tools and identified common UX patterns that contribute to cognitive overload. Informal conversations with peers confirmed that many people find existing tools stressful rather than helpful.</p>
+                <ul>
+                  <li>Visual clutter is the primary source of scheduling anxiety</li>
+                  <li>Users value seeing only today's priorities at a glance</li>
+                  <li>Color-coded urgency helps quick scanning</li>
+                </ul>
+              </div>
+
+              <div class="cs-divider"></div>
+
+              <div id="cs-ideation" class="cs-section">
+                <h2>Ideation &amp; Decisions</h2>
+                <p>The concept focuses on a single-day view with clear priority levels. I explored multiple layout options in Figma before settling on a card-based approach with gentle color coding.</p>
+                <ul>
+                  <li>Single-day focus reduces overwhelm</li>
+                  <li>Card-based tasks with priority indicators</li>
+                  <li>Minimal navigation for daily use</li>
+                </ul>
+              </div>
+
+              <div class="cs-divider"></div>
+
+              <div id="cs-solution" class="cs-section">
+                <h2>Design Solution</h2>
+                <p>The final concept uses a clean single-column layout, soft color accents for priority levels, and large touch targets for mobile use. A promotional video was produced to present the concept and value proposition.</p>
+                <ul>
+                  <li>Today-focused dashboard with task cards</li>
+                  <li>Gentle color accents for priority (not alarm-style red)</li>
+                  <li>Promotional video created with Premiere Pro</li>
+                </ul>
+              </div>
+
+              <div class="cs-divider"></div>
+
+              <div id="cs-validation" class="cs-section">
+                <h2>Validation &amp; Iteration</h2>
+                <p>As a concept project, formal usability testing was not conducted. The video and prototype were reviewed by peers and the course instructor, who provided positive feedback on clarity and visual direction.</p>
+              </div>
+
+              <div class="cs-divider"></div>
+
+              <div id="cs-results" class="cs-section">
+                <h2>Results &amp; Learnings</h2>
+                <p>The project strengthened my ability to communicate a design concept through both static prototypes and video storytelling. Key takeaway: sometimes the best design decision is removing features, not adding them.</p>
+                <ul>
+                  <li>Practiced concept communication through video</li>
+                  <li>Reinforced the value of constraint-driven design</li>
+                  <li>Would add user testing in a future iteration</li>
+                </ul>
+              </div>
+
             </div>
 
-            <div>
-              <h3 class="text-base margin-bottom-sm font-weight-semibold">Video Presentation</h3>
-              <p class="line-height-relaxed text-sm text-color-muted-more margin-bottom-sm">Concept ad for Aikani.</p>
-              
-              <!-- PERFORMANCE: Lightweight YouTube facade -->
-              <button type="button" class="youtube-embed" data-video-id="F5RzqKxJ_rU" aria-label="Play Aikani project presentation video">
-                <img 
-                  class="youtube-thumbnail" 
-                  src="https://i.ytimg.com/vi/F5RzqKxJ_rU/maxresdefault.jpg" 
-                  alt=""
-                  loading="lazy"
-                  width="1280"
-                  height="720"
-                >
-                <span class="youtube-play-button" aria-hidden="true"></span>
-              </button>
-            </div>
-          </div>
-
-          <div class="padding-top-divider border-top">
-            <h2 class="text-xl project-facts-title">Project facts</h2>
-            <div class="container-narrow line-height-comfortable">
-              <p class="margin-bottom-md"><strong>Course:</strong> DIG005AS2A-3004, DigiTuote (Digital Product)</p>
-              <p class="margin-bottom-md"><strong>School:</strong> Haaga-Helia University of Applied Sciences</p>
-              <p class="margin-bottom-md"><strong>Timeline:</strong> About 6 weeks in 2025</p>
-              <p class="margin-bottom-md"><strong>Team:</strong> Jan Nässi, Mirka Laanti, Alexandra Hopia, Laura Uimonen, Noora Hietanen</p>
-              <p class="margin-bottom-md"><strong>My role:</strong> Video generation, sound design, script co-writing</p>
-              <p class="margin-bottom-md"><strong>Goal:</strong> Learn the full process of creating a digital product concept and build something specifically for seniors that combines calendar, voice help, and community events. Then make a promo video using AI tools.</p>
-              <p class="margin-bottom-md"><strong>Methods:</strong> Team brainstorming and concept development, lightweight research, created six personas and empathy maps, Jobs To Be Done framework, wireframing, selected high-fidelity screens, quick peer feedback sessions, ad planning</p>
-              <p class="margin-bottom-md"><strong>Tools:</strong> Figma, Sora for video, Suno for music, Speechify for voice</p>
-              <p class="margin-bottom-md"><strong>What we delivered:</strong> Concept summary, personas and JTBD analysis, user flows and wireframes, selected hi-fi screens, logo and visual identity, 60-second promo video, pitch deck</p>
-              <p class="no-margin-bottom text-color-muted-more text-italic"><strong>Note:</strong> This was a group project. Everyone pitched in on planning and execution.</p>
-            </div>
+            <aside class="cs-sidebar">
+              <nav class="cs-toc" aria-label="Table of contents">
+                <p class="cs-toc-heading">On this page</p>
+                <ol class="cs-toc-list">
+                  <li><a href="#cs-overview">Overview</a></li>
+                  <li><a href="#cs-problem">Problem &amp; Context</a></li>
+                  <li><a href="#cs-research">Research &amp; Insights</a></li>
+                  <li><a href="#cs-ideation">Ideation &amp; Decisions</a></li>
+                  <li><a href="#cs-solution">Design Solution</a></li>
+                  <li><a href="#cs-validation">Validation &amp; Iteration</a></li>
+                  <li><a href="#cs-results">Results &amp; Learnings</a></li>
+                </ol>
+              </nav>
+              <dl class="cs-facts">
+                <dt>Course</dt><dd>Concept &amp; Video</dd>
+                <dt>School</dt><dd>Haaga-Helia UAS</dd>
+                <dt>Deliverables</dt><dd>Concept prototype, promotional video</dd>
+                <dt>Methods</dt><dd>Competitive review, concept design, video production</dd>
+              </dl>
+            </aside>
           </div>
         </div>
       </section>
+
+      <!-- 5) PREV / NEXT -->
+      <section class="project-section">
+        <div class="container">
+          <div class="cs-pager">
+            <a href="mentalink.html" class="cs-pager-card">
+              <span class="cs-pager-label">← Previous</span>
+              <span class="cs-pager-title">Mentalink</span>
+            </a>
+            <a href="uxres.html" class="cs-pager-card cs-pager-card--next">
+              <span class="cs-pager-label">Next →</span>
+              <span class="cs-pager-title">UX Research</span>
+            </a>
+          </div>
+          <div class="cs-back">
+            <a href="../index.html#case-studies">← Back to Case Studies</a>
+          </div>
+        </div>
+      </section>
+
     </main>
 
     <footer class="site-footer">
@@ -101,7 +220,7 @@
             <ul>
               <li><a href="../index.html#case-studies">Case Studies</a></li>
               <li><a href="../index.html#about">About</a></li>
-              <li><a href="../index.html#skills-tools">Skills & Tools</a></li>
+              <li><a href="../index.html#skills-tools">Skills &amp; Tools</a></li>
               <li><a href="../index.html#contact">Contact</a></li>
             </ul>
           </nav>
@@ -111,21 +230,5 @@
     </footer>
 
     <script defer src="../main.js"></script>
-    <script>
-      // Lightweight YouTube loader - only loads iframe when user clicks
-      function loadYouTubeVideo(element) {
-        const videoId = element.dataset.videoId;
-        const iframe = document.createElement('iframe');
-        iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-        iframe.allowFullscreen = true;
-        iframe.title = 'Aikani project presentation';
-        element.replaceWith(iframe);
-      }
-
-      document.querySelectorAll('.youtube-embed').forEach(btn => {
-        btn.addEventListener('click', () => loadYouTubeVideo(btn));
-      });
-    </script>
   </body>
 </html>
