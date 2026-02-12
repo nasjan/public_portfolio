@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio Website Redesign — Case Study • Jan Nässi</title>
+    <meta name="description" content="How I redesigned and rebuilt my portfolio website with improved structure, accessibility, and design system." />
+    <link rel="icon" href="../img/pixel_me.png" type="image/png" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+
+    <header class="site-header">
+      <div class="container cluster cluster-space-between">
+        <a class="logo" href="../index.html">Jan Nässi</a>
+        <nav id="site-nav" class="site-nav" aria-label="Primary">
+          <ul>
+            <li><a href="../index.html#case-studies">Case Studies</a></li>
+            <li><a href="../index.html#about">About</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <button id="menu-toggle" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer"></button>
+      </div>
+    </header>
+
+    <nav id="mobile-drawer" class="mobile-drawer" hidden aria-label="Mobile">
+      <ul class="drawer-list">
+        <li><a href="../index.html#case-studies">Case Studies</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div id="drawer-backdrop" class="drawer-backdrop" hidden></div>
+
+    <main id="main">
+
+      <!-- ===== HERO ===== -->
+      <section class="cs-hero">
+        <div class="container">
+          <h1>Portfolio Website Redesign</h1>
+
+          <p class="cs-hero-summary">
+            I redesigned and rebuilt my personal portfolio from the ground up. The goal was to replace a quickly built first version with a clean, accessible, and well-structured site that reflects my skills as a designer and developer.
+          </p>
+
+          <dl class="cs-hero-meta">
+            <div class="cs-meta-item"><dt>Role</dt><dd>Design and Development</dd></div>
+            <div class="cs-meta-item"><dt>Timeline</dt><dd>2025</dd></div>
+            <div class="cs-meta-item"><dt>Tools</dt><dd>Figma, HTML, CSS, JavaScript, AI tools</dd></div>
+          </dl>
+
+          
+        </div>
+      </section>
+
+      <!-- ===== BODY ===== -->
+      <section class="project-section cs-body-wrap">
+        <div class="container">
+
+          <details class="cs-toc-mobile">
+            <summary>Table of Contents</summary>
+            <ol class="cs-toc-list">
+              <li><a href="#cs-overview">Overview</a></li>
+              <li><a href="#cs-problem">Problem and Starting Point</a></li>
+              <li><a href="#cs-goals">Goals and Requirements</a></li>
+              <li><a href="#cs-figma">Design Process in Figma</a></li>
+              <li><a href="#cs-dev">Development and Refactoring</a></li>
+              <li><a href="#cs-ai">Use of AI in the Workflow</a></li>
+              <li><a href="#cs-decisions">Key Decisions and Trade-offs</a></li>
+              <li><a href="#cs-results">Results and Improvements</a></li>
+              <li><a href="#cs-lessons">Lessons Learned</a></li>
+            </ol>
+          </details>
+
+          <div class="cs-body">
+            <div class="cs-main">
+
+              <!-- 1. Overview -->
+              <div id="cs-overview" class="cs-section">
+                <h2>Overview</h2>
+                <p>This project is a complete redesign of my personal portfolio website. The earlier version was built quickly during a learning phase. It worked at first glance, but the code was messy, the layout was inconsistent, and accessibility was not considered.</p>
+                <p>I decided to start fresh. I designed a new layout system in Figma, defined spacing and typography tokens, and rebuilt the site with clean HTML and CSS. The result is a professional portfolio with consistent structure, strong contrast, and clear content hierarchy.</p>
+                <p>The redesign also gave me a chance to combine AI tools with my own front-end and design skills. I used AI to speed up certain tasks, but all design decisions and final implementation choices were mine.</p>
+              </div>
+
+              <div class="cs-divider"></div>
+
+              <!-- 2. Problem and Starting Point -->
+              <div id="cs-problem" class="cs-section">
+                <h2>Problem and Starting Point</h2>
+                <p>The first version of my portfolio was built without a design system or clear plan. I was learning as I went, and the result showed it. The code worked, but it was hard to maintain and extend.</p>
+                <ul>
+                  <li>Layout was inconsistent across different sections and pages</li>
+                  <li>Colors and font sizes were chosen without a system</li>
+                  <li>Contrast ratios did not meet accessibility standards</li>
+                  <li>Content structure had no clear hierarchy for scanning</li>
+                  <li>CSS had no organization, making changes risky</li>
+                  <li>The site did not present my work in a professional way</li>
+                </ul>
+                <p>The portfolio needed more than small fixes. It needed a full rethink of structure, content, and visual design.</p>
+              </div>
+
+              <div class="cs-divider"></div>
+
+              <!-- 3. Goals and Requirements -->
+              <div id="cs-goals" class="cs-section">
+                <h2>Goals and Requirements</h2>
+                <p>Before starting the redesign, I wrote down clear goals. These guided every decision during the process.</p>
+                <ul>
+                  <li>Clear structure and content hierarchy on every page</li>
+                  <li>Easy to scan for recruiters and hiring managers</li>
+                  <li>WCAG AAA contrast ratio (7:1 minimum) on all text</li>
+                  <li>Minimum 1rem font size for all body text</li>
+                  <li>Consistent design system with defined tokens for spacing, colors, and typography</li>
+                  <li>Responsive layout from 320px to wide screens</li>
+                  <li>Good performance without heavy frameworks</li>
+                  <li>Minimal and calm visual style that puts content first</li>
+                </ul>
+              </div>
+
+              <div class="cs-divider"></div>
+
+              <!-- 4. Design Process in Figma -->
+              <div id="cs-figma" class="cs-section">
+                <h2>Design Process in Figma</h2>
+                <p>I started the redesign in Figma before writing any code. This helped me think about layout, spacing, and visual hierarchy without getting distracted by implementation details.</p>
+                <ul>
+                  <li>Created a spacing scale from xs to 3xl</li>
+                  <li>Defined a typography system with consistent sizes and weights</li>
+                  <li>Designed reusable components for cards, sections, and navigation</li>
+                  <li>Tested color combinations to meet AAA contrast requirements</li>
+                  <li>Iterated on the hero section, case study cards, and about section</li>
+                  <li>Designed mobile and desktop layouts side by side</li>
+                </ul>
+                <p>The Figma file became the single source of truth for the project. Every value in the CSS maps back to a decision made in Figma.</p>
+
+                <div class="cs-callout">
+                  <p><strong>Figma file:</strong> <a href="#" target="_blank" rel="noopener noreferrer">View the complete design file</a></p>
+                </div>
+              </div>
+
+              <div class="cs-divider"></div>
+
+              <!-- 5. Development and Refactoring -->
+              <div id="cs-dev" class="cs-section">
+                <h2>Development and Refactoring</h2>
+                <p>The CSS was rebuilt from scratch with a clear architecture. I organized it into numbered sections so that any part of the code is easy to find and update.</p>
+                <ul>
+                  <li>All visual values use CSS custom properties (design tokens)</li>
+                  <li>HTML uses semantic elements: header, nav, main, section, aside, footer</li>
+                  <li>Consistent container and spacing system across all pages</li>
+                  <li>Responsive behavior uses clear, consistent breakpoints</li>
+                  <li>All text meets minimum 1rem font size</li>
+                  <li>All color combinations pass WCAG AAA contrast (7:1)</li>
+                  <li>Improved hover and focus states for keyboard navigation</li>
+                  <li>Case study pages share a common template structure</li>
+                </ul>
+                <p>The refactoring was iterative. I built each section, tested it across screen sizes, checked contrast, and then moved to the next.</p>
+              </div>
+
+              <div class="cs-divider"></div>
+
+              <!-- 6. Use of AI in the Workflow -->
+              <div id="cs-ai" class="cs-section">
+                <h2>Use of AI in the Workflow</h2>
+                <p>I used AI tools as a development partner during this project. AI helped with specific tasks, but the creative direction and final decisions were always mine.</p>
+                <ul>
+                  <li>Used AI to refine and structure case study content</li>
+                  <li>Ran systematic accessibility audits checking contrast and font sizes</li>
+                  <li>Used AI to help reorganize CSS into a clean, commented architecture</li>
+                  <li>Combined AI suggestions with my own front-end knowledge</li>
+                  <li>Reviewed every output and made manual corrections where needed</li>
+                </ul>
+
+                <div class="cs-callout">
+                  <p><strong>Key principle:</strong> AI made the work faster, but it did not make the decisions. I directed the process, chose what to keep, and took responsibility for the result.</p>
+                </div>
+              </div>
+
+              <div class="cs-divider"></div>
+
+              <!-- 7. Key Decisions and Trade-offs -->
+              <div id="cs-decisions" class="cs-section">
+                <h2>Key Decisions and Trade-offs</h2>
+                <p>Several decisions shaped the final result. Each one involved balancing different priorities.</p>
+                <ul>
+                  <li>Simplified the visual language to focus on content clarity</li>
+                  <li>Removed decorative elements that did not serve the user</li>
+                  <li>Chose AAA contrast over AA, which limited color options but improved readability</li>
+                  <li>Used plain HTML, CSS, and JS instead of a framework to keep the site fast and simple</li>
+                  <li>Avoided heavy animations that could distract from the content</li>
+                  <li>Kept one well-organized CSS file instead of multiple imports</li>
+                  <li>Balanced design quality with technical feasibility for a solo project</li>
+                </ul>
+              </div>
+
+              <div class="cs-divider"></div>
+
+              <!-- 8. Results and Improvements -->
+              <div id="cs-results" class="cs-section">
+                <h2>Results and Improvements</h2>
+                <p>The redesigned portfolio is better in every measurable way compared to the first version.</p>
+                <ul>
+                  <li>Clear content hierarchy that guides the reader through each page</li>
+                  <li>Better readability with consistent typography and spacing</li>
+                  <li>All text passes WCAG AAA contrast requirements</li>
+                  <li>All body text uses at least 1rem (16px) font size</li>
+                  <li>Consistent design system across all pages</li>
+                  <li>Responsive layout from mobile to ultrawide screens</li>
+                  <li>Keyboard navigation and focus management work correctly</li>
+                  <li>Stronger personal brand and more professional presentation</li>
+                  <li>Reduced motion support for users who prefer less animation</li>
+                </ul>
+              </div>
+
+              <div class="cs-divider"></div>
+
+              <!-- 9. Lessons Learned -->
+              <div id="cs-lessons" class="cs-section">
+                <h2>Lessons Learned</h2>
+                <p>This project taught me several things that I will carry into future work.</p>
+                <ul>
+                  <li>Structure and hierarchy should come before visual styling</li>
+                  <li>Accessibility is not something to add later. It must be planned from the start</li>
+                  <li>A design system with tokens saves time and reduces inconsistency</li>
+                  <li>Designing in Figma first makes development faster, not slower</li>
+                  <li>Iteration improves clarity. The first version is rarely the best version</li>
+                  <li>AI is useful for specific tasks, but it needs clear direction and careful review</li>
+                  <li>Testing contrast and font sizes systematically catches issues that visual review misses</li>
+                </ul>
+              </div>
+
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="cs-sidebar">
+              <div class="cs-toc" aria-label="Table of contents">
+                <p class="cs-toc-heading">On this page</p>
+                <nav>
+                  <ol class="cs-toc-list">
+                    <li><a href="#cs-overview">Overview</a></li>
+                    <li><a href="#cs-problem">Problem and Starting Point</a></li>
+                    <li><a href="#cs-goals">Goals and Requirements</a></li>
+                    <li><a href="#cs-figma">Design Process in Figma</a></li>
+                    <li><a href="#cs-dev">Development and Refactoring</a></li>
+                    <li><a href="#cs-ai">Use of AI in the Workflow</a></li>
+                    <li><a href="#cs-decisions">Key Decisions and Trade-offs</a></li>
+                    <li><a href="#cs-results">Results and Improvements</a></li>
+                    <li><a href="#cs-lessons">Lessons Learned</a></li>
+                  </ol>
+                </nav>
+
+                <dl class="cs-facts">
+                  <dt>Type</dt>
+                  <dd>Personal project</dd>
+                  <dt>Stack</dt>
+                  <dd>HTML, CSS, JavaScript, Figma</dd>
+                  <dt>AI Tools</dt>
+                  <dd>Claude, GitHub Copilot</dd>
+                  <dt>Standards</dt>
+                  <dd>WCAG AAA, semantic HTML</dd>
+                </dl>
+              </div>
+            </aside>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== ARTIFACTS ===== -->
+      <section class="project-section">
+        <div class="container">
+          <h2 style="margin-bottom:var(--space-md); text-align:left;">Artifacts and Links</h2>
+          <div class="cs-artifacts-grid">
+            <a href="#" class="cs-artifact" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Figma design file
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== PREV / NEXT ===== -->
+      <section class="project-section">
+        <div class="container">
+          <div class="cs-pager">
+            <a href="design-explorations.html" class="cs-pager-card">
+              <span class="cs-pager-label">Previous</span>
+              <span class="cs-pager-title">Design Explorations</span>
+            </a>
+            <a href="mentalink.html" class="cs-pager-card cs-pager-card--next">
+              <span class="cs-pager-label">Next</span>
+              <span class="cs-pager-title">Mentalink</span>
+            </a>
+          </div>
+          <div class="cs-back">
+            <a href="../index.html#case-studies">Back to Case Studies</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-content">
+          <p class="footer-copyright">© <span id="year"></span> Jan Nässi</p>
+          <nav aria-label="Footer navigation">
+            <ul>
+              <li><a href="../index.html#about">About</a></li>
+              <li><a href="../index.html#case-studies">Case Studies</a></li>
+              <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+          </nav>
+          <a href="https://www.linkedin.com/in/jannassi" target="_blank" rel="noopener noreferrer" class="footer-linkedin">LinkedIn <span class="sr-only">(opens in new tab)</span></a>
+        </div>
+      </div>
+    </footer>
+
+    <script defer src="../main.js"></script>
+  </body>
+</html>
