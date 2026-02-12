@@ -596,10 +596,6 @@ main > section + section {
   animation: aboutFadeIn 0.8s ease-out 0.2s forwards;
 }
 
-#skills-tools {
-  padding: 5rem 0;
-}
-
 @keyframes aboutFadeIn {
   to { opacity: 1; transform: none; }
 }
@@ -649,15 +645,15 @@ main > section + section {
   }
 }
 
-/* --- Skills & Tools --- */
+/* --- Skills & Tools (About section) --- */
 .skills-section {
-  padding-block: clamp(1rem, 4vh, 2rem);
+  padding-block: clamp(3rem, 6vh, 5rem);       /* ← ABOUT SECTION TOP & BOTTOM PADDING */
   background: var(--section-bg-light);
   color: var(--text-body);
-  scroll-margin-top: var(--header-h);
+  scroll-margin-top: var(--header-h);           /* ← SCROLL ANCHOR OFFSET */
 }
 
-/* Section container: center only what should be centered */
+/* ↓ INNER LEFT & RIGHT PADDING */
 .skills-inner {
   max-width: var(--site-max-width);
   margin-inline: auto;
@@ -690,15 +686,7 @@ main > section + section {
   margin-bottom: clamp(2rem, 4vh, 3rem);
 }
 
-/* Grid centered as a block; text inside left-aligned */
-.skills-columns {
-  
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-xl);
-  
-}
-
+/* Three-column layout (single definition, no duplicate) */
 .skills-columns {
   display: flex;
   justify-content: center;
