@@ -608,8 +608,8 @@ main > section + section {
 
 /* --- Case Studies --- */
 #case-studies {
-   background: var(--section-bg-dark);
-  padding-block: clamp(2rem, 4vh, 4rem);
+  background: var(--section-bg-dark);
+  padding-block: clamp(3rem, 6vh, 5rem);       /* ← SAME AS ABOUT SECTION */
   width: 100%;
 }
 
@@ -620,8 +620,10 @@ main > section + section {
 }
 
 .cases-section > h2 {
+  font-size: clamp(1.35rem, 1.5vw, 1.125rem);  /* ← SAME AS .skills-heading */
+  letter-spacing: 0.15em;                        /* ← SAME AS .skills-heading */
+  margin-bottom: clamp(2rem, 4vh, 3rem);         /* ← MORE SPACE BEFORE CARDS */
   text-align: center;
-
 }
 
 .cases-grid {
