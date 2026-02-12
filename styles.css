@@ -253,9 +253,10 @@ h3 {
 }
 
 .logo {
-  font-weight: 700;
+  font-weight: 600;
   text-decoration: none;
   color: var(--nav-font);
+  letter-spacing: 0.08em;
 }
 
 /* Desktop nav (visible > 900 px) */
