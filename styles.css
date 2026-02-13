@@ -1466,7 +1466,7 @@ main > section + section {
 
 /* --- Body layout (main + sidebar) --- */
 .cs-body-wrap {
-  padding-block: var(--space-xl);
+  padding-block: var(--space-md);
 }
 
 .cs-body {
@@ -1655,7 +1655,7 @@ main > section + section {
   border-left-color: var(--accent);
 }
 
-/* Quick facts */
+/* Quick facts (Course, School, Team - oikeassa reunassa */
 .cs-facts {
   margin-top: var(--space-xl);
   padding-top: var(--space-lg);
@@ -1774,6 +1774,7 @@ main > section + section {
   .cs-pager { grid-template-columns: 1fr; }
 }
 
+/* Previous - next painikkeet */
 .cs-pager-card {
   display: flex;
   flex-direction: column;
