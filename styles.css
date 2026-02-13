@@ -1420,7 +1420,7 @@ main > section + section {
 
 /* --- Overview cards --- */
 .cs-overview {
-  padding-block: var(--space-xl);
+  padding-block: var(--space-xs);
 }
 
 .cs-overview-grid {
@@ -1733,6 +1733,7 @@ main > section + section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
   gap: var(--space-md);
+  margin-bottom: 1rem;
 }
 
 .cs-artifact {
