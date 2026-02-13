@@ -312,8 +312,7 @@ h3 {
   justify-content: center;
   width: 2.75rem;
   min-height: 2.75rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
+  border: none;
   padding: 0.5em;
   position: relative;
   color: var(--nav-font);
@@ -321,6 +320,7 @@ h3 {
   background: transparent;
 }
 
+/* Hamburger ikonin säädöt */
 .nav-toggle::before {
   content: "";
   position: absolute;
@@ -331,7 +331,7 @@ h3 {
   background: currentColor;
   border-radius: 2px;
   transform: translateY(-50%);
-  box-shadow: 0 -0.375em 0 0 currentColor, 0 0.375em 0 0 currentColor;
+  box-shadow: 0 -0.550em 0 0 currentColor, 0 0.550em 0 0 currentColor;
 }
 
 .nav-toggle:focus-visible {
