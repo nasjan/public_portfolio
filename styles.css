@@ -1195,12 +1195,14 @@ main > section + section {
 
 /* Project sections */
 .project-section {
-  padding-block: var(--space-xl);
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-md);
   background-color: var(--project-content-bg);
 }
 
 .project-section.alt {
-  padding-block: var(--space-xl);
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-md);
 }
 
 /* Sisäiset alasektiot: ei omaa taustaa, tiiviimmät välit */
@@ -2009,6 +2011,7 @@ figure.bento-image::after {
 }
 
 .de-visual-card {
+  
   display: flex;
   flex-direction: column;
   text-decoration: none;
