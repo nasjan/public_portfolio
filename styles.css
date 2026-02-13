@@ -1813,7 +1813,7 @@ main > section + section {
 
 .cs-back {
   text-align: center;
-  padding-top: var(--space-md);
+  padding-top: var(--space-xl);
 }
 
 .cs-back a {
@@ -2001,7 +2001,7 @@ figure.bento-image::after {
 .de-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-lg);
+  gap: var(--space-xl);
 }
 
 @media (max-width: 640px) {
@@ -2011,7 +2011,8 @@ figure.bento-image::after {
 }
 
 .de-visual-card {
-  
+  margin: 0 auto;
+  max-width: 500px;
   display: flex;
   flex-direction: column;
   text-decoration: none;
