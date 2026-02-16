@@ -1998,6 +1998,14 @@ figure.bento-image::after {
   border: 1px solid var(--border);
 }
 
+.youtube-embed--active {
+  cursor: default;
+}
+
+.youtube-embed--active::before {
+  display: none;
+}
+
 /* Design Explorations — visual link cards */
 .de-grid {
   display: grid;

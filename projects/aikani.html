@@ -262,13 +262,15 @@
       document.querySelectorAll('.youtube-embed[data-video-id]').forEach(function(el) {
         el.addEventListener('click', function() {
           var videoId = this.dataset.videoId;
+          var wrapper = document.createElement('div');
+          wrapper.className = 'youtube-embed youtube-embed--active';
           var iframe = document.createElement('iframe');
           iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1';
           iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
           iframe.allowFullscreen = true;
           iframe.title = 'Aikani project presentation';
-          this.innerHTML = '';
-          this.appendChild(iframe);
+          wrapper.appendChild(iframe);
+          this.replaceWith(wrapper);
         });
       });
     </script>
