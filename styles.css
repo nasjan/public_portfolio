@@ -744,6 +744,13 @@ main > section + section {
   text-align: left;
 }
 
+/* Tablet: ≤ 900px — shrink gap, keep 3 columns */
+@media (max-width: 1000px) {
+  .skills-columns {
+    gap: clamp(2rem, 5vw, 4rem);
+  }
+}
+
 /* Mobiili näkymä about */
 @media (max-width: 639px) {
   .skills-columns {
