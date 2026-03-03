@@ -77,7 +77,7 @@
   --header-h: clamp(3.5rem, 7vh, 4.5rem);
   --grid-gap: clamp(1.5rem, 5vw, 3rem);
   --container-pad-inline: clamp(1.5rem, 4vw, 3rem);
-  --container-pad-block: clamp(2rem, 4vw, 4rem);
+  --container-pad-block: clamp(1rem, 1vw, 1rem);
 }
 
 
@@ -1239,6 +1239,18 @@ main > section + section {
   background-color: var(--project-content-bg);
 }
 
+@media (max-width: 480px) {
+
+  .project-section {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  background-color: var(--project-content-bg);
+
+}
+}
+
+
+
 .project-section.alt {
   padding-top: var(--space-lg);
   padding-bottom: var(--space-md);
@@ -1364,6 +1376,8 @@ main > section + section {
     opacity: 1;
   }
 }
+
+
 
 
 /* =============================================================== */
@@ -2049,8 +2063,17 @@ figure.bento-image::after {
 .de-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-xl);
+  gap: 1rem;
+  padding: 0;
 }
+
+.de-container {
+  width: 100%;
+  max-width: 65rem;
+  margin-inline: auto;
+  padding: 1rem 1rem;
+}
+
 
 @media (max-width: 640px) {
   .de-grid {
@@ -2059,8 +2082,8 @@ figure.bento-image::after {
 }
 
 .de-visual-card {
-  margin: 0 auto;
-  max-width: 500px;
+  margin: 0;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   text-decoration: none;
