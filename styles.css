@@ -769,25 +769,10 @@ main > section + section {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin-bottom: 0.4rem;
-  text-align: center;
-  width: max-content;
-  max-width: 24ch;
-  text-align: center;
 }
 
-}
-
-/* Tablet: ≤ 900px — shrink gap, keep 3 columns */
-@media (max-width: 1000px) {
-  .skills-columns {
-    gap: clamp(2rem, 5vw, 4rem);
   }
 
-  .skills-intro {
-    max-width: 100%;
-  }
-}
 
 /* Small tablet / large phone: ≤ 700px — stack to single column */
 @media (max-width: 770px) {
@@ -1149,7 +1134,7 @@ main > section + section {
 
 
 /* =============================================================== */
-/*  100 — FOOTER                                                   */
+/* 100 — FOOTER                                                   */
 /* =============================================================== */
 
 .site-footer {
@@ -1170,6 +1155,15 @@ main > section + section {
   gap: var(--space-xl);
 }
 
+/* Tämä käärii copyrightin ja evästenapin yhteen */
+.footer-meta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Desktopilla evästenappi "karkaa" täältä (fixed), 
+     joten tämä vaikuttaa vain copyright-tekstiin */
+}
+
 .site-footer .footer-copyright {
   margin: 0;
   color: var(--nav-font);
@@ -1177,6 +1171,7 @@ main > section + section {
   white-space: nowrap;
 }
 
+/* Navigaatio */
 .site-footer nav {
   flex: 1;
   display: flex;
@@ -1192,7 +1187,8 @@ main > section + section {
   align-items: center;
 }
 
-.site-footer a {
+/* Yleiset linkkityylit footerissa */
+.site-footer a:not(#cookie-settings) {
   text-decoration: none;
   color: var(--nav-font);
   padding: var(--space-xs) var(--space-sm);
@@ -1204,7 +1200,7 @@ main > section + section {
   transition: all 0.3s ease;
 }
 
-.site-footer a:is(:hover, :focus-visible) {
+.site-footer a:not(#cookie-settings):is(:hover, :focus-visible) {
   color: var(--nav-hover);
   text-decoration-color: var(--nav-hover);
   text-decoration-line: underline;
@@ -1212,29 +1208,161 @@ main > section + section {
   text-underline-offset: 4px;
 }
 
+/* =============================================================== */
+/* HYBRIDI EVÄSTE-NAPPI (Floating Cookie Button)                   */
+/* =============================================================== */
 
+#cookie-settings {
+  /* --- DESKTOP-OLETUS (Kelluva ympyrä) --- */
+  
+  /* Sijainti: Kiinteästi vasemmassa alareunassa */
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 9999;
+  
+  /* Ulkoasu: Ympyrä */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  
+  /* Värit ja tyyli */
+  background-color: var(--nav-bg); 
+  border: 1px solid var(--border);
+  color: var(--nav-font);
+  text-decoration: none;
+  
+  /* HAAMU-EFEKTI: Puoliksi läpinäkyvä oletuksena */
+  opacity: 0.5; 
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+/* Piilota teksti desktopilla, näytä vain ikoni */
+#cookie-settings .cookie-text {
+  display: none;
+}
+
+/* Ikonin koko desktopilla */
+#cookie-settings svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* --- HOVER DESKTOPILLA (Aktivoituu hiirellä) --- */
+#cookie-settings:hover,
+#cookie-settings:focus-visible {
+  opacity: 1; /* Täysin näkyvä */
+  background-color: var(--nav-hover, #008282); /* Korostusväri */
+  color: #fff;
+  transform: scale(1.1); /* Hieman isompi */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  border-color: transparent;
+}
+
+
+/* =============================================================== */
+/* MOBIILI-NOLLAUS JA JÄRJESTYKSEN VAIHTO (Flex Order)            */
+/* =============================================================== */
 
 @media (max-width: 670px) {
+  
+  .site-footer .container {
+    padding-block: 1rem;
+  }
+
+  /* Muutetaan footer pystysuuntaiseksi */
   .site-footer .footer-content {
     flex-direction: column;
-    gap: var(--space-md);
+    gap: 2rem;
+    align-items: center;
   }
 
+  /* --- JÄRJESTYKSEN HALLINTA (ORDER) --- */
+
+  /* 1. Navigaatio ylimmäksi */
+  .site-footer nav {
+    order: 1;
+    width: 100%;
+  }
+
+  /* 2. LinkedIn keskelle */
+  .site-footer .footer-linkedin {
+    order: 2;
+    margin: 0;
+  }
+
+  /* 3. Copyright ja Evästeet alimmaiseksi */
+  .footer-meta {
+    order: 3;
+    align-items: center; /* Keskitä tekstit mobiilissa */
+    margin-top: 0.5rem;
+    opacity: 0.8;
+  }
+
+  /* Navigaation linkit pystyyn */
   .site-footer nav ul {
     flex-direction: column;
-    gap: 1px;
+    gap: 0.3rem;
   }
 
-  .site-footer .container {
+  /* --- EVÄSTENAPIN PALAUTUS LINKIKSI --- */
   
-  padding-block: 1rem;
+  #cookie-settings {
+    /* Nollataan sijainti: Ei enää kelluva */
+    position: static; 
+    z-index: auto;
+    
+    /* Nollataan ulkoasu: Ei enää ympyrä */
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    opacity: 1; /* Aina näkyvä */
+    transform: none;
+    
+    /* Tyylitellään tekstilinkiksi */
+    display: inline-flex;
+    gap: 8px; /* Väli ikonin ja tekstin välissä */
+    color: var(--nav-font);
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    text-decoration: none; 
+    margin-top: 5px;
+  }
+
+  /* Näytetään teksti mobiilissa */
+  #cookie-settings .cookie-text {
+    display: inline;
+    text-decoration: underline; /* Selkeä linkki */
+  }
   
+  /* Pienennetään ikonia mobiilissa */
+  #cookie-settings svg {
+    width: 16px;
+    height: 16px;
+    margin-top: 2px; 
+  }
+
+  /* Mobiili-hover */
+  #cookie-settings:hover,
+  #cookie-settings:focus-visible {
+    background-color: transparent;
+    color: var(--nav-hover);
+    transform: none;
+    box-shadow: none;
+  }
 }
 
 
 
 
-}
+
 
 
 /* =============================================================== */
