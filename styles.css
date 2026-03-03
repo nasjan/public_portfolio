@@ -1830,6 +1830,8 @@ main > section + section {
   .cs-pager { grid-template-columns: 1fr 1fr; }
 }
 
+
+
 /* Previous - next painikkeet */
 .cs-pager-card {
   display: flex;
@@ -1842,6 +1844,40 @@ main > section + section {
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
   padding: 0.5rem 0.6rem;
 }
+
+@media (max-width: 420px) {
+
+  .cs-pager {
+    gap: 0.2rem;
+  }
+
+  .cs-pager-title  {
+    font-size: 0.85rem !important;
+    padding: 0.2rem 0;
+  }
+}
+
+
+@media (max-width: 359px) {
+
+  .cs-pager {
+    gap: 0.1rem;
+  }
+
+  .cs-pager-label {
+    font-size: 0.9rem !important;
+  }
+
+  .cs-pager-title  {
+    font-size: 0.80rem !important;
+    padding: 0.2rem 0;
+  }
+
+  .cs-pager-card {
+    padding: 0.6rem 0.2rem;
+  }
+}
+
 
 .cs-pager-card:hover {
   border-color: var(--accent);
