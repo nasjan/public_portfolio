@@ -3,25 +3,52 @@
   const CLARITY_PROJECT_ID = "j2w7qgk6xg"; // Varmista, että tämä on oikea ID
   const CONSENT_KEY = "clarityConsent";
 
-  // Tietosuojaselosteen sisältö
+  // Tietosuojaselosteen sisältö (Tyylitelty versio)
   const PRIVACY_TEXT = `
-    <h2 style='margin-top:0'>Tietosuojaseloste</h2>
-    <strong>Rekisterinpitäjä:</strong><br>
-    Jan Nässi<br>
-    <a href='mailto:jan.nassi@outlook.com'>jan.nassi@outlook.com</a><br>
-    <a href='https://nasjan.github.io/public_portfolio/' target='_blank'>https://nasjan.github.io/public_portfolio/</a><br><br>
-    <strong>Mitä tietoja kerätään</strong><br>
-    Sivusto käyttää Microsoft Clarity -analytiikkaa. Palvelu kerää anonymisoitua tietoa sivuston käytöstä, kuten sivulatauksia, klikkauksia, vierityksiä, selaintietoja ja osittain anonymisoidun IP-osoitteen.<br><br>
-    <strong>Käyttötarkoitus</strong><br>
-    Tietoja käytetään sivuston käytön analysointiin ja käyttäjäkokemuksen kehittämiseen.<br><br>
-    <strong>Oikeusperuste</strong><br>
-    Tietojen käsittely perustuu käyttäjän suostumukseen.<br><br>
-    <strong>Tietojen luovutus</strong><br>
-    Tietoja käsittelee Microsoft Clarity -palvelun tarjoaja. Dataa voidaan siirtää EU/ETA-alueen ulkopuolelle palveluntarjoajan infrastruktuurin mukaisesti.<br><br>
-    <strong>Säilytysaika</strong><br>
-    Tietoja säilytetään analytiikkapalvelun oletusasetusten mukaisesti.<br><br>
-    <strong>Oikeutesi</strong><br>
-    Voit peruuttaa suostumuksesi milloin tahansa evästeasetuksista.
+    <div class="privacy-header">
+      <h2>Tietosuojaseloste</h2>
+    </div>
+    
+    <div class="privacy-content-body">
+      <div class="privacy-section">
+        <h3>Rekisterinpitäjä</h3>
+        <p>
+          Jan Nässi<br>
+          <a href="mailto:jan.nassi@outlook.com">jan.nassi@outlook.com</a><br>
+          <a href="https://nasjan.github.io/public_portfolio/" target="_blank">https://nasjan.github.io/public_portfolio/</a>
+        </p>
+      </div>
+
+      <div class="privacy-section">
+        <h3>Mitä tietoja kerätään</h3>
+        <p>Sivusto käyttää Microsoft Clarity -analytiikkaa. Palvelu kerää anonymisoitua tietoa sivuston käytöstä, kuten sivulatauksia, klikkauksia, vierityksiä, selaintietoja ja osittain anonymisoidun IP-osoitteen.</p>
+      </div>
+
+      <div class="privacy-section">
+        <h3>Käyttötarkoitus</h3>
+        <p>Tietoja käytetään sivuston käytön analysointiin ja käyttäjäkokemuksen kehittämiseen.</p>
+      </div>
+
+      <div class="privacy-section">
+        <h3>Oikeusperuste</h3>
+        <p>Tietojen käsittely perustuu käyttäjän suostumukseen.</p>
+      </div>
+
+      <div class="privacy-section">
+        <h3>Tietojen luovutus</h3>
+        <p>Tietoja käsittelee Microsoft Clarity -palvelun tarjoaja. Dataa voidaan siirtää EU/ETA-alueen ulkopuolelle palveluntarjoajan infrastruktuurin mukaisesti.</p>
+      </div>
+
+      <div class="privacy-section">
+        <h3>Säilytysaika</h3>
+        <p>Tietoja säilytetään analytiikkapalvelun oletusasetusten mukaisesti.</p>
+      </div>
+
+      <div class="privacy-section">
+        <h3>Oikeutesi</h3>
+        <p>Voit peruuttaa suostumuksesi milloin tahansa evästeasetuksista.</p>
+      </div>
+    </div>
   `;
 
   function loadClarity() {
@@ -53,27 +80,76 @@
     }
   }
 
+  // UUSI: Tyylitelty tietosuojamodaali
   function showPrivacyModal() {
     if (document.getElementById("privacy-modal")) return;
     
+    // Luodaan tyylit dynaamisesti tätä modaalia varten
+    const modalStyles = `
+      <style>
+        #privacy-modal {
+          position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+          background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px);
+          z-index: 10000; display: flex; justify-content: center; align-items: center;
+          padding: 20px; box-sizing: border-box;
+        }
+        .privacy-card {
+          background: #fff; max-width: 600px; width: 100%; max-height: 85vh;
+          border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+          display: flex; flex-direction: column; overflow: hidden;
+          position: relative; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        .privacy-header {
+          padding: 1.5rem 2rem 1rem; border-bottom: 1px solid #eee;
+          background: #fafafa;
+        }
+        .privacy-header h2 { margin: 0; font-size: 1.5rem; color: #111; }
+        .privacy-content-body {
+          padding: 2rem; overflow-y: auto; color: #444; line-height: 1.6;
+        }
+        .privacy-section { margin-bottom: 1.5rem; }
+        .privacy-section:last-child { margin-bottom: 0; }
+        .privacy-section h3 {
+          font-size: 1rem; text-transform: uppercase; letter-spacing: 0.5px;
+          color: #008282; margin: 0 0 0.5rem 0; font-weight: 700;
+        }
+        .privacy-section p { margin: 0; font-size: 0.95rem; }
+        .privacy-section a { color: #008282; text-decoration: underline; }
+        .privacy-section a:hover { text-decoration: none; }
+        .close-icon-btn {
+          position: absolute; top: 1rem; right: 1rem; background: transparent;
+          border: none; font-size: 2rem; line-height: 1; color: #888;
+          cursor: pointer; transition: color 0.2s; width: 40px; height: 40px;
+          display: flex; align-items: center; justify-content: center; border-radius: 50%;
+        }
+        .close-icon-btn:hover { color: #111; background: rgba(0,0,0,0.05); }
+        .privacy-footer {
+          padding: 1rem 2rem; border-top: 1px solid #eee; background: #fafafa;
+          display: flex; justify-content: center;
+        }
+        #privacy-close-bottom {
+          padding: 0.6rem 1.5rem; background: #008282; color: #fff;
+          border: none; border-radius: 6px; cursor: pointer;
+          font-weight: 600; font-size: 0.95rem; transition: background 0.2s;
+        }
+        #privacy-close-bottom:hover { background: #006666; }
+      </style>
+    `;
+
     const modal = document.createElement("div");
     modal.id = "privacy-modal";
     modal.setAttribute("role", "dialog");
     modal.setAttribute("aria-modal", "true");
     modal.setAttribute("aria-label", "Tietosuojaseloste");
-    
-    // Tyylit inline-tyyleinä (tai luokkina jos CSS-tiedosto on käytössä)
-    Object.assign(modal.style, {
-      position: "fixed", top: "0", left: "0", width: "100vw", height: "100vh",
-      background: "rgba(0,0,0,0.45)", zIndex: "10000",
-      display: "flex", justifyContent: "center", alignItems: "center"
-    });
 
     modal.innerHTML = `
-      <div style="background:#fff;max-width:600px;width:90vw;padding:2rem 1.5rem;border-radius:8px;box-shadow:0 2px 16px rgba(0,0,0,0.12);position:relative;display:flex;flex-direction:column;align-items:center;">
-        <button id="privacy-close" aria-label="Sulje tietosuojaseloste" style="position:absolute;top:1rem;right:2.5rem;background:none;border:none;font-size:2rem;line-height:1;color:#008282;cursor:pointer;z-index:2;">&times;</button>
-        <div style="overflow-y:auto;max-height:70vh;width:100%;">${PRIVACY_TEXT}</div>
-        <button id="privacy-close-bottom" aria-label="Sulje tietosuojaseloste" style="margin-top:2rem;padding:0.7rem 1.5rem;background:#008282;color:#fff;border:none;border-radius:4px;cursor:pointer;font-weight:600;font-size:1rem;">Sulje</button>
+      ${modalStyles}
+      <div class="privacy-card">
+        <button id="privacy-close" class="close-icon-btn" aria-label="Sulje">&times;</button>
+        ${PRIVACY_TEXT}
+        <div class="privacy-footer">
+          <button id="privacy-close-bottom">Sulje</button>
+        </div>
       </div>
     `;
 
@@ -81,10 +157,9 @@
     
     const closeBtnTop = modal.querySelector("#privacy-close");
     const closeBtnBottom = modal.querySelector("#privacy-close-bottom");
-
+    
     // Fokusointi
     closeBtnTop.focus();
-
     const closeModal = () => modal.remove();
 
     closeBtnTop.onclick = closeModal;
@@ -104,7 +179,7 @@
   function showBanner(focusFirst = true) {
     if (document.getElementById("cookie-banner")) return;
 
-    // Lisätään tyylit, jos niitä ei vielä ole
+    // Lisätään tyylit bannerille, jos niitä ei vielä ole
     if (!document.getElementById("cookie-banner-style")) {
       const style = document.createElement("style");
       style.id = "cookie-banner-style";
@@ -150,7 +225,7 @@
       </div>
     `;
 
-    // Estä fokuksen karkaaminen taustalle (tabindex -1 ei tässä välttämätön koska on dialog, mutta ei haittaa)
+    // Estä fokuksen karkaaminen taustalle
     banner.setAttribute("tabindex", "-1");
     document.body.appendChild(banner);
 
@@ -173,7 +248,6 @@
     rejectBtn.onclick = () => setConsent("rejected");
 
     // --- NÄPPÄIMISTÖNAVIGAATIO (FOCUS TRAP) ---
-    // KORJAUS: Lisätty privacyLink focusables-listaan, jotta tab ei jumiudu nappeihin
     const focusables = [privacyLink, rejectBtn, acceptBtn];
     
     banner.addEventListener("keydown", function (e) {
@@ -193,9 +267,9 @@
           }
         }
       } else if (e.key === "Escape") {
-        // Sulje ESC:llä vain jos avattu footerista (ei pakota valintaa uudelleen)
+        // Sulje ESC:llä vain jos avattu footerista
         if (window.__cookie_settings_focus) {
-          removeBanner(); // Tai setConsent("none") jos haluat nollata
+          removeBanner();
           window.__cookie_settings_focus = false;
         }
       }
@@ -208,12 +282,15 @@
   function setupFooterSettingsButton() {
     const btn = document.getElementById("cookie-settings");
     if (!btn) return;
-    btn.onclick = function () {
-      // Huom: emme poista suostumusta heti, vaan vasta kun käyttäjä valitsee uuden
+    btn.onclick = function (e) {
+      e.preventDefault(); // Estä sivun hyppääminen ylös
       window.__cookie_settings_focus = true;
-      showBanner(false); // false = älä varasta fokusta heti aggressiivisesti, tai true jos haluat
-      // Jos haluat fokuksen heti banneriin:
-      setTimeout(() => document.getElementById("cookie-accept").focus(), 50); 
+      showBanner(false); 
+      // Siirrä fokus bannerin "Hyväksy" -nappiin
+      setTimeout(() => {
+        const accept = document.getElementById("cookie-accept");
+        if(accept) accept.focus();
+      }, 50); 
     };
   }
 
@@ -226,7 +303,7 @@
     } else if (consent === "rejected") {
       // Ei tehdä mitään
     } else {
-      showBanner(true); // Ensimmäinen vierailu: näytä ja fokusoi
+      showBanner(true); // Ensimmäinen vierailu
     }
   });
 })();
