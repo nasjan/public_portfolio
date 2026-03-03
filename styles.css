@@ -1842,7 +1842,13 @@ main > section + section {
   border-radius: var(--radius-lg);
   text-decoration: none;
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  padding: 0.5rem 2rem;
+}
+
+@media (max-width: 510px) {
+  .cs-pager-card {
   padding: 0.5rem 0.6rem;
+  }
 }
 
 @media (max-width: 420px) {
