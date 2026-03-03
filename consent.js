@@ -80,30 +80,44 @@
     }
   }
 
-  // UUSI: Tyylitelty tietosuojamodaali
+  // UUSI: Tyylitelty tietosuojamodaali (X-nappi piilotettu mobiilissa)
   function showPrivacyModal() {
     if (document.getElementById("privacy-modal")) return;
     
     // Luodaan tyylit dynaamisesti tätä modaalia varten
     const modalStyles = `
       <style>
+        /* --- MODAALIN TAUSTA JA ASETTELU --- */
         #privacy-modal {
           position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
           background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px);
-          z-index: 10000; display: flex; justify-content: center; align-items: center;
+          z-index: 10000; 
+          /* Flexbox keskittää modaalin täydellisesti pysty- ja vaakasuunnassa */
+          display: flex; justify-content: center; align-items: center;
           padding: 20px; box-sizing: border-box;
         }
+
+        /* --- KORTTI --- */
         .privacy-card {
-          background: #fff; max-width: 600px; width: 100%; max-height: 85vh;
+          background: #fff; 
+          max-width: 600px; width: 100%; 
+          /* Desktop: max-height 85vh jättää nätit reunat ylös ja alas */
+          max-height: 85vh;
           border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.2);
           display: flex; flex-direction: column; overflow: hidden;
           position: relative; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
+
+        /* --- HEADER --- */
         .privacy-header {
-          padding: 1.5rem 2rem 1rem; border-bottom: 1px solid #eee;
+          /* Desktop: Tilaa oikealla X-napille */
+          padding: 1.5rem 3.5rem 1rem 2rem; 
+          border-bottom: 1px solid #eee;
           background: #fafafa;
         }
         .privacy-header h2 { margin: 0; font-size: 1.5rem; color: #111; }
+
+        /* --- SISÄLTÖ --- */
         .privacy-content-body {
           padding: 2rem; overflow-y: auto; color: #444; line-height: 1.6;
         }
@@ -116,16 +130,21 @@
         .privacy-section p { margin: 0; font-size: 0.95rem; }
         .privacy-section a { color: #008282; text-decoration: underline; }
         .privacy-section a:hover { text-decoration: none; }
+        
+        /* --- X-NAPPI (DESKTOP) --- */
         .close-icon-btn {
           position: absolute; top: 1rem; right: 1rem; background: transparent;
           border: none; font-size: 2rem; line-height: 1; color: #888;
           cursor: pointer; transition: color 0.2s; width: 40px; height: 40px;
           display: flex; align-items: center; justify-content: center; border-radius: 50%;
+          z-index: 10;
         }
         .close-icon-btn:hover { color: #111; background: rgba(0,0,0,0.05); }
+        
+        /* --- FOOTER --- */
         .privacy-footer {
           padding: 1rem 2rem; border-top: 1px solid #eee; background: #fafafa;
-          display: flex; justify-content: center;
+          display: flex; justify-content: center; /* Keskittää "Sulje"-napin */
         }
         #privacy-close-bottom {
           padding: 0.6rem 1.5rem; background: #008282; color: #fff;
@@ -133,6 +152,45 @@
           font-weight: 600; font-size: 0.95rem; transition: background 0.2s;
         }
         #privacy-close-bottom:hover { background: #006666; }
+
+        /* --- MEDIA QUERY MOBIILILLE (alle 670px) --- */
+        @media (max-width: 670px) {
+          .privacy-card {
+            width: 90%; 
+            /* Mobiili: 80vh varmistaa että kortti "kelluu" keskellä, 
+               eikä osu ylä- tai alareunaan */
+            max-height: 80vh; 
+          }
+          
+          /* Piilota X-nappi mobiilissa */
+          .close-icon-btn {
+            display: none;
+          }
+
+          .privacy-header {
+            /* Tasainen padding, koska X-nappi on poissa */
+            padding: 1rem 1.5rem 0.5rem 1.5rem;
+            text-align: center;
+          }
+          
+          .privacy-header h2 {
+            font-size: 1.1rem; 
+            line-height: 1.3;
+          }
+          .privacy-content-body {
+            padding: 1rem;
+          }
+          /* Pienennetään fontteja mobiilissa */
+          .privacy-section h3 { font-size: 0.8rem; }
+          .privacy-section p { font-size: 0.85rem; }
+          
+          #privacy-close-bottom {
+            padding: 0.5rem 1.2rem; font-size: 0.85rem;
+          }
+          .privacy-footer {
+            padding: 0.8rem 1.5rem;
+          }
+        }
       </style>
     `;
 
@@ -158,8 +216,14 @@
     const closeBtnTop = modal.querySelector("#privacy-close");
     const closeBtnBottom = modal.querySelector("#privacy-close-bottom");
     
-    // Fokusointi
-    closeBtnTop.focus();
+    // Fokusointi (jos top-nappi piilotettu, fokusoidaan silti siihen tai modaaliin, 
+    // mutta mobiilissa käyttäjä selaa luonnollisesti)
+    if (getComputedStyle(closeBtnTop).display !== 'none') {
+        closeBtnTop.focus();
+    } else {
+        closeBtnBottom.focus();
+    }
+    
     const closeModal = () => modal.remove();
 
     closeBtnTop.onclick = closeModal;
