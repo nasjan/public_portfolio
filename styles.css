@@ -534,6 +534,7 @@ body.drawer-open .drawer-backdrop { opacity: 1; }
     gap: var(--space-xl);
     min-height: 0;
   }
+  
 
   .hero-avatar {
     width: clamp(240px, 25vw, 320px);
@@ -543,11 +544,24 @@ body.drawer-open .drawer-backdrop { opacity: 1; }
 
 /* Hero — small (hide portrait, centre text) */
 @media (max-width: 650px) {
+
+
+
+.hero-container {
+  width: 100%;
+  max-width: var(--site-max-width);
+  margin: 0 auto;
+  padding: 0.2rem 1rem;
+
+}
+
   .hero-content {
     grid-template-columns: 1fr;
     gap: 0;
     text-align: center;
   }
+
+  
 
   .hero-text {
     max-width: 100%;
@@ -755,7 +769,7 @@ main > section + section {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.4rem;
   text-align: center;
   width: max-content;
   max-width: 24ch;
