@@ -730,13 +730,38 @@ main > section + section {
   text-align: left;
 }
 
-
+/* Mobiili näkymä about */
 @media (max-width: 639px) {
   .skills-columns {
     grid-template-columns: 1fr;
     gap: var(--space-lg);
     text-align: center;
   }
+
+.skills-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  text-align: left;
+  width: max-content;
+  max-width: 24ch;
+}
+
+.skills-column h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+  text-align: center;
+  width: max-content;
+  max-width: 24ch;
+  text-align: center;
+}
+
 }
 
 /* Tablet: ≤ 900px — shrink gap, keep 3 columns */
