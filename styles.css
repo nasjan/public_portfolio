@@ -474,7 +474,7 @@ body.drawer-open .drawer-backdrop { opacity: 1; }
 
 .hero h1 {
   font-size: clamp(2rem, 2.2vw, 4rem);
-  font-weight: 500;
+  font-weight: 600;
   line-height: var(--heading-line-height);
   letter-spacing: 1px;
   margin: 0;
@@ -1587,95 +1587,121 @@ main > section + section {
 
 
 /* =============================================================== */
-/*  115 — CASE STUDY TEMPLATE                                      */
+/* 115 — CASE STUDY HERO V2 (Responsive Grid)                     */
 /* =============================================================== */
 
-/* --- Hero v2 --- */
 .cs-hero {
   background: var(--project-hero-bg);
-  padding-block: clamp(2rem, 5vh, 3.5rem);
+  /* Enemmän tilaa ylös ja alas, näyttää ilmavammalta */
+  padding-block: clamp(1rem, 2vh, 2rem);
+  border-bottom: 1px solid var(--border); /* Valinnainen: rajaa heron */
 }
 
 .cs-hero .container {
   display: flex;
   flex-direction: column;
-  gap: var(--space-md);
+  gap: clamp(2rem, 2vh, 2rem); /* Väli tekstin ja meta-tietojen välillä */
+  width: 100%;
+  max-width: 1280px; /* Estää rivien venymisen liian pitkiksi isolla näytöllä */
+  margin: 0 auto;
+}
+
+/* --- Tekstiosio --- */
+.cs-hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .cs-hero h1 {
-  font-size: clamp(2rem, 3.5vw, 3.25rem);
-  line-height: var(--heading-line-height);
+  font-size: clamp(2.5rem, 3vw, 3rem); 
+  line-height: 1.1;
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   margin: 0;
-  max-width: 22ch;
+  color: var(--text);
 }
 
 .cs-hero-summary {
-  font-size: clamp(1rem, 1.15vw, 1.15rem);
-  line-height: 1.7;
+  font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+  line-height: 1.6;
   color: var(--text-body);
-  max-width: 70ch;
+  max-width: 60ch; /* Optimaalinen lukuleveys */
   margin: 0;
+  opacity: 0.9;
 }
 
-/* Meta row */
+/* --- Meta Data (role, timeline jne) --- */
 .cs-hero-meta {
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-xs) var(--space-xl);
-  font-size: 1rem;
-  color: #4a4c52;
+  flex-wrap: wrap; /* Sallii rivityksen pienillä näytöillä */
+  gap: 3rem; /* Kiinteä väli elementtien välillä (n. 48px) */
+  justify-content: flex-start; /* Pakottaa kaiken vasemmalle */
+  
+  width: 100%;
   margin: 0;
-  padding: 0;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0,0,0, 0.1);
 }
 
 .cs-meta-item {
   display: flex;
-  gap: 0.3em;
+  flex-direction: column;
+  gap: 0.5rem;
+  
+  /* Varmistaa, että elementillä on joku perusleveys, mutta se ei veny hulluna */
+  min-width: 140px; 
+  flex: 0 1 auto; 
 }
 
+/* Otsikko (ROLE, TIMELINE...) */
 .cs-meta-item dt {
-  font-weight: 600;
-  color: var(--text);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
   margin: 0;
 }
 
 .cs-meta-item dt::after { content: none; }
 
+/* Sisältö */
 .cs-meta-item dd {
   margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.4;
+  max-width: 250px; /* Estää tekstin leviämisen liian leveälle, jos se on pitkä */
 }
 
-/* CTAs */
-.cs-hero-ctas {
-  display: flex;
-  gap: var(--space-md);
-  flex-wrap: wrap;
-  margin-top: 1rem;
+/* --- Mobiilisäätö --- */
+@media (max-width: 700px) {
+  .cs-hero-meta {
+    gap: 1.5rem; /* Pienempi väli mobiilissa */
+  }
+  
+  .cs-meta-item {
+    /* Mobiilissa annetaan elementtien viedä n. puolet tilasta (2 vierekkäin) */
+    width: 45%; 
+    min-width: auto;
+  }
 }
 
-/* Hero image */
-.cs-hero-img {
-  margin: 1.5rem 0 0;
-  padding: 0;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  max-height: 20.5rem;
-  background: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* --- Mobiilisäätö --- */
+@media (max-width: 600px) {
+  .cs-hero-meta {
+    /* Mobiilissa tiivistetään välejä */
+    gap: 1.5rem; 
+    grid-template-columns: 1fr 1fr; /* Pakotetaan 2 saraketta */
+  }
+  
+  /* Jos tiimi-teksti on pitkä, se voi viedä kaksi saraketta mobiilissa */
+  .cs-meta-item:last-child {
+    grid-column: span 2; 
+  }
 }
 
-.cs-hero-img img {
-  width: 100%;
-  height: 100%;
-  max-height: 16.5rem;
-  object-fit: contain;
-  object-position: center;
-  display: block;
-}
 
 /* --- Overview cards --- */
 .cs-overview {
