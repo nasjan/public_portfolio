@@ -2256,7 +2256,10 @@ figure.bento-image::after {
 .youtube-embed {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%;
+  max-width: 600px;
+  margin-right: auto;
+  aspect-ratio: 16 / 9;
+  padding-bottom: 0;
   background: var(--muted);
   border-radius: var(--radius);
   overflow: hidden;
@@ -2320,6 +2323,8 @@ figure.bento-image::after {
 
 .youtube-embed iframe {
   position: absolute;
+  top: 0;
+  left: 0;
   inset: 0;
   width: 100%;
   height: 100%;
