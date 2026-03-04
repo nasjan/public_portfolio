@@ -585,8 +585,18 @@ body.drawer-open .drawer-backdrop { opacity: 1; }
 /* Hero — phone (stack CTAs) */
 @media (max-width: 600px) {
   .hero-ctas {
-    flex-direction: column;
-    align-items: stretch;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+  }
+
+  .hero-ctas .btn {
+    width: auto;
+    max-width: none;
+    min-height: 44px;
+    flex: 1;
+    white-space: nowrap;
   }
 
   .hero-ctas .btn {
@@ -594,6 +604,23 @@ body.drawer-open .drawer-backdrop { opacity: 1; }
     max-width: 280px;
     min-height: 44px;
   }
+
+  .hero h1 {
+  font-size: clamp(2rem, 3vw, 2rem);
+  
+}
+}
+
+@media (max-width: 363px) {
+    .hero h1 {
+  font-size: clamp(1.7rem, 3vw, 2rem);
+}
+
+.hero-intro {
+  font-size: clamp(1rem, 1vw, 1.4rem);
+  line-height: 1.4;
+}
+
 }
 
 
