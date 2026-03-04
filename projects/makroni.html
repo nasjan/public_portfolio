@@ -183,17 +183,20 @@
               <div class="cs-divider"></div>
 
               <!-- E. Design Solution -->
-              <div id="cs-solution" class="cs-section">
-                <h2>Design Solution</h2>
-                <p>The UI is simple on purpose. Users can understand the app without a tutorial or onboarding. The app is built with React and Vite. Firebase Authentication handles login, and Firestore stores user data.</p>
-                <ul>
-                  <li>React components for the meal builder and saved meals views</li>
-                  <li>Real time calculation when users change input values</li>
-                  <li>Firestore storage that keeps each user's data separate</li>
-                  <li>Clear separation between building a meal and viewing saved meals</li>
-                  <li>Same navigation and layout on every page</li>
-                </ul>
-              </div>
+                <div id="cs-solution" class="cs-section">
+                  <h2>Design Solution</h2>
+                  <p>I kept the design intentionally simple. My primary focus was on the technical implementation, such as connecting
+                    React components to the Firebase backend.</p>
+                  <p>This serves as a functional demo (MVP). I believe it is better to focus on the UI details only after the core
+                    features are finalized and the user flows are validated.</p>
+                  <ul>
+                    <li>React components for the meal builder and saved meals views</li>
+                    <li>Real time calculation when users change input values</li>
+                    <li>Firestore storage that keeps each user's data separate</li>
+                    <li>Clear separation between building a meal and viewing saved meals</li>
+                    <li>Same navigation and layout on every page</li>
+                  </ul>
+                </div>
 
               <div class="cs-divider"></div>
 
@@ -203,13 +206,13 @@
                 <p>I tested the app with seven people aged 25 to 55. All testers said the idea and navigation were clear. They could move between pages without extra help.</p>
                 <ul>
                   <li>Found two mobile scaling issues on specific devices and fixed them with CSS changes</li>
-                  <li>Fixed iOS Safari auto zoom on inputs by making the font size at least 16px</li>
+                  <li>Fixed iOS Safari auto zoom on inputs by making the font size at least 1rem</li>
                   <li>Tested responsiveness with Chrome DevTools at different screen sizes</li>
                   <li>Tested on Chrome, Edge, and iOS Safari</li>
                 </ul>
 
                 <div class="cs-callout">
-                  <p><strong>Iteration highlight:</strong> Two testers had trouble with input fields on smaller phones. Making the font size 16px fixed the iOS Safari zoom problem and improved usability on all mobile devices.</p>
+                  <p><strong>Iteration highlight:</strong> Two testers had trouble with input fields on smaller phones. Making the font size 16px / 1rem fixed the iOS Safari zoom problem and improved usability on all mobile devices.</p>
                 </div>
               </div>
 
@@ -225,6 +228,7 @@
                   <li>Confirmed correct behavior on Chrome and Edge</li>
                   <li>Lighthouse scores were strong for both performance and accessibility</li>
                 </ul>
+                <p>This project taught me how to connect a React frontend to a serverless backend and how to solve browser-specific bugs through user testing.</p>
                 <p>Future improvements include planning meals by day, a history view, more UI improvements, and possibly connecting to a REST API.</p>
               </div>
 
