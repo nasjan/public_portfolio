@@ -49,20 +49,22 @@
   --muted: #eef0f3;
   --border: #e6e8ec;
   --accent: #006060;
-  --accent-hover: #004a4a;
+  --accent-hover: #006060;
 
   /* --- Effects --- */
   --shadow-sm: 0 1px 4px rgba(16, 24, 40, 0.04);
   --shadow: 0 2px 10px rgba(16, 24, 40, 0.06);
   --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08);
   --radius: 0.4rem;
-  --radius-lg: 0.2rem;
+  --radius-lg: 0.25rem;
 
   /* --- Spacing scale (used by sections, gaps, padding) --- */
+  --space-mini025: 0.25rem
   --space-xs: 0.5rem;
   --space-sm: 0.75rem;
   --space-md: 1rem;
   --space-lg: 1.5rem;
+  --space-lg-2: 2rem;
   --space-xl: clamp(2rem, 4vw, 3rem);
   --space-2xl: clamp(3rem, 6vh, 4rem);
   --space-3xl: clamp(3.5rem, 7vh, 5rem);
@@ -560,7 +562,7 @@ body.drawer-open .drawer-backdrop { opacity: 1; }
   width: 100%;
   max-width: var(--site-max-width);
   margin: 0 auto;
-  padding: 0.2rem 1rem;
+  padding: 0.25rem 1rem;
 
 }
 
@@ -754,7 +756,7 @@ main > section + section {
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  margin-bottom: 1.4rem;
+  margin-bottom: 1rem;   /* otsikko-margin-bottom  */
   text-align: center;
   width: max-content;
   max-width: 24ch;
@@ -812,6 +814,7 @@ main > section + section {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  margin-bottom: var(--space-mini025); /* mobiili-otsikko-margin-bottom */
 }
 
   }
@@ -1060,10 +1063,10 @@ main > section + section {
 }
 
 .case-study-card .card-content {
-  padding: 0.625rem 0.2rem;
+  padding: 0.625rem 0.25rem;
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: --var(--space-mini025);
   flex: 1;
 }
 
@@ -1350,7 +1353,7 @@ main > section + section {
   /* Navigaation linkit pystyyn */
   .site-footer nav ul {
     flex-direction: column;
-    gap: 0.2rem;
+    gap: var(--space-sm);
   }
 
   /* --- EVÄSTENAPIN PALAUTUS LINKIKSI --- */
@@ -1888,13 +1891,14 @@ main > section + section {
   margin: 0 0 var(--space-sm);
 }
 
+/* On this page listaus */
 .cs-toc-list {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: var(--space-mini025);
 }
 
 .cs-toc-list a {
@@ -2057,12 +2061,12 @@ main > section + section {
 @media (max-width: 420px) {
 
   .cs-pager {
-    gap: 0.2rem;
+    gap: var(--space-mini025);
   }
 
   .cs-pager-title  {
     font-size: 0.85rem !important;
-    padding: 0.2rem 0;
+    padding: 0.25rem 0;
   }
 }
 
@@ -2079,11 +2083,11 @@ main > section + section {
 
   .cs-pager-title  {
     font-size: 0.80rem !important;
-    padding: 0.2rem 0;
+    padding: 0.25rem 0;
   }
 
   .cs-pager-card {
-    padding: 0.6rem 0.2rem;
+    padding: 0.6rem 0.25rem;
   }
 }
 
