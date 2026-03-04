@@ -1141,7 +1141,7 @@ main > section + section {
 }
 
 .btn-primary {
-  background: var(--accent);
+  background: var(--nav-bg);
   color: #fff;
 }
 
