@@ -2206,6 +2206,12 @@ body.drawer-open .drawer-backdrop { opacity: 1; }
   flex-shrink: 0;
 }
 
+.cs-artifact-note {
+  margin-top: var(--space-sm);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
 /* --- Prev / Next nav --- */
 .cs-pager {
   display: grid;
