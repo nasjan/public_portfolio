@@ -380,13 +380,14 @@ h3 {
 
 /* ----------------------------------------------------------------
    Bilingual visibility
+   html[lang] attribute is set synchronously in <head> from
+   localStorage, so the correct language shows before paint.
 ---------------------------------------------------------------- */
+.lang-en,
 .lang-fi { display: none; }
 
-html[lang="fi"] .lang-fi { display: block; }
-html[lang="fi"] span.lang-fi,
-html[lang="fi"] li.lang-fi { display: inline; }
-html[lang="fi"] .lang-en { display: none !important; }
+html[lang="en"] .lang-en,
+html[lang="fi"] .lang-fi { display: revert; }
 
 
 /* Back button (project pages) */

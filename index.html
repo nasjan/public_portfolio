@@ -34,8 +34,11 @@
     <!-- ========================================================= -->
     <!-- [S-00D] Tyylit                                            -->
     <!-- ========================================================= -->
-    <link rel="preload" href="styles.css?v=6" as="style" />
-    <link rel="stylesheet" href="styles.css?v=6" />
+    <link rel="preload" href="styles.css?v=7" as="style" />
+    <link rel="stylesheet" href="styles.css?v=7" />
+
+    <!-- [S-00D1] Kielialustus ennen renderöintiä (ei FOUC) -->
+    <script>document.documentElement.lang = localStorage.getItem('portfolio-lang') || 'en';</script>
 
     <!-- ========================================================= -->
     <!-- [S-00E] Schema.org: Person & WebSite                      -->
