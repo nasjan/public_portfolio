@@ -2010,6 +2010,142 @@ body.drawer-open .drawer-backdrop { opacity: 1; }
   background: var(--surface);
 }
 
+/* Decision cards */
+.decision-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.decision-card {
+  background: #ffffff;
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  border-radius: 20px;
+  padding: 1.35rem;
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.07);
+}
+
+.decision-card__label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #255766;
+  margin-bottom: 0.35rem;
+}
+
+.decision-card__name {
+  margin: 0 0 var(--space-sm);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #0f172a;
+}
+
+.decision-card__details {
+  margin: 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.2rem var(--space-sm);
+  font-size: 0.875rem;
+}
+
+.decision-card__details dt {
+  font-weight: 600;
+  color: var(--text-muted);
+  white-space: nowrap;
+  padding-top: 0.1rem;
+}
+
+.decision-card__details dd {
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+  .decision-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Option cards */
+.option-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.option-card {
+  background: #ffffff;
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  border-radius: 20px;
+  padding: 1.35rem;
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.07);
+}
+
+.option-card--selected {
+  border-color: rgba(82, 115, 255, 0.42);
+  box-shadow: 0 18px 42px rgba(82, 115, 255, 0.12);
+}
+
+.option-label {
+  margin: 0 0 0.35rem;
+  color: #255766;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.option-card h3 {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+  line-height: 1.3;
+  color: #0f172a;
+}
+
+.option-field {
+  margin-top: 0.85rem;
+}
+
+.option-field-label {
+  display: block;
+  margin-bottom: 0.2rem;
+  color: #64748b;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.option-field p {
+  margin: 0;
+  color: #0f172a;
+  line-height: 1.45;
+}
+
+.option-decision {
+  margin: 1rem 0 0;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.22);
+  color: #334155;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.option-card--selected .option-decision {
+  color: #5273ff;
+}
+
+@media (max-width: 1050px) {
+  .option-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* 2-up image grid */
 .cs-fig-grid {
   display: grid;
@@ -2692,6 +2828,102 @@ figure.bento-image::after {
 /* Global focus ring */
 :where(a, button, input, select, textarea) {
   outline-color: var(--accent);
+}
+
+/* ============================================================
+   Lightbox
+   ============================================================ */
+
+/* Zoom cursor on all case-study figures */
+.cs-main figure {
+  cursor: zoom-in;
+}
+
+.cs-main figure img {
+  transition: opacity 0.12s ease;
+}
+
+.cs-main figure:hover img {
+  opacity: 0.88;
+}
+
+.cs-main figure:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* Overlay backdrop */
+.lb-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  background: rgba(10, 20, 40, 0.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  cursor: pointer;
+}
+
+.lb-overlay[hidden] {
+  display: none;
+}
+
+/* Inner dialog — stops click propagation to backdrop */
+.lb-dialog {
+  position: relative;
+  max-width: min(92vw, 1100px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: default;
+}
+
+.lb-img {
+  max-width: 100%;
+  max-height: calc(90vh - 5rem);
+  object-fit: contain;
+  border-radius: 10px;
+  display: block;
+}
+
+.lb-caption {
+  margin-top: 0.65rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.875rem;
+  text-align: center;
+  max-width: 60ch;
+  line-height: 1.5;
+}
+
+/* Close button — top-right of dialog */
+.lb-close {
+  position: absolute;
+  top: -3rem;
+  right: 0;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+  width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.1rem;
+  line-height: 1;
+  padding: 0;
+}
+
+.lb-close:hover {
+  background: rgba(255, 255, 255, 0.24);
+}
+
+.lb-close:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.6);
+  outline-offset: 2px;
 }
 
 /* Reduced motion */

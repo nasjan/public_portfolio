@@ -184,4 +184,98 @@
     });
   }
 
+  /* ------------------------------------------------------------
+     3) Image lightbox — cs-main figures
+     ------------------------------------------------------------ */
+  (function () {
+    var csMain = document.querySelector('.cs-main');
+    if (!csMain) return;
+
+    // Make every figure keyboard-navigable
+    csMain.querySelectorAll('figure').forEach(function (figure) {
+      var img = figure.querySelector('img');
+      if (!img) return;
+      figure.setAttribute('tabindex', '0');
+      figure.setAttribute('role', 'button');
+      figure.setAttribute('aria-label', 'View image larger' + (img.alt ? ': ' + img.alt : ''));
+    });
+
+    // Build overlay once
+    var overlay = document.createElement('div');
+    overlay.id = 'lb-overlay';
+    overlay.className = 'lb-overlay';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.setAttribute('aria-label', 'Image viewer');
+    overlay.hidden = true;
+    overlay.innerHTML =
+      '<div class="lb-dialog">' +
+      '<button class="lb-close" aria-label="Close image viewer">×</button>' +
+      '<img class="lb-img" src="" alt="" />' +
+      '<p class="lb-caption"></p>' +
+      '</div>';
+    document.body.appendChild(overlay);
+
+    var lbImg     = overlay.querySelector('.lb-img');
+    var lbCaption = overlay.querySelector('.lb-caption');
+    var lbClose   = overlay.querySelector('.lb-close');
+    var lastFocused = null;
+
+    function openLb(figure) {
+      var img = figure.querySelector('img');
+      if (!img) return;
+      lastFocused = figure;
+
+      lbImg.src = img.src;
+      lbImg.alt = img.alt || '';
+
+      // Prefer current-language figcaption; fall back to full text
+      var figcaption = figure.querySelector('figcaption');
+      var caption = '';
+      if (figcaption) {
+        var lang = document.documentElement.lang || 'en';
+        var span = figcaption.querySelector('.lang-' + lang);
+        caption = span ? span.textContent.trim() : figcaption.textContent.trim();
+      }
+      lbCaption.textContent = caption;
+      lbCaption.hidden = !caption;
+
+      overlay.hidden = false;
+      document.body.style.overflow = 'hidden';
+      requestAnimationFrame(function () { lbClose.focus(); });
+      document.addEventListener('keydown', onKey, true);
+    }
+
+    function closeLb() {
+      overlay.hidden = true;
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', onKey, true);
+      if (lastFocused instanceof HTMLElement) lastFocused.focus();
+    }
+
+    function onKey(e) {
+      if (e.key === 'Escape') { e.preventDefault(); closeLb(); }
+    }
+
+    // Click anywhere inside a figure
+    csMain.addEventListener('click', function (e) {
+      var figure = e.target.closest('figure');
+      if (figure && figure.querySelector('img')) openLb(figure);
+    });
+
+    // Keyboard: Enter or Space on a focused figure
+    csMain.addEventListener('keydown', function (e) {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      var figure = e.target.closest('figure[tabindex]');
+      if (figure && figure.querySelector('img')) { e.preventDefault(); openLb(figure); }
+    });
+
+    // Backdrop click
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) closeLb();
+    });
+
+    lbClose.addEventListener('click', closeLb);
+  })();
+
 })();

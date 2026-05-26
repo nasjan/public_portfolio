@@ -321,38 +321,73 @@
 
               <div id="cs-options" class="cs-section">
                 <h2><span class="lang-en">Solution Options</span><span class="lang-fi">Ratkaisuvaihtoehdot</span></h2>
-                <div class="lang-en">
-                  <p>In the early stage, the solution was not a single UI view but several possible directions. We compared options based on which would solve both the conversation initiation problem and the need for concrete next steps.</p>
-                  <div class="cs-table-wrap">
-                    <table class="cs-table">
-                      <thead>
-                        <tr><th>Option</th><th>What it solved</th><th>Benefit</th><th>Weakness or risk</th><th>Decision</th></tr>
-                      </thead>
-                      <tbody>
-                        <tr><td>A: Activity list</td><td>Finding local options</td><td>Easy to understand and scope</td><td>Does not support sensitive conversation</td><td>Not sufficient alone</td></tr>
-                        <tr><td>B: AI conversation support</td><td>Conversation initiation and follow-up question support</td><td>Addresses sensitive consultation situations</td><td>Leaves concrete options to the professional</td><td>Needed as part of solution</td></tr>
-                        <tr><td>C: Conversation support + separate local search</td><td>Conversation initiation and concrete next steps</td><td>Combines consultation support and practical options</td><td>Requires clear boundary between AI and search</td><td>Chosen solution</td></tr>
-                      </tbody>
-                    </table>
+                <p>
+                  <span class="lang-en">In the early stage, the solution was not a single UI view but several possible directions. We compared options based on which would solve both the conversation initiation problem and the need for concrete next steps.</span>
+                  <span class="lang-fi">Alkuvaiheessa ratkaisu ei ollut yksittäinen käyttöliittymänäkymä, vaan useita mahdollisia suuntia. Vertailimme vaihtoehtoja sen perusteella, mikä ratkaisisi sekä puheeksioton ongelman että konkreettisten jatkoaskelten tarpeen.</span>
+                </p>
+
+                <div class="option-grid">
+
+                  <div class="option-card">
+                    <p class="option-label"><span class="lang-en">Option A</span><span class="lang-fi">Vaihtoehto A</span></p>
+                    <h3><span class="lang-en">Activity list</span><span class="lang-fi">Harrastuslista</span></h3>
+                    <div class="option-field">
+                      <span class="option-field-label"><span class="lang-en">What it solved</span><span class="lang-fi">Mitä se ratkaisi</span></span>
+                      <p><span class="lang-en">Finding local options</span><span class="lang-fi">Paikallisten vaihtoehtojen löytäminen</span></p>
+                    </div>
+                    <div class="option-field">
+                      <span class="option-field-label"><span class="lang-en">Benefit</span><span class="lang-fi">Hyöty</span></span>
+                      <p><span class="lang-en">Easy to understand and scope</span><span class="lang-fi">Helppo ymmärtää ja rajata</span></p>
+                    </div>
+                    <div class="option-field">
+                      <span class="option-field-label"><span class="lang-en">Weakness or risk</span><span class="lang-fi">Heikkous tai riski</span></span>
+                      <p><span class="lang-en">Does not support sensitive conversation</span><span class="lang-fi">Ei tue sensitiivistä puheeksiottoa</span></p>
+                    </div>
+                    <p class="option-decision"><span class="lang-en">Not sufficient alone</span><span class="lang-fi">Ei yksin riittävä</span></p>
                   </div>
-                  <p>The key trade-off was that local search was implemented in the pilot with limited test data. This does not solve production-level data maintenance, but made the search structure, filters, and risks testable within the project timeline.</p>
-                </div>
-                <div class="lang-fi">
-                  <p>Alkuvaiheessa ratkaisu ei ollut yksittäinen käyttöliittymänäkymä, vaan useita mahdollisia suuntia. Vertailimme vaihtoehtoja sen perusteella, mikä ratkaisisi sekä puheeksioton ongelman että konkreettisten jatkoaskelten tarpeen.</p>
-                  <div class="cs-table-wrap">
-                    <table class="cs-table">
-                      <thead>
-                        <tr><th>Vaihtoehto</th><th>Mitä se ratkaisi</th><th>Hyöty</th><th>Heikkous tai riski</th><th>Päätös</th></tr>
-                      </thead>
-                      <tbody>
-                        <tr><td>A: Harrastuslista</td><td>Paikallisten vaihtoehtojen löytäminen</td><td>Helppo ymmärtää ja rajata</td><td>Ei tue sensitiivistä puheeksiottoa</td><td>Ei yksin riittävä</td></tr>
-                        <tr><td>B: AI-keskustelutuki</td><td>Puheeksioton ja jatkokysymysten tuki</td><td>Vastaa arkaan kohtaamistilanteeseen</td><td>Jättää konkreettiset vaihtoehdot ammattilaisen varaan</td><td>Tarvitaan osaksi ratkaisua</td></tr>
-                        <tr><td>C: Keskustelutuki + erillinen paikallishaku</td><td>Puheeksiotto ja konkreettinen eteneminen</td><td>Yhdistää kohtaamisen tuen ja käytännön vaihtoehdot</td><td>Vaatii selkeän rajan AI:n ja haun välille</td><td>Valittu ratkaisu</td></tr>
-                      </tbody>
-                    </table>
+
+                  <div class="option-card">
+                    <p class="option-label"><span class="lang-en">Option B</span><span class="lang-fi">Vaihtoehto B</span></p>
+                    <h3><span class="lang-en">AI conversation support</span><span class="lang-fi">AI-keskustelutuki</span></h3>
+                    <div class="option-field">
+                      <span class="option-field-label"><span class="lang-en">What it solved</span><span class="lang-fi">Mitä se ratkaisi</span></span>
+                      <p><span class="lang-en">Conversation initiation and follow-up question support</span><span class="lang-fi">Puheeksioton ja jatkokysymysten tuki</span></p>
+                    </div>
+                    <div class="option-field">
+                      <span class="option-field-label"><span class="lang-en">Benefit</span><span class="lang-fi">Hyöty</span></span>
+                      <p><span class="lang-en">Addresses sensitive consultation situations</span><span class="lang-fi">Vastaa arkaan kohtaamistilanteeseen</span></p>
+                    </div>
+                    <div class="option-field">
+                      <span class="option-field-label"><span class="lang-en">Weakness or risk</span><span class="lang-fi">Heikkous tai riski</span></span>
+                      <p><span class="lang-en">Leaves concrete options to the professional</span><span class="lang-fi">Jättää konkreettiset vaihtoehdot ammattilaisen varaan</span></p>
+                    </div>
+                    <p class="option-decision"><span class="lang-en">Needed as part of solution</span><span class="lang-fi">Tarvitaan osaksi ratkaisua</span></p>
                   </div>
-                  <p>Keskeinen kompromissi oli se, että paikallishaku toteutettiin pilotissa rajatulla testidatalla. Tämä ei ratkaise tuotantotason tiedon ylläpitoa, mutta se teki hakutulosten rakenteen, suodattimet ja riskit testattaviksi projektin aikataulussa.</p>
+
+                  <div class="option-card option-card--selected">
+                    <p class="option-label"><span class="lang-en">Option C</span><span class="lang-fi">Vaihtoehto C</span></p>
+                    <h3><span class="lang-en">Conversation support + separate local search</span><span class="lang-fi">Keskustelutuki + erillinen paikallishaku</span></h3>
+                    <div class="option-field">
+                      <span class="option-field-label"><span class="lang-en">What it solved</span><span class="lang-fi">Mitä se ratkaisi</span></span>
+                      <p><span class="lang-en">Conversation initiation and concrete next steps</span><span class="lang-fi">Puheeksiotto ja konkreettinen eteneminen</span></p>
+                    </div>
+                    <div class="option-field">
+                      <span class="option-field-label"><span class="lang-en">Benefit</span><span class="lang-fi">Hyöty</span></span>
+                      <p><span class="lang-en">Combines consultation support and practical options</span><span class="lang-fi">Yhdistää kohtaamisen tuen ja käytännön vaihtoehdot</span></p>
+                    </div>
+                    <div class="option-field">
+                      <span class="option-field-label"><span class="lang-en">Weakness or risk</span><span class="lang-fi">Heikkous tai riski</span></span>
+                      <p><span class="lang-en">Requires clear boundary between AI and search</span><span class="lang-fi">Vaatii selkeän rajan AI:n ja haun välille</span></p>
+                    </div>
+                    <p class="option-decision"><span class="lang-en">Chosen solution</span><span class="lang-fi">Valittu ratkaisu</span></p>
+                  </div>
+
                 </div>
+
+                <p>
+                  <span class="lang-en">The key trade-off was that local search was implemented in the pilot with limited test data. This does not solve production-level data maintenance, but made the search structure, filters, and risks testable within the project timeline.</span>
+                  <span class="lang-fi">Keskeinen kompromissi oli se, että paikallishaku toteutettiin pilotissa rajatulla testidatalla. Tämä ei ratkaise tuotantotason tiedon ylläpitoa, mutta se teki hakutulosten rakenteen, suodattimet ja riskit testattaviksi projektin aikataulussa.</span>
+                </p>
               </div>
 
               <div class="cs-divider"></div>
@@ -489,35 +524,60 @@
               <div id="cs-decisions" class="cs-section">
                 <h2><span class="lang-en">Key Design Decisions</span><span class="lang-fi">Keskeiset design-päätökset</span></h2>
 
-                <div class="lang-en">
-                  <div class="cs-table-wrap">
-                    <table class="cs-table">
-                      <thead>
-                        <tr><th>Decision</th><th>Alternatives</th><th>Final choice</th><th>Rationale</th></tr>
-                      </thead>
-                      <tbody>
-                        <tr><td>AI's role</td><td>Expert, decision-maker, or sparring partner</td><td>Sparring partner</td><td>The professional makes decisions. Healthcare context requires keeping responsibility with the human.</td></tr>
-                        <tr><td>Local search</td><td>Free chat generation or limited search logic</td><td>Separate local search with limited data</td><td>Reduces risk of incorrect or nonexistent local suggestions.</td></tr>
-                        <tr><td>Prototyping focus</td><td>WoZ testing or functional AI prototype</td><td>Functional AI prototype</td><td>WoZ testing was ruled out because enough real test users couldn't be recruited. A functional proto made model behavior and risks visible.</td></tr>
-                        <tr><td>Response guidance</td><td>One general prompt or situation-specific rules</td><td>Mode-specific guidance and code safeguards</td><td>Sensitive conversation and local search cannot operate on the same ruleset.</td></tr>
-                      </tbody>
-                    </table>
+                <div class="decision-grid">
+
+                  <div class="decision-card">
+                    <span class="decision-card__label"><span class="lang-en">Decision 1</span><span class="lang-fi">Päätös 1</span></span>
+                    <h3 class="decision-card__name"><span class="lang-en">AI's role</span><span class="lang-fi">AI:n rooli</span></h3>
+                    <dl class="decision-card__details">
+                      <dt><span class="lang-en">Alternatives</span><span class="lang-fi">Vaihtoehdot</span></dt>
+                      <dd><span class="lang-en">Expert, decision-maker or sparring partner</span><span class="lang-fi">Asiantuntija, päätöksentekijä tai sparraaja</span></dd>
+                      <dt><span class="lang-en">Final choice</span><span class="lang-fi">Lopullinen päätös</span></dt>
+                      <dd><span class="lang-en">Sparring partner</span><span class="lang-fi">Sparraaja</span></dd>
+                      <dt><span class="lang-en">Rationale</span><span class="lang-fi">Perustelu</span></dt>
+                      <dd><span class="lang-en">The professional makes decisions. Healthcare context requires keeping responsibility with the human.</span><span class="lang-fi">Ammattilainen tekee päätökset. Terveydenhuollon konteksti vaatii vastuun säilyttämistä ihmisellä.</span></dd>
+                    </dl>
                   </div>
-                </div>
-                <div class="lang-fi">
-                  <div class="cs-table-wrap">
-                    <table class="cs-table">
-                      <thead>
-                        <tr><th>Päätös</th><th>Vaihtoehdot</th><th>Lopullinen päätös</th><th>Perustelu</th></tr>
-                      </thead>
-                      <tbody>
-                        <tr><td>AI:n rooli</td><td>Asiantuntija, päätöksentekijä tai sparraaja</td><td>Sparraaja</td><td>Ammattilainen tekee päätökset. Terveydenhuollon konteksti vaatii vastuun säilyttämistä ihmisellä.</td></tr>
-                        <tr><td>Paikallishaku</td><td>Vapaa chat-generointi tai rajattu hakulogiikka</td><td>Erillinen paikallishaku rajatulla datalla</td><td>Vähentää virheellisten tai olemattomien paikallisten ehdotusten riskiä.</td></tr>
-                        <tr><td>Prototypoinnin painopiste</td><td>WoZ-testaus tai toimiva AI-prototyyppi</td><td>Toimiva AI-prototyyppi</td><td>WoZ-testaus rajautui pois, koska oikeita testikäyttäjiä ei saatu riittävästi. Toimiva proto teki mallin käyttäytymisen ja riskit näkyviksi.</td></tr>
-                        <tr><td>Vastausten ohjaus</td><td>Yksi yleinen prompti tai tilanteen mukaan vaihtuvat säännöt</td><td>Moodikohtainen ohjaus ja koodisuojaukset</td><td>Sensitiivinen keskustelu ja paikallishaku eivät voi toimia samalla säännöstöllä.</td></tr>
-                      </tbody>
-                    </table>
+
+                  <div class="decision-card">
+                    <span class="decision-card__label"><span class="lang-en">Decision 2</span><span class="lang-fi">Päätös 2</span></span>
+                    <h3 class="decision-card__name"><span class="lang-en">Local search</span><span class="lang-fi">Paikallishaku</span></h3>
+                    <dl class="decision-card__details">
+                      <dt><span class="lang-en">Alternatives</span><span class="lang-fi">Vaihtoehdot</span></dt>
+                      <dd><span class="lang-en">Free chat generation or limited search logic</span><span class="lang-fi">Vapaa chat-generointi tai rajattu hakulogiikka</span></dd>
+                      <dt><span class="lang-en">Final choice</span><span class="lang-fi">Lopullinen päätös</span></dt>
+                      <dd><span class="lang-en">Separate local search with limited data</span><span class="lang-fi">Erillinen paikallishaku rajatulla datalla</span></dd>
+                      <dt><span class="lang-en">Rationale</span><span class="lang-fi">Perustelu</span></dt>
+                      <dd><span class="lang-en">Reduces risk of incorrect or nonexistent local suggestions.</span><span class="lang-fi">Vähentää virheellisten tai olemattomien paikallisten ehdotusten riskiä.</span></dd>
+                    </dl>
                   </div>
+
+                  <div class="decision-card">
+                    <span class="decision-card__label"><span class="lang-en">Decision 3</span><span class="lang-fi">Päätös 3</span></span>
+                    <h3 class="decision-card__name"><span class="lang-en">Prototyping focus</span><span class="lang-fi">Prototypoinnin painopiste</span></h3>
+                    <dl class="decision-card__details">
+                      <dt><span class="lang-en">Alternatives</span><span class="lang-fi">Vaihtoehdot</span></dt>
+                      <dd><span class="lang-en">Wizard of Oz testing or functional AI prototype</span><span class="lang-fi">Wizard of Oz -testaus tai toimiva AI-prototyyppi</span></dd>
+                      <dt><span class="lang-en">Final choice</span><span class="lang-fi">Lopullinen päätös</span></dt>
+                      <dd><span class="lang-en">Functional AI prototype</span><span class="lang-fi">Toimiva AI-prototyyppi</span></dd>
+                      <dt><span class="lang-en">Rationale</span><span class="lang-fi">Perustelu</span></dt>
+                      <dd><span class="lang-en">Wizard of Oz testing was ruled out because enough real test users could not be recruited. A functional prototype still made model behavior and risks visible.</span><span class="lang-fi">Wizard of Oz -testaus rajautui pois, koska oikeita testikäyttäjiä ei saatu riittävästi. Toimiva proto teki mallin käyttäytymisen ja riskit näkyviksi.</span></dd>
+                    </dl>
+                  </div>
+
+                  <div class="decision-card">
+                    <span class="decision-card__label"><span class="lang-en">Decision 4</span><span class="lang-fi">Päätös 4</span></span>
+                    <h3 class="decision-card__name"><span class="lang-en">Response guidance</span><span class="lang-fi">Vastausten ohjaus</span></h3>
+                    <dl class="decision-card__details">
+                      <dt><span class="lang-en">Alternatives</span><span class="lang-fi">Vaihtoehdot</span></dt>
+                      <dd><span class="lang-en">One general prompt or situation-specific rules</span><span class="lang-fi">Yksi yleinen prompti tai tilanteen mukaan vaihtuvat säännöt</span></dd>
+                      <dt><span class="lang-en">Final choice</span><span class="lang-fi">Lopullinen päätös</span></dt>
+                      <dd><span class="lang-en">Mode-specific guidance and code safeguards</span><span class="lang-fi">Moodikohtainen ohjaus ja koodisuojaukset</span></dd>
+                      <dt><span class="lang-en">Rationale</span><span class="lang-fi">Perustelu</span></dt>
+                      <dd><span class="lang-en">Sensitive conversation and local search cannot operate on the same ruleset.</span><span class="lang-fi">Sensitiivinen keskustelu ja paikallishaku eivät voi toimia samalla säännöstöllä.</span></dd>
+                    </dl>
+                  </div>
+
                 </div>
 
                 <div class="visual-callouts">
