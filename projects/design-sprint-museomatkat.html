@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="fi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Design Sprint: Museomatkat • Jan Nässi</title>
+    <meta name="description" content="Design Sprint -case study: fyysisestä pop-up-kohtaamisesta digitaaliseen Museomatkat-konversiopolkuun." />
+    <link rel="icon" href="img/pixel_me.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"></noscript>
+    <link rel="preload" href="../styles.css?v=4" as="style" />
+    <link rel="stylesheet" href="../styles.css?v=4" />
+    <style>
+      .wireframe-placeholder {
+        min-height: 360px;
+        border: 1px dashed rgba(15, 23, 42, 0.28);
+        border-radius: 24px;
+        background:
+          linear-gradient(135deg, rgba(148, 163, 184, 0.14) 25%, transparent 25%) -20px 0/40px 40px,
+          linear-gradient(225deg, rgba(148, 163, 184, 0.14) 25%, transparent 25%) -20px 0/40px 40px,
+          linear-gradient(315deg, rgba(148, 163, 184, 0.14) 25%, transparent 25%) 0 0/40px 40px,
+          linear-gradient(45deg, rgba(148, 163, 184, 0.14) 25%, rgba(248, 250, 252, 0.9) 25%) 0 0/40px 40px;
+        display: grid;
+        place-items: center;
+        padding: 32px;
+        text-align: center;
+      }
+      .wireframe-placeholder strong {
+        display: block;
+        font-size: 1.05rem;
+        margin-bottom: 8px;
+      }
+      .wireframe-placeholder span {
+        display: block;
+        max-width: 680px;
+        color: rgba(15, 23, 42, 0.68);
+        line-height: 1.55;
+      }
+      .wireframe-placeholder--wide { min-height: 460px; }
+      .wireframe-placeholder--small { min-height: 260px; }
+      .cs-note-list li + li { margin-top: .65rem; }
+    </style>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "vpy7xoc0ya");
+    </script>
+  </head>
+  <body>
+
+    <header class="site-header">
+      <div class="container cluster cluster-space-between">
+        <a class="logo" href="../index.html">Jan Nässi</a>
+        <nav id="site-nav" class="site-nav" aria-label="Primary">
+          <ul>
+            <li><a href="../index.html#about"><span class="lang-en">About</span><span class="lang-fi">Tietoa</span></a></li>
+            <li><a href="../index.html#case-studies"><span class="lang-en">Case Studies</span><span class="lang-fi">Case-tutkimukset</span></a></li>
+            <li><a href="../index.html#contact"><span class="lang-en">Contact</span><span class="lang-fi">Yhteystiedot</span></a></li>
+          </ul>
+        </nav>
+        <button class="lang-toggle" aria-label="Vaihda suomeksi">FI</button>
+        <button id="menu-toggle" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer"></button>
+      </div>
+    </header>
+
+    <nav id="mobile-drawer" class="mobile-drawer" hidden aria-label="Mobile">
+      <ul class="drawer-list">
+        <li><a href="../index.html#about"><span class="lang-en">About</span><span class="lang-fi">Tietoa</span></a></li>
+        <li><a href="../index.html#case-studies"><span class="lang-en">Case Studies</span><span class="lang-fi">Case-tutkimukset</span></a></li>
+        <li><a href="../index.html#contact"><span class="lang-en">Contact</span><span class="lang-fi">Yhteystiedot</span></a></li>
+      </ul>
+    </nav>
+    <div id="drawer-backdrop" class="drawer-backdrop" hidden></div>
+
+    <main id="main">
+
+      <section class="cs-hero">
+        <div class="container">
+          <h1>Design Sprint: Museomatkat</h1>
+          <p class="cs-hero-summary">
+            Fyysisestä pop-up-kohtaamisesta digitaaliseen konversiopolkuun. Viiden päivän Design Sprintissä suunnittelimme Museomatkat-palvelulle konseptin, joka yhdisti pop-up-standin, flyerit, QR-koodin ja 6-vaiheisen kyselyn. Tavoitteena oli tehdä Museomatkoista helpommin löydettäviä, kiinnostavampia ja ostoa kohti ohjaavia.
+          </p>
+
+          <dl class="cs-hero-meta">
+            <div class="cs-meta-item">
+              <dt>Rooli</dt>
+              <dd>Head of testing, käyttäjätestauksen rakenne, digitaalisen prototyypin suunnittelu ja toteutus yhdessä Vadimin ja Jonen kanssa</dd>
+            </div>
+            <div class="cs-meta-item">
+              <dt>Konteksti</dt>
+              <dd>Design Sprint Days 2026, asiakaslähtöinen kurssiprojekti Museomatkat-palvelulle ja Museokortille</dd>
+            </div>
+            <div class="cs-meta-item"><dt>Menetelmät</dt><dd>Google Design Sprint, käyttäjäpolku, ideointi, prototypointi, käyttäjätestaus, pitchaus toimeksiantajalle</dd></div>
+            <div class="cs-meta-item">
+              <dt>Tiimi</dt>
+              <dd>Jan Nässi, Vadim, Jone, Kajsa, Thao ja Tanja</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="project-section cs-overview">
+        <div class="container">
+          <div class="cs-overview-grid">
+            <div class="cs-ov-card">
+              <p class="cs-ov-label">Ongelma</p>
+              <p>Fyysinen asiakaskohtaaminen jää helposti irralliseksi, jos käyttäjälle ei tarjota selkeää ja kiinnostavaa digitaalista jatkopolkua.</p>
+            </div>
+            <div class="cs-ov-card">
+              <p class="cs-ov-label">Tavoite</p>
+              <p>Suunnitella tapa, jolla pop-up, flyerit ja QR-koodi ohjaavat käyttäjän kevyesti Museomatkat-palveluun ja lisäävät kiinnostusta Museokorttiin.</p>
+            </div>
+            <div class="cs-ov-card">
+              <p class="cs-ov-label">Ratkaisu</p>
+              <p>6-vaiheinen kysely, joka kysyy käyttäjältä lyhyesti matkustusmieltymyksistä ja palauttaa museomatkasuosituksen.</p>
+            </div>
+            <div class="cs-ov-card">
+              <p class="cs-ov-label">Tulos</p>
+              <p>Tiimimme voitti kurssiprojektin neljän ryhmän joukosta. Toimeksiantaja piti ratkaisua toiveiden mukaisena, budjettiystävällisenä ja visuaalisesti miellyttävänä.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-section cs-body-wrap">
+        <div class="container">
+
+          <details class="cs-toc-mobile">
+            <summary>Sisällysluettelo</summary>
+            <ol class="cs-toc-list">
+              <li><a href="#cs-overview">Yleiskatsaus</a></li>
+              <li><a href="#cs-proofs">Kolme vahvinta näyttöä</a></li>
+              <li><a href="#cs-problem">Konteksti ja ongelma</a></li>
+              <li><a href="#cs-role">Oma roolini</a></li>
+              <li><a href="#cs-research">Tutkimus ja löydökset</a></li>
+              <li><a href="#cs-options">Ratkaisuvaihtoehdot</a></li>
+              <li><a href="#cs-solution">Lopullinen ratkaisu</a></li>
+              <li><a href="#cs-decisions">Design-päätökset</a></li>
+              <li><a href="#cs-validation">Validointi ja rajoitteet</a></li>
+              <li><a href="#cs-reflection">Reflektio ja krediitit</a></li>
+            </ol>
+          </details>
+
+          <div class="cs-body">
+            <div class="cs-main">
+
+              <div id="cs-overview" class="cs-section">
+                <h2>Yleiskatsaus</h2>
+                <p>Design Sprint Days 2026 oli viikon mittainen intensiivikurssi, jossa sovellettiin Google Design Sprint -menetelmää todelliseen asiakaslähtöiseen haasteeseen. Sprintti eteni viiden päivän rytmissä: ongelman kartoittaminen, ratkaisujen luonnostelu, päätöksenteko, prototypointi ja käyttäjätestaus.</p>
+                <p>Meidän tiimimme ratkaisu keskittyi Museomatkat-palvelun saavutettavuuteen ja konversiopolkuun. Emme suunnitelleet vain yksittäistä käyttöliittymää, vaan fyysisen ja digitaalisen kohtaamisen yhdistävän palvelupolun: pop-up herättää huomion, QR-koodi vie 6-vaiheiseen kyselyyn ja kysely antaa käyttäjälle henkilökohtaiselta tuntuvan matkasuosituksen.</p>
+
+                <figure class="cs-fig">
+                  <div class="wireframe-placeholder wireframe-placeholder--wide">
+                    <div>
+                      <strong>Lisää hero-kuva kokonaisratkaisusta</strong>
+                      <span>Näytä samassa kuvassa pop-up, flyer, QR-koodi ja 6-vaiheisen kyselyn ensimmäinen näkymä. Kuvan pitää osoittaa, että ratkaisu yhdisti fyysisen ja digitaalisen palvelupolun.</span>
+                    </div>
+                  </div>
+                  <figcaption>Konseptin ydin oli muuttaa fyysinen asiakaskohtaaminen digitaaliseksi jatkopoluksi Museomatkat-palveluun.</figcaption>
+                </figure>
+              </div>
+
+              <div class="cs-divider"></div>
+
+              <div id="cs-proofs" class="cs-section">
+                <h2>Kolme vahvinta näyttöä</h2>
+                <h3>1. Palvelupolku testasi muutakin kuin käyttöliittymää</h3>
+                <p>Ratkaisu testasi koko konversiopolun: käyttäjä huomaa pop-upin, saa flyerin tai näkee QR-koodin, avaa 6-vaiheisen kyselyn, saa suosituksen ja arvioi kiinnostustaan jatkaa kohti ostoa. Tämä teki casesta palvelukehityksen case-esimerkin, ei vain visuaalisen prototyypin.</p>
+
+                <h3>2. Johdin testauksen näkökulmaa sprintissä</h3>
+                <p>Head of testing -roolissa keskityin siihen, että käyttäjätestaus arvioi palvelupolun kriittisiä oletuksia: ymmärretäänkö QR-siirtymä, onko kysely tarpeeksi kiinnostava, tuntuuko suositus relevantilta ja missä kohtaa ostoaikomus katkeaa.</p>
+
+                <h3>3. Ratkaisu sai sekä käyttäjä- että toimeksiantajapalautetta</h3>
+                <p>Käyttäjätestaus osoitti, että konsepti koettiin kiinnostavana ja helppokäyttöisenä, mutta se paljasti myös konversion kannalta kriittisiä puutteita. Toimeksiantaja arvioi ratkaisun toiveidensa mukaiseksi, budjettiystävälliseksi ja visuaalisesti miellyttäväksi. Tiimimme voitti projektin neljän ryhmän joukosta.</p>
+
+                <figure class="cs-fig">
+                  <div class="wireframe-placeholder">
+                    <div>
+                      <strong>Lisää sprintin avainartefaktien kooste</strong>
+                      <span>Näytä kolme nostoa: palvelupolun kuva, kyselyn ruutu ja palautteen tärkein nosto. Kuvan tarkoitus on konkretisoida, mitä sprintissä tuotettiin.</span>
+                    </div>
+                  </div>
+                  <figcaption>Kolme vahvinta näyttöä konkretisoitiin artefakteilla, jotka osoittavat palvelupolun, prototyypin ja palautteen.</figcaption>
+                </figure>
+              </div>
+
+              <div class="cs-divider"></div>
+
+              <div id="cs-problem" class="cs-section">
+                <h2>Konteksti ja ongelma</h2>
+                <p>Museomatkat-palvelun haasteena oli, miten palvelun kiinnostavuutta ja löydettävyyttä voidaan kasvattaa fyysisessä kohtaamisessa. Pop-up tai flyer voi herättää huomion, mutta ilman selkeää jatkopolkua kiinnostus jää helposti hetkelliseksi.</p>
+                <p>Liiketoiminnan näkökulmasta haaste liittyi konversioon: miten käyttäjä saadaan fyysisestä tilanteesta digitaaliseen palveluun, miten hänelle annetaan nopeasti relevantti syy jatkaa ja miten Museokortin sekä Museomatkojen yhteys tehdään ymmärrettäväksi.</p>
+                <div class="cs-callout">
+                  <p><strong>Problem statement:</strong> Museomatkoista kiinnostunut käyttäjä tarvitsee nopean ja helposti lähestyttävän tavan löytää itselleen sopiva matka, koska fyysinen kohtaaminen jää helposti irralliseksi ilman selkeää digitaalista jatkopolkua.</p>
+                </div>
+
+                <figure class="cs-fig">
+                  <div class="wireframe-placeholder">
+                    <div>
+                      <strong>Lisää käyttäjäpolun kipupistekuva</strong>
+                      <span>Näytä nykytilanne tai yksinkertainen kaavio, jossa fyysinen kohtaaminen ei vielä johda digitaaliseen jatkopolkuun. Kuvan tarkoitus on tehdä konversiokatkos näkyväksi.</span>
+                    </div>
+                  </div>
+                  <figcaption>Ongelma ei ollut vain näkyvyyden lisääminen, vaan fyysisen kiinnostuksen muuttaminen selkeäksi digitaaliseksi etenemiseksi.</figcaption>
+                </figure>
+              </div>
+
+              <div class="cs-divider"></div>
+
+              <div id="cs-role" class="cs-section">
+                <h2>Oma roolini</h2>
+                <p>Toimin projektissa Head of testing -roolissa. Vastasin erityisesti testauksen suunnasta ja siitä, että prototyyppiä arvioitiin suhteessa koko palvelupolkuun. Osallistuin myös digitaalisen prototyypin suunnitteluun ja toteutukseen yhdessä Vadimin ja Jonen kanssa.</p>
+                <h3>Vastasin erityisesti</h3>
+                <ul>
+                  <li>testauksen näkökulman määrittelystä sprintin aikana</li>
+                  <li>käyttäjäpalautteen tarkastelusta konversiopolun kannalta</li>
+                  <li>digitaalisen kyselyprototyypin rakentamisesta yhdessä Vadimin ja Jonen kanssa</li>
+                  <li>sen arvioimisesta, missä kohtaa käyttäjän kiinnostus muuttuu tai katkeaa</li>
+                  <li>löydösten jäsentämisestä niin, että niistä voitiin johtaa jatkokehityksen tarpeita</li>
+                </ul>
+                <p>Kajsa, Thao ja Tanja keskittyivät pääosin fyysisiin flyereihin ja pop-upiin. Vaikka vastuut oli jaettu, kaikki tiimin jäsenet osallistuivat ideointiin ja antoivat näkemyksiä koko ratkaisuun.</p>
+              </div>
+
+              <div class="cs-divider"></div>
+
+              <div id="cs-research" class="cs-section">
+                <h2>Tutkimus ja tärkeimmät löydökset</h2>
+                <p>Sprintin aikana tutkimus oli nopeaa ja päätöksentekoa palvelevaa. Rakensimme oletuksia siitä, miten käyttäjä siirtyy fyysisestä kohtaamisesta digitaaliseen palveluun, ja testasimme niitä prototyypillä. Testauksen tarkoitus oli tunnistaa, mikä palvelupolussa tuntui luontevalta ja missä käyttäjän epävarmuus kasvoi.</p>
+
+                <h3>1. Lyhyt kyselymuoto madalsi kynnystä</h3>
+                <p>Käyttäjät kokivat kyselyn kevyenä ja helposti lähestyttävänä. Tämä tuki päätöstä käyttää nopeaa kysymysvastauspolkua sen sijaan, että käyttäjä ohjattaisiin suoraan laajaan matkavalikoimaan.</p>
+
+                <h3>2. Hinta ja paketin sisältö olivat kriittisiä ostoaikeelle</h3>
+                <p>Testaus paljasti, että käyttäjät eivät ymmärtäneet riittävän nopeasti, mitä matkapaketin hinta sisälsi. Epäselvyys esimerkiksi majoituksesta, kuljetuksista, ruokailuista ja museolipuista heikensi ostohalukkuutta.</p>
+
+                <h3>3. Museokortin hankintapolku puuttui</h3>
+                <p>Jos käyttäjällä ei ollut Museokorttia, palvelu ei ohjannut häntä tarpeeksi selkeästi sen hankkimiseen. Tämä loi katkoksen palvelupolkuun ja heikensi mahdollisuutta muuttaa kiinnostus toiminnaksi.</p>
+
+                <h3>4. Luottamus vaati vahvempaa brändiyhteyttä</h3>
+                <p>Museomatkat-nimi yksinään tuntui osalle käyttäjistä irralliselta. Palvelun yhteys Museokorttiin olisi pitänyt tehdä näkyvämmäksi, jotta käyttäjä ymmärtää palvelun virallisuuden ja luotettavuuden nopeammin.</p>
+
+                <figure class="cs-fig">
+                  <div class="wireframe-placeholder">
+                    <div>
+                      <strong>Lisää testilöydösten yhteenvetokuva</strong>
+                      <span>Näytä neljä tärkeintä löydöstä: kysely toimi, hinta oli epäselvä, Museokortin hankintapolku puuttui ja brändiyhteys vaati vahvistusta.</span>
+                    </div>
+                  </div>
+                  <figcaption>Testaus osoitti, että kiinnostava konsepti tarvitsee tuekseen selkeän hinnan, luottamuksen ja seuraavan askeleen.</figcaption>
+                </figure>
+              </div>
+
+              <div class="cs-divider"></div>
+
+              <div id="cs-options" class="cs-section">
+                <h2>Ratkaisuvaihtoehdot ja priorisointi</h2>
+                <p>Sprintissä vertailimme eri tapoja ohjata käyttäjä Museomatkat-palveluun. Valittu ratkaisu yhdisti fyysisen herätteen ja digitaalisen personoinnin, koska se oli toteutettavissa nopeasti, budjettiystävällisesti ja riittävän uskottavasti käyttäjätestausta varten.</p>
+
+                <div class="option-grid">
+                  <div class="option-card">
+                    <p class="option-label">Vaihtoehto A</p>
+                    <h3>Pelkkä informatiivinen flyer</h3>
+                    <div class="option-field"><span class="option-field-label">Hyöty</span><p>Helppo ja halpa toteuttaa fyysisessä ympäristössä.</p></div>
+                    <div class="option-field"><span class="option-field-label">Riski</span><p>Jää passiiviseksi, eikä luo vahvaa digitaalista jatkopolkua.</p></div>
+                    <p class="option-decision">Ei valittu pääkonseptiksi</p>
+                  </div>
+                  <div class="option-card">
+                    <p class="option-label">Vaihtoehto B</p>
+                    <h3>Suora ohjaus matkavalikoimaan</h3>
+                    <div class="option-field"><span class="option-field-label">Hyöty</span><p>Vie käyttäjän nopeasti olemassa olevaan palveluun.</p></div>
+                    <div class="option-field"><span class="option-field-label">Riski</span><p>Voi tuntua liian raskaalta, jos käyttäjä ei vielä tiedä mitä etsii.</p></div>
+                    <p class="option-decision">Ei valittu</p>
+                  </div>
+                  <div class="option-card option-card--selected">
+                    <p class="option-label">Vaihtoehto C</p>
+                    <h3>QR-koodilla avautuva matkakysely</h3>
+                    <div class="option-field"><span class="option-field-label">Hyöty</span><p>Madaltaa kynnystä ja tekee suosituksesta käyttäjälle henkilökohtaisemman.</p></div>
+                    <div class="option-field"><span class="option-field-label">Riski</span><p>Personoinnin pitää tuntua aidolta, muuten käyttäjän luottamus heikkenee.</p></div>
+                    <p class="option-decision">Valittu ratkaisu</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cs-divider"></div>
+
+              <div id="cs-solution" class="cs-section">
+                <h2>Lopullinen ratkaisu</h2>
+                <p>Lopullinen ratkaisu oli fyysisen ja digitaalisen palvelupolun yhdistävä konsepti. Pop-up ja flyer toimivat huomion herättäjinä, QR-koodi madalsi siirtymää digitaaliseen palveluun ja 6-vaiheinen kysely auttoi käyttäjää löytämään itselleen sopivan museomatkan nopeasti.</p>
+                <p>Kyselyssä käyttäjä vastasi noin kuuteen kysymykseen. Kysymysten tarkoitus oli tehdä valinnasta kevyempi ja luoda tunne siitä, että suositus perustuu käyttäjän omiin kiinnostuksiin, aikatauluun ja matkustustyyliin.</p>
+
+                <div class="visual-callouts">
+                  <div class="visual-callouts-grid">
+                    <div class="visual-callout">
+                      <h3>Pop-up herättää huomion</h3>
+                      <figure>
+                        <div class="wireframe-placeholder wireframe-placeholder--small">
+                          <div>
+                            <strong>Lisää kuva pop-upista</strong>
+                            <span>Näytä fyysinen kohtaamispiste ja miten se houkuttelee käyttäjän lähemmäs.</span>
+                          </div>
+                        </div>
+                        <figcaption>Pop-upin tehtävä oli pysäyttää käyttäjä ja tehdä Museomatkat näkyväksi fyysisessä ympäristössä.</figcaption>
+                      </figure>
+                    </div>
+                    <div class="visual-callout">
+                      <h3>Flyer ja QR-koodi luovat jatkopolun</h3>
+                      <figure>
+                        <div class="wireframe-placeholder wireframe-placeholder--small">
+                          <div>
+                            <strong>Lisää kuva flyeristä ja QR-koodista</strong>
+                            <span>Näytä miten fyysinen materiaali ohjaa digitaaliseen kyselyyn.</span>
+                          </div>
+                        </div>
+                        <figcaption>QR-koodi muutti passiivisen markkinointimateriaalin toiminnalliseksi sisäänkäynniksi.</figcaption>
+                      </figure>
+                    </div>
+                    <div class="visual-callout">
+                      <h3>6-vaiheinen kysely keventää päätöstä</h3>
+                      <figure>
+                        <div class="wireframe-placeholder wireframe-placeholder--small">
+                          <div>
+                            <strong>Lisää kyselyn näkymä</strong>
+                            <span>Näytä yksi kysymysnäkymä, progress bar ja selkeät vastausvaihtoehdot.</span>
+                          </div>
+                        </div>
+                        <figcaption>Kyselyn tehtävä oli tehdä palveluun tutustumisesta nopeaa, henkilökohtaista ja matalan kynnyksen toimintaa.</figcaption>
+                      </figure>
+                    </div>
+                    <div class="visual-callout">
+                      <h3>Suositus ohjaa kohti ostoa</h3>
+                      <figure>
+                        <div class="wireframe-placeholder wireframe-placeholder--small">
+                          <div>
+                            <strong>Lisää suositusnäkymä</strong>
+                            <span>Näytä museomatkasuositus, hinnan sisältö ja selkeä seuraava toimintakehote.</span>
+                          </div>
+                        </div>
+                        <figcaption>Suositusnäkymän piti muuttaa kiinnostus konkreettiseksi seuraavaksi askeleeksi.</figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cs-divider"></div>
+
+              <div id="cs-decisions" class="cs-section">
+                <h2>Keskeiset design-päätökset</h2>
+                <div class="decision-grid">
+                  <div class="decision-card">
+                    <span class="decision-card__label">Päätös 1</span>
+                    <h3 class="decision-card__name">Fyysinen ja digitaalinen polku yhdistettiin</h3>
+                    <dl class="decision-card__details">
+                      <dt>Vaihtoehdot</dt><dd>Pelkkä pop-up, pelkkä flyer tai yhdistetty QR-polku</dd>
+                      <dt>Lopullinen päätös</dt><dd>Pop-up, flyer, QR-koodi ja 6-vaiheinen kysely</dd>
+                      <dt>Perustelu</dt><dd>Ratkaisu teki fyysisestä kohtaamisesta mitattavamman ja ohjasi käyttäjän konkreettiseen jatkotoimintaan.</dd>
+                    </dl>
+                  </div>
+                  <div class="decision-card">
+                    <span class="decision-card__label">Päätös 2</span>
+                    <h3 class="decision-card__name">Kysely ennen laajaa matkavalikoimaa</h3>
+                    <dl class="decision-card__details">
+                      <dt>Vaihtoehdot</dt><dd>Suora matkavalikoima tai lyhyt suositusvisa</dd>
+                      <dt>Lopullinen päätös</dt><dd>Lyhyt mobiilivisa</dd>
+                      <dt>Perustelu</dt><dd>Visa madalsi kynnystä ja auttoi käyttäjää aloittamaan valinnan ilman koko tarjonnan selaamista.</dd>
+                    </dl>
+                  </div>
+                  <div class="decision-card">
+                    <span class="decision-card__label">Päätös 3</span>
+                    <h3 class="decision-card__name">Kevyt prototyyppi sprintin aikarajoissa</h3>
+                    <dl class="decision-card__details">
+                      <dt>Vaihtoehdot</dt><dd>Laaja toiminnallinen prototyyppi tai rajattu testipolku</dd>
+                      <dt>Lopullinen päätös</dt><dd>Rajattu mutta uskottava testiprototyyppi</dd>
+                      <dt>Perustelu</dt><dd>Sprintin tavoitteena oli oppia nopeasti, ei rakentaa valmista tuotetta.</dd>
+                    </dl>
+                  </div>
+                  <div class="decision-card">
+                    <span class="decision-card__label">Päätös 4</span>
+                    <h3 class="decision-card__name">Luottamus nostettiin jatkokehityksen prioriteetiksi</h3>
+                    <dl class="decision-card__details">
+                      <dt>Vaihtoehdot</dt><dd>Museomatkat-brändi yksin tai vahvempi yhteys Museokorttiin</dd>
+                      <dt>Lopullinen päätös</dt><dd>Jatkokehityksessä brändiyhteyttä tulisi vahvistaa</dd>
+                      <dt>Perustelu</dt><dd>Testaus osoitti, että palvelun virallisuus ja yhteys Museokorttiin eivät olleet käyttäjille riittävän selviä.</dd>
+                    </dl>
+                  </div>
+                </div>
+
+                <figure class="cs-fig">
+                  <div class="wireframe-placeholder">
+                    <div>
+                      <strong>Lisää päätöksiä tukeva kuva</strong>
+                      <span>Näytä esimerkiksi ennen/jälkeen-ruutu, jossa brändiyhteys Museokorttiin näkyy selkeämmin, tai visuointi QR-polun selkeytymisestä.</span>
+                    </div>
+                  </div>
+                  <figcaption>Kuvan tarkoitus on näyttää, miten päätökset vaikuttivat palvelupolun selkeyteen ja luottamukseen.</figcaption>
+                </figure>
+              </div>
+
+              <div class="cs-divider"></div>
+
+              <div id="cs-validation" class="cs-section">
+                <h2>Validointi, vaikutus ja rajoitteet</h2>
+                <p>Projektin lopputuloksena syntyi testattava konsepti ja prototyyppi, jotka esitettiin toimeksiantajalle sprintin lopuksi. Käyttäjätestaus antoi laadullista näyttöä siitä, että visamuoto ja selkeä eteneminen kiinnostivat käyttäjiä.</p>
+                <div class="cs-callout">
+                  <p><strong>Huomio:</strong> Projektissa ei ollut käytettävissä julkaisun jälkeistä analytiikkaa. Ratkaisun vaikutusta ei voi väittää mitatuksi konversioparannukseksi.</p>
+                </div>
+                <h3>Laadullinen vaikutus</h3>
+                <p>Tiimimme voitti kurssiprojektin neljän ryhmän joukosta. Toimeksiantajan palaute korosti, että ratkaisu noudatti heidän toiveitaan, oli budjettiystävällinen, visuaalisesti miellyttävä ja sisälsi myyntiä tukevia liiketoiminnallisia ideoita.</p>
+                <h3>Rajoitteet ja sokeat pisteet</h3>
+                <ul class="cs-note-list">
+                  <li><strong>Personointi:</strong> prototyypin suosituslogiikka ei vielä todistanut, että käyttäjä saisi aidosti yksilöllisen tuloksen.</li>
+                  <li><strong>Hinnan ymmärrettävyys:</strong> paketin sisällön ja hinnan suhde pitäisi selittää selkeämmin ennen ostoon ohjaamista.</li>
+                  <li><strong>Museokortin hankintapolku:</strong> käyttäjä tarvitsee selkeän reitin Museokortin ostamiseen, jos hänellä ei vielä ole sitä.</li>
+                  <li><strong>Luottamus:</strong> Museomatkojen yhteys Museokorttiin pitäisi näyttää vahvemmin jo ensimmäisissä näkymissä.</li>
+                </ul>
+                <h3>Seuraava järkevä testi</h3>
+                <p>Pienin järkevä seuraava testi olisi mitata QR-skannauksia, visan aloituksia, visan läpäisyastetta, suositusnäkymän klikkauksia ja Museokortin ostoon siirtymistä pienessä pop-up-pilotissa.</p>
+
+                <figure class="cs-fig">
+                  <div class="wireframe-placeholder">
+                    <div>
+                      <strong>Lisää mittauspolun kuva</strong>
+                      <span>Näytä funnel: pop-up-havainto, QR-skannaus, visan aloitus, visan läpäisy, suositus, ostoon siirtyminen.</span>
+                    </div>
+                  </div>
+                  <figcaption>Seuraavassa vaiheessa konseptin arvo pitäisi todentaa käyttäytymisdatalla, ei pelkällä laadullisella palautteella.</figcaption>
+                </figure>
+              </div>
+
+              <div class="cs-divider"></div>
+
+              <div id="cs-reflection" class="cs-section">
+                <h2>Reflektio ja krediitit</h2>
+                <h3>Mikä onnistui?</h3>
+                <p>Projektissa onnistui erityisesti fyysisen ja digitaalisen polun yhdistäminen. Ratkaisu oli riittävän kevyt toteutettavaksi sprintissä, mutta samalla tarpeeksi konkreettinen, jotta käyttäjiltä ja toimeksiantajalta saatiin relevanttia palautetta.</p>
+
+                <h3>Mikä jäi epävarmaksi?</h3>
+                <p>Suurin epävarmuus liittyi siihen, riittäisikö visan suosituslogiikka aidosti lisäämään ostohalukkuutta. Käyttäjätestaus osoitti kiinnostusta, mutta ei todistanut todellista konversiota tai maksuhalukkuutta.</p>
+
+                <h3>Mitä opin?</h3>
+                <ul>
+                  <li>Design Sprintin arvo ei ole vain nopeassa prototyypissä, vaan siinä, että epävarmuuksia voidaan testata ennen raskaampaa toteutusta.</li>
+                  <li>Käyttäjän kiinnostus ei yksin riitä konversioon. Hinta, luottamus, relevanssi ja seuraava askel pitää kommunikoida selkeästi.</li>
+                  <li>Fyysisen palvelukohtaamisen suunnittelussa digitaalinen jatkopolku pitää tehdä näkyväksi, helpoksi ja mitattavaksi.</li>
+                  <li>Tiimityössä selkeä työnjako auttaa etenemään nopeasti, mutta parhaat ratkaisut syntyvät silti yhteisestä ideoinnista ja palautteesta.</li>
+                </ul>
+
+                <h3>Mitä tekisin toisin?</h3>
+                <p>Jos aloittaisin projektin uudelleen, nostaisin hinnan, paketin sisällön ja Museokortin hankintapolun mukaan prototyyppiin aiemmin. Näin testaus olisi voinut tuottaa tarkempaa näyttöä siitä, missä kohtaa ostoaikomus syntyy tai katkeaa.</p>
+
+                <h3>Krediitit</h3>
+                <p>Tämä projekti syntyi yhteistyössä Vadimin, Jonen, Kajsan, Thaon ja Tanjan kanssa osana Design Sprint Days 2026 -kurssia.</p>
+                <ul>
+                  <li><strong>Jan Nässi:</strong> Head of testing, käyttäjätestauksen rakenne, digitaalinen prototyyppi yhdessä Vadimin ja Jonen kanssa</li>
+                  <li><strong>Vadim:</strong> digitaalinen prototyyppi</li>
+                  <li><strong>Jone:</strong> digitaalinen prototyyppi</li>
+                  <li><strong>Kajsa:</strong> fyysiset flyerit ja pop-up</li>
+                  <li><strong>Thao:</strong> fyysiset flyerit ja pop-up</li>
+                  <li><strong>Tanja:</strong> fyysiset flyerit ja pop-up</li>
+                </ul>
+              </div>
+
+            </div>
+
+            <aside class="cs-sidebar">
+              <div class="cs-toc" aria-label="Table of contents">
+                <p class="cs-toc-heading">Tällä sivulla</p>
+                <nav>
+                  <ol class="cs-toc-list">
+                    <li><a href="#cs-overview">Yleiskatsaus</a></li>
+                    <li><a href="#cs-proofs">Kolme vahvinta näyttöä</a></li>
+                    <li><a href="#cs-problem">Konteksti ja ongelma</a></li>
+                    <li><a href="#cs-role">Oma roolini</a></li>
+                    <li><a href="#cs-research">Tutkimus ja löydökset</a></li>
+                    <li><a href="#cs-options">Ratkaisuvaihtoehdot</a></li>
+                    <li><a href="#cs-solution">Lopullinen ratkaisu</a></li>
+                    <li><a href="#cs-decisions">Design-päätökset</a></li>
+                    <li><a href="#cs-validation">Validointi ja rajoitteet</a></li>
+                    <li><a href="#cs-reflection">Reflektio ja krediitit</a></li>
+                  </ol>
+                </nav>
+
+                <dl class="cs-facts">
+                  <dt>Projekti</dt><dd>Design Sprint: Museomatkat</dd>
+                  <dt>Konteksti</dt><dd>Design Sprint Days 2026</dd>
+                  <dt>Toimeksianto</dt><dd>Museomatkat ja Museokortti</dd>
+                  <dt>Tiimi</dt><dd>Jan Nässi, Vadim, Jone, Kajsa, Thao ja Tanja</dd>
+                  <dt>Oma rooli</dt><dd>Head of testing, digitaalinen prototyyppi</dd>
+                  <dt>Menetelmät</dt><dd>Google Design Sprint, ideointi, prototypointi, käyttäjätestaus, pitchaus</dd>
+                  <dt>Tuotokset</dt><dd>Pop-up-konsepti, flyerit, QR-polku, mobiilivisa, testilöydökset, asiakasesitys</dd>
+                </dl>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <div class="container">
+          <h2 style="margin-bottom:var(--space-md); text-align:left;">Artefaktit ja linkit</h2>
+          <div class="cs-artifacts-grid">
+            <a href="#" class="cs-artifact">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Lisää linkki digitaaliseen prototyyppiin
+            </a>
+            <a href="#" class="cs-artifact">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Lisää kuvat flyeristä ja pop-upista
+            </a>
+            <a href="#" class="cs-artifact">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Lisää pitch-esityksen tai testikoosteen linkki
+            </a>
+          </div>
+          <p class="cs-artifact-note">Huomio: pidä julkisessa portfoliossa vain sellaiset materiaalit, joiden julkaisemiseen on lupa. Sisäiset muistiinpanot, raaka testidata ja toimeksiantajan ei-julkiset materiaalit kannattaa jättää pois tai yleistää.</p>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <div class="container">
+          <div class="cs-pager">
+            <a href="unessa.html" class="cs-pager-card">
+              <span class="cs-pager-label">← Edellinen</span>
+              <span class="cs-pager-title">Unessa</span>
+            </a>
+            <a href="makroni.html" class="cs-pager-card cs-pager-card--next">
+              <span class="cs-pager-label">Seuraava →</span>
+              <span class="cs-pager-title">Makroni</span>
+            </a>
+          </div>
+          <div class="cs-back">
+            <a href="../index.html#case-studies">← Takaisin case-tutkimuksiin</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-meta">
+            <p class="footer-copyright">© <span id="year"></span> Jan Nässi</p>
+            <a id="cookie-settings" href="#" aria-label="Muuta evästeasetuksia">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path>
+                <path d="M8.5 8.5v.01"></path><path d="M16 15.5v.01"></path>
+                <path d="M12 12v.01"></path><path d="M11 17v.01"></path><path d="M7 14v.01"></path>
+              </svg>
+              <span class="cookie-text">Evästeasetukset</span>
+            </a>
+          </div>
+          <nav aria-label="Footer navigation">
+            <ul>
+              <li><a href="../index.html#about"><span class="lang-en">About</span><span class="lang-fi">Tietoa</span></a></li>
+              <li><a href="../index.html#case-studies"><span class="lang-en">Case Studies</span><span class="lang-fi">Case-tutkimukset</span></a></li>
+              <li><a href="../index.html#contact"><span class="lang-en">Contact</span><span class="lang-fi">Yhteystiedot</span></a></li>
+            </ul>
+          </nav>
+          <a href="https://www.linkedin.com/in/jannassi" target="_blank" rel="noopener noreferrer" class="footer-linkedin">
+            LinkedIn <span class="sr-only">(opens in new tab)</span>
+          </a>
+        </div>
+      </div>
+    </footer>
+    <script defer src="../main.js"></script>
+    <script src="../consent.js"></script>
+  </body>
+</html>
