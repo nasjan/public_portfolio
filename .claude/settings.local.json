@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp \"$\\(pwd\\)/Liikeapuri/img/Hero-img.webp\" \"$\\(pwd\\)/img/liikeapuri-hero.webp\")",
+      "Bash(cp \"$\\(pwd\\)/Liikeapuri/img/figma-frontpage.webp\" \"$\\(pwd\\)/img/liikeapuri-figma-frontpage.webp\")",
+      "Bash(cp \"$\\(pwd\\)/Liikeapuri/img/Figma chat-start.webp\" \"$\\(pwd\\)/img/liikeapuri-figma-chat-start.webp\")",
+      "Bash(cp \"$\\(pwd\\)/Liikeapuri/img/Figma chat-view.webp\" \"$\\(pwd\\)/img/liikeapuri-figma-chat-view.webp\")",
+      "Bash(cp \"$\\(pwd\\)/Liikeapuri/img/Figma datalibrary.webp\" \"$\\(pwd\\)/img/liikeapuri-figma-datalibrary.webp\")",
+      "Bash(grep -n \"cs-fig\\\\b\\\\|\\\\.cs-fig \" \"$\\(pwd\\)/styles.css\")",
+      "Bash(grep -rn \"table\\\\|<th\\\\|<td\\\\|<tr\" \"$\\(pwd\\)/projects/\")",
+      "Bash(grep -n \"figcaption\" \"$\\(pwd\\)/styles.css\")",
+      "Bash(grep -n \"site-header\\\\|nav-toggle\\\\|\\\\.logo\\\\b\" \"$\\(pwd\\)/styles.css\")",
+      "Bash(grep -n \"accent\\\\|--teal\\\\|#008\" \"$\\(pwd\\)/styles.css\")"
+    ]
+  }
+}

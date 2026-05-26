@@ -5,190 +5,220 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Meal Macro Builder — Case Study • Jan Nässi</title>
     <meta name="description" content="Meal macro builder MVP: UX, UI, and React + Firebase implementation by Jan Nässi." />
-    <!-- ========================================================= -->
-    <!-- [S-00C] Ikonit & Webfontit                               -->
-    <!-- ========================================================= -->
     <link rel="icon" href="img/pixel_me.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"></noscript>
-    <!-- ========================================================= -->
-    <!-- [S-00D] Tyylit                                            -->
-    <!-- ========================================================= -->
     <link rel="preload" href="../styles.css?v=4" as="style" />
     <link rel="stylesheet" href="../styles.css?v=4" />
   </head>
   <body>
 
-    <!-- NAV -->
     <header class="site-header">
       <div class="container cluster cluster-space-between">
         <a class="logo" href="../index.html">Jan Nässi</a>
         <nav id="site-nav" class="site-nav" aria-label="Primary">
           <ul>
-            <li><a href="../index.html#about">About</a></li>
-            <li><a href="../index.html#case-studies">Case Studies</a></li>
-            <li><a href="../index.html#contact">Contact</a></li>
+            <li><a href="../index.html#about"><span class="lang-en">About</span><span class="lang-fi">Tietoa</span></a></li>
+            <li><a href="../index.html#case-studies"><span class="lang-en">Case Studies</span><span class="lang-fi">Case-tutkimukset</span></a></li>
+            <li><a href="../index.html#contact"><span class="lang-en">Contact</span><span class="lang-fi">Yhteystiedot</span></a></li>
           </ul>
         </nav>
+        <button class="lang-toggle" aria-label="Vaihda suomeksi">FI</button>
         <button id="menu-toggle" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer"></button>
       </div>
     </header>
 
     <nav id="mobile-drawer" class="mobile-drawer" hidden aria-label="Mobile">
       <ul class="drawer-list">
-        <li><a href="../index.html#about">About</a></li>
-        <li><a href="../index.html#case-studies">Case Studies</a></li>
-        <li><a href="../index.html#contact">Contact</a></li>
+        <li><a href="../index.html#about"><span class="lang-en">About</span><span class="lang-fi">Tietoa</span></a></li>
+        <li><a href="../index.html#case-studies"><span class="lang-en">Case Studies</span><span class="lang-fi">Case-tutkimukset</span></a></li>
+        <li><a href="../index.html#contact"><span class="lang-en">Contact</span><span class="lang-fi">Yhteystiedot</span></a></li>
       </ul>
     </nav>
     <div id="drawer-backdrop" class="drawer-backdrop" hidden></div>
 
-    <!-- MAIN -->
     <main id="main">
 
-      <!-- ===== 1) HERO ===== -->
       <section class="cs-hero">
         <div class="container">
           <h1>Meal Macro Builder</h1>
 
           <p class="cs-hero-summary">
-            A reactive web application for building meals and tracking nutrition. I built this full-stack project to learn cloud services, authentication, and real-time database integration.
+            <span class="lang-en">A reactive web application for building meals and tracking nutrition. I built this full-stack project to learn cloud services, authentication, and real-time database integration.</span>
+            <span class="lang-fi">Reaktiivinen verkkosovellus aterioiden rakentamiseen ja ravinnon seurantaan. Rakensin tämän full-stack-projektin oppiakseni pilvipalveluista, autentikoinnista ja reaaliaikaisesta tietokantaintegraatiosta.</span>
           </p>
 
           <dl class="cs-hero-meta">
-            <div class="cs-meta-item"><dt>Role</dt><dd>Full Stack Development</dd></div>
-            <div class="cs-meta-item"><dt>Timeline</dt><dd>Fall 2025 (Course Project)</dd></div>
+            <div class="cs-meta-item">
+              <dt><span class="lang-en">Role</span><span class="lang-fi">Rooli</span></dt>
+              <dd><span class="lang-en">Full Stack Development</span><span class="lang-fi">Full Stack -kehitys</span></dd>
+            </div>
+            <div class="cs-meta-item">
+              <dt><span class="lang-en">Timeline</span><span class="lang-fi">Aikataulu</span></dt>
+              <dd><span class="lang-en">Fall 2025 (Course Project)</span><span class="lang-fi">Syksy 2025 (Kurssiprojekti)</span></dd>
+            </div>
             <div class="cs-meta-item"><dt>Tools</dt><dd>React, Vite, Firebase</dd></div>
-            <div class="cs-meta-item"><dt>Team</dt><dd>Solo Project</dd></div>
+            <div class="cs-meta-item">
+              <dt><span class="lang-en">Team</span><span class="lang-fi">Tiimi</span></dt>
+              <dd><span class="lang-en">Solo Project</span><span class="lang-fi">Yksin tehty projekti</span></dd>
+            </div>
           </dl>
-
-          <!-- <div class="cs-hero-ctas">
-            <a href="https://nasjan.github.io/Pilvipalvelut_kurssi_Jan/Harjoitusty%C3%B6/app/" class="btn btn-primary btn-inline" target="_blank" rel="noopener noreferrer">
-              View demo
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
-            </a>
-          </div> -->
-
 
         </div>
       </section>
 
-      <!-- ===== 2) OVERVIEW CARDS ===== -->
       <section class="project-section cs-overview">
         <div class="container">
           <div class="cs-overview-grid">
             <div class="cs-ov-card">
-              <p class="cs-ov-label">Problem</p>
-              <p>Tracking macros is slow and complicated. Most tools have too many features for everyday use.</p>
+              <p class="cs-ov-label"><span class="lang-en">Problem</span><span class="lang-fi">Ongelma</span></p>
+              <p>
+                <span class="lang-en">Tracking macros is slow and complicated. Most tools have too many features for everyday use.</span>
+                <span class="lang-fi">Makrojen seuraaminen on hidasta ja monimutkaista. Useimmissa työkaluissa on liikaa ominaisuuksia arkikäyttöön.</span>
+              </p>
             </div>
             <div class="cs-ov-card">
-              <p class="cs-ov-label">Goal</p>
-              <p>Build a simple meal builder that calculates nutrition in real time and saves meals for each user.</p>
+              <p class="cs-ov-label"><span class="lang-en">Goal</span><span class="lang-fi">Tavoite</span></p>
+              <p>
+                <span class="lang-en">Build a simple meal builder that calculates nutrition in real time and saves meals for each user.</span>
+                <span class="lang-fi">Rakentaa yksinkertainen aterian kokoaja, joka laskee ravintosisällön reaaliajassa ja tallentaa ateriat kullekin käyttäjälle.</span>
+              </p>
             </div>
             <div class="cs-ov-card">
-              <p class="cs-ov-label">My Role</p>
-              <p>React frontend development, and Firebase backend integration (Auth & Firestore)</p>
+              <p class="cs-ov-label"><span class="lang-en">My Role</span><span class="lang-fi">Roolini</span></p>
+              <p>
+                <span class="lang-en">React frontend development, and Firebase backend integration (Auth &amp; Firestore)</span>
+                <span class="lang-fi">React-käyttöliittymän kehitys ja Firebase-backend-integraatio (Auth &amp; Firestore)</span>
+              </p>
             </div>
             <div class="cs-ov-card">
-              <p class="cs-ov-label">Outcome</p>
-              <p>A functional MVP tested with 7 users. It achieves high Lighthouse performance scores and works seamlessly across mobile and desktop devices.</p>
+              <p class="cs-ov-label"><span class="lang-en">Outcome</span><span class="lang-fi">Lopputulos</span></p>
+              <p>
+                <span class="lang-en">A functional MVP tested with 7 users. It achieves high Lighthouse performance scores and works seamlessly across mobile and desktop devices.</span>
+                <span class="lang-fi">Toimiva MVP testattuna 7 käyttäjällä. Saavuttaa korkeat Lighthouse-pisteytykset ja toimii saumattomasti sekä mobiili- että työpöytälaitteilla.</span>
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ===== 3) BODY (main + sidebar) ===== -->
       <section class="project-section cs-body-wrap">
         <div class="container">
 
-          <!-- Mobile TOC -->
           <details class="cs-toc-mobile">
-            <summary>Table of Contents</summary>
+            <summary><span class="lang-en">Table of Contents</span><span class="lang-fi">Sisällysluettelo</span></summary>
             <ol class="cs-toc-list">
-              <li><a href="#cs-overview">Overview</a></li>
-              <li><a href="#cs-problem">Problem and Context</a></li>
-              <li><a href="#cs-research">Research and Insights</a></li>
-              <li><a href="#cs-ideation">Ideation and Decisions</a></li>
-              <li><a href="#cs-solution">Design Solution</a></li>
-              <li><a href="#cs-validation">Validation and Iteration</a></li>
-              <li><a href="#cs-results">Results and Learnings</a></li>
+              <li><a href="#cs-overview"><span class="lang-en">Overview</span><span class="lang-fi">Yleiskatsaus</span></a></li>
+              <li><a href="#cs-problem"><span class="lang-en">Problem and Context</span><span class="lang-fi">Ongelma ja konteksti</span></a></li>
+              <li><a href="#cs-research"><span class="lang-en">Research and Insights</span><span class="lang-fi">Tutkimus ja havainnot</span></a></li>
+              <li><a href="#cs-ideation"><span class="lang-en">Ideation and Decisions</span><span class="lang-fi">Ideointi ja päätökset</span></a></li>
+              <li><a href="#cs-solution"><span class="lang-en">Design Solution</span><span class="lang-fi">Suunnitteluratkaisu</span></a></li>
+              <li><a href="#cs-validation"><span class="lang-en">Validation and Iteration</span><span class="lang-fi">Validointi ja iterointi</span></a></li>
+              <li><a href="#cs-results"><span class="lang-en">Results and Learnings</span><span class="lang-fi">Tulokset ja oppiminen</span></a></li>
             </ol>
           </details>
 
           <div class="cs-body">
-            <!-- Main column -->
             <div class="cs-main">
 
-              <!-- A. Overview -->
               <div id="cs-overview" class="cs-section">
-                <h2>Overview</h2>
-                <p>This is a beginner level React application that I built as a personal tool. I wanted to create something I would actually use every day. At the same time, I wanted to learn how a real web application is planned, designed, and built as an MVP.</p>
-                <p>The idea of a meal macro calculator is not new. My focus was on understanding how to build one from scratch. It was built as a coursework assignment for the "Cloud Services in Web Development" module at Haaga-Helia UAS.</p>
+                <h2><span class="lang-en">Overview</span><span class="lang-fi">Yleiskatsaus</span></h2>
+                <div class="lang-en">
+                  <p>This is a beginner level React application that I built as a personal tool. I wanted to create something I would actually use every day. At the same time, I wanted to learn how a real web application is planned, designed, and built as an MVP.</p>
+                  <p>The idea of a meal macro calculator is not new. My focus was on understanding how to build one from scratch. It was built as a coursework assignment for the "Cloud Services in Web Development" module at Haaga-Helia UAS.</p>
+                </div>
+                <div class="lang-fi">
+                  <p>Tämä on aloittelijan tason React-sovellus, jonka rakensin henkilökohtaiseksi työkaluksi. Halusin luoda jotain, mitä käyttäisin oikeasti joka päivä. Samalla halusin oppia, miten todellinen verkkosovellus suunnitellaan, toteutetaan ja rakennetaan MVP:nä.</p>
+                  <p>Makrolaskurin idea ei ole uusi. Fokukseni oli ymmärtää, miten sellainen rakennetaan alusta asti. Se rakennettiin kurssin tehtävänä Haaga-Helian "Pilvipalvelut web-kehityksessä" -moduulille.</p>
+                </div>
 
-          <div class="cs-hero-ctas">
-            <a href="https://nasjan.github.io/Pilvipalvelut_kurssi_Jan/Harjoitusty%C3%B6/app/" class="btn btn-primary btn-inline" target="_blank" rel="noopener noreferrer">
-              View demo
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
-            </a>
-          </div>
+                <div class="cs-hero-ctas">
+                  <a href="https://nasjan.github.io/Pilvipalvelut_kurssi_Jan/Harjoitusty%C3%B6/app/" class="btn btn-primary btn-inline" target="_blank" rel="noopener noreferrer">
+                    <span class="lang-en">View demo</span>
+                    <span class="lang-fi">Katso demo</span>
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
+                  </a>
+                </div>
 
                 <div class="cs-callout">
                   <p><strong>Test login:</strong> Email: testi@makroni.fi · Password: Makroni123</p>
                 </div>
               </div>
 
-
               <div class="cs-divider"></div>
 
-              <!-- B. Problem & Context -->
               <div id="cs-problem" class="cs-section">
-                <h2>Problem and Context</h2>
-                <p>While there are many mobile apps for nutrition, they usually require installation and heavy updates. I wanted to create a lightweight web application that runs directly in the browser without any app store downloads.</p>
-                <p>The goal was to build a fast "single view" tool. The user adds ingredients, types in the grams, and the nutrition totals update instantly. The challenge was to implement this reactive logic and real-time database connection in a simple web interface.</p>
-              </div>
-
-              <div class="cs-divider"></div>
-
-              <!-- C. Research & Insights -->
-              <div id="cs-research" class="cs-section">
-                <h2>Research and Insights</h2>
-                <p>I researched how to make a web app feel as smooth as a native mobile app. I wanted the user experience to be seamless, even though it runs in a browser.</p>
-                <ul>
-                  <li><strong>Speed is key:</strong> The app must load quickly and react immediately to input changes.</li>
-                  <li><strong>Simplicity:</strong> Moving between building a meal and reviewing meals should be clear</li>
-                  <li><strong>Accessibility:</strong> The interface needs to work well on both mobile phones and desktop computers without breaking the layout.</li>
-                </ul>
-
-                <div class="cs-callout">
-                  <p><strong>Key insight:</strong> Users appreciate a tool that opens instantly in a browser and does one thing very well, rather than a complex app with too many features.</p>
+                <h2><span class="lang-en">Problem and Context</span><span class="lang-fi">Ongelma ja konteksti</span></h2>
+                <div class="lang-en">
+                  <p>While there are many mobile apps for nutrition, they usually require installation and heavy updates. I wanted to create a lightweight web application that runs directly in the browser without any app store downloads.</p>
+                  <p>The goal was to build a fast "single view" tool. The user adds ingredients, types in the grams, and the nutrition totals update instantly. The challenge was to implement this reactive logic and real-time database connection in a simple web interface.</p>
+                </div>
+                <div class="lang-fi">
+                  <p>Vaikka ravitsemussovelluksia on paljon, ne vaativat yleensä asennuksen ja raskaita päivityksiä. Halusin luoda kevyen verkkosovelluksen, joka toimii suoraan selaimessa ilman sovelluskauppalatauksia.</p>
+                  <p>Tavoitteena oli rakentaa nopea "yksinäkymä"-työkalu. Käyttäjä lisää ainesosia, kirjoittaa grammat ja ravintosisältö päivittyy välittömästi. Haasteena oli toteuttaa tämä reaktiivinen logiikka ja reaaliaikainen tietokantayhteys yksinkertaisessa verkkokäyttöliittymässä.</p>
                 </div>
               </div>
 
               <div class="cs-divider"></div>
 
-              <!-- D. Ideation & Decisions -->
-              <div id="cs-ideation" class="cs-section">
-                <h2>Ideation and Decisions</h2>
-                <p>I designed the MVP around one main flow: search for food items, enter grams, see nutrition totals update in real time, and save the meal. I used Nielsen heuristics to guide interface decisions. I focused on showing system status, preventing errors, and giving users control.</p>
-                <ul>
-                  <li>Show feedback right away for important actions</li>
-                  <li>Use the same patterns on every page so users learn quickly</li>
-                  <li>Use readable fonts and clear contrast for basic accessibility</li>
-                </ul>
+              <div id="cs-research" class="cs-section">
+                <h2><span class="lang-en">Research and Insights</span><span class="lang-fi">Tutkimus ja havainnot</span></h2>
+                <div class="lang-en">
+                  <p>I researched how to make a web app feel as smooth as a native mobile app. I wanted the user experience to be seamless, even though it runs in a browser.</p>
+                  <ul>
+                    <li><strong>Speed is key:</strong> The app must load quickly and react immediately to input changes.</li>
+                    <li><strong>Simplicity:</strong> Moving between building a meal and reviewing meals should be clear</li>
+                    <li><strong>Accessibility:</strong> The interface needs to work well on both mobile phones and desktop computers without breaking the layout.</li>
+                  </ul>
+                  <div class="cs-callout">
+                    <p><strong>Key insight:</strong> Users appreciate a tool that opens instantly in a browser and does one thing very well, rather than a complex app with too many features.</p>
+                  </div>
+                </div>
+                <div class="lang-fi">
+                  <p>Tutkin, miten verkkosovellus saadaan tuntumaan yhtä sujuvalta kuin natiivi mobiilisovellus. Halusin, että käyttökokemus on saumaton, vaikka sovellus toimii selaimessa.</p>
+                  <ul>
+                    <li><strong>Nopeus on avain:</strong> Sovelluksen on ladattava nopeasti ja reagoitava välittömästi syötteiden muutoksiin.</li>
+                    <li><strong>Yksinkertaisuus:</strong> Aterian rakentamisen ja tallennettujen aterioiden välillä siirtymisen on oltava selkeää.</li>
+                    <li><strong>Saavutettavuus:</strong> Käyttöliittymän on toimittava hyvin sekä mobiilipuhelimilla että pöytätietokoneilla rikkoutumatta.</li>
+                  </ul>
+                  <div class="cs-callout">
+                    <p><strong>Keskeinen havainto:</strong> Käyttäjät arvostavat työkalua, joka avautuu välittömästi selaimessa ja tekee yhden asian erittäin hyvin, mieluummin kuin monimutkaista sovellusta, jossa on liikaa ominaisuuksia.</p>
+                  </div>
+                </div>
               </div>
 
               <div class="cs-divider"></div>
 
-              <!-- E. Design Solution -->
-                <div id="cs-solution" class="cs-section">
-                  <h2>Design Solution</h2>
-                  <p>I kept the design intentionally simple. My primary focus was on the technical implementation, such as connecting
-                    React components to the Firebase backend.</p>
-                  <p>This serves as a functional demo (MVP). I believe it is better to focus on the UI details only after the core
-                    features are finalized and the user flows are validated.</p>
+              <div id="cs-ideation" class="cs-section">
+                <h2><span class="lang-en">Ideation and Decisions</span><span class="lang-fi">Ideointi ja päätökset</span></h2>
+                <div class="lang-en">
+                  <p>I designed the MVP around one main flow: search for food items, enter grams, see nutrition totals update in real time, and save the meal. I used Nielsen heuristics to guide interface decisions. I focused on showing system status, preventing errors, and giving users control.</p>
+                  <ul>
+                    <li>Show feedback right away for important actions</li>
+                    <li>Use the same patterns on every page so users learn quickly</li>
+                    <li>Use readable fonts and clear contrast for basic accessibility</li>
+                  </ul>
+                </div>
+                <div class="lang-fi">
+                  <p>Suunnittelin MVP:n yhden päävirran ympärille: hae ruoka-aineita, syötä grammat, katso ravintosisällön yhteensä päivittyvän reaaliajassa ja tallenna ateria. Käytin Nielsenin heuristiikkoja ohjaamaan käyttöliittymäratkaisuja. Keskityin järjestelmätilan näyttämiseen, virheiden ehkäisemiseen ja käyttäjien kontrollin antamiseen.</p>
+                  <ul>
+                    <li>Näytä palaute välittömästi tärkeille toiminnoille</li>
+                    <li>Käytä samoja malleja jokaisella sivulla, jotta käyttäjät oppivat nopeasti</li>
+                    <li>Käytä luettavia fontteja ja selkeää kontrastia perustavanlaatuiseen saavutettavuuteen</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="cs-divider"></div>
+
+              <div id="cs-solution" class="cs-section">
+                <h2><span class="lang-en">Design Solution</span><span class="lang-fi">Suunnitteluratkaisu</span></h2>
+                <div class="lang-en">
+                  <p>I kept the design intentionally simple. My primary focus was on the technical implementation, such as connecting React components to the Firebase backend.</p>
+                  <p>This serves as a functional demo (MVP). I believe it is better to focus on the UI details only after the core features are finalized and the user flows are validated.</p>
                   <ul>
                     <li>React components for the meal builder and saved meals views</li>
                     <li>Real time calculation when users change input values</li>
@@ -197,68 +227,103 @@
                     <li>Same navigation and layout on every page</li>
                   </ul>
                 </div>
-
-              <div class="cs-divider"></div>
-
-              <!-- F. Validation & Iteration -->
-              <div id="cs-validation" class="cs-section">
-                <h2>Validation and Iteration</h2>
-                <p>I tested the app with seven people aged 25 to 55. All testers said the idea and navigation were clear. They could move between pages without extra help.</p>
-                <ul>
-                  <li>Found two mobile scaling issues on specific devices and fixed them with CSS changes</li>
-                  <li>Fixed iOS Safari auto zoom on inputs by making the font size at least 1rem</li>
-                  <li>Tested responsiveness with Chrome DevTools at different screen sizes</li>
-                  <li>Tested on Chrome, Edge, and iOS Safari</li>
-                </ul>
-
-                <div class="cs-callout">
-                  <p><strong>Iteration highlight:</strong> Two testers had trouble with input fields on smaller phones. Making the font size 16px / 1rem fixed the iOS Safari zoom problem and improved usability on all mobile devices.</p>
+                <div class="lang-fi">
+                  <p>Pidin suunnittelun tarkoituksellisesti yksinkertaisena. Pääfokukseni oli teknisessä toteutuksessa, kuten React-komponenttien yhdistämisessä Firebase-backendiin.</p>
+                  <p>Tämä toimii toimivana demona (MVP). Uskon, että käyttöliittymän yksityiskohtiin kannattaa keskittyä vasta sen jälkeen, kun ydintoiminnot on viimeistelty ja käyttäjävirrat on validoitu.</p>
+                  <ul>
+                    <li>React-komponentit aterian rakentajalle ja tallennettujen aterioiden näkymille</li>
+                    <li>Reaaliaikainen laskenta, kun käyttäjät muuttavat syöttöarvoja</li>
+                    <li>Firestore-tallennus, joka pitää jokaisen käyttäjän tiedot erillään</li>
+                    <li>Selkeä erottelu aterian rakentamisen ja tallennettujen aterioiden katselun välillä</li>
+                    <li>Sama navigointi ja asettelu jokaisella sivulla</li>
+                  </ul>
                 </div>
               </div>
 
               <div class="cs-divider"></div>
 
-              <!-- G. Results & Learnings -->
+              <div id="cs-validation" class="cs-section">
+                <h2><span class="lang-en">Validation and Iteration</span><span class="lang-fi">Validointi ja iterointi</span></h2>
+                <div class="lang-en">
+                  <p>I tested the app with seven people aged 25 to 55. All testers said the idea and navigation were clear. They could move between pages without extra help.</p>
+                  <ul>
+                    <li>Found two mobile scaling issues on specific devices and fixed them with CSS changes</li>
+                    <li>Fixed iOS Safari auto zoom on inputs by making the font size at least 1rem</li>
+                    <li>Tested responsiveness with Chrome DevTools at different screen sizes</li>
+                    <li>Tested on Chrome, Edge, and iOS Safari</li>
+                  </ul>
+                  <div class="cs-callout">
+                    <p><strong>Iteration highlight:</strong> Two testers had trouble with input fields on smaller phones. Making the font size 16px / 1rem fixed the iOS Safari zoom problem and improved usability on all mobile devices.</p>
+                  </div>
+                </div>
+                <div class="lang-fi">
+                  <p>Testasin sovelluksen seitsemällä henkilöllä ikäryhmässä 25–55. Kaikki testaajat sanoivat, että idea ja navigointi olivat selkeitä. He pystyivät siirtymään sivujen välillä ilman lisäapua.</p>
+                  <ul>
+                    <li>Löydettiin kaksi mobiiliskaalausongelmaa tietyillä laitteilla ja korjattiin ne CSS-muutoksilla</li>
+                    <li>Korjattiin iOS Safarin automaattinen zoom syöttökenttiin tekemällä fonttikooksi vähintään 1rem</li>
+                    <li>Testattiin responsiivisuus Chrome DevToolsilla eri näyttökokoilla</li>
+                    <li>Testattiin Chromella, Edgellä ja iOS Safarilla</li>
+                  </ul>
+                  <div class="cs-callout">
+                    <p><strong>Iterointikohde:</strong> Kahdella testaajalla oli vaikeuksia syöttökenttien kanssa pienemmillä puhelimilla. Fonttikoon muuttaminen 16 pikseliin / 1rem korjasi iOS Safarin zoom-ongelman ja paransi käytettävyyttä kaikilla mobiililaitteilla.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cs-divider"></div>
+
               <div id="cs-results" class="cs-section">
-                <h2>Results and Learnings</h2>
-                <p>Lighthouse testing showed good performance and accessibility scores for an MVP. The app ran smoothly during typical use without visible slowdowns.</p>
-                <ul>
-                  <li>All 7 testers understood the main flow without instructions</li>
-                  <li>Fixed mobile scaling issues on two devices with CSS improvements</li>
-                  <li>Confirmed correct behavior on Chrome and Edge</li>
-                  <li>Lighthouse scores were strong for both performance and accessibility</li>
-                </ul>
-                <p>This project taught me how to connect a React frontend to a serverless backend and how to solve browser-specific bugs through user testing.</p>
-                <p>Future improvements include planning meals by day, a history view, more UI improvements, and possibly connecting to a REST API.</p>
+                <h2><span class="lang-en">Results and Learnings</span><span class="lang-fi">Tulokset ja oppiminen</span></h2>
+                <div class="lang-en">
+                  <p>Lighthouse testing showed good performance and accessibility scores for an MVP. The app ran smoothly during typical use without visible slowdowns.</p>
+                  <ul>
+                    <li>All 7 testers understood the main flow without instructions</li>
+                    <li>Fixed mobile scaling issues on two devices with CSS improvements</li>
+                    <li>Confirmed correct behavior on Chrome and Edge</li>
+                    <li>Lighthouse scores were strong for both performance and accessibility</li>
+                  </ul>
+                  <p>This project taught me how to connect a React frontend to a serverless backend and how to solve browser-specific bugs through user testing.</p>
+                  <p>Future improvements include planning meals by day, a history view, more UI improvements, and possibly connecting to a REST API.</p>
+                </div>
+                <div class="lang-fi">
+                  <p>Lighthouse-testaus osoitti hyvät suorituskyky- ja saavutettavuuspisteet MVP:lle. Sovellus toimi sujuvasti tyypillisessä käytössä ilman havaittavia hidastumisia.</p>
+                  <ul>
+                    <li>Kaikki 7 testaajaa ymmärsivät päävirran ilman ohjeita</li>
+                    <li>Korjattiin mobiiliskaalausongelmat kahdella laitteella CSS-parannuksilla</li>
+                    <li>Vahvistettiin oikea toiminta Chromella ja Edgellä</li>
+                    <li>Lighthouse-pisteet olivat vahvat sekä suorituskyvyn että saavutettavuuden osalta</li>
+                  </ul>
+                  <p>Tämä projekti opetti minulle, miten React-käyttöliittymä yhdistetään serverless-backendiin ja miten selainkohtaiset bugit ratkaistaan käyttäjätestauksen kautta.</p>
+                  <p>Tulevat parannukset sisältävät aterioiden suunnittelun päivän mukaan, historianäkymän, lisää käyttöliittymäparannuksia ja mahdollisesti REST API -yhteyden.</p>
+                </div>
               </div>
 
             </div>
 
-            <!-- Sidebar -->
             <aside class="cs-sidebar">
               <div class="cs-toc" aria-label="Table of contents">
-                <p class="cs-toc-heading">On this page</p>
+                <p class="cs-toc-heading"><span class="lang-en">On this page</span><span class="lang-fi">Tällä sivulla</span></p>
                 <nav>
                   <ol class="cs-toc-list">
-                    <li><a href="#cs-overview">Overview</a></li>
-                    <li><a href="#cs-problem">Problem and Context</a></li>
-                    <li><a href="#cs-research">Research and Insights</a></li>
-                    <li><a href="#cs-ideation">Ideation and Decisions</a></li>
-                    <li><a href="#cs-solution">Design Solution</a></li>
-                    <li><a href="#cs-validation">Validation and Iteration</a></li>
-                    <li><a href="#cs-results">Results and Learnings</a></li>
+                    <li><a href="#cs-overview"><span class="lang-en">Overview</span><span class="lang-fi">Yleiskatsaus</span></a></li>
+                    <li><a href="#cs-problem"><span class="lang-en">Problem and Context</span><span class="lang-fi">Ongelma ja konteksti</span></a></li>
+                    <li><a href="#cs-research"><span class="lang-en">Research and Insights</span><span class="lang-fi">Tutkimus ja havainnot</span></a></li>
+                    <li><a href="#cs-ideation"><span class="lang-en">Ideation and Decisions</span><span class="lang-fi">Ideointi ja päätökset</span></a></li>
+                    <li><a href="#cs-solution"><span class="lang-en">Design Solution</span><span class="lang-fi">Suunnitteluratkaisu</span></a></li>
+                    <li><a href="#cs-validation"><span class="lang-en">Validation and Iteration</span><span class="lang-fi">Validointi ja iterointi</span></a></li>
+                    <li><a href="#cs-results"><span class="lang-en">Results and Learnings</span><span class="lang-fi">Tulokset ja oppiminen</span></a></li>
                   </ol>
                 </nav>
 
                 <dl class="cs-facts">
-                  <dt>Course</dt>
-                  <dd>Cloud services web development</dd>
-                  <dt>School</dt>
+                  <dt><span class="lang-en">Course</span><span class="lang-fi">Kurssi</span></dt>
+                  <dd><span class="lang-en">Cloud services web development</span><span class="lang-fi">Pilvipalvelut web-kehityksessä</span></dd>
+                  <dt><span class="lang-en">School</span><span class="lang-fi">Koulu</span></dt>
                   <dd>Haaga Helia UAS</dd>
                   <dt>Stack</dt>
                   <dd>React, Vite, Firebase Auth, Firestore</dd>
-                  <dt>Methods</dt>
-                  <dd>MVP scoping, usability testing, responsive QA</dd>
+                  <dt><span class="lang-en">Methods</span><span class="lang-fi">Menetelmät</span></dt>
+                  <dd><span class="lang-en">MVP scoping, usability testing, responsive QA</span><span class="lang-fi">MVP-rajaus, käytettävyystestaus, responsiivisuuden laadunvarmistus</span></dd>
                 </dl>
               </div>
             </aside>
@@ -267,51 +332,48 @@
         </div>
       </section>
 
-      <!-- ===== 4) ARTIFACTS ===== -->
       <section class="project-section">
         <div class="container">
-          <h2 style="margin-bottom:var(--space-md); text-align:left;">Artifacts and Links</h2>
+          <h2 style="margin-bottom:var(--space-md); text-align:left;">
+            <span class="lang-en">Artifacts and Links</span>
+            <span class="lang-fi">Artefaktit ja linkit</span>
+          </h2>
           <div class="cs-artifacts-grid">
             <a href="https://nasjan.github.io/Pilvipalvelut_kurssi_Jan/Harjoitusty%C3%B6/app/" class="cs-artifact" target="_blank" rel="noopener noreferrer">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               Live demo
             </a>
           </div>
-
-        <div class="cs-artifacts-grid">
-             <a href="https://nasjan.github.io/Pilvipalvelut_kurssi_Jan/Harjoitusty%C3%B6/harjoitus.html" class="cs-artifact" target="_blank" rel="noopener noreferrer">
+          <div class="cs-artifacts-grid">
+            <a href="https://nasjan.github.io/Pilvipalvelut_kurssi_Jan/Harjoitusty%C3%B6/harjoitus.html" class="cs-artifact" target="_blank" rel="noopener noreferrer">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              Course Report
+              <span class="lang-en">Course Report</span>
+              <span class="lang-fi">Kurssin raportti</span>
             </a>
-            </div>
-
+          </div>
         </div>
       </section>
 
-      <!-- ===== 5) PREV / NEXT ===== -->
       <section class="project-section">
         <div class="container">
           <div class="cs-pager">
             <a href="mentalink.html" class="cs-pager-card">
-              <span class="cs-pager-label">← Previous</span>
+              <span class="cs-pager-label">← <span class="lang-en">Previous</span><span class="lang-fi">Edellinen</span></span>
               <span class="cs-pager-title">Mentalink</span>
             </a>
             <a href="uxres.html" class="cs-pager-card cs-pager-card--next">
-              <span class="cs-pager-label">Next →</span>
+              <span class="cs-pager-label"><span class="lang-en">Next</span><span class="lang-fi">Seuraava</span> →</span>
               <span class="cs-pager-title">UX Research</span>
             </a>
           </div>
           <div class="cs-back">
-            <a href="../index.html#case-studies">← Back to Case Studies</a>
+            <a href="../index.html#case-studies">← <span class="lang-en">Back to Case Studies</span><span class="lang-fi">Takaisin case-tutkimuksiin</span></a>
           </div>
         </div>
       </section>
 
     </main>
 
- <!-- ========================================================= -->
-    <!-- [S-90] Footer                                              -->
-    <!-- ========================================================= -->
     <footer class="site-footer">
       <div class="container">
         <div class="footer-content">
@@ -320,20 +382,17 @@
             <a id="cookie-settings" href="#" aria-label="Muuta evästeasetuksia">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path>
-                <path d="M8.5 8.5v.01"></path>
-                <path d="M16 15.5v.01"></path>
-                <path d="M12 12v.01"></path>
-                <path d="M11 17v.01"></path>
-                <path d="M7 14v.01"></path>
+                <path d="M8.5 8.5v.01"></path><path d="M16 15.5v.01"></path>
+                <path d="M12 12v.01"></path><path d="M11 17v.01"></path><path d="M7 14v.01"></path>
               </svg>
               <span class="cookie-text">Evästeasetukset</span>
             </a>
           </div>
           <nav aria-label="Footer navigation">
             <ul>
-              <li><a href="../index.html#about">About</a></li>
-              <li><a href="../index.html#case-studies">Case Studies</a></li>
-              <li><a href="../index.html#contact">Contact</a></li>
+              <li><a href="../index.html#about"><span class="lang-en">About</span><span class="lang-fi">Tietoa</span></a></li>
+              <li><a href="../index.html#case-studies"><span class="lang-en">Case Studies</span><span class="lang-fi">Case-tutkimukset</span></a></li>
+              <li><a href="../index.html#contact"><span class="lang-en">Contact</span><span class="lang-fi">Yhteystiedot</span></a></li>
             </ul>
           </nav>
           <a href="https://www.linkedin.com/in/jannassi" target="_blank" rel="noopener noreferrer" class="footer-linkedin">

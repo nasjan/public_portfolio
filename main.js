@@ -13,6 +13,34 @@
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   /* ------------------------------------------------------------
+     0) Language toggle
+     ------------------------------------------------------------ */
+  (function () {
+    const STORAGE_KEY = 'portfolio-lang';
+    const DEFAULT_LANG = 'en';
+    const saved = localStorage.getItem(STORAGE_KEY) || DEFAULT_LANG;
+
+    function applyLang(lang) {
+      document.documentElement.lang = lang;
+      document.querySelectorAll('.lang-toggle').forEach(function (btn) {
+        btn.textContent = lang === 'fi' ? 'EN' : 'FI';
+        btn.setAttribute('aria-label', lang === 'fi' ? 'Switch to English' : 'Vaihda suomeksi');
+      });
+    }
+
+    applyLang(saved);
+
+    document.querySelectorAll('.lang-toggle').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        const current = document.documentElement.lang;
+        const next = current === 'fi' ? 'en' : 'fi';
+        localStorage.setItem(STORAGE_KEY, next);
+        applyLang(next);
+      });
+    });
+  })();
+
+  /* ------------------------------------------------------------
      2) Mobile drawer (slides from right)
      - #menu-toggle button (hamburger)
      - #mobile-drawer nav panel
