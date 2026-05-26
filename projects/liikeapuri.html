@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Liikeapuri — Case Study • Jan Nässi</title>
-    <meta name="description" content="Liikeapuri: AI-assisted conversation support tool for healthcare professionals addressing physical inactivity in youth. Product/concept, PRD, and functional AI prototype." />
+    <title>Liikeapuri: Case Study • Jan Nässi</title>
+    <meta name="description" content="Liikeapuri: AI-assisted sparring tool for school nurses. Supports sensitive physical activity conversations. Product and concept work, PRD and functional AI prototype." />
     <link rel="icon" href="img/pixel_me.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,7 +54,7 @@
         <div class="container">
           <h1>Liikeapuri</h1>
           <p class="cs-hero-summary">
-            <span class="lang-en">AI-assisted conversation support tool for healthcare professionals addressing physical inactivity in youth sensitively. A real client project with PHLU.</span>
+            <span class="lang-en">Sensitive physical activity conversations supported by an AI sparring tool for school nurses. A real client project with PHLU.</span>
             <span class="lang-fi">Sensitiivisen liikuntakeskustelun tukeminen AI-avusteisella sparraustyökalulla kouluterveydenhoitajille. Oikea asiakastoimeksianto PHLU:lle.</span>
           </p>
 
@@ -121,14 +121,17 @@
             <summary><span class="lang-en">Table of Contents</span><span class="lang-fi">Sisällysluettelo</span></summary>
             <ol class="cs-toc-list">
               <li><a href="#cs-overview"><span class="lang-en">Overview</span><span class="lang-fi">Yleiskatsaus</span></a></li>
+              <li><a href="#cs-proofs"><span class="lang-en">Three strongest proofs</span><span class="lang-fi">Kolme vahvinta näyttöä</span></a></li>
               <li><a href="#cs-problem"><span class="lang-en">Problem and Context</span><span class="lang-fi">Ongelma ja konteksti</span></a></li>
               <li><a href="#cs-role"><span class="lang-en">My Role</span><span class="lang-fi">Roolini</span></a></li>
               <li><a href="#cs-research"><span class="lang-en">Research and Insights</span><span class="lang-fi">Tutkimus ja havainnot</span></a></li>
               <li><a href="#cs-options"><span class="lang-en">Solution Options</span><span class="lang-fi">Ratkaisuvaihtoehdot</span></a></li>
               <li><a href="#cs-solution"><span class="lang-en">The Solution</span><span class="lang-fi">Ratkaisu</span></a></li>
+              <li><a href="#cs-ethics"><span class="lang-en">Technology and ethics</span><span class="lang-fi">Teknologia ja etiikka</span></a></li>
               <li><a href="#cs-decisions"><span class="lang-en">Key Design Decisions</span><span class="lang-fi">Keskeiset design-päätökset</span></a></li>
               <li><a href="#cs-validation"><span class="lang-en">Validation and Limitations</span><span class="lang-fi">Validointi ja rajoitteet</span></a></li>
               <li><a href="#cs-reflection"><span class="lang-en">Reflection</span><span class="lang-fi">Reflektio</span></a></li>
+              <li><a href="#cs-credits"><span class="lang-en">Credits</span><span class="lang-fi">Tekijät</span></a></li>
             </ol>
           </details>
 
@@ -170,13 +173,43 @@
 
               <div class="cs-divider"></div>
 
+              <div id="cs-proofs" class="cs-section">
+                <h2><span class="lang-en">Three strongest proofs</span><span class="lang-fi">Kolme vahvinta näyttöä</span></h2>
+                <div class="lang-en">
+                  <h3>1. Traceable product definition for an AI solution</h3>
+                  <p>I created the product requirements document and the prototype design specification. They made product goals, scope, risks, accessibility requirements and feature rationale visible. Each prototype feature had to answer four questions: what it does, why it exists, how it helps the user and what requirements it must meet.</p>
+                  <p>The definition also included a WCAG AA target, contrast and font size considerations, and a clear interface suitable for consultation situations. This gave further development a clearer starting point than a Figma prototype alone.</p>
+                  <h3>2. Functional AI prototype that made risks visible</h3>
+                  <p>I built a published AI prototype with React, Vite and Mistral API. The React app was not meant to finalize the UI or UX solution. Its purpose was to test AI logic, conversation paths and response risks.</p>
+                  <p>The prototype can be tested with your own Mistral or GPT-compatible API key through the Settings view at <a href="https://liikunta-ai.vercel.app" target="_blank" rel="noopener noreferrer">liikunta-ai.vercel.app</a>. Claude Code helped produce code, but I directed the implementation, integration and bug fixes.</p>
+                  <p>Testing revealed wrong assumptions, question loops and risks in local search. These findings were turned into PRD requirements.</p>
+                  <h3>3. Lightweight agent logic and limited knowledge base for AI risk management</h3>
+                  <p>I built logic where the app identifies the user's situation before calling the language model. Different use cases receive different instructions.</p>
+                  <p>In local search, the language model is not used at all. Results come from limited, curated test data instead of free generation. This made the solution more predictable and documented clear safety layers for further development.</p>
+                </div>
+                <div class="lang-fi">
+                  <h3>1. Jäljitettävä tuotemäärittely AI-ratkaisulle</h3>
+                  <p>Loin tuotevaatimusdokumentin ja prototyypin designmäärittelyn. Ne tekivät tuotteen tavoitteet, rajaukset, riskit, saavutettavuusvaatimukset ja ominaisuusperustelut näkyviksi. Jokaisen prototyypin ominaisuuden piti vastata neljään kysymykseen: mitä se tekee, miksi se on olemassa, miten se auttaa käyttäjää ja mitä vaatimuksia sen pitää täyttää.</p>
+                  <p>Määrittelyyn sisältyi WCAG AA -tavoite, kontrasti- ja kirjasinkokoharkintoja sekä vastaanottotilanteeseen sopiva selkeä käyttöliittymä. Tämä antoi jatkokehitykselle selkeämmän lähtökohdan kuin pelkkä Figma-prototyyppi.</p>
+                  <h3>2. Toimiva AI-prototyyppi, joka teki riskit näkyviksi</h3>
+                  <p>Rakensin julkaistun AI-prototyypin React-, Vite- ja Mistral API -teknologioilla. React-sovellus ei ollut tarkoitettu UI- tai UX-ratkaisun viimeistelyyn. Sen tarkoituksena oli testata AI-logiikkaa, keskustelupolkuja ja vastauksiin liittyviä riskejä.</p>
+                  <p>Prototyyppiä voi testata omalla Mistral- tai GPT-yhteensopivalla API-avaimella Asetukset-näkymän kautta osoitteessa <a href="https://liikunta-ai.vercel.app" target="_blank" rel="noopener noreferrer">liikunta-ai.vercel.app</a>. Claude Code auttoi koodin tuottamisessa, mutta ohjain toteutusta, integraatiota ja bugien korjauksia.</p>
+                  <p>Testaus paljasti virheelliset oletukset, kysymyslooppit ja paikallishaun riskit. Nämä havainnot muutettiin PRD-vaatimuksiksi.</p>
+                  <h3>3. Kevyt agenttilogiikka ja rajattu tietopohja AI-riskien hallintaan</h3>
+                  <p>Rakensin logiikan, jossa sovellus tunnistaa käyttäjän tilanteen ennen kielimallin kutsumista. Eri käyttötapaukset saavat eri ohjeistuksen.</p>
+                  <p>Paikallishaussa kielimallia ei käytetä lainkaan. Tulokset tulevat rajatusta, kuratoidusta testidatasta vapaan generoinnin sijaan. Tämä teki ratkaisusta ennustettavamman ja dokumentoi selkeät turvallisuuskerrokset jatkokehitystä varten.</p>
+                </div>
+              </div>
+
+              <div class="cs-divider"></div>
+
               <div id="cs-problem" class="cs-section">
                 <h2><span class="lang-en">Problem and Context</span><span class="lang-fi">Ongelma ja konteksti</span></h2>
                 <div class="lang-en">
                   <p>School nurses regularly meet young people who are physically inactive, but they lack a unified tool to support bringing up physical activity. Consultation time is limited, local information about activity options is scattered, and the underlying reasons for a young person's situation may involve complex psychological, social, or experiential barriers.</p>
                   <p>Based on interviews, the more critical challenge was often starting and continuing the conversation sensitively. A young person may not be ready for a sport yet, but needs a small, safe, and realistic step forward first.</p>
                   <div class="cs-callout">
-                    <p><strong>Problem statement:</strong> A school nurse needs quick access to sensitive conversation support and local options, because information is scattered and a young person's situation can be complex — making it hard to bring up physical activity and provide follow-up guidance during a consultation.</p>
+                    <p><strong>Problem statement:</strong> A school nurse needs quick access to sensitive conversation support and local options, because information is scattered and a young person's situation can be complex, making it hard to bring up physical activity and provide follow-up guidance during a consultation.</p>
                   </div>
                   <p>The project goal was to deliver a concrete demo to the client (Päijät-Häme Sports and Recreation Association, PHLU) that could be presented to stakeholders and moved toward further development.</p>
                 </div>
@@ -329,17 +362,17 @@
                 <div class="lang-en">
                   <p>The final solution was an AI-assisted sparring tool that supports the professional in sensitive physical activity conversations and provides local activity search as a separate, limited feature. The solution has three parts:</p>
                   <ol>
-                    <li><strong>Sensitive conversation support</strong> — AI suggests opening phrases, follow-up questions, and small next steps. It does not diagnose or decide for the professional.</li>
-                    <li><strong>Separate local search</strong> — Local options are fetched from limited test data and shown as cards. The model cannot invent non-existent places.</li>
-                    <li><strong>Visibility of sources and boundaries</strong> — The user can see when information is based on sources, limited knowledge base, or local search data.</li>
+                    <li><strong>Sensitive conversation support:</strong> AI suggests opening phrases, follow-up questions, and small next steps. It does not diagnose or decide for the professional. The model supports short, situation-specific openings and small next steps. It does not give a complete solution on behalf of the young person.</li>
+                    <li><strong>Separate local search:</strong> Local options are fetched from limited test data and shown as cards. The model cannot invent non-existent places.</li>
+                    <li><strong>Visibility of sources and boundaries:</strong> The user can see when information is based on sources, a limited knowledge base, or local search data.</li>
                   </ol>
                 </div>
                 <div class="lang-fi">
                   <p>Lopullinen ratkaisu oli AI-avusteinen sparraustyökalu, joka tukee ammattilaista sensitiivisessä liikuntakeskustelussa ja tarjoaa paikallisen harrastushaun omana, rajattuna toimintona. Ratkaisun ydin oli kolmeosainen:</p>
                   <ol>
-                    <li><strong>Sensitiivinen keskustelutuki</strong> — AI ehdottaa avausfraaseja, jatkokysymyksiä ja pieniä etenemisaskeleita. Se ei tee diagnoosia eikä päätä ammattilaisen puolesta.</li>
-                    <li><strong>Erillinen paikallishaku</strong> — Paikalliset vaihtoehdot haetaan rajatusta testidatasta ja näytetään kortteina. Malli ei saa keksiä olemattomia paikkoja.</li>
-                    <li><strong>Lähteiden ja rajojen näkyvyys</strong> — Käyttäjälle tehdään näkyväksi, milloin tieto perustuu lähteisiin, rajattuun tietopohjaan tai paikalliseen hakudataan.</li>
+                    <li><strong>Sensitiivinen keskustelutuki:</strong> AI ehdottaa avausfraaseja, jatkokysymyksiä ja pieniä etenemisaskeleita. Se ei tee diagnoosia eikä päätä ammattilaisen puolesta. Malli tukee lyhyitä, tilanteeseen sopivia avauksia ja pieniä seuraavia askeleita. Se ei anna valmista ratkaisua nuoren puolesta.</li>
+                    <li><strong>Erillinen paikallishaku:</strong> Paikalliset vaihtoehdot haetaan rajatusta testidatasta ja näytetään kortteina. Malli ei saa keksiä olemattomia paikkoja.</li>
+                    <li><strong>Lähteiden ja rajojen näkyvyys:</strong> Käyttäjälle tehdään näkyväksi, milloin tieto perustuu lähteisiin, rajattuun tietopohjaan tai paikalliseen hakudataan.</li>
                   </ol>
                 </div>
 
@@ -377,7 +410,7 @@
                     <li>App identifies whether it's a motivation conversation, activity mapping, or local search request.</li>
                     <li>App assembles situation-appropriate instructions for the language model.</li>
                     <li>Code performs additional checks before the model call to prevent disconnected or sensitive assumptions.</li>
-                    <li>In local search, the language model is not called at all — results are fetched from limited test data.</li>
+                    <li>In local search, the language model is not called at all. Results are fetched from limited test data.</li>
                   </ol>
                 </div>
                 <div class="lang-fi">
@@ -409,19 +442,45 @@
                       <figure>
                         <img src="../img/liikeapuri-react-permission.webp" alt="Go to local search modal: explains that local search uses separate limited search data" width="800" height="600" loading="lazy" />
                         <figcaption>
-                          <span class="lang-en">Permission modal before local search — communicates that local search uses separate limited data, not AI generation.</span>
-                          <span class="lang-fi">Siirtymismodaali ennen paikallishakua — kertoo käyttäjälle, että paikallishaku käyttää erillistä rajattua hakudataa.</span>
+                          <span class="lang-en">Permission modal before local search. It communicates that local search uses separate limited data, not AI generation.</span>
+                          <span class="lang-fi">Siirtymismodaali ennen paikallishakua. Se kertoo käyttäjälle, että paikallishaku käyttää erillistä rajattua hakudataa.</span>
                         </figcaption>
                       </figure>
                     </div>
                   </div>
                 </div>
 
-                <div class="cs-callout">
-                  <p>
-                    <span class="lang-en"><strong>Technology choice:</strong> We chose Mistral as the language model for the prototype because in a sensitive healthcare context, the choice emphasized European operating environment, GDPR compatibility, and cost-effective API use.</span>
-                    <span class="lang-fi"><strong>Teknologiavalinta:</strong> Valitsimme prototyypin kielimalliksi Mistralin, koska sensitiivisessä terveydenhuollon kontekstissa korostuivat eurooppalainen toimintaympäristö, GDPR-yhteensopivuus ja kustannustehokas API-käyttö.</span>
-                  </p>
+              </div>
+
+              <div class="cs-divider"></div>
+
+              <div id="cs-ethics" class="cs-section">
+                <h2><span class="lang-en">Technology choice and ethical principles</span><span class="lang-fi">Teknologiavalinta ja eettiset periaatteet</span></h2>
+                <div class="lang-en">
+                  <p>We chose Mistral as the language model for the prototype because the context was sensitive and healthcare-like. The choice emphasized a European operating environment, GDPR compatibility, cost-effective API use and the ability to test AI logic lightly before a heavier production architecture.</p>
+                  <p>Ethics was part of the product definition, not a separate add-on. In the PRD, AI was defined as a background sparring partner, not a decision-maker, doctor or therapist.</p>
+                  <p>The design used Sitra's fair data economy principles, especially human-centeredness, transparency and avoiding harm. The work also reflected the client's responsibility goals: equality, respect for diversity, a safe environment, good governance and environmental responsibility.</p>
+                  <p>Green Lahti and Luontoaskel terveyteen thinking supported the focus on local activity, active transportation and more sustainable physical activity options.</p>
+                  <p>In practice, this was visible in four decisions:</p>
+                  <ul>
+                    <li>Local search was separated from free AI generation.</li>
+                    <li>Source visibility was written into the requirements.</li>
+                    <li>The professional kept final responsibility.</li>
+                    <li>Further development included the principle of technological sufficiency: use the smallest sufficient model and avoid unnecessary API calls.</li>
+                  </ul>
+                </div>
+                <div class="lang-fi">
+                  <p>Valitsimme prototyypin kielimalliksi Mistralin, koska konteksti oli sensitiivinen ja terveydenhuollon kaltainen. Valinnassa korostui eurooppalainen toimintaympäristö, GDPR-yhteensopivuus, kustannustehokas API-käyttö ja mahdollisuus testata AI-logiikkaa kevyesti ennen raskaampaa tuotantoarkkitehtuuria.</p>
+                  <p>Etiikka oli osa tuotemäärittelyä, ei erillinen lisäys. PRD:ssä AI määriteltiin taustasparraajaksi, ei päätöksentekijäksi, lääkäriksi tai terapeutiksi.</p>
+                  <p>Suunnittelussa hyödynnettiin Sitran reilun datatalouden periaatteita, erityisesti ihmislähtöisyyttä, läpinäkyvyyttä ja vahingoittamisen välttämistä. Työ heijasteli myös toimeksiantajan vastuullisuustavoitteita: tasa-arvo, moninaisuuden kunnioittaminen, turvallinen ympäristö, hyvä hallintotapa ja ympäristövastuu.</p>
+                  <p>Green Lahti ja Luontoaskel terveyteen -ajattelu tuki suuntautumista lähiliikuntaan, aktiiviseen liikkumiseen ja kestävämpiin liikuntavaihtoehtoihin.</p>
+                  <p>Käytännössä tämä näkyi neljässä päätöksessä:</p>
+                  <ul>
+                    <li>Paikallishaku erotettiin vapaasta AI-generoinnista.</li>
+                    <li>Lähteiden näkyvyys kirjoitettiin vaatimuksiin.</li>
+                    <li>Ammattilaisella säilyi loppuvastuu.</li>
+                    <li>Jatkokehitykseen sisällytettiin teknologisen riittävyyden periaate: käytä pienintä riittävää mallia ja vältä tarpeettomia API-kutsuja.</li>
+                  </ul>
                 </div>
               </div>
 
@@ -494,27 +553,29 @@
                 <div class="lang-en">
                   <p>The project produced a Figma hi-fi prototype, functional AI prototype, product requirements document, and UX report. The AI prototype made visible how the language model behaves in sensitive scenarios and where application logic must restrict or guide responses.</p>
                   <div class="cs-callout">
-                    <p><strong>Note:</strong> The project did not have post-launch analytics or sufficient user testing to verify measured impact. Impact is presented as qualitatively justified, not measured.</p>
+                    <p><strong>Note:</strong> The project did not have post-launch analytics or sufficient user testing to verify measured impact. Impact is expected and qualitatively supported, not measured.</p>
                   </div>
+                  <p>Wizard of Oz testing and wider user testing remained incomplete because enough real test users could not be recruited within the project timeline. This should have been treated as a critical project risk from the start.</p>
                   <h3>Limitations and blind spots</h3>
                   <ul>
-                    <li><strong>Assumption:</strong> Professional has time to use the tool during consultation — Risk: May be too rushed — Validation: Testing in realistic consultation scenario</li>
-                    <li><strong>Assumption:</strong> AI responses are safe and usable — Risk: Sensitive topic cannot tolerate poor responses — Validation: Scenario testing with actual nurses</li>
-                    <li><strong>Assumption:</strong> Local data maintenance is solvable — Risk: Data ages quickly — Validation: Defining maintenance model in further development</li>
+                    <li>It is not yet known whether the professional has time to use the tool during a real consultation. Testing in realistic situations is still needed.</li>
+                    <li>AI responses have not been validated as safe by actual nurses. Scenario testing with professionals in realistic consultation-like situations remains the next required step.</li>
+                    <li>Local data maintenance has no tested model yet. The data used in the pilot ages quickly and requires a governance plan for further development.</li>
                   </ul>
                   <h3>Next sensible test</h3>
-                  <p>5–10 school nurses testing in realistic consultation-like situations, measuring: self-assessed confidence before and after, task completion, sensitivity of response tone, relevance of local search, and speed of use.</p>
+                  <p>5 to 10 school nurses testing in realistic consultation-like situations, measuring: self-assessed confidence before and after, task completion, sensitivity of response tone, relevance of local search, and speed of use.</p>
                 </div>
                 <div class="lang-fi">
                   <p>Projektin lopputuloksena syntyi Figma hi-fi -prototyyppi, toimiva AI-prototyyppi, tuotevaatimusdokumentti ja UX-raportti. AI-prototyyppi teki näkyväksi, miten kielimalli käyttäytyy sensitiivisissä skenaarioissa ja missä kohdissa sovelluslogiikan pitää rajoittaa tai ohjata vastausta.</p>
                   <div class="cs-callout">
-                    <p><strong>Huomio:</strong> Projektissa ei ollut käytettävissä julkaisun jälkeistä analytiikkaa eikä riittävää käyttäjätestausta mitatun vaikutuksen todentamiseen. Vaikutus esitetään laadullisesti perusteltuna, ei mitattuna.</p>
+                    <p><strong>Huomio:</strong> Projektissa ei ollut käytettävissä julkaisun jälkeistä analytiikkaa eikä riittävää käyttäjätestausta mitatun vaikutuksen todentamiseen. Vaikutus on odotettua ja laadullisesti perusteltua, ei mitattua.</p>
                   </div>
+                  <p>Wizard of Oz -testaus ja laajempi käyttäjätestaus jäivät kesken, koska oikeita testikäyttäjiä ei saatu riittävästi projektin aikataulussa. Tämä olisi pitänyt tunnistaa projektin alusta asti kriittisenä riskinä.</p>
                   <h3>Rajoitteet ja sokeat pisteet</h3>
                   <ul>
-                    <li><strong>Oletus:</strong> Ammattilainen ehtii käyttää työkalua vastaanoton aikana — Riski: Vastaanotto voi olla liian kiireinen — Validointi: Testaus realistisessa vastaanottoskenaariossa</li>
-                    <li><strong>Oletus:</strong> AI-vastaukset ovat turvallisia ja käyttökelpoisia — Riski: Sensitiivinen aihe ei kestä huonoja vastauksia — Validointi: Skenaariotestaus oikeilla terveydenhoitajilla</li>
-                    <li><strong>Oletus:</strong> Paikallisen tiedon ylläpito on ratkaistavissa — Riski: Tieto vanhenee nopeasti — Validointi: Ylläpitomallin määrittely jatkokehityksessä</li>
+                    <li>Ei vielä tiedetä, ehtikö ammattilainen käyttää työkalua todellisen vastaanoton aikana. Testaus realistisissa tilanteissa puuttuu.</li>
+                    <li>AI-vastausten turvallisuutta ei ole vahvistettu oikeilla terveydenhoitajilla. Skenaariotestaus ammattilaisten kanssa realistisissa vastaanoton kaltaisissa tilanteissa on seuraava vaadittava askel.</li>
+                    <li>Paikallisen tiedon ylläpidolle ei ole testattua mallia. Pilotissa käytetty data vanhenee nopeasti ja vaatii hallintamallin jatkokehityksessä.</li>
                   </ul>
                   <h3>Seuraava järkevä testi</h3>
                   <p>5–10 kouluterveydenhoitajan testaus realistisissa vastaanoton kaltaisissa tilanteissa, mittaukset: itsearvioitu varmuus ennen ja jälkeen, tehtävän onnistuminen, vastausten sävyn sensitiivisyys, paikallishaun relevanssi ja käytön nopeus.</p>
@@ -535,8 +596,16 @@
                     <li>In sensitive contexts, the most important design decision may be what AI is not allowed to do.</li>
                     <li>In a product/concept role, value often comes from turning a broad problem space into a scoped, justified, and testable direction.</li>
                   </ul>
+                  <h3>What remained uncertain</h3>
+                  <p>Whether the tool actually fits into a real consultation situation remained untested. The local data maintenance question also stayed unresolved: who would update the data, how often, and who owns it in production. These are the two most important open questions for the next phase.</p>
+                  <h3>What I would do differently</h3>
+                  <ul>
+                    <li>Treat test user recruitment as a critical project risk from kickoff. Not just a task to complete later.</li>
+                    <li>Have a validation backup plan ready: if real nurses are unavailable, have a Wizard of Oz scenario prepared in advance.</li>
+                    <li>Scope the pilot tighter. One or two core flows tested well beats many features tested superficially.</li>
+                  </ul>
                   <h3>What's next</h3>
-                  <p>I'm continuing Liikeapuri's development with Fanny Marjakangas as a thesis project for the client. The goal is to evaluate the prototype's usability in professionals' work and produce user-testing-based further development recommendations.</p>
+                  <p>I'm continuing Liikeapuri's development with Fanny Marjakangas as a thesis project for the client. The primary target group is school nurses, with youth workers as a secondary group. The goal is a testable prototype, not a production-ready system. The thesis will focus on validating the prototype's usability in real professional contexts and producing user-testing-based recommendations for further development.</p>
                 </div>
                 <div class="lang-fi">
                   <h3>Mikä onnistui?</h3>
@@ -548,8 +617,40 @@
                     <li>Sensitiivisessä kontekstissa tärkein design-päätös voi olla se, mitä AI ei saa tehdä.</li>
                     <li>Product/concept-roolissa arvo syntyy usein siitä, että laaja ongelmakenttä muutetaan rajatuksi, perustelluksi ja testattavaksi suunnaksi.</li>
                   </ul>
+                  <h3>Mikä jäi epäselväksi?</h3>
+                  <p>Se, sopiiko työkalu oikeasti todelliseen vastaanottotilanteeseen, jäi testaamatta. Paikallisen tiedon ylläpitokysymys jäi myös avoimeksi: kuka päivittäisi tietoja, kuinka usein ja kuka omistaa ne tuotannossa. Nämä ovat kaksi tärkeintä avointa kysymystä seuraavaa vaihetta varten.</p>
+                  <h3>Mitä tekisin toisin?</h3>
+                  <ul>
+                    <li>Käsittelisin testikäyttäjien rekrytointia kriittisenä projektiriskinä alusta asti. Ei vain myöhemmin hoidettavana tehtävänä.</li>
+                    <li>Varautuminen validoinnin varasuunnitelmalla: jos oikeita terveydenhoitajia ei ole saatavilla, Wizard of Oz -skenaario valmiina etukäteen.</li>
+                    <li>Rajaisin pilotin tiukemmin. Yksi tai kaksi hyvin testattua ydinpolkua on parempi kuin monta pinnallisesti testattua toimintoa.</li>
+                  </ul>
                   <h3>Mitä seuraavaksi?</h3>
-                  <p>Jatkan Liikeapurin kehittämistä Fanny Marjakankaan kanssa opinnäytetyönä toimeksiantajalle. Tavoitteena on arvioida prototyypin käyttökelpoisuutta ammattilaisten työssä ja tuottaa käyttäjätestaukseen perustuvat jatkokehitysehdotukset.</p>
+                  <p>Jatkan Liikeapurin kehittämistä Fanny Marjakankaan kanssa opinnäytetyönä toimeksiantajalle. Ensisijainen kohderyhmä on kouluterveydenhoitajat, toissijaisena nuorisotyöntekijät. Tavoitteena on testattava prototyyppi, ei tuotantovalmis järjestelmä. Opinnäytetyö keskittyy prototyypin käyttökelpoisuuden validointiin ammattilaisten todellisissa konteksteissa ja käyttäjätestaukseen perustuvien jatkokehitysehdotusten tuottamiseen.</p>
+                </div>
+              </div>
+
+              <div class="cs-divider"></div>
+
+              <div id="cs-credits" class="cs-section">
+                <h2><span class="lang-en">Credits</span><span class="lang-fi">Tekijät</span></h2>
+                <div class="lang-en">
+                  <ul>
+                    <li><strong>Hellu Isomäki:</strong> Project management</li>
+                    <li><strong>Inka Lindström:</strong> Figma hi-fi prototype and UI work</li>
+                    <li><strong>Fanny Marjakangas:</strong> UX research and UX report</li>
+                    <li><strong>Milla Kamppi:</strong> UX research and UX report</li>
+                    <li><strong>Jan Nässi:</strong> Concept, AI definition, PRD, and functional AI prototype</li>
+                  </ul>
+                </div>
+                <div class="lang-fi">
+                  <ul>
+                    <li><strong>Hellu Isomäki:</strong> Projektinhallinta</li>
+                    <li><strong>Inka Lindström:</strong> Figma hi-fi -prototyyppi ja UI-työ</li>
+                    <li><strong>Fanny Marjakangas:</strong> UX-tutkimus ja UX-raportti</li>
+                    <li><strong>Milla Kamppi:</strong> UX-tutkimus ja UX-raportti</li>
+                    <li><strong>Jan Nässi:</strong> Konsepti, AI-määrittely, PRD ja toimiva AI-prototyyppi</li>
+                  </ul>
                 </div>
               </div>
 
@@ -561,14 +662,17 @@
                 <nav>
                   <ol class="cs-toc-list">
                     <li><a href="#cs-overview"><span class="lang-en">Overview</span><span class="lang-fi">Yleiskatsaus</span></a></li>
+                    <li><a href="#cs-proofs"><span class="lang-en">Three strongest proofs</span><span class="lang-fi">Kolme vahvinta näyttöä</span></a></li>
                     <li><a href="#cs-problem"><span class="lang-en">Problem and Context</span><span class="lang-fi">Ongelma ja konteksti</span></a></li>
                     <li><a href="#cs-role"><span class="lang-en">My Role</span><span class="lang-fi">Roolini</span></a></li>
                     <li><a href="#cs-research"><span class="lang-en">Research and Insights</span><span class="lang-fi">Tutkimus ja havainnot</span></a></li>
                     <li><a href="#cs-options"><span class="lang-en">Solution Options</span><span class="lang-fi">Ratkaisuvaihtoehdot</span></a></li>
                     <li><a href="#cs-solution"><span class="lang-en">The Solution</span><span class="lang-fi">Ratkaisu</span></a></li>
+                    <li><a href="#cs-ethics"><span class="lang-en">Technology and ethics</span><span class="lang-fi">Teknologia ja etiikka</span></a></li>
                     <li><a href="#cs-decisions"><span class="lang-en">Key Design Decisions</span><span class="lang-fi">Keskeiset design-päätökset</span></a></li>
                     <li><a href="#cs-validation"><span class="lang-en">Validation and Limitations</span><span class="lang-fi">Validointi ja rajoitteet</span></a></li>
                     <li><a href="#cs-reflection"><span class="lang-en">Reflection</span><span class="lang-fi">Reflektio</span></a></li>
+                    <li><a href="#cs-credits"><span class="lang-en">Credits</span><span class="lang-fi">Tekijät</span></a></li>
                   </ol>
                 </nav>
 
