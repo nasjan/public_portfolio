@@ -65,7 +65,7 @@
             </div>
             <div class="cs-meta-item">
               <dt><span class="lang-en">Timeline</span><span class="lang-fi">Aikataulu</span></dt>
-              <dd><span class="lang-en">March–May 2026, ~7 weeks</span><span class="lang-fi">27.3.–15.5.2026, noin 7 viikkoa</span></dd>
+              <dd><span class="lang-en">March to May 2026, ~7 weeks</span><span class="lang-fi">27.3.–15.5.2026, noin 7 viikkoa</span></dd>
             </div>
             <div class="cs-meta-item"><dt>Tools</dt><dd>Figma, FigJam, React + Vite, Mistral API, VS Code, GitHub, Miro</dd></div>
             <div class="cs-meta-item">
@@ -150,7 +150,7 @@
                 </div>
 
                 <figure class="cs-fig">
-                  <img src="../img/liikeapuri-hero.webp" alt="Liikeapuri – three main views: front page, category selection, and sensitive chat response" width="1200" height="750" loading="lazy" />
+                  <img src="../img/liikeapuri-hero.webp" alt="Liikeapuri: three main views: front page, category selection, and sensitive chat response" width="1200" height="750" loading="lazy" />
                   <figcaption>
                     <span class="lang-en">Three main views: front page, category selection, and sensitive chat response.</span>
                     <span class="lang-fi">Kolme päänäkymää: etusivu, kategoriavalinta ja sensitiivinen chat-vastaus.</span>
@@ -193,8 +193,8 @@
                   <p>Määrittelyyn sisältyi WCAG AA -tavoite, kontrasti- ja kirjasinkokoharkintoja sekä vastaanottotilanteeseen sopiva selkeä käyttöliittymä. Tämä antoi jatkokehitykselle selkeämmän lähtökohdan kuin pelkkä Figma-prototyyppi.</p>
                   <h3>2. Toimiva AI-prototyyppi, joka teki riskit näkyviksi</h3>
                   <p>Rakensin julkaistun AI-prototyypin React-, Vite- ja Mistral API -teknologioilla. React-sovellus ei ollut tarkoitettu UI- tai UX-ratkaisun viimeistelyyn. Sen tarkoituksena oli testata AI-logiikkaa, keskustelupolkuja ja vastauksiin liittyviä riskejä.</p>
-                  <p>Prototyyppiä voi testata omalla Mistral- tai GPT-yhteensopivalla API-avaimella Asetukset-näkymän kautta osoitteessa <a href="https://liikunta-ai.vercel.app" target="_blank" rel="noopener noreferrer">liikunta-ai.vercel.app</a>. Claude Code auttoi koodin tuottamisessa, mutta ohjain toteutusta, integraatiota ja bugien korjauksia.</p>
-                  <p>Testaus paljasti virheelliset oletukset, kysymyslooppit ja paikallishaun riskit. Nämä havainnot muutettiin PRD-vaatimuksiksi.</p>
+                  <p>Prototyyppiä voi testata omalla Mistral- tai GPT-yhteensopivalla API-avaimella Asetukset-näkymän kautta osoitteessa <a href="https://liikunta-ai.vercel.app" target="_blank" rel="noopener noreferrer">liikunta-ai.vercel.app</a>. Claude Code auttoi koodin tuottamisessa, mutta ohjasin toteutusta, integraatiota ja bugien korjauksia.</p>
+                  <p>Testaus paljasti virheelliset oletukset, toistuvat kysymyskierrokset ja paikallishaun riskit. Nämä havainnot muutettiin PRD-vaatimuksiksi.</p>
                   <h3>3. Kevyt agenttilogiikka ja rajattu tietopohja AI-riskien hallintaan</h3>
                   <p>Rakensin logiikan, jossa sovellus tunnistaa käyttäjän tilanteen ennen kielimallin kutsumista. Eri käyttötapaukset saavat eri ohjeistuksen.</p>
                   <p>Paikallishaussa kielimallia ei käytetä lainkaan. Tulokset tulevat rajatusta, kuratoidusta testidatasta vapaan generoinnin sijaan. Tämä teki ratkaisusta ennustettavamman ja dokumentoi selkeät turvallisuuskerrokset jatkokehitystä varten.</p>
@@ -240,9 +240,9 @@
                   <h3>Concrete contribution</h3>
                   <p>I participated in client kickoff interviews and ideation workshop facilitation. Every error found in AI prototype testing was converted into either a new prompt rule, code safeguard, search logic restriction, or PRD requirement.</p>
                   <ul>
-                    <li>AI made overly broad assumptions from quick selections → requirement that quick selection alone does not activate background assumptions</li>
-                    <li>AI got stuck in a question loop when the user asked for a concrete answer → rule to move to the next usable step</li>
-                    <li>Local search was risky as freely generated text → requirement for a separate local search with card view</li>
+                    <li>AI made overly broad assumptions from quick selections, which led to the requirement that quick selection alone does not activate background assumptions.</li>
+                    <li>AI got stuck in repeated question loops when the user asked for a concrete answer, which led to the rule to move to the next usable step.</li>
+                    <li>Local search was risky as freely generated text, which resulted in the requirement for a separate local search with card view.</li>
                   </ul>
                   <h3>What I did not do</h3>
                   <p>I was not responsible for the visual design of the Figma UI or writing the UX report. The Figma hi-fi prototype was handled by the team's UI/prototyping role, and the UX report by the team's UX/research roles.</p>
@@ -260,9 +260,9 @@
                   <h3>Konkreettinen panos</h3>
                   <p>Osallistuin toimeksiantajan aloitushaastatteluihin ja ideointityöpajan fasilitointiin. Jokainen testauksessa havaittu virhe muutettiin joko uudeksi prompttisäännöksi, koodisuojaukseksi, hakulogiikan rajaukseksi tai PRD-vaatimukseksi.</p>
                   <ul>
-                    <li>AI teki liian pitkälle meneviä oletuksia pikavalinnan perusteella → vaatimus, ettei pikavalinta yksin aktivoi taustaoletuksia</li>
-                    <li>AI jäi kysymyslooppiin, vaikka käyttäjä pyysi konkreettista vastausta → sääntö siirtyä seuraavaan käyttökelpoiseen askeleeseen</li>
-                    <li>Paikallishaku oli riskialtis vapaasti generoituna tekstinä → vaatimus erillisestä paikallishausta ja korttinäkymästä</li>
+                    <li>AI teki liian pitkälle meneviä oletuksia pikavalinnan perusteella, mikä johti vaatimukseen, ettei pikavalinta yksin aktivoi taustaoletuksia.</li>
+                    <li>AI jäi toistuvaan kysymyskierrokseen, vaikka käyttäjä pyysi konkreettista vastausta, mikä johti sääntöön siirtyä seuraavaan käyttökelpoiseen askeleeseen.</li>
+                    <li>Paikallishaku oli riskialtis vapaasti generoituna tekstinä, mikä johti vaatimukseen erillisestä paikallishausta ja korttinäkymästä.</li>
                   </ul>
                   <h3>Rajaus</h3>
                   <p>En vastannut Figma-UI:n visuaalisesta suunnittelusta tai UX-raportin kirjoittamisesta. Figma hi-fi -prototyypistä vastasi tiimin UI/prototypointirooli, ja UX-raportista vastasivat tiimin UX/research-roolit.</p>
@@ -430,7 +430,7 @@
                     <div class="visual-callout">
                       <h3><span class="lang-en">Visual highlight 3: Sources and reliability</span><span class="lang-fi">Visuaalinen nosto 3: Lähteet ja luotettavuus</span></h3>
                       <figure>
-                        <img src="../img/liikeapuri-figma-datalibrary.webp" alt="Data library – sources as cards with open source links" width="800" height="600" loading="lazy" />
+                        <img src="../img/liikeapuri-figma-datalibrary.webp" alt="Data library: sources as cards with open source links" width="800" height="600" loading="lazy" />
                         <figcaption>
                           <span class="lang-en">Data library with source cards and open source links.</span>
                           <span class="lang-fi">Tietokirjasto lähdekortteina ja avaa lähde -linkeillä.</span>
@@ -472,7 +472,7 @@
                 <div class="lang-fi">
                   <p>Valitsimme prototyypin kielimalliksi Mistralin, koska konteksti oli sensitiivinen ja terveydenhuollon kaltainen. Valinnassa korostui eurooppalainen toimintaympäristö, GDPR-yhteensopivuus, kustannustehokas API-käyttö ja mahdollisuus testata AI-logiikkaa kevyesti ennen raskaampaa tuotantoarkkitehtuuria.</p>
                   <p>Etiikka oli osa tuotemäärittelyä, ei erillinen lisäys. PRD:ssä AI määriteltiin taustasparraajaksi, ei päätöksentekijäksi, lääkäriksi tai terapeutiksi.</p>
-                  <p>Suunnittelussa hyödynnettiin Sitran reilun datatalouden periaatteita, erityisesti ihmislähtöisyyttä, läpinäkyvyyttä ja vahingoittamisen välttämistä. Työ heijasteli myös toimeksiantajan vastuullisuustavoitteita: tasa-arvo, moninaisuuden kunnioittaminen, turvallinen ympäristö, hyvä hallintotapa ja ympäristövastuu.</p>
+                  <p>Suunnittelussa hyödynnettiin Sitran reilun datatalouden periaatteita, erityisesti ihmislähtöisyyttä, läpinäkyvyyttä ja haitan välttämistä. Työ heijasteli myös toimeksiantajan vastuullisuustavoitteita: tasa-arvo, moninaisuuden kunnioittaminen, turvallinen ympäristö, hyvä hallintotapa ja ympäristövastuu.</p>
                   <p>Green Lahti ja Luontoaskel terveyteen -ajattelu tuki suuntautumista lähiliikuntaan, aktiiviseen liikkumiseen ja kestävämpiin liikuntavaihtoehtoihin.</p>
                   <p>Käytännössä tämä näkyi neljässä päätöksessä:</p>
                   <ul>
@@ -617,7 +617,7 @@
                     <li>Sensitiivisessä kontekstissa tärkein design-päätös voi olla se, mitä AI ei saa tehdä.</li>
                     <li>Product/concept-roolissa arvo syntyy usein siitä, että laaja ongelmakenttä muutetaan rajatuksi, perustelluksi ja testattavaksi suunnaksi.</li>
                   </ul>
-                  <h3>Mikä jäi epäselväksi?</h3>
+                  <h3>Mikä jäi epävarmaksi?</h3>
                   <p>Se, sopiiko työkalu oikeasti todelliseen vastaanottotilanteeseen, jäi testaamatta. Paikallisen tiedon ylläpitokysymys jäi myös avoimeksi: kuka päivittäisi tietoja, kuinka usein ja kuka omistaa ne tuotannossa. Nämä ovat kaksi tärkeintä avointa kysymystä seuraavaa vaihetta varten.</p>
                   <h3>Mitä tekisin toisin?</h3>
                   <ul>
@@ -708,6 +708,7 @@
             <a href="https://liikunta-ai.vercel.app" class="cs-artifact" target="_blank" rel="noopener noreferrer">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               <span class="lang-en">Live AI prototype</span><span class="lang-fi">Live AI-prototyyppi</span>
+              <small style="display:block; margin-top:0.25rem; font-size:0.8rem; opacity:0.7;"><span class="lang-en">Requires your own Mistral or GPT-compatible API key in Settings.</span><span class="lang-fi">Vaatii oman Mistral- tai GPT-yhteensopivan API-avaimen asetuksista.</span></small>
             </a>
           </div>
         </div>
