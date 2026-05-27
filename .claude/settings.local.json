@@ -11,7 +11,8 @@
       "Bash(grep -n \"figcaption\" \"$\\(pwd\\)/styles.css\")",
       "Bash(grep -n \"site-header\\\\|nav-toggle\\\\|\\\\.logo\\\\b\" \"$\\(pwd\\)/styles.css\")",
       "Bash(grep -n \"accent\\\\|--teal\\\\|#008\" \"$\\(pwd\\)/styles.css\")",
-      "Bash(node -e *)"
+      "Bash(node -e *)",
+      "Bash(dir \"C:\\\\Users\\\\Nassi\\\\Documents\\\\Koodit\\\\Portfolio\\\\enchanted\\\\Unessa\\\\img\" /b)"
     ]
   }
 }
