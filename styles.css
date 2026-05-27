@@ -1911,6 +1911,15 @@ body.drawer-open .drawer-backdrop { opacity: 1; }
   margin-right: auto;
 }
 
+.cs-hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
 /* ----------------------------------------------------------------
    Visual callout cards (phone screenshot highlights)
 ---------------------------------------------------------------- */
@@ -2080,25 +2089,110 @@ body.drawer-open .drawer-backdrop { opacity: 1; }
   }
 }
 
-/* Option cards */
-.option-grid {
+/* Decision list */
+.decision-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: var(--space-lg);
+}
+
+.decision-item {
+  background: #ffffff;
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  border-radius: 16px;
+  padding: 1.35rem 1.5rem;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
+  grid-template-columns: minmax(160px, 210px) 1fr 1fr;
+  gap: var(--space-md);
+  align-items: start;
+}
+
+.decision-item__label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #255766;
+  margin-bottom: 0.35rem;
+}
+
+.decision-item__name {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #0f172a;
+}
+
+.decision-item__meta-label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 0.3rem;
+}
+
+.decision-item__alts p,
+.decision-item__rationale p {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 860px) {
+  .decision-item {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Option path */
+.option-path {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
   margin: 1.5rem 0;
 }
 
-.option-card {
+.option-step {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
   background: #ffffff;
   border: 1px solid rgba(148, 163, 184, 0.24);
-  border-radius: 20px;
-  padding: 1.35rem;
-  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.07);
+  border-radius: 16px;
+  padding: 1.2rem 1.25rem;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
 }
 
-.option-card--selected {
+.option-step--selected {
   border-color: rgba(82, 115, 255, 0.42);
-  box-shadow: 0 18px 42px rgba(82, 115, 255, 0.12);
+  background: #f8f9ff;
+  box-shadow: 0 6px 20px rgba(82, 115, 255, 0.1);
+}
+
+.option-step .option-decision {
+  margin-top: auto;
+  padding-top: 0.75rem;
+}
+
+.option-path__arrow {
+  flex: 0 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.option-path__arrow::before {
+  content: '→';
 }
 
 .option-label {
@@ -2110,15 +2204,15 @@ body.drawer-open .drawer-backdrop { opacity: 1; }
   text-transform: uppercase;
 }
 
-.option-card h3 {
-  margin: 0 0 1rem;
-  font-size: 1.1rem;
+.option-step h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
   line-height: 1.3;
   color: #0f172a;
 }
 
 .option-field {
-  margin-top: 0.85rem;
+  margin-top: 0.75rem;
 }
 
 .option-field-label {
@@ -2133,26 +2227,39 @@ body.drawer-open .drawer-backdrop { opacity: 1; }
 
 .option-field p {
   margin: 0;
+  font-size: 0.875rem;
   color: #0f172a;
   line-height: 1.45;
 }
 
 .option-decision {
-  margin: 1rem 0 0;
-  padding-top: 0.85rem;
+  margin: 0.85rem 0 0;
+  padding-top: 0.75rem;
   border-top: 1px solid rgba(148, 163, 184, 0.22);
+  font-size: 0.875rem;
   color: #334155;
   font-weight: 700;
   line-height: 1.45;
 }
 
-.option-card--selected .option-decision {
+.option-step--selected .option-decision {
   color: #5273ff;
 }
 
-@media (max-width: 1050px) {
-  .option-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 860px) {
+  .option-path {
+    flex-direction: column;
+  }
+
+  .option-path__arrow {
+    align-self: flex-start;
+    padding-top: 0;
+    padding-left: 1.25rem;
+    height: 1.75rem;
+  }
+
+  .option-path__arrow::before {
+    content: '↓';
   }
 }
 
