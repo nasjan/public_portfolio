@@ -12,7 +12,9 @@
       "Bash(grep -n \"site-header\\\\|nav-toggle\\\\|\\\\.logo\\\\b\" \"$\\(pwd\\)/styles.css\")",
       "Bash(grep -n \"accent\\\\|--teal\\\\|#008\" \"$\\(pwd\\)/styles.css\")",
       "Bash(node -e *)",
-      "Bash(dir \"C:\\\\Users\\\\Nassi\\\\Documents\\\\Koodit\\\\Portfolio\\\\enchanted\\\\Unessa\\\\img\" /b)"
+      "Bash(dir \"C:\\\\Users\\\\Nassi\\\\Documents\\\\Koodit\\\\Portfolio\\\\enchanted\\\\Unessa\\\\img\" /b)",
+      "Bash(Rename-Item \"C:\\\\Users\\\\Nassi\\\\Documents\\\\Koodit\\\\Portfolio\\\\enchanted\\\\Unessa\\\\img\\\\Hi-Fi.webp\" \"hi-fi.webp\")",
+      "PowerShell(Rename-Item \"C:\\\\Users\\\\Nassi\\\\Documents\\\\Koodit\\\\Portfolio\\\\enchanted\\\\Unessa\\\\img\\\\Hi-Fi.webp\" \"hi-fi.webp\")"
     ]
   }
 }
