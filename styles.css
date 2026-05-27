@@ -378,6 +378,10 @@ h3 {
   outline-offset: 2px;
 }
 
+@media (max-width: 900px) {
+  .lang-toggle { display: none; }
+}
+
 /* ----------------------------------------------------------------
    Bilingual visibility
    html[lang] attribute is set synchronously in <head> from
@@ -471,6 +475,58 @@ body.drawer-open .drawer-backdrop { opacity: 1; }
   .drawer-backdrop {
     display: none !important;
   }
+}
+
+/* ----------------------------------------------------------------
+   Drawer language switcher
+---------------------------------------------------------------- */
+.drawer-lang {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.drawer-lang__label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0 0 0.5rem;
+}
+
+.drawer-lang__pills {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.drawer-lang__pill {
+  flex: 1;
+  padding: 0.45rem 0.75rem;
+  border: 1.5px solid var(--border);
+  border-radius: 2rem;
+  background: transparent;
+  color: var(--text);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.drawer-lang__pill:hover {
+  background: var(--muted);
+  border-color: var(--accent);
+}
+
+.drawer-lang__pill[aria-pressed="true"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+.drawer-lang__pill:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 

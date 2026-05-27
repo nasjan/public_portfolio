@@ -26,6 +26,10 @@
         btn.textContent = lang === 'fi' ? 'EN' : 'FI';
         btn.setAttribute('aria-label', lang === 'fi' ? 'Switch to English' : 'Vaihda suomeksi');
       });
+      document.querySelectorAll('.drawer-lang__pill').forEach(function (btn) {
+        var isActive = btn.getAttribute('data-lang') === lang;
+        btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      });
     }
 
     applyLang(saved);
@@ -36,6 +40,14 @@
         const next = current === 'fi' ? 'en' : 'fi';
         localStorage.setItem(STORAGE_KEY, next);
         applyLang(next);
+      });
+    });
+
+    document.querySelectorAll('.drawer-lang__pill').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var lang = btn.getAttribute('data-lang');
+        localStorage.setItem(STORAGE_KEY, lang);
+        applyLang(lang);
       });
     });
   })();
