@@ -180,7 +180,7 @@
                 <h2><span class="lang-en">Three strongest proofs</span><span class="lang-fi">Kolme vahvinta näyttöä</span></h2>
                 <div class="lang-en">
                   <h3>1. Traceable product definition for an AI solution</h3>
-                  <p>I created the product requirements document and the prototype design specification. They made the product goals, scope, risks, accessibility requirements and feature reasons visible. Each prototype feature had to answer four questions: what it does, why it exists, how it helps the user and what requirements it must meet.</p>
+                  <p>I created the product requirements document and the basis for the prototype design specification. They made the product goals, scope, risks, accessibility requirements and feature reasons visible. Each prototype feature had to answer four questions: what it does, why it exists, how it helps the user and what requirements it must meet.</p>
                   <p>The definition also included a WCAG AA target, contrast and font size considerations, and a clear interface for consultation use. This gave further development a clearer starting point than a Figma prototype alone.</p>
                   <h3>2. Functional AI prototype that made risks visible</h3>
                   <p>I built a published AI prototype with React, Vite and Mistral API. The React app was not meant to polish the final UI or UX. Its purpose was to test AI logic, conversation paths and response risks.</p>
@@ -192,7 +192,7 @@
                 </div>
                 <div class="lang-fi">
                   <h3>1. Jäljitettävä tuotemäärittely AI-ratkaisulle</h3>
-                  <p>Laadin tuotevaatimusdokumentin ja prototyypin designmäärittelyn, joissa tuotteen tavoitteet, rajaukset, riskit, saavutettavuusvaatimukset ja ominaisuuksien perustelut kirjattiin näkyviksi. Jokaisen prototyypin ominaisuuden piti vastata kysymyksiin: mitä se tekee, miksi se on olemassa, miten se auttaa käyttäjää ja mitä vaatimuksia sen pitää täyttää.</p>
+                  <p>Laadin tuotevaatimusdokumentin ja prototyypin designmäärittelyn pohjan, joissa tuotteen tavoitteet, rajaukset, riskit, saavutettavuusvaatimukset ja ominaisuuksien perustelut kirjattiin näkyviksi. Jokaisen prototyypin ominaisuuden piti vastata kysymyksiin: mitä se tekee, miksi se on olemassa, miten se auttaa käyttäjää ja mitä vaatimuksia sen pitää täyttää.</p>
                   <p>Määrittelyyn kirjattiin myös WCAG AA -tason tavoite, kontrastien ja fonttikokojen huomiointi sekä selkeä, vastaanottotilanteeseen sopiva käyttöliittymä. Tämä loi jatkokehitykselle selkeämmän lähtökohdan kuin pelkkä Figma-prototyyppi.</p>
                   <h3>2. Toimiva AI-prototyyppi, joka teki riskit näkyviksi</h3>
                   <p>Rakensin React + Vite + Mistral API -pinolla julkaistun AI-prototyypin. React-sovelluksen tarkoitus ei ollut viimeistellä UI/UX-ratkaisua, vaan testata AI-logiikkaa, keskustelupolkuja ja vastausten riskejä.</p>
@@ -487,7 +487,6 @@
                               </figcaption>
                             </figure>
                           </div>
-                          <!-- TODO: replace with opened local search result card screenshot -->
                           <div class="cs-carousel__slide" aria-hidden="true">
                             <figure>
                               <img src="../img/React-hobby-card.webp" alt="Local search – opened result card showing detailed activity information" width="1200" height="750" loading="lazy" />
@@ -933,7 +932,7 @@
           var lbCaption = overlay.querySelector('.lb-caption');
           var lbClose   = overlay.querySelector('.lb-close');
 
-          /* Shared lightbox nav buttons — one pair, reused across all carousels */
+          /* Shared lightbox nav buttons: one pair, reused across all carousels */
           var lbPrev = document.createElement('button');
           lbPrev.className = 'lb-nav lb-nav--prev';
           lbPrev.setAttribute('aria-label', 'Show previous image / Näytä edellinen kuva');
@@ -949,7 +948,7 @@
           overlay.appendChild(lbPrev);
           overlay.appendChild(lbNext);
 
-          /* Lightbox navigation state — shared across all carousels */
+          /* Lightbox navigation state: shared across all carousels */
           var lbFigures      = [];
           var lbIdx          = -1;
           var lbSyncCarousel = null;
