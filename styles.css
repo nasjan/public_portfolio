@@ -1897,8 +1897,9 @@ body.drawer-open .drawer-backdrop { opacity: 1; }
 }
 
 .cs-fig figcaption {
-  padding: var(--space-xs) var(--space-sm);
+  padding: 0.6rem var(--space-sm) 0.5rem;
   font-size: var(--text-sm);
+  line-height: 1.5;
   color: var(--text-muted);
   background: var(--surface);
   border-top: 1px solid var(--border);
@@ -1916,8 +1917,8 @@ body.drawer-open .drawer-backdrop { opacity: 1; }
   flex-wrap: wrap;
   align-items: center;
   gap: 1rem;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
+  margin-top: 1.1rem;
+  margin-bottom: 2.5rem;
 }
 
 /* ----------------------------------------------------------------
