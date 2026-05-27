@@ -14,7 +14,10 @@
       "Bash(node -e *)",
       "Bash(dir \"C:\\\\Users\\\\Nassi\\\\Documents\\\\Koodit\\\\Portfolio\\\\enchanted\\\\Unessa\\\\img\" /b)",
       "Bash(Rename-Item \"C:\\\\Users\\\\Nassi\\\\Documents\\\\Koodit\\\\Portfolio\\\\enchanted\\\\Unessa\\\\img\\\\Hi-Fi.webp\" \"hi-fi.webp\")",
-      "PowerShell(Rename-Item \"C:\\\\Users\\\\Nassi\\\\Documents\\\\Koodit\\\\Portfolio\\\\enchanted\\\\Unessa\\\\img\\\\Hi-Fi.webp\" \"hi-fi.webp\")"
+      "PowerShell(Rename-Item \"C:\\\\Users\\\\Nassi\\\\Documents\\\\Koodit\\\\Portfolio\\\\enchanted\\\\Unessa\\\\img\\\\Hi-Fi.webp\" \"hi-fi.webp\")",
+      "Bash(git config *)",
+      "Bash(git add *)",
+      "Bash(git rm *)"
     ]
   }
 }
