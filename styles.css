@@ -2582,7 +2582,12 @@ body.drawer-open .drawer-backdrop { opacity: 1; }
 .cs-toc {
   position: sticky;
   top: calc(var(--header-h) + 1.5rem);
-  /* Facts must not be inside the sticky element */
+  max-height: calc(100vh - var(--header-h) - 3rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 0.25rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(15, 23, 42, 0.15) transparent;
 }
 
 .cs-toc-heading {
