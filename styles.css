@@ -2203,15 +2203,15 @@ body.drawer-open .drawer-backdrop { opacity: 1; }
   display: flex;
   flex-direction: column;
   margin: 0;
-  background: #ffffff;
+  background: #f5f7fa;
+  padding: 0.5rem 0;
 }
 
 .visual-callout img {
   width: 100%;
-  height: 380px;
+  height: 360px;
   object-fit: contain;
   display: block;
-  background: #f5f7fa;
 }
 
 .visual-callout figcaption {
@@ -2244,7 +2244,7 @@ body.drawer-open .drawer-backdrop { opacity: 1; }
   }
 
   .visual-callout img {
-    height: 280px;
+    height: 260px;
   }
 
   .visual-callout .cs-carousel__nav {
