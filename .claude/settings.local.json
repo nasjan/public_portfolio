@@ -10,7 +10,8 @@
       "Bash(grep -rn \"table\\\\|<th\\\\|<td\\\\|<tr\" \"$\\(pwd\\)/projects/\")",
       "Bash(grep -n \"figcaption\" \"$\\(pwd\\)/styles.css\")",
       "Bash(grep -n \"site-header\\\\|nav-toggle\\\\|\\\\.logo\\\\b\" \"$\\(pwd\\)/styles.css\")",
-      "Bash(grep -n \"accent\\\\|--teal\\\\|#008\" \"$\\(pwd\\)/styles.css\")"
+      "Bash(grep -n \"accent\\\\|--teal\\\\|#008\" \"$\\(pwd\\)/styles.css\")",
+      "Bash(node -e *)"
     ]
   }
 }

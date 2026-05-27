@@ -446,13 +446,35 @@
                     </div>
                     <div class="visual-callout">
                       <h3><span class="lang-en">Visual highlight 2: Local search</span><span class="lang-fi">Visuaalinen nosto 2: Paikallishaku</span></h3>
-                      <figure>
-                        <img src="../img/liikeapuri-react-results.webp" alt="Local search – filters and result cards from limited test data" width="1200" height="750" loading="lazy" />
-                        <figcaption>
-                          <span class="lang-en">Local activity search with filters and result cards.</span>
-                          <span class="lang-fi">Paikallinen harrastushaku suodattimilla ja tuloskorteilla.</span>
-                        </figcaption>
-                      </figure>
+                      <div class="cs-carousel" role="region" aria-label="Local search views / Paikallishakunäkymät">
+                        <div class="cs-carousel__track">
+                          <div class="cs-carousel__slide cs-carousel__slide--active" aria-hidden="false">
+                            <figure>
+                              <img src="../img/liikeapuri-react-results.webp" alt="Local search – result list with filters and limited result cards" width="1200" height="750" loading="lazy" />
+                              <figcaption>
+                                <span class="lang-en">Local search shows limited result cards and filters.</span>
+                                <span class="lang-fi">Paikallishaku näyttää rajatut tuloskortit ja suodattimet.</span>
+                              </figcaption>
+                            </figure>
+                          </div>
+                          <!-- TODO: replace with opened local search result card screenshot (liikeapuri-react-hobby-card.webp) -->
+                          <div class="cs-carousel__slide" aria-hidden="true">
+                            <figure>
+                              <img src="../img/React-hobby-card.webp" alt="Local search – opened result card showing detailed activity information" width="1200" height="750" loading="lazy" />
+                              <figcaption>
+                                <span class="lang-en">Opening a card shows more details, so the professional can evaluate the option before suggesting it.</span>
+                                <span class="lang-fi">Kortin avaaminen näyttää tarkemmat tiedot, jotta ammattilainen voi arvioida vaihtoehdon ennen sen ehdottamista.</span>
+                              </figcaption>
+                            </figure>
+                          </div>
+                          <button class="cs-carousel__nav cs-carousel__nav--prev" aria-label="Show previous local search image / Näytä edellinen paikallishaun kuva" hidden>
+                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3l-5 5 5 5"/></svg>
+                          </button>
+                          <button class="cs-carousel__nav cs-carousel__nav--next" aria-label="Show next local search image / Näytä seuraava paikallishaun kuva">
+                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
+                          </button>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -865,6 +887,117 @@
         </div>
       </div>
     </footer>
+    <script>
+      (function () {
+        document.addEventListener('DOMContentLoaded', function () {
+          document.querySelectorAll('.cs-carousel').forEach(function (carousel) {
+            var slides   = carousel.querySelectorAll('.cs-carousel__slide');
+            var navPrev  = carousel.querySelector('.cs-carousel__nav--prev');
+            var navNext  = carousel.querySelector('.cs-carousel__nav--next');
+            var figures  = Array.from(carousel.querySelectorAll('figure'));
+            var current  = 0;
+
+            function goTo(index) {
+              slides[current].classList.remove('cs-carousel__slide--active');
+              slides[current].setAttribute('aria-hidden', 'true');
+              current = index;
+              slides[current].classList.add('cs-carousel__slide--active');
+              slides[current].setAttribute('aria-hidden', 'false');
+              if (navPrev) navPrev.hidden = current === 0;
+              if (navNext) navNext.hidden = current === slides.length - 1;
+            }
+
+            if (navPrev) navPrev.addEventListener('click', function (e) {
+              e.stopPropagation();
+              if (current > 0) goTo(current - 1);
+            });
+            if (navNext) navNext.addEventListener('click', function (e) {
+              e.stopPropagation();
+              if (current < slides.length - 1) goTo(current + 1);
+            });
+
+            goTo(0);
+
+            /* --- Lightbox carousel navigation --- */
+            var overlay = document.getElementById('lb-overlay');
+            if (!overlay || figures.length < 2) return;
+
+            var lbImg     = overlay.querySelector('.lb-img');
+            var lbCaption = overlay.querySelector('.lb-caption');
+            var lbClose   = overlay.querySelector('.lb-close');
+            var lbIdx     = -1;
+
+            var lbPrev = document.createElement('button');
+            lbPrev.className = 'lb-nav lb-nav--prev';
+            lbPrev.setAttribute('aria-label', 'Show previous local search image / Näytä edellinen paikallishaun kuva');
+            lbPrev.innerHTML = '<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3l-5 5 5 5"/></svg>';
+            lbPrev.hidden = true;
+
+            var lbNext = document.createElement('button');
+            lbNext.className = 'lb-nav lb-nav--next';
+            lbNext.setAttribute('aria-label', 'Show next local search image / Näytä seuraava paikallishaun kuva');
+            lbNext.innerHTML = '<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>';
+            lbNext.hidden = true;
+
+            overlay.appendChild(lbPrev);
+            overlay.appendChild(lbNext);
+
+            function lbSetNav(idx) {
+              lbIdx = idx;
+              lbPrev.hidden = idx === 0;
+              lbNext.hidden = idx === figures.length - 1;
+            }
+
+            function lbGoTo(idx) {
+              var fig = figures[idx];
+              var img = fig.querySelector('img');
+              lbImg.src = img.src;
+              lbImg.alt = img.alt || '';
+              var figcaption = fig.querySelector('figcaption');
+              var lang = document.documentElement.lang || 'en';
+              var caption = '';
+              if (figcaption) {
+                var span = figcaption.querySelector('.lang-' + lang);
+                caption = span ? span.textContent.trim() : figcaption.textContent.trim();
+              }
+              lbCaption.textContent = caption;
+              lbCaption.hidden = !caption;
+              lbSetNav(idx);
+              goTo(idx);
+            }
+
+            function resetLbNav() {
+              lbPrev.hidden = true;
+              lbNext.hidden = true;
+              lbIdx = -1;
+            }
+
+            figures.forEach(function (fig, idx) {
+              fig.addEventListener('click', function () {
+                requestAnimationFrame(function () {
+                  if (!overlay.hidden) lbSetNav(idx);
+                });
+              });
+            });
+
+            lbPrev.addEventListener('click', function () { if (lbIdx > 0) lbGoTo(lbIdx - 1); });
+            lbNext.addEventListener('click', function () { if (lbIdx < figures.length - 1) lbGoTo(lbIdx + 1); });
+
+            document.addEventListener('keydown', function (e) {
+              if (e.key === 'Escape') { resetLbNav(); return; }
+              if (overlay.hidden || lbIdx === -1) return;
+              if (e.key === 'ArrowLeft'  && lbIdx > 0)                    lbGoTo(lbIdx - 1);
+              if (e.key === 'ArrowRight' && lbIdx < figures.length - 1)   lbGoTo(lbIdx + 1);
+            });
+
+            lbClose.addEventListener('click', resetLbNav);
+            overlay.addEventListener('click', function (e) {
+              if (e.target === overlay) resetLbNav();
+            });
+          });
+        });
+      }());
+    </script>
     <script defer src="../main.js"></script>
     <script src="../consent.js"></script>
   </body>

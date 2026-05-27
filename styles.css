@@ -1921,6 +1921,103 @@ body.drawer-open .drawer-backdrop { opacity: 1; }
   margin-bottom: 2.5rem;
 }
 
+/* Image carousel */
+.cs-carousel {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.cs-carousel__track {
+  flex: 1;
+  position: relative;
+}
+
+.cs-carousel__slide {
+  display: none;
+}
+
+.cs-carousel__slide--active {
+  display: block;
+  animation: cs-carousel-fade 0.18s ease;
+}
+
+@keyframes cs-carousel-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.cs-carousel__nav {
+  position: absolute;
+  top: 190px;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  border-radius: 50%;
+  cursor: pointer;
+  color: #334155;
+  padding: 0;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.12);
+}
+
+.cs-carousel__nav[hidden] {
+  display: none;
+}
+
+.cs-carousel__nav--prev {
+  left: calc((100% - 179px) / 4 - 1.125rem);
+}
+
+.cs-carousel__nav--next {
+  right: calc((100% - 179px) / 4 - 1.125rem);
+}
+
+/* Lightbox carousel navigation */
+.lb-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 901;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 50%;
+  cursor: pointer;
+  color: #ffffff;
+  padding: 0;
+}
+
+.lb-nav:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.lb-nav:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.6);
+  outline-offset: 2px;
+}
+
+.lb-nav--prev {
+  left: 1.5rem;
+}
+
+.lb-nav--next {
+  right: 1.5rem;
+}
+
+.lb-nav[hidden] {
+  display: none;
+}
+
 /* ----------------------------------------------------------------
    Visual callout cards (phone screenshot highlights)
 ---------------------------------------------------------------- */
@@ -1960,7 +2057,7 @@ body.drawer-open .drawer-backdrop { opacity: 1; }
   display: flex;
   flex-direction: column;
   margin: 0;
-  background: #f5f7fa;
+  background: #ffffff;
 }
 
 .visual-callout img {
@@ -1968,6 +2065,7 @@ body.drawer-open .drawer-backdrop { opacity: 1; }
   height: 380px;
   object-fit: contain;
   display: block;
+  background: #f5f7fa;
 }
 
 .visual-callout figcaption {
@@ -1977,6 +2075,7 @@ body.drawer-open .drawer-backdrop { opacity: 1; }
   color: var(--text-muted);
   background: #ffffff;
   border-top: 1px solid rgba(148, 163, 184, 0.14);
+  min-height: 5.5rem;
 }
 
 @media (max-width: 768px) {
@@ -1990,6 +2089,18 @@ body.drawer-open .drawer-backdrop { opacity: 1; }
 
   .visual-callout img {
     height: 280px;
+  }
+
+  .cs-carousel__nav {
+    top: 140px;
+  }
+
+  .cs-carousel__nav--prev {
+    left: calc((100% - 132px) / 4 - 1.125rem);
+  }
+
+  .cs-carousel__nav--next {
+    right: calc((100% - 132px) / 4 - 1.125rem);
   }
 }
 
