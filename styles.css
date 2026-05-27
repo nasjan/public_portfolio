@@ -1913,6 +1913,79 @@ body.drawer-open .drawer-backdrop { opacity: 1; }
 }
 
 
+.risk-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-top: 1rem;
+  margin-bottom: 2.25rem;
+}
+
+.risk-card {
+  background: #fff;
+  border: 1px solid rgba(15, 23, 42, 0.10);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+  padding: 1.15rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.risk-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #334155;
+}
+
+.risk-heading {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #0f172a;
+  margin: 0 0 0.125rem;
+}
+
+.risk-divider {
+  border: none;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  margin: 0.3rem 0;
+}
+
+.risk-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.risk-label {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #334155;
+}
+
+.risk-field--risk p {
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.risk-card p {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #334155;
+}
+
+@media (max-width: 640px) {
+  .risk-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .cs-hero-ctas {
   display: flex;
   flex-wrap: wrap;
