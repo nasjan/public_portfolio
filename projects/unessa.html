@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="fi">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Unessa: Case Study • Jan Nässi</title>
-    <meta name="description" content="Unessa: hyvinvointilähtöisen verkkokauppakonseptin suunnittelu ja Shopify-prototypointi. Portfolio case study." />
+    <meta name="description" content="Unessa: wellness-oriented e-commerce concept and Shopify prototype for better sleep. Portfolio case study by Jan Nässi." />
     <link rel="icon" href="img/pixel_me.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,36 +16,6 @@
 
     <!-- lang init before paint -->
     <script>document.documentElement.lang = localStorage.getItem('portfolio-lang') || 'en';</script>
-    <style>
-      .wireframe-placeholder {
-        min-height: 360px;
-        border: 1px dashed rgba(15, 23, 42, 0.28);
-        border-radius: 24px;
-        background:
-          linear-gradient(135deg, rgba(148, 163, 184, 0.14) 25%, transparent 25%) -20px 0/40px 40px,
-          linear-gradient(225deg, rgba(148, 163, 184, 0.14) 25%, transparent 25%) -20px 0/40px 40px,
-          linear-gradient(315deg, rgba(148, 163, 184, 0.14) 25%, transparent 25%) 0 0/40px 40px,
-          linear-gradient(45deg, rgba(148, 163, 184, 0.14) 25%, rgba(248, 250, 252, 0.9) 25%) 0 0/40px 40px;
-        display: grid;
-        place-items: center;
-        padding: 32px;
-        text-align: center;
-      }
-      .wireframe-placeholder strong {
-        display: block;
-        font-size: 1.05rem;
-        margin-bottom: 8px;
-      }
-      .wireframe-placeholder span {
-        display: block;
-        max-width: 680px;
-        color: rgba(15, 23, 42, 0.68);
-        line-height: 1.55;
-      }
-      .wireframe-placeholder--wide { min-height: 460px; }
-      .wireframe-placeholder--small { min-height: 260px; }
-      .cs-note-list li + li { margin-top: .65rem; }
-    </style>
     <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -82,70 +52,88 @@
 
     <main id="main">
 
+      <!-- 1) HERO -->
       <section class="cs-hero">
         <div class="container">
           <h1>Unessa</h1>
           <p class="cs-hero-summary">
-            Hyvinvointilähtöisen verkkokauppakonseptin suunnittelu ja Shopify-prototypointi. Kurssiprojektissa rakensimme hyvän unen ympärille verkkokaupan, jossa yhdistyvät markkina-analyysi, kohderyhmämäärittely, kuratoitu tuotevalikoima, sisältöstrategia ja kaupallinen verkkokauppalogiikka.
+            <span class="lang-en">A wellness-oriented e-commerce concept and Shopify prototype built around better sleep. The project combined market analysis, target group definition, curated product selection, content strategy and commercial e-commerce logic.</span>
+            <span class="lang-fi">Hyvinvointilähtöisen verkkokauppakonseptin suunnittelu ja Shopify-prototypointi. Kurssiprojektissa rakensimme hyvän unen ympärille verkkokaupan, jossa yhdistyvät markkina-analyysi, kohderyhmämäärittely, kuratoitu tuotevalikoima, sisältöstrategia ja kaupallinen verkkokauppalogiikka.</span>
           </p>
 
           <dl class="cs-hero-meta">
             <div class="cs-meta-item">
-              <dt>Rooli</dt>
-              <dd>Konseptointi, kilpailija- ja markkina-analyysi, verkkokaupan rakenne, Shopify-prototypointi, sisältö- ja liiketoimintalogiikka yhdessä tiimin kanssa</dd>
+              <dt><span class="lang-en">Role</span><span class="lang-fi">Rooli</span></dt>
+              <dd><span class="lang-en">Concepting, competitor and market analysis, store structure, Shopify prototyping, content and business logic with the team</span><span class="lang-fi">Konseptointi, kilpailija- ja markkina-analyysi, verkkokaupan rakenne, Shopify-prototypointi, sisältö- ja liiketoimintalogiikka yhdessä tiimin kanssa</span></dd>
             </div>
             <div class="cs-meta-item">
-              <dt>Konteksti</dt>
-              <dd>Haaga-Helian Verkkokauppa liiketoimintamallina -kurssi</dd>
+              <dt><span class="lang-en">Context</span><span class="lang-fi">Konteksti</span></dt>
+              <dd><span class="lang-en">Haaga-Helia course: E-commerce as a business model</span><span class="lang-fi">Haaga-Helian Verkkokauppa liiketoimintamallina -kurssi</span></dd>
             </div>
-            <div class="cs-meta-item"><dt>Työkalut</dt><dd>Shopify, Figma, Ubersuggest, Google Trends, Koala Inspector, Meta Ad Library, NotebookLM, ChatGPT, Google Gemini</dd></div>
+            <div class="cs-meta-item"><dt>Tools</dt><dd>Shopify, Figma, Ubersuggest, Google Trends, Koala Inspector, Meta Ad Library, NotebookLM, ChatGPT, Google Gemini</dd></div>
             <div class="cs-meta-item">
-              <dt>Tiimi</dt>
-              <dd>Jan Nässi ja Veera Heikkinen</dd>
+              <dt><span class="lang-en">Team</span><span class="lang-fi">Tiimi</span></dt>
+              <dd><span class="lang-en">2 person team</span><span class="lang-fi">2 hengen tiimi: Jan Nässi ja Veera Heikkinen</span></dd>
             </div>
           </dl>
+
         </div>
       </section>
 
+      <!-- 2) OVERVIEW CARDS -->
       <section class="project-section cs-overview">
         <div class="container">
           <div class="cs-overview-grid">
             <div class="cs-ov-card">
-              <p class="cs-ov-label">Ongelma</p>
-              <p>Hyvän unen tuotteita etsivä kuluttaja kohtaa hajanaisen markkinan: apteekit painottuvat lääkkeellisempiin ratkaisuihin ja erikoiskaupat usein kuorsauksen tai uniapnean ympärille.</p>
+              <p class="cs-ov-label"><span class="lang-en">Problem</span><span class="lang-fi">Ongelma</span></p>
+              <p>
+                <span class="lang-en">People looking for better sleep products face a fragmented market: pharmacies focus on more medical solutions, while specialist stores often center on snoring or sleep apnea.</span>
+                <span class="lang-fi">Hyvän unen tuotteita etsivä kuluttaja kohtaa hajanaisen markkinan: apteekit painottuvat lääkkeellisempiin ratkaisuihin ja erikoiskaupat usein kuorsauksen tai uniapnean ympärille.</span>
+              </p>
             </div>
             <div class="cs-ov-card">
-              <p class="cs-ov-label">Tavoite</p>
-              <p>Suunnitella verkkokauppa, joka asemoituu hyvinvoinnin, unirutiinien ja palautumisen tueksi ilman lääketieteellisiä ylilupauksia tai aggressiivista myyntiä.</p>
+              <p class="cs-ov-label"><span class="lang-en">Goal</span><span class="lang-fi">Tavoite</span></p>
+              <p>
+                <span class="lang-en">Design a store that supports sleep routines, recovery and wellbeing without medical overpromising or aggressive sales tactics.</span>
+                <span class="lang-fi">Suunnitella verkkokauppa, joka tukee unirutiineja, palautumista ja hyvinvointia ilman lääketieteellisiä ylilupauksia tai aggressiivista myyntiä.</span>
+              </p>
             </div>
             <div class="cs-ov-card">
-              <p class="cs-ov-label">Ratkaisu</p>
-              <p>Shopify-prototyyppi, kuratoitu noin 20 tuotteen valikoima, päätuotteet, tuotepaketti, blogisisältö, maksutapa- ja logistiikkasuunnitelma sekä alustava myyntibudjetti.</p>
+              <p class="cs-ov-label"><span class="lang-en">Solution</span><span class="lang-fi">Ratkaisu</span></p>
+              <p>
+                <span class="lang-en">A responsive Shopify prototype with a curated product range, product bundle, need-based structure, blog content, payment and logistics planning and an initial sales budget.</span>
+                <span class="lang-fi">Responsiivinen Shopify-prototyyppi, kuratoitu tuotevalikoima, tuotepaketti, tarvelähtöinen rakenne, blogisisältö, maksutapa- ja logistiikkasuunnitelma sekä alustava myyntibudjetti.</span>
+              </p>
             </div>
             <div class="cs-ov-card">
-              <p class="cs-ov-label">Portfolioarvo</p>
-              <p>Case osoittaa kykyä yhdistää käyttäjätarve, kilpailijapositio, sisältöstrategia ja verkkokaupan kaupallinen logiikka konkreettiseksi prototyypiksi.</p>
+              <p class="cs-ov-label"><span class="lang-en">Outcome</span><span class="lang-fi">Lopputulos</span></p>
+              <p>
+                <span class="lang-en">A concrete e-commerce concept that connects user needs, market positioning, content strategy and commercial store logic.</span>
+                <span class="lang-fi">Konkreettinen verkkokauppakonsepti, joka yhdistää käyttäjätarpeen, markkinaposition, sisältöstrategian ja kaupallisen verkkokauppalogiikan.</span>
+              </p>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- 3) BODY -->
       <section class="project-section cs-body-wrap">
         <div class="container">
 
           <details class="cs-toc-mobile">
-            <summary>Sisällysluettelo</summary>
+            <summary><span class="lang-en">Table of Contents</span><span class="lang-fi">Sisällysluettelo</span></summary>
             <ol class="cs-toc-list">
-              <li><a href="#cs-overview">Yleiskatsaus</a></li>
-              <li><a href="#cs-proofs">Kolme vahvinta näyttöä</a></li>
-              <li><a href="#cs-problem">Konteksti ja ongelma</a></li>
-              <li><a href="#cs-role">Oma roolini</a></li>
-              <li><a href="#cs-research">Tutkimus ja löydökset</a></li>
-              <li><a href="#cs-options">Ratkaisuvaihtoehdot</a></li>
-              <li><a href="#cs-solution">Lopullinen ratkaisu</a></li>
-              <li><a href="#cs-decisions">Design- ja liiketoimintapäätökset</a></li>
-              <li><a href="#cs-validation">Validointi ja rajoitteet</a></li>
-              <li><a href="#cs-reflection">Reflektio ja krediitit</a></li>
+              <li><a href="#cs-overview"><span class="lang-en">Overview</span><span class="lang-fi">Yleiskatsaus</span></a></li>
+              <li><a href="#cs-proofs"><span class="lang-en">Three strongest proofs</span><span class="lang-fi">Kolme vahvinta näyttöä</span></a></li>
+              <li><a href="#cs-problem"><span class="lang-en">Problem and Context</span><span class="lang-fi">Konteksti ja ongelma</span></a></li>
+              <li><a href="#cs-role"><span class="lang-en">My Role</span><span class="lang-fi">Oma roolini</span></a></li>
+              <li><a href="#cs-research"><span class="lang-en">Research and Insights</span><span class="lang-fi">Tutkimus ja löydökset</span></a></li>
+              <li><a href="#cs-options"><span class="lang-en">Solution Options</span><span class="lang-fi">Ratkaisuvaihtoehdot</span></a></li>
+              <li><a href="#cs-solution"><span class="lang-en">The Solution</span><span class="lang-fi">Lopullinen ratkaisu</span></a></li>
+              <li><a href="#cs-decisions"><span class="lang-en">Key Design Decisions</span><span class="lang-fi">Keskeiset design-päätökset</span></a></li>
+              <li><a href="#cs-validation"><span class="lang-en">Validation and Limitations</span><span class="lang-fi">Validointi ja rajoitteet</span></a></li>
+              <li><a href="#cs-reflection"><span class="lang-en">Reflection</span><span class="lang-fi">Reflektio</span></a></li>
+              <li><a href="#cs-credits"><span class="lang-en">Credits</span><span class="lang-fi">Krediitit</span></a></li>
             </ol>
           </details>
 
@@ -153,153 +141,368 @@
             <div class="cs-main">
 
               <div id="cs-overview" class="cs-section">
-                <h2>Yleiskatsaus</h2>
-                <p>Unessa oli hyvän unen tuotteisiin keskittyvä verkkokauppakonsepti 21–50-vuotiaille kuluttajille, jotka haluavat parantaa unen laatua, palautumista ja arjen jaksamista. Projektissa suunnittelimme verkkokaupan, joka ei asemoidu sairauden hoitoon, vaan parempaa uniympäristöä ja rauhallisempaa iltarutiinia tukevaksi hyvinvointikaupaksi.</p>
-                <p>Projektin ydinkysymys oli: miten hyvän unen ympärille voidaan rakentaa verkkokauppa, joka tuntuu luotettavalta ja hyödylliseltä ilman lääketieteellisiä ylilupauksia tai painostavaa kampanjamyyntiä?</p>
+                <h2><span class="lang-en">Overview</span><span class="lang-fi">Yleiskatsaus</span></h2>
+                <div class="lang-en">
+                  <p>Unessa is a better sleep e-commerce concept for 21–50-year-old consumers who want to improve sleep quality, recovery and everyday wellbeing. Instead of positioning the store as a medical solution, the concept frames sleep through routines, environment and recovery.</p>
+                  <p>The core question was: how can better sleep be turned into an e-commerce concept that feels trustworthy and useful without medical overpromising or pressure-based sales tactics?</p>
+                </div>
+                <div class="lang-fi">
+                  <p>Unessa oli hyvän unen tuotteisiin keskittyvä verkkokauppakonsepti 21–50-vuotiaille kuluttajille, jotka haluavat parantaa unen laatua, palautumista ja arjen jaksamista. Projektissa suunnittelimme verkkokaupan, joka ei asemoidu sairauden hoitoon, vaan parempaa uniympäristöä ja rauhallisempaa iltarutiinia tukevaksi hyvinvointikaupaksi.</p>
+                  <p>Projektin ydinkysymys oli: miten hyvän unen ympärille voidaan rakentaa verkkokauppa, joka tuntuu luotettavalta ja hyödylliseltä ilman lääketieteellisiä ylilupauksia tai painostavaa kampanjamyyntiä?</p>
+                </div>
 
                 <figure class="cs-fig">
-                  <img src="../Unessa/img/unessa-webpage-hero.jpg" alt="Unessa-verkkokaupan etusivun hero-osio" width="1200" height="750" loading="lazy" />
-                  <figcaption>Unessa-verkkokaupan etusivu esittelee arvolupauksen, tunnelman ja hyvinvointilähtöisen position heti ensimmäisessä näkymässä.</figcaption>
+                  <img src="../Unessa/img/unessa-webpage-hero.webp" alt="Unessa-verkkokaupan etusivun hero-osio" width="1200" height="750" loading="lazy" />
+                  <figcaption>
+                    <span class="lang-en">The Unessa homepage presents the value proposition, mood and wellness-oriented positioning in the first view.</span>
+                    <span class="lang-fi">Unessa-verkkokaupan etusivu esittelee arvolupauksen, tunnelman ja hyvinvointilähtöisen position heti ensimmäisessä näkymässä.</span>
+                  </figcaption>
                 </figure>
+
+                <div class="cs-hero-ctas">
+                  <a href="https://unessa-store.myshopify.com/" class="btn btn-primary btn-inline" target="_blank" rel="noopener noreferrer">
+                    <span class="lang-en">Open Unessa store</span>
+                    <span class="lang-fi">Avaa Unessa-verkkokauppa</span>
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
+                  </a>
+                  <a href="https://unessa-store.myshopify.com/blogs/uutiset/oura-ring" class="btn btn-outline btn-inline" target="_blank" rel="noopener noreferrer">
+                    <span class="lang-en">Open blog article</span>
+                    <span class="lang-fi">Avaa blogiartikkeli</span>
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
+                  </a>
+                </div>
               </div>
 
               <div class="cs-divider"></div>
 
               <div id="cs-proofs" class="cs-section">
-                <h2>Kolme vahvinta näyttöä</h2>
-                <h3>1. Markkina- ja kilpailija-analyysistä johdettu tuotevalikoima</h3>
-                <p>Tuotevalikoimaa ei rakennettu pelkän intuition varaan. Hyödynsimme hakusana-analyysiä, kilpailijavertailua ja kilpailijoiden suosituimpien tuotteiden arviointia, jotta valikoima vastaisi sekä asiakkaiden hakukäyttäytymiseen että markkinassa näkyviin puutteisiin.</p>
-
-                <h3>2. Liiketoimintalogiikka vietiin osaksi verkkokaupan rakennetta</h3>
-                <p>Koska yksittäiset tuotteet olivat suhteellisen edullisia, suunnittelimme tuotepaketin, ilmaisen toimituksen rajan ja lisämyynnin logiikan tukemaan keskiostoksen kasvattamista. Tämä teki konseptista uskottavamman verkkokauppana, ei vain visuaalisena prototyyppinä.</p>
-
-                <h3>3. Shopify-prototyyppi yhdisti brändin, sisällön ja ostokokemuksen</h3>
-                <p>Lopputuloksena syntyi Shopifyllä rakennettu verkkokauppaprototyyppi, jossa olivat mukana sivurakenne, päätuotteet, kategorisointi, blogisisältö, maksutapojen suunnittelu, logistiikkamalli ja brändin tone of voice.</p>
+                <h2><span class="lang-en">Three strongest proofs</span><span class="lang-fi">Kolme vahvinta näyttöä</span></h2>
+                <div class="lang-en">
+                  <h3>1. Product range derived from market and competitor analysis</h3>
+                  <p>Keyword analysis, competitor scanning and product popularity signals guided what products were included. The range was built around concrete sleep challenges, not just categories.</p>
+                  <h3>2. Commercial logic built into the store structure</h3>
+                  <p>Low-priced products required an average order value strategy. Bundles, a free shipping threshold and add-on logic were built into the store structure from the start.</p>
+                  <h3>3. Shopify prototype connected brand, content and shopping experience</h3>
+                  <p>The prototype included the store structure, key product pages, blog content and a shopping flow, making the concept more than a static mockup.</p>
+                </div>
+                <div class="lang-fi">
+                  <h3>1. Markkina- ja kilpailija-analyysistä johdettu tuotevalikoima</h3>
+                  <p>Hakusana-analyysi, kilpailijavertailu ja tuotteiden suosiosignaalit ohjasivat valikoiman rakennetta. Valikoima rakennettiin konkreettisten unihaasteiden ympärille, ei pelkkien kategorioiden varaan.</p>
+                  <h3>2. Liiketoimintalogiikka vietiin osaksi verkkokaupan rakennetta</h3>
+                  <p>Edulliset päätuotteet edellyttivät keskiostosta kasvattavaa ajattelua. Tuotepaketit, ilmaisen toimituksen raja ja lisämyynnin logiikka rakennettiin osaksi kaupan rakennetta heti alusta.</p>
+                  <h3>3. Shopify-prototyyppi yhdisti brändin, sisällön ja ostokokemuksen</h3>
+                  <p>Prototyyppi sisälsi kaupan rakenteen, päätuotesivut, blogisisällöt ja ostopolun, jolloin konsepti oli enemmän kuin pelkkä staattinen mallikuva.</p>
+                </div>
               </div>
 
               <div class="cs-divider"></div>
 
               <div id="cs-problem" class="cs-section">
-                <h2>Konteksti ja ongelma</h2>
-                <p>Unessa-projektin lähtökohtana oli havainto siitä, että uni on noussut osaksi hyvinvoinnin optimointia samalla tavalla kuin liikunta ja ravinto. Kuluttajat etsivät ratkaisuja esimerkiksi stressiin, ruutuaikaan, valoon, meluun ja palautumisen haasteisiin.</p>
-                <p>Markkinassa olevat vaihtoehdot näyttäytyivät kuitenkin usein joko apteekkien lääke- ja ravintolisäkeskeisinä ratkaisuina tai kuorsauksen ja uniapnean ympärille rakentuvina erikoiskauppoina. Tämä loi mahdollisuuden verkkokauppakonseptille, joka yhdistäisi fyysiset tuotteet, digitaaliset sisällöt, unirutiinia tukevat paketit ja luottamusta rakentavan sisältömarkkinoinnin.</p>
-                <div class="cs-callout">
-                  <p><strong>Problem statement:</strong> Hyvinvoinnistaan kiinnostunut kuluttaja tarvitsee tavan löytää parempaa unta tukevia tuotteita ja sisältöä yhdestä selkeästä paikasta, koska olemassa olevat vaihtoehdot ovat usein joko hajanaisia, apteekkikeskeisiä tai sairauslähtöisiä.</p>
+                <h2><span class="lang-en">Problem and Context</span><span class="lang-fi">Konteksti ja ongelma</span></h2>
+                <div class="lang-en">
+                  <p>Sleep has become part of everyday wellbeing alongside nutrition and exercise. Consumers search for solutions related to stress, screen time, light, noise and recovery.</p>
+                  <p>Most options were either pharmacy-driven, supplement-heavy solutions or specialist stores focused on snoring and sleep apnea. This created an opportunity for a store that frames sleep through routines, environment and recovery.</p>
+                  <div class="cs-callout">
+                    <p><strong>Problem statement:</strong> People interested in better sleep need a clear way to find products and content in one place because the existing options are fragmented, pharmacy-driven or medicalized.</p>
+                  </div>
+                </div>
+                <div class="lang-fi">
+                  <p>Unessa-projektin lähtökohtana oli havainto siitä, että uni on noussut osaksi hyvinvoinnin optimointia samalla tavalla kuin liikunta ja ravinto. Kuluttajat etsivät ratkaisuja esimerkiksi stressiin, ruutuaikaan, valoon, meluun ja palautumisen haasteisiin.</p>
+                  <p>Markkinassa olevat vaihtoehdot näyttäytyivät kuitenkin usein joko apteekkien lääke- ja ravintolisäkeskeisinä ratkaisuina tai kuorsauksen ja uniapnean ympärille rakentuvina erikoiskauppoina. Tämä loi mahdollisuuden verkkokauppakonseptille, joka yhdistäisi fyysiset tuotteet, digitaaliset sisällöt, unirutiinia tukevat paketit ja luottamusta rakentavan sisältömarkkinoinnin.</p>
+                  <div class="cs-callout">
+                    <p><strong>Problem statement:</strong> Hyvinvoinnistaan kiinnostunut kuluttaja tarvitsee tavan löytää parempaa unta tukevia tuotteita ja sisältöä yhdestä selkeästä paikasta, koska olemassa olevat vaihtoehdot ovat usein joko hajanaisia, apteekkikeskeisiä tai sairauslähtöisiä.</p>
+                  </div>
                 </div>
 
                 <figure class="cs-fig">
-                  <img src="../Unessa/img/unessa-webpage-mikä-häiritsee-untasi.jpg" alt="Unessa-verkkokaupan unihaasteisiin perustuva valintaosio" width="1200" height="750" loading="lazy" />
-                  <figcaption>Unihaasteet jäsennettiin asiakkaan tilanteen mukaan, jotta käyttäjä voisi lähestyä valikoimaa oman ongelmansa eikä pelkän tuotekategorian kautta.</figcaption>
+                  <img src="../Unessa/img/unessa-webpage-mikä-häiritsee-untasi.webp" alt="Unessa-verkkokaupan unihaasteisiin perustuva valintaosio" width="1200" height="750" loading="lazy" />
+                  <figcaption>
+                    <span class="lang-en">Sleep challenges were structured around the customer's situation, so the user could approach the product range through their own problem rather than only product categories.</span>
+                    <span class="lang-fi">Unihaasteet jäsennettiin asiakkaan tilanteen mukaan, jotta käyttäjä voisi lähestyä valikoimaa oman ongelmansa eikä pelkän tuotekategorian kautta.</span>
+                  </figcaption>
                 </figure>
               </div>
 
               <div class="cs-divider"></div>
 
               <div id="cs-role" class="cs-section">
-                <h2>Oma roolini</h2>
-                <p>Tein projektin parityönä Veera Heikkisen kanssa. Konsepti, analyysi, valikoima ja lopullinen raportointi syntyivät yhteisen työskentelyn kautta, joten case ei esitä lopputulosta yksin tehtynä työnä.</p>
-                <h3>Vastasin erityisesti</h3>
-                <ul>
-                  <li>verkkokaupan konseptin ja liiketoimintalogiikan jäsentämisestä yhdessä tiimin kanssa</li>
-                  <li>kilpailija- ja markkina-analyysin hyödyntämisestä tuotevalikoiman suunnittelussa</li>
-                  <li>verkkokaupan rakenteen, sivujen ja ostokokemuksen määrittelystä</li>
-                  <li>Shopify-prototyypin rakentamisesta ja viimeistelystä projektin tavoitteiden mukaisesti</li>
-                  <li>SEO/GEO-ajattelun viemisestä päätuotteiden kuvauksiin ja blogisisältöön</li>
-                  <li>sen arvioimisesta, miten tuotepaketit, toimitusraja ja sisältö tukevat verkkokaupan kaupallista toimivuutta</li>
-                </ul>
+                <h2><span class="lang-en">My Role</span><span class="lang-fi">Oma roolini</span></h2>
+                <div class="lang-en">
+                  <p>The project was created together with Veera Heikkinen. The concept, analysis, product range and final reporting were developed through shared work, so this case does not present the outcome as individual work.</p>
+                  <h3>I was especially responsible for</h3>
+                  <ul>
+                    <li>structuring the e-commerce concept and business logic with the team</li>
+                    <li>using competitor and market analysis to inform the product range</li>
+                    <li>defining the store structure, pages and shopping experience</li>
+                    <li>building and refining the Shopify prototype according to the project goals</li>
+                    <li>bringing SEO/GEO thinking into product descriptions and blog content</li>
+                    <li>evaluating how product bundles, shipping threshold and content support commercial viability</li>
+                  </ul>
+                </div>
+                <div class="lang-fi">
+                  <p>Tein projektin parityönä Veera Heikkisen kanssa. Konsepti, analyysi, valikoima ja lopullinen raportointi syntyivät yhteisen työskentelyn kautta, joten case ei esitä lopputulosta yksin tehtynä työnä.</p>
+                  <h3>Vastasin erityisesti</h3>
+                  <ul>
+                    <li>verkkokaupan konseptin ja liiketoimintalogiikan jäsentäminen yhdessä tiimin kanssa</li>
+                    <li>kilpailija- ja markkina-analyysin hyödyntäminen tuotevalikoiman suunnittelussa</li>
+                    <li>verkkokaupan rakenteen, sivujen ja ostokokemuksen määrittely</li>
+                    <li>Shopify-prototyypin rakentaminen ja viimeistely projektin tavoitteiden mukaisesti</li>
+                    <li>SEO/GEO-ajattelun vieminen päätuotteiden kuvauksiin ja blogisisältöön</li>
+                    <li>sen arvioiminen, miten tuotepaketit, toimitusraja ja sisältö tukevat verkkokaupan kaupallista toimivuutta</li>
+                  </ul>
+                </div>
               </div>
 
               <div class="cs-divider"></div>
 
               <div id="cs-research" class="cs-section">
-                <h2>Tutkimus ja tärkeimmät löydökset</h2>
-                <p>Käytimme hakusana-analyysiä, kilpailijavertailua, kilpailijoiden suosituimpien tuotteiden arviointia, Meta Ad Libraryn tarkastelua, asiakassegmentointia ja Figma-ideointia. Menetelmien tarkoitus ei ollut vain dokumentoida markkinaa, vaan tehdä päätöksiä valikoimasta, positioinnista ja verkkokaupan rakenteesta.</p>
-
-                <h3>1. Asiakkaiden tarve liittyy konkreettisiin unihaasteisiin</h3>
-                <p>Hakusanoissa ja kilpailijoiden tuotenostoissa korostuivat esimerkiksi unimaskit, korvatulpat, nenäteipit, melatoniini ja magnesium. Tämä ohjasi päätöstä rakentaa valikoima konkreettisten käyttötilanteiden ympärille: valosuojaus, ympäristö, hengitys, ravintolisät, iltarutiinit ja paketit.</p>
-
-                <h3>2. Kilpailijoiden valikoimat jättivät tilaa kuratoidulle hyvinvointikonseptille</h3>
-                <p>Chillamo painottui vahvasti kuorsauksen, hengityksen ja uniapnean ympärille. Apteekit puolestaan olivat vahvoja ravintolisissä ja lääkemäisemmissä ratkaisuissa, mutta niiden tarjoama ei muodostanut lifestyle-henkistä, esteettistä tai kokonaisvaltaista unirutiinikokemusta.</p>
-
-                <h3>3. Edulliset tuotteet vaativat keskiostoksen kasvattamista</h3>
-                <p>Päätuotteet olivat yksittäin melko edullisia, joten pelkkä yksittäistuotteiden myynti olisi tehnyt kannattavuudesta haastavaa. Tämän vuoksi suunnittelimme tuotepaketin, ilmaisen toimituksen rajan ja lisämyynnin logiikan osaksi kaupan rakennetta.</p>
-
-                <h3>4. Luottamus piti rakentaa sisällöllä, ei painostavalla myynnillä</h3>
-                <p>Uni on sensitiivinen hyvinvoinnin aihe, ja osa tuotteista sivuaa terveyttä. Siksi brändin tone of voice rajattiin rauhalliseksi, asiantuntevaksi ja vastuulliseksi. Sisältömarkkinoinnin tehtävä oli auttaa asiakasta ymmärtämään omaa tilannettaan ilman liiallisia lupauksia.</p>
+                <h2><span class="lang-en">Research and Insights</span><span class="lang-fi">Tutkimus ja löydökset</span></h2>
+                <div class="lang-en">
+                  <p>Research was fast and decision-oriented. We used keyword analysis, competitor analysis, product popularity signals, Meta Ad Library, segmentation, personas and Figma exploration to inform the concept.</p>
+                  <h3>Key findings</h3>
+                  <p><strong>1. Customer needs were concrete sleep challenges.</strong> This led to a need-based product structure rather than generic categories.</p>
+                  <p><strong>2. Competitors left space for a curated wellness concept.</strong> Pharmacy and snoring-focused stores did not offer a holistic, lifestyle-oriented sleep routine experience.</p>
+                  <p><strong>3. Low-priced products required average order value logic.</strong> Bundles, free shipping threshold and add-on logic were essential for commercial viability.</p>
+                  <p><strong>4. Trust had to be built through content, not pressure selling.</strong> Tone of voice and blog content were part of the value proposition.</p>
+                </div>
+                <div class="lang-fi">
+                  <p>Hyödynsimme hakusana-analyysiä, kilpailijavertailua, kilpailijoiden suosituimpien tuotteiden arviointia, Meta Ad Libraryn tarkastelua, asiakassegmentointia, asiakaspersoonia ja Figma-ideointia. Menetelmien tarkoitus oli tehdä päätöksiä valikoimasta, positioinnista ja verkkokaupan rakenteesta.</p>
+                  <h3>Keskeiset löydökset</h3>
+                  <p><strong>1. Asiakkaiden tarve liittyy konkreettisiin unihaasteisiin.</strong> Tämä johti tarvelähtöiseen rakenteeseen pelkkien kategorioiden sijaan.</p>
+                  <p><strong>2. Kilpailijoiden valikoimat jättivät tilaa kuratoidulle hyvinvointikonseptille.</strong> Apteekit ja kuorsauspainotteiset kaupat eivät tarjonneet kokonaisvaltaista unirutiinikokemusta.</p>
+                  <p><strong>3. Edulliset tuotteet vaativat keskiostoksen kasvattamista.</strong> Tuotepaketti, toimitusraja ja lisämyynnin logiikka olivat kaupallisesti keskeisiä.</p>
+                  <p><strong>4. Luottamus piti rakentaa sisällöllä, ei painostavalla myynnillä.</strong> Tone of voice ja blogisisältö olivat osa arvolupausta.</p>
+                </div>
 
                 <figure class="cs-fig">
-                  <img src="../Unessa/img/unessa-webpage-suosituimmat-tuotteet.jpg" alt="Unessa-verkkokaupan suosituimmat tuotteet" width="1200" height="750" loading="lazy" />
-                  <figcaption>Päätuotteet valittiin hakusana- ja kilpailijaanalyysin pohjalta: valosuojaus, hengityksen tukeminen ja ympäristön rauhoittaminen nousivat konkreettisiksi tuoteteemoiksi.</figcaption>
+                  <img src="../Unessa/img/customer-personas.webp" alt="Unessa-verkkokaupan asiakaspersoonat" width="1200" height="750" loading="lazy" />
+                  <figcaption>
+                    <span class="lang-en">Customer personas helped structure different sleep challenges, buying motives and price sensitivity before designing the product range and content.</span>
+                    <span class="lang-fi">Asiakaspersoonat auttoivat jäsentämään erilaisia unihaasteita, ostomotiiveja ja hintaherkkyyttä ennen valikoiman ja sisällön suunnittelua.</span>
+                  </figcaption>
                 </figure>
               </div>
 
               <div class="cs-divider"></div>
 
               <div id="cs-options" class="cs-section">
-                <h2>Ratkaisuvaihtoehdot ja priorisointi</h2>
-                <p>Ennen lopullista suuntaa vertailimme kolmea mahdollista positiointia. Lopulliseksi suunnaksi valittiin hyvinvointilähtöinen verkkokauppa, koska se tarjosi parhaan kompromissin erottautumisen, käyttäjän arjen tarpeiden, tuotevalikoiman laajennettavuuden ja Shopify-toteutuksen realistisuuden välillä.</p>
+                <h2><span class="lang-en">Solution Options</span><span class="lang-fi">Ratkaisuvaihtoehdot</span></h2>
+                <p>
+                  <span class="lang-en">We compared three positioning directions before deciding on the final concept.</span>
+                  <span class="lang-fi">Vertailimme kolmea mahdollista positiointia ennen lopullista suuntaa.</span>
+                </p>
 
-                <div class="option-grid">
-                  <div class="option-card">
-                    <p class="option-label">Vaihtoehto A</p>
-                    <h3>Apteekkityylinen ongelmanratkaisukauppa</h3>
-                    <div class="option-field"><span class="option-field-label">Hyöty</span><p>Luotettava ja tuttu ostokonteksti.</p></div>
-                    <div class="option-field"><span class="option-field-label">Riski</span><p>Vaikea erottautua apteekeista ja liian lääkemäinen vaikutelma.</p></div>
-                    <p class="option-decision">Ei valittu</p>
+                <div class="option-path">
+
+                  <div class="option-step">
+                    <p class="option-label"><span class="lang-en">Option A</span><span class="lang-fi">Vaihtoehto A</span></p>
+                    <h3><span class="lang-en">Pharmacy-style problem-solving store</span><span class="lang-fi">Apteekkityylinen ongelmanratkaisukauppa</span></h3>
+                    <div class="option-field">
+                      <span class="option-field-label"><span class="lang-en">What it solved</span><span class="lang-fi">Mitä se ratkaisi</span></span>
+                      <p><span class="lang-en">Familiar and trusted shopping context.</span><span class="lang-fi">Luotettava ja tuttu ostokonteksti.</span></p>
+                    </div>
+                    <div class="option-field">
+                      <span class="option-field-label"><span class="lang-en">Risk</span><span class="lang-fi">Riski</span></span>
+                      <p><span class="lang-en">Too medical and hard to differentiate from pharmacies.</span><span class="lang-fi">Liian lääkemäinen ja vaikea erottautua apteekeista.</span></p>
+                    </div>
+                    <p class="option-decision"><span class="lang-en">Not selected</span><span class="lang-fi">Ei valittu</span></p>
                   </div>
-                  <div class="option-card">
-                    <p class="option-label">Vaihtoehto B</p>
-                    <h3>Kuorsaus- ja hengitystuotteisiin erikoistuva kauppa</h3>
-                    <div class="option-field"><span class="option-field-label">Hyöty</span><p>Selkeä niche ja konkreettinen ongelma.</p></div>
-                    <div class="option-field"><span class="option-field-label">Riski</span><p>Liian lähellä Chillamon positiota ja sairauskeskeistä markkinaa.</p></div>
-                    <p class="option-decision">Ei valittu</p>
+
+                  <div class="option-path__arrow" aria-hidden="true"></div>
+
+                  <div class="option-step">
+                    <p class="option-label"><span class="lang-en">Option B</span><span class="lang-fi">Vaihtoehto B</span></p>
+                    <h3><span class="lang-en">Snoring and breathing-focused specialist store</span><span class="lang-fi">Kuorsaus- ja hengitystuotteisiin erikoistuva kauppa</span></h3>
+                    <div class="option-field">
+                      <span class="option-field-label"><span class="lang-en">What it solved</span><span class="lang-fi">Mitä se ratkaisi</span></span>
+                      <p><span class="lang-en">Clear niche and a concrete problem focus.</span><span class="lang-fi">Selkeä niche ja konkreettinen ongelma.</span></p>
+                    </div>
+                    <div class="option-field">
+                      <span class="option-field-label"><span class="lang-en">Risk</span><span class="lang-fi">Riski</span></span>
+                      <p><span class="lang-en">Too close to existing competitors and medical framing.</span><span class="lang-fi">Liian lähellä kilpailijoita ja sairauskeskeistä markkinaa.</span></p>
+                    </div>
+                    <p class="option-decision"><span class="lang-en">Not selected</span><span class="lang-fi">Ei valittu</span></p>
                   </div>
-                  <div class="option-card option-card--selected">
-                    <p class="option-label">Vaihtoehto C</p>
-                    <h3>Hyvinvointi- ja unirutiinikauppa</h3>
-                    <div class="option-field"><span class="option-field-label">Hyöty</span><p>Erottuu lifestyle-, sisältö- ja pakettiajattelulla.</p></div>
-                    <div class="option-field"><span class="option-field-label">Riski</span><p>Vaatii vahvaa luottamusta, koska brändi on uusi.</p></div>
-                    <p class="option-decision">Valittu ratkaisu</p>
+
+                  <div class="option-path__arrow" aria-hidden="true"></div>
+
+                  <div class="option-step option-step--selected">
+                    <p class="option-label"><span class="lang-en">Option C</span><span class="lang-fi">Vaihtoehto C</span></p>
+                    <h3><span class="lang-en">Wellbeing and sleep routine store</span><span class="lang-fi">Hyvinvointi- ja unirutiinikauppa</span></h3>
+                    <div class="option-field">
+                      <span class="option-field-label"><span class="lang-en">What it solved</span><span class="lang-fi">Mitä se ratkaisi</span></span>
+                      <p><span class="lang-en">Balanced wellbeing positioning and room for content and bundles.</span><span class="lang-fi">Tasapainoinen hyvinvointipositio ja tila sisällölle sekä paketoinnille.</span></p>
+                    </div>
+                    <div class="option-field">
+                      <span class="option-field-label"><span class="lang-en">Risk</span><span class="lang-fi">Riski</span></span>
+                      <p><span class="lang-en">Requires strong trust-building and content clarity.</span><span class="lang-fi">Vaatii vahvaa luottamuksen rakentamista ja sisällön selkeyttä.</span></p>
+                    </div>
+                    <p class="option-decision"><span class="lang-en">Chosen solution</span><span class="lang-fi">Valittu ratkaisu</span></p>
                   </div>
+
                 </div>
+
+                <figure class="cs-fig">
+                  <img src="../Unessa/img/wireframe-figma-hifi-shopify.webp" alt="Figma-rakenteen ja Shopify-toteutuksen vertailu Unessa-projektissa" width="1200" height="750" loading="lazy" />
+                  <figcaption>
+                    <span class="lang-en">Figma exploration and Shopify implementation were connected so the concept became a working e-commerce prototype rather than only a static mockup.</span>
+                    <span class="lang-fi">Figma-ideointi ja Shopify-toteutus yhdistettiin niin, että konseptista syntyi toimiva verkkokauppaprototyyppi eikä pelkkä staattinen mallikuva.</span>
+                  </figcaption>
+                </figure>
               </div>
 
               <div class="cs-divider"></div>
 
               <div id="cs-solution" class="cs-section">
-                <h2>Lopullinen ratkaisu</h2>
-                <p>Lopullinen ratkaisu oli Shopifyllä rakennettu Unessa-verkkokauppaprototyyppi. Kauppa tarjoaa tuotteita ja sisältöä unen laadun, palautumisen ja hyvinvoinnin tueksi. Sen arvolupaus on tarjota parempaan uneen liittyvät ratkaisut yhdessä selkeässä, luotettavassa ja esteettisessä verkkokaupassa.</p>
-                <p>Verkkokaupan pääsivut olivat etusivu, tuotteet, blogi, tietoa meistä, UKK ja ota yhteyttä. Tuotevalikoima jäsennettiin asiakkaan tarpeiden mukaan kategorioihin, kuten hengitys, valosuojaus, ravintolisät, ympäristö, iltarutiinit ja paketit.</p>
+                <h2><span class="lang-en">The Solution</span><span class="lang-fi">Lopullinen ratkaisu</span></h2>
+                <div class="lang-en">
+                  <p>The final solution was a responsive Shopify prototype for a better sleep store. The store offers products and content for sleep quality, recovery and wellbeing. Its value proposition is to bring better sleep solutions into one clear, trustworthy and aesthetically coherent e-commerce experience.</p>
+                  <p>The main pages were homepage, products, blog, about, FAQ and contact. The product range was structured around customer needs such as breathing, light protection, supplements, sleep environment, evening routines and bundles.</p>
+                </div>
+                <div class="lang-fi">
+                  <p>Lopullinen ratkaisu oli responsiivinen Shopify-prototyyppi hyvän unen verkkokaupasta. Kauppa tarjoaa tuotteita ja sisältöä unen laadun, palautumisen ja hyvinvoinnin tueksi. Sen arvolupaus on tarjota parempaan uneen liittyvät ratkaisut yhdessä selkeässä, luotettavassa ja esteettisessä verkkokaupassa.</p>
+                  <p>Verkkokaupan pääsivut olivat etusivu, tuotteet, blogi, tietoa meistä, UKK ja ota yhteyttä. Tuotevalikoima jäsennettiin asiakkaan tarpeiden mukaan kategorioihin, kuten hengitys, valosuojaus, ravintolisät, ympäristö, iltarutiinit ja paketit.</p>
+                </div>
 
                 <div class="visual-callouts">
                   <div class="visual-callouts-grid">
                     <div class="visual-callout">
-                      <h3>Etusivu ohjaa tarpeesta ratkaisuun</h3>
+                      <h3><span class="lang-en">Need-based homepage structure</span><span class="lang-fi">Tarvelähtöinen etusivurakenne</span></h3>
                       <figure>
-                        <img src="../Unessa/img/unessa-webpage-hero.jpg" alt="Unessa-verkkokaupan etusivun hero-osio" width="1200" height="750" loading="lazy" />
-                        <figcaption>Etusivun tehtävä on kertoa nopeasti, mitä Unessa tarjoaa ja ohjata käyttäjä tuotteisiin tarpeen kautta.</figcaption>
+                        <img src="../Unessa/img/unessa-webpage-mikä-häiritsee-untasi.webp" alt="Unessa-verkkokaupan unihaasteisiin perustuva valintaosio" width="1200" height="750" loading="lazy" />
+                        <figcaption>
+                          <span class="lang-en">Need-based structure helped users approach the range through their own sleep challenge.</span>
+                          <span class="lang-fi">Tarvelähtöinen rakenne auttoi käyttäjää lähestymään valikoimaa oman unihaasteen kautta.</span>
+                        </figcaption>
                       </figure>
                     </div>
                     <div class="visual-callout">
-                      <h3>Tuotesivut yhdistävät hyödyn, käytön ja hakunäkyvyyden</h3>
+                      <h3><span class="lang-en">Product range</span><span class="lang-fi">Tuotevalikoima</span></h3>
+                      <div class="cs-carousel" role="region" aria-label="Product range views / Tuotevalikoiman näkymät">
+                        <div class="cs-carousel__track">
+                          <div class="cs-carousel__slide cs-carousel__slide--active" aria-hidden="false">
+                            <figure>
+                              <img src="../Unessa/img/tuotteet-page.webp" alt="Unessa-verkkokaupan tuotteet-sivu" width="1200" height="750" loading="lazy" />
+                              <figcaption>
+                                <span class="lang-en">The products page turns the curated range into a clear store view and shows how the concept works in a shopping context.</span>
+                                <span class="lang-fi">Tuotteet-sivu kokoaa valikoiman selkeäksi verkkokauppanäkymäksi ja näyttää, miten konsepti toimii ostotilanteessa.</span>
+                              </figcaption>
+                            </figure>
+                          </div>
+                          <div class="cs-carousel__slide" aria-hidden="true">
+                            <figure>
+                              <img src="../Unessa/img/unessa-webpage-suosituimmat-tuotteet.webp" alt="Unessa-verkkokaupan suosituimmat tuotteet" width="1200" height="750" loading="lazy" />
+                              <figcaption>
+                                <span class="lang-en">The homepage product highlights show the products selected through the analysis, such as light protection, breathing support and calming the sleep environment.</span>
+                                <span class="lang-fi">Etusivun päätuotenostot nostavat esiin analyysin perusteella valitut tuotteet, kuten valosuojauksen, hengityksen tuen ja ympäristön rauhoittamisen.</span>
+                              </figcaption>
+                            </figure>
+                          </div>
+                          <button class="cs-carousel__nav cs-carousel__nav--prev" aria-label="Show previous image / Näytä edellinen kuva" hidden>
+                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3l-5 5 5 5"/></svg>
+                          </button>
+                          <button class="cs-carousel__nav cs-carousel__nav--next" aria-label="Show next image / Näytä seuraava kuva">
+                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="visual-callout">
+                      <h3><span class="lang-en">Product bundle and average order value</span><span class="lang-fi">Tuotepaketti ja keskiostos</span></h3>
                       <figure>
-                        <img src="../Unessa/img/unessa-webpage-suosituimmat-tuotteet.jpg" alt="Unessa-verkkokaupan suosituimmat tuotteet" width="1200" height="750" loading="lazy" />
-                        <figcaption>Tuotekuvauksissa huomioitiin sekä hakunäkyvyys että asiakkaan päätöksenteko.</figcaption>
+                        <img src="../Unessa/img/unessa-webpage-bundle-paketti.webp" alt="Unessa-verkkokaupan Unipaketti-tuotenosto" width="1200" height="750" loading="lazy" />
+                        <figcaption>
+                          <span class="lang-en">The sleep bundle connects a clear starter solution for the customer with the store's commercial goal of increasing average order value.</span>
+                          <span class="lang-fi">Unipaketti yhdistää asiakkaalle selkeän aloitusratkaisun ja verkkokaupan kaupallisen tavoitteen kasvattaa keskiostosta.</span>
+                        </figcaption>
                       </figure>
                     </div>
                     <div class="visual-callout">
-                      <h3>Tuotepaketti tukee asiakasarvoa ja keskiostosta</h3>
-                      <figure>
-                        <img src="../Unessa/img/unessa-webpage-bundle-paketti.jpg" alt="Unessa-verkkokaupan Unipaketti-tuotenosto" width="1200" height="750" loading="lazy" />
-                        <figcaption>Unipaketti yhdistää asiakkaalle selkeän aloitusratkaisun ja verkkokaupan kaupallisen tavoitteen kasvattaa keskiostosta.</figcaption>
-                      </figure>
+                      <h3><span class="lang-en">Content strategy</span><span class="lang-fi">Sisältöstrategia</span></h3>
+                      <div class="cs-carousel" role="region" aria-label="Content strategy views / Sisältöstrategian näkymät">
+                        <div class="cs-carousel__track">
+                          <div class="cs-carousel__slide cs-carousel__slide--active" aria-hidden="false">
+                            <figure>
+                              <img src="../Unessa/img/blog-page.webp" alt="Unessa-verkkokaupan blogisivu" width="1200" height="750" loading="lazy" />
+                              <figcaption>
+                                <span class="lang-en">The blog page extends the store from a product catalogue into an advisory content channel.</span>
+                                <span class="lang-fi">Blogisivu laajentaa verkkokaupan roolia tuotekatalogista neuvovaksi sisältökanavaksi.</span>
+                              </figcaption>
+                            </figure>
+                          </div>
+                          <div class="cs-carousel__slide" aria-hidden="true">
+                            <figure>
+                              <img src="../Unessa/img/unessa-webpage-blogista-vinkit.webp" alt="Unessa-verkkokaupan etusivun bloginostot" width="1200" height="750" loading="lazy" />
+                              <figcaption>
+                                <span class="lang-en">Homepage blog highlights bring the content strategy into the shopping experience and build trust before purchase.</span>
+                                <span class="lang-fi">Etusivun bloginostot tuovat sisältöstrategian osaksi ostokokemusta ja rakentavat luottamusta ennen ostoa.</span>
+                              </figcaption>
+                            </figure>
+                          </div>
+                          <button class="cs-carousel__nav cs-carousel__nav--prev" aria-label="Show previous image / Näytä edellinen kuva" hidden>
+                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3l-5 5 5 5"/></svg>
+                          </button>
+                          <button class="cs-carousel__nav cs-carousel__nav--next" aria-label="Show next image / Näytä seuraava kuva">
+                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
+                          </button>
+                        </div>
+                      </div>
                     </div>
                     <div class="visual-callout">
-                      <h3>Blogisisältö rakentaa luottamusta</h3>
+                      <h3><span class="lang-en">Shopping flow and responsive implementation</span><span class="lang-fi">Ostopolku ja responsiivinen toteutus</span></h3>
                       <figure>
-                        <img src="../Unessa/img/unessa-webpage-blogista-vinkit.jpg" alt="Unessa-verkkokaupan blogiosio" width="1200" height="750" loading="lazy" />
-                        <figcaption>Blogisisältö tukee hakunäkyvyyttä ja rakentaa luottamusta aiheessa, jossa vastuullinen viestintä on osa tuotteen uskottavuutta.</figcaption>
+                        <img src="../Unessa/img/shopping-cart-page.webp" alt="Unessa-verkkokaupan ostoskori" width="1200" height="750" loading="lazy" />
+                        <figcaption>
+                          <span class="lang-en">The cart view makes the Shopify purchase flow concrete and shows that the concept was taken beyond a static presentation.</span>
+                          <span class="lang-fi">Ostoskori konkretisoi Shopify-prototyypin ostopolkua ja näyttää, että konsepti vietiin staattista esitystä pidemmälle.</span>
+                        </figcaption>
                       </figure>
+                      <div class="lang-en">
+                        <p>The Shopify prototype was designed responsively so the main store flows work on desktop, tablet and mobile. This mattered because consumer e-commerce browsing and purchasing often happen on mobile devices.</p>
+                      </div>
+                      <div class="lang-fi">
+                        <p>Shopify-prototyyppi suunniteltiin responsiiviseksi, jotta verkkokaupan pääpolut toimivat desktopilla, tabletilla ja mobiilissa. Tämä oli oleellista, koska kuluttajaverkkokaupan selaus ja ostaminen tapahtuvat usein mobiililaitteilla.</p>
+                      </div>
+                    </div>
+                    <div class="visual-callout">
+                      <h3><span class="lang-en">Trust and support content</span><span class="lang-fi">Luottamusta tukevat sivut</span></h3>
+                      <div class="cs-carousel" role="region" aria-label="Trust content views / Luottamusta tukevat sivut">
+                        <div class="cs-carousel__track">
+                          <div class="cs-carousel__slide cs-carousel__slide--active" aria-hidden="false">
+                            <figure>
+                              <img src="../Unessa/img/UKK-page.webp" alt="Unessa-verkkokaupan UKK-sivu" width="1200" height="750" loading="lazy" />
+                              <figcaption>
+                                <span class="lang-en">FAQ, contact and about pages support trust and reduce customer support friction before purchase.</span>
+                                <span class="lang-fi">UKK-, yhteydenotto- ja tietosivut tukevat luottamusta sekä vähentävät asiakaspalvelun kitkaa ennen ostoa.</span>
+                              </figcaption>
+                            </figure>
+                          </div>
+                          <div class="cs-carousel__slide" aria-hidden="true">
+                            <figure>
+                              <img src="../Unessa/img/contact-page.webp" alt="Unessa-verkkokaupan yhteydenottosivu" width="1200" height="750" loading="lazy" />
+                              <figcaption>
+                                <span class="lang-en">FAQ, contact and about pages support trust and reduce customer support friction before purchase.</span>
+                                <span class="lang-fi">UKK-, yhteydenotto- ja tietosivut tukevat luottamusta sekä vähentävät asiakaspalvelun kitkaa ennen ostoa.</span>
+                              </figcaption>
+                            </figure>
+                          </div>
+                          <div class="cs-carousel__slide" aria-hidden="true">
+                            <figure>
+                              <img src="../Unessa/img/about%20us-page.webp" alt="Unessa-verkkokaupan tietoa meistä -sivu" width="1200" height="750" loading="lazy" />
+                              <figcaption>
+                                <span class="lang-en">FAQ, contact and about pages support trust and reduce customer support friction before purchase.</span>
+                                <span class="lang-fi">UKK-, yhteydenotto- ja tietosivut tukevat luottamusta sekä vähentävät asiakaspalvelun kitkaa ennen ostoa.</span>
+                              </figcaption>
+                            </figure>
+                          </div>
+                          <button class="cs-carousel__nav cs-carousel__nav--prev" aria-label="Show previous image / Näytä edellinen kuva" hidden>
+                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3l-5 5 5 5"/></svg>
+                          </button>
+                          <button class="cs-carousel__nav cs-carousel__nav--next" aria-label="Show next image / Näytä seuraava kuva">
+                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
+                          </button>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -308,135 +511,238 @@
               <div class="cs-divider"></div>
 
               <div id="cs-decisions" class="cs-section">
-                <h2>Keskeiset design- ja liiketoimintapäätökset</h2>
-                <div class="decision-grid">
-                  <div class="decision-card">
-                    <span class="decision-card__label">Päätös 1</span>
-                    <h3 class="decision-card__name">Hyvinvointilähtöinen positiointi</h3>
-                    <dl class="decision-card__details">
-                      <dt>Vaihtoehdot</dt><dd>Apteekkityylinen, sairauskeskeinen tai hyvinvointilähtöinen</dd>
-                      <dt>Lopullinen päätös</dt><dd>Hyvinvointilähtöinen unirutiinikauppa</dd>
-                      <dt>Perustelu</dt><dd>Erottui kilpailijoista ja sopi paremmin arjen palautumisen sekä lifestyle-tuotteiden ympärille.</dd>
-                    </dl>
+                <h2><span class="lang-en">Key Design Decisions</span><span class="lang-fi">Keskeiset design-päätökset</span></h2>
+
+                <div class="decision-list">
+
+                  <div class="decision-item">
+                    <div class="decision-item__id">
+                      <span class="decision-item__label"><span class="lang-en">Decision 1</span><span class="lang-fi">Päätös 1</span></span>
+                      <h3 class="decision-item__name"><span class="lang-en">Wellness-oriented positioning</span><span class="lang-fi">Hyvinvointilähtöinen positiointi</span></h3>
+                    </div>
+                    <div class="decision-item__alts">
+                      <span class="decision-item__meta-label"><span class="lang-en">Alternatives</span><span class="lang-fi">Vaihtoehdot</span></span>
+                      <p><span class="lang-en">Medical problem-solving store or wellness-oriented routine store.</span><span class="lang-fi">Sairauskeskeinen ongelmanratkaisukauppa tai hyvinvointilähtöinen unirutiinikauppa.</span></p>
+                    </div>
+                    <div class="decision-item__rationale">
+                      <span class="decision-item__meta-label"><span class="lang-en">Reason</span><span class="lang-fi">Perustelu</span></span>
+                      <p><span class="lang-en">Wellness positioning fit the market gap and supported routines, recovery and content-driven trust.</span><span class="lang-fi">Hyvinvointipositio tarjosi selkeän erottautumisen ja tuki rutiineja, palautumista sekä sisältöön perustuvaa luottamusta.</span></p>
+                    </div>
                   </div>
-                  <div class="decision-card">
-                    <span class="decision-card__label">Päätös 2</span>
-                    <h3 class="decision-card__name">Kuratoitu valikoima</h3>
-                    <dl class="decision-card__details">
-                      <dt>Vaihtoehdot</dt><dd>Laaja katalogi tai rajattu valikoima</dd>
-                      <dt>Lopullinen päätös</dt><dd>Noin 20 tuotteen valikoima</dd>
-                      <dt>Perustelu</dt><dd>Rajattu valikoima vähentää valintakuormaa ja tekee konseptista selkeämmän.</dd>
-                    </dl>
+
+                  <div class="decision-item">
+                    <div class="decision-item__id">
+                      <span class="decision-item__label"><span class="lang-en">Decision 2</span><span class="lang-fi">Päätös 2</span></span>
+                      <h3 class="decision-item__name"><span class="lang-en">Curated product range</span><span class="lang-fi">Kuratoitu valikoima</span></h3>
+                    </div>
+                    <div class="decision-item__alts">
+                      <span class="decision-item__meta-label"><span class="lang-en">Alternatives</span><span class="lang-fi">Vaihtoehdot</span></span>
+                      <p><span class="lang-en">Large catalog or curated range.</span><span class="lang-fi">Laaja katalogi tai kuratoitu valikoima.</span></p>
+                    </div>
+                    <div class="decision-item__rationale">
+                      <span class="decision-item__meta-label"><span class="lang-en">Reason</span><span class="lang-fi">Perustelu</span></span>
+                      <p><span class="lang-en">A curated range reduces choice overload and makes the concept clearer.</span><span class="lang-fi">Kuratoitu valikoima vähentää valintakuormaa ja tekee konseptista selkeämmän.</span></p>
+                    </div>
                   </div>
-                  <div class="decision-card">
-                    <span class="decision-card__label">Päätös 3</span>
-                    <h3 class="decision-card__name">Tuotepaketti keskiöön</h3>
-                    <dl class="decision-card__details">
-                      <dt>Vaihtoehdot</dt><dd>Yksittäistuotteet etusijalla tai tuotepaketit mukana</dd>
-                      <dt>Lopullinen päätös</dt><dd>Päätuotteet ja tuotepaketti nostettiin keskiöön</dd>
-                      <dt>Perustelu</dt><dd>Tuotepaketti kasvattaa keskiostosta ja tarjoaa asiakkaalle selkeämmän kokonaisratkaisun.</dd>
-                    </dl>
+
+                  <div class="decision-item">
+                    <div class="decision-item__id">
+                      <span class="decision-item__label"><span class="lang-en">Decision 3</span><span class="lang-fi">Päätös 3</span></span>
+                      <h3 class="decision-item__name"><span class="lang-en">Need-based structure</span><span class="lang-fi">Tarvelähtöinen rakenne</span></h3>
+                    </div>
+                    <div class="decision-item__alts">
+                      <span class="decision-item__meta-label"><span class="lang-en">Alternatives</span><span class="lang-fi">Vaihtoehdot</span></span>
+                      <p><span class="lang-en">Category-first navigation or problem-based entry.</span><span class="lang-fi">Kategoriapohjainen navigaatio tai ongelmalähtöinen sisäänkäynti.</span></p>
+                    </div>
+                    <div class="decision-item__rationale">
+                      <span class="decision-item__meta-label"><span class="lang-en">Reason</span><span class="lang-fi">Perustelu</span></span>
+                      <p><span class="lang-en">Users could start from their own sleep challenge rather than a generic product taxonomy.</span><span class="lang-fi">Käyttäjä pystyi aloittamaan omasta unihaasteesta eikä pelkästä tuotekategoriasta.</span></p>
+                    </div>
                   </div>
-                  <div class="decision-card">
-                    <span class="decision-card__label">Päätös 4</span>
-                    <h3 class="decision-card__name">Rauhallinen tone of voice</h3>
-                    <dl class="decision-card__details">
-                      <dt>Vaihtoehdot</dt><dd>Aggressiivinen kampanjointi tai asiantunteva sisältö</dd>
-                      <dt>Lopullinen päätös</dt><dd>Rauhallinen, luottamusta rakentava ja vastuullinen viestintä</dd>
-                      <dt>Perustelu</dt><dd>Uni liittyy hyvinvointiin ja osin terveyteen, joten liialliset lupaukset olisivat heikentäneet uskottavuutta.</dd>
-                    </dl>
+
+                  <div class="decision-item">
+                    <div class="decision-item__id">
+                      <span class="decision-item__label"><span class="lang-en">Decision 4</span><span class="lang-fi">Päätös 4</span></span>
+                      <h3 class="decision-item__name"><span class="lang-en">Product bundle for average order value</span><span class="lang-fi">Tuotepaketti keskiostoksen kasvattamiseen</span></h3>
+                    </div>
+                    <div class="decision-item__alts">
+                      <span class="decision-item__meta-label"><span class="lang-en">Alternatives</span><span class="lang-fi">Vaihtoehdot</span></span>
+                      <p><span class="lang-en">Single items only or bundles included.</span><span class="lang-fi">Yksittäistuotteet tai tuotepaketit mukana.</span></p>
+                    </div>
+                    <div class="decision-item__rationale">
+                      <span class="decision-item__meta-label"><span class="lang-en">Reason</span><span class="lang-fi">Perustelu</span></span>
+                      <p><span class="lang-en">Bundles create a clear starter solution and help increase average order value.</span><span class="lang-fi">Tuotepaketit tarjoavat selkeän aloitusratkaisun ja kasvattavat keskiostosta.</span></p>
+                    </div>
                   </div>
+
+                  <div class="decision-item">
+                    <div class="decision-item__id">
+                      <span class="decision-item__label"><span class="lang-en">Decision 5</span><span class="lang-fi">Päätös 5</span></span>
+                      <h3 class="decision-item__name"><span class="lang-en">Calm and responsible tone of voice</span><span class="lang-fi">Rauhallinen ja vastuullinen tone of voice</span></h3>
+                    </div>
+                    <div class="decision-item__alts">
+                      <span class="decision-item__meta-label"><span class="lang-en">Alternatives</span><span class="lang-fi">Vaihtoehdot</span></span>
+                      <p><span class="lang-en">Aggressive sales tone or calm, advisory tone.</span><span class="lang-fi">Aggressiivinen myyntisävy tai rauhallinen neuvova sävy.</span></p>
+                    </div>
+                    <div class="decision-item__rationale">
+                      <span class="decision-item__meta-label"><span class="lang-en">Reason</span><span class="lang-fi">Perustelu</span></span>
+                      <p><span class="lang-en">Sleep is a sensitive topic, so trust-building communication was essential.</span><span class="lang-fi">Uni on sensitiivinen aihe, joten luottamusta rakentava viestintä oli välttämätöntä.</span></p>
+                    </div>
+                  </div>
+
+                  <div class="decision-item">
+                    <div class="decision-item__id">
+                      <span class="decision-item__label"><span class="lang-en">Decision 6</span><span class="lang-fi">Päätös 6</span></span>
+                      <h3 class="decision-item__name"><span class="lang-en">Responsive Shopify prototype across devices</span><span class="lang-fi">Responsiivinen Shopify-prototyyppi eri laitteille</span></h3>
+                    </div>
+                    <div class="decision-item__alts">
+                      <span class="decision-item__meta-label"><span class="lang-en">Alternatives</span><span class="lang-fi">Vaihtoehdot</span></span>
+                      <p><span class="lang-en">Desktop-first store view or responsive store experience across desktop, tablet and mobile.</span><span class="lang-fi">Desktop-painotteinen verkkokauppanäkymä tai eri laitteille mukautuva verkkokauppakokemus.</span></p>
+                    </div>
+                    <div class="decision-item__rationale">
+                      <span class="decision-item__meta-label"><span class="lang-en">Reason</span><span class="lang-fi">Perustelu</span></span>
+                      <p><span class="lang-en">The Shopify prototype was designed responsively so core content, product listing and the purchase flow work across devices. In consumer e-commerce this is critical because inspiration, comparison and purchase can happen in different contexts and on different screen sizes.</span><span class="lang-fi">Shopify-prototyyppi suunniteltiin responsiiviseksi, jotta verkkokaupan ydinsisällöt, tuotelistaus ja ostopolku toimivat eri laitteilla. Kuluttajaverkkokaupassa tämä on kriittistä, koska inspiraatio, vertailu ja ostaminen voivat tapahtua eri tilanteissa ja eri näytöillä.</span></p>
+                    </div>
+                  </div>
+
                 </div>
 
-                <figure class="cs-fig">
-                  <img src="../Unessa/img/unessa-webpage-bundle-paketti.jpg" alt="Unessa-verkkokaupan Unipaketti-tuotenosto" width="1200" height="750" loading="lazy" />
-                  <figcaption>Unipaketti yhdistää asiakkaalle selkeän aloitusratkaisun ja verkkokaupan kaupallisen tavoitteen kasvattaa keskiostosta.</figcaption>
-                </figure>
               </div>
 
               <div class="cs-divider"></div>
 
               <div id="cs-validation" class="cs-section">
-                <h2>Validointi, vaikutus ja rajoitteet</h2>
-                <p>Projektin lopputuloksena syntyi Shopifyllä toteutettu verkkokauppaprototyyppi, jota tukivat markkina-analyysi, kohderyhmät, kilpailijavertailu, päätuotevalikoima, alustava myyntibudjetti, sisältöstrategia sekä maksutapa- ja logistiikkasuunnitelma.</p>
-                <div class="cs-callout">
-                  <p><strong>Huomio:</strong> Projektissa ei ollut käytettävissä julkaisun jälkeistä analytiikkaa, todellista asiakasdataa tai pitkäaikaista myyntiseurantaa. Vaikutusta ei siksi voi esittää mitattuna liiketoimintatuloksena.</p>
+                <h2><span class="lang-en">Validation and Limitations</span><span class="lang-fi">Validointi ja rajoitteet</span></h2>
+                <div class="lang-en">
+                  <p>The project did not have post-launch analytics, real customer data or long-term sales tracking. Therefore, the impact cannot be presented as a measured business result.</p>
+                  <h3>Limitations and blind spots</h3>
+                  <ul>
+                    <li>Real willingness to pay was not validated with live traffic.</li>
+                    <li>Product quality and supply chain require separate validation.</li>
+                    <li>SEO/GEO visibility needs long-term content work.</li>
+                    <li>The Shopify prototype shows the concept, but does not prove market demand.</li>
+                  </ul>
+                  <h3>Next sensible test</h3>
+                  <p>The smallest useful next test would be to drive a small amount of paid traffic to two or three main product pages and the product bundle. I would measure click-through rate, add-to-cart actions, bundle interest, newsletter signups and which message angles bring the highest-quality traffic.</p>
                 </div>
-                <h3>Odotettu vaikutus</h3>
-                <p>Ratkaisun odotettu vaikutus käyttäjälle oli tehdä parempaa unta tukevien tuotteiden löytäminen helpommaksi, ymmärrettävämmäksi ja vähemmän lääketieteellisen tuntuiseksi. Liiketoiminnan näkökulmasta odotettu vaikutus oli rakentaa verkkokaupalle erottautuva positio sekä keskiostosta tukeva rakenne.</p>
-                <h3>Rajoitteet ja sokeat pisteet</h3>
-                <ul class="cs-note-list">
-                  <li><strong>Kohderyhmän kiinnostus:</strong> hyvinvointilähtöinen positio pitäisi validoida landing page -testillä ja mainosvariaatioilla.</li>
-                  <li><strong>Tuotepaketin houkuttelevuus:</strong> asiakkaat eivät välttämättä halua ostaa useaa tuotetta heti ensimmäisellä käynnillä.</li>
-                  <li><strong>SEO/GEO-sisällön toimivuus:</strong> hakunäkyvyys vaatii aikaa, auktoriteettia ja laadukasta sisältöjatkumoa.</li>
-                  <li><strong>Tuotteiden laatu ja toimitusketju:</strong> prototyyppi ei vielä todista toimittajien laatua tai asiakaskokemusta.</li>
-                </ul>
-                <h3>Seuraava järkevä testi</h3>
-                <p>Pienin järkevä seuraava testi olisi ohjata pientä maksettua liikennettä kahdelle tai kolmelle päätuotesivulle ja tuotepakettiin. Testissä mittaisin klikkausprosenttia, ostoskoriin lisäyksiä, tuotepaketin kiinnostavuutta, uutiskirjeeseen liittymistä ja sitä, mitkä viestikulmat tuottavat eniten laadukasta liikennettä.</p>
+                <div class="lang-fi">
+                  <p>Projektissa ei ollut käytettävissä julkaisun jälkeistä analytiikkaa, todellista asiakasdataa tai pitkäaikaista myyntiseurantaa. Vaikutusta ei siksi voi esittää mitattuna liiketoimintatuloksena.</p>
+                  <h3>Rajoitteet ja sokeat pisteet</h3>
+                  <ul>
+                    <li>Todellista maksuhalukkuutta ei validoitu liikenteellä.</li>
+                    <li>Tuotteiden laatu ja toimitusketju vaativat erillisen validoinnin.</li>
+                    <li>SEO/GEO-näkyvyys edellyttää pitkäjänteistä sisältötyötä.</li>
+                    <li>Shopify-prototyyppi osoittaa konseptin, mutta ei todista markkinakysyntää.</li>
+                  </ul>
+                  <h3>Seuraava järkevä testi</h3>
+                  <p>Pienin järkevä seuraava testi olisi ohjata pientä maksettua liikennettä kahdelle tai kolmelle päätuotesivulle ja tuotepakettiin. Mittaisin klikkausprosenttia, ostoskoriin lisäyksiä, tuotepaketin kiinnostavuutta, uutiskirjeeseen liittymistä ja sitä, mitkä viestikulmat tuottavat eniten laadukasta liikennettä.</p>
+                </div>
 
                 <figure class="cs-fig">
-                  <img src="../Unessa/img/unessa-webpage-blogista-vinkit.jpg" alt="Unessa-verkkokaupan blogiosio" width="1200" height="750" loading="lazy" />
-                  <figcaption>Blogisisältö tukee hakunäkyvyyttä ja rakentaa luottamusta aiheessa, jossa vastuullinen viestintä on osa tuotteen uskottavuutta.</figcaption>
+                  <img src="../Unessa/img/order-news-letter.webp" alt="Unessa-verkkokaupan uutiskirjeen tilausosio" width="1200" height="750" loading="lazy" />
+                  <figcaption>
+                    <span class="lang-en">The newsletter gives a follow-up path for users who are not ready to buy immediately but are interested in improving sleep.</span>
+                    <span class="lang-fi">Uutiskirje tarjoaa jatkopolun käyttäjille, jotka eivät ole heti valmiita ostamaan mutta ovat kiinnostuneita unen parantamisesta.</span>
+                  </figcaption>
                 </figure>
               </div>
 
               <div class="cs-divider"></div>
 
               <div id="cs-reflection" class="cs-section">
-                <h2>Reflektio ja krediitit</h2>
-                <h3>Mikä onnistui?</h3>
-                <p>Projektissa vahvinta oli se, että verkkokauppaa ei rakennettu pelkkänä visuaalisena Shopify-harjoituksena. Konsepti yhdisti markkinasignaalit, kilpailijaposition, tuotevalikoiman, sisältöstrategian ja kaupallisen rakenteen. Erityisesti tuotepaketin ja toimitusrajan suunnittelu teki ratkaisusta liiketoiminnallisesti uskottavamman.</p>
+                <h2><span class="lang-en">Reflection</span><span class="lang-fi">Reflektio</span></h2>
+                <div class="lang-en">
+                  <h3>What worked?</h3>
+                  <p>The strongest part of the project was that the store was not treated as a visual Shopify exercise. The concept connected market signals, positioning, product selection, content strategy and commercial logic.</p>
+                  <h3>What remained uncertain?</h3>
+                  <p>Validation remained limited. Without real customer traffic, we cannot confirm demand, pricing acceptance or whether the bundle increases order value.</p>
+                  <h3>What I learned?</h3>
+                  <ul>
+                    <li>Commerce concepts are shaped by product range, pricing, shipping and content as much as the UI.</li>
+                    <li>Competitor analysis matters most when it leads to concrete scope decisions.</li>
+                    <li>Trust is part of the product in wellbeing contexts.</li>
+                    <li>A Shopify prototype is a fast way to test business logic visually and structurally.</li>
+                  </ul>
+                  <h3>What I would do differently?</h3>
+                  <p>I would validate the positioning earlier with a light landing page or questionnaire to see which framing resonates.</p>
+                  <h3>What is next?</h3>
+                  <p>A sensible next step would be a small live traffic test focusing on product pages, the bundle and newsletter signup to validate interest before any full build.</p>
+                </div>
+                <div class="lang-fi">
+                  <h3>Mikä onnistui?</h3>
+                  <p>Projektissa vahvinta oli se, että verkkokauppaa ei rakennettu pelkkänä visuaalisena Shopify-harjoituksena. Konsepti yhdisti markkinasignaalit, kilpailijaposition, tuotevalikoiman, sisältöstrategian ja kaupallisen rakenteen.</p>
+                  <h3>Mikä jäi epävarmaksi?</h3>
+                  <p>Validointi jäi rajalliseksi. Ilman todellista asiakasliikennettä emme voi varmistaa kysyntää, hinnoittelun toimivuutta tai tuotepaketin vaikutusta keskiostokseen.</p>
+                  <h3>Mitä opin?</h3>
+                  <ul>
+                    <li>Verkkokauppakonseptia muovaavat valikoima, hinnoittelu, toimitusraja ja sisältö yhtä paljon kuin käyttöliittymä.</li>
+                    <li>Kilpailija-analyysi on hyödyllisintä silloin, kun se johtaa konkreettisiin rajauksiin.</li>
+                    <li>Hyvinvointikontekstissa luottamus on osa tuotetta.</li>
+                    <li>Shopify-prototyyppi on nopea tapa testata liiketoimintalogiikkaa visuaalisesti ja rakenteellisesti.</li>
+                  </ul>
+                  <h3>Mitä tekisin toisin?</h3>
+                  <p>Validioisin positiointia aikaisemmin kevyellä landing page -testillä tai kyselyllä.</p>
+                  <h3>Mitä seuraavaksi?</h3>
+                  <p>Luonteva seuraava askel olisi pieni liikennetesti, jossa mitataan päätuotesivujen, tuotepaketin ja uutiskirjeen kiinnostusta ennen täyttä toteutusta.</p>
+                </div>
+              </div>
 
-                <h3>Mikä jäi epävarmaksi?</h3>
-                <p>Suurin epävarmuus liittyi validointiin. Ilman todellista asiakasliikennettä ei voida tietää, kiinnostaisiko kohderyhmää juuri Unessan positiointi, tuotteiden hinnoittelu tai tuotepaketin rakenne. Myös tuotevalikoiman laatu, toimittajat ja toimitusketju vaatisivat erillisen testauksen ennen oikeaa lanseerausta.</p>
+              <div class="cs-divider"></div>
 
-                <h3>Mitä opin?</h3>
-                <ul>
-                  <li>Verkkokaupan suunnittelussa valikoima, hinnoittelu, toimitusraja ja sisältö ovat yhtä keskeisiä kuin käyttöliittymän visuaalinen rakenne.</li>
-                  <li>Kilpailija-analyysi on hyödyllisin silloin, kun se johtaa konkreettisiin päätöksiin: mitä valitaan, mitä rajataan pois ja mihin positioon kauppa asetetaan.</li>
-                  <li>Hyvinvointiin liittyvässä verkkokaupassa luottamus on osa tuotetta. Tone of voice, turvallisuusviestintä ja realistiset lupaukset vaikuttavat suoraan konseptin uskottavuuteen.</li>
-                  <li>Shopify-prototyyppi toimii tehokkaana tapana testata liiketoimintaideaa visuaalisesti ja rakenteellisesti ennen raskaampaa teknistä toteutusta.</li>
-                </ul>
-
-                <h3>Mitä tekisin toisin?</h3>
-                <p>Jos aloittaisin projektin uudelleen, tekisin varhaisessa vaiheessa kevyen asiakaskyselyn tai landing page -testin, jolla validoisin kohderyhmän kiinnostusta eri positiointeihin: apteekkityylinen ongelmanratkaisu, sleep optimization -lifestyle ja konkreettinen unirutiinipaketti.</p>
-
-                <h3>Krediitit</h3>
-                <p>Tämä projekti syntyi yhteistyössä Veera Heikkisen kanssa osana Haaga-Helian Verkkokauppa liiketoimintamallina -kurssia.</p>
-                <ul>
-                  <li><strong>Jan Nässi:</strong> konseptointi, markkina- ja kilpailija-analyysi, verkkokaupan rakenteen suunnittelu, Shopify-prototypointi, sisältö- ja liiketoimintalogiikan kehittäminen yhdessä tiimin kanssa</li>
-                  <li><strong>Veera Heikkinen:</strong> konseptointi, analyysi, kohderyhmien ja verkkokaupan sisällön kehittäminen yhdessä tiimin kanssa</li>
-                </ul>
+              <div id="cs-credits" class="cs-section">
+                <h2><span class="lang-en">Credits</span><span class="lang-fi">Krediitit</span></h2>
+                <div class="lang-en">
+                  <p>This project was created together with Veera Heikkinen as part of Haaga-Helia's E-commerce as a business model course.</p>
+                  <ul>
+                    <li><strong>Jan Nässi:</strong> concepting, market and competitor analysis, store structure, Shopify prototyping, content and business logic with the team</li>
+                    <li><strong>Veera Heikkinen:</strong> concepting, analysis, target group definition and store content with the team</li>
+                  </ul>
+                </div>
+                <div class="lang-fi">
+                  <p>Tämä projekti syntyi yhteistyössä Veera Heikkisen kanssa osana Haaga-Helian Verkkokauppa liiketoimintamallina -kurssia.</p>
+                  <ul>
+                    <li><strong>Jan Nässi:</strong> konseptointi, markkina- ja kilpailija-analyysi, verkkokaupan rakenteen suunnittelu, Shopify-prototypointi, sisältö- ja liiketoimintalogiikan kehittäminen yhdessä tiimin kanssa</li>
+                    <li><strong>Veera Heikkinen:</strong> konseptointi, analyysi, kohderyhmien ja verkkokaupan sisällön kehittäminen yhdessä tiimin kanssa</li>
+                  </ul>
+                </div>
               </div>
 
             </div>
 
             <aside class="cs-sidebar">
               <div class="cs-toc" aria-label="Table of contents">
-                <p class="cs-toc-heading">Tällä sivulla</p>
+                <p class="cs-toc-heading"><span class="lang-en">On this page</span><span class="lang-fi">Tällä sivulla</span></p>
                 <nav>
                   <ol class="cs-toc-list">
-                    <li><a href="#cs-overview">Yleiskatsaus</a></li>
-                    <li><a href="#cs-proofs">Kolme vahvinta näyttöä</a></li>
-                    <li><a href="#cs-problem">Konteksti ja ongelma</a></li>
-                    <li><a href="#cs-role">Oma roolini</a></li>
-                    <li><a href="#cs-research">Tutkimus ja löydökset</a></li>
-                    <li><a href="#cs-options">Ratkaisuvaihtoehdot</a></li>
-                    <li><a href="#cs-solution">Lopullinen ratkaisu</a></li>
-                    <li><a href="#cs-decisions">Design-päätökset</a></li>
-                    <li><a href="#cs-validation">Validointi ja rajoitteet</a></li>
-                    <li><a href="#cs-reflection">Reflektio ja krediitit</a></li>
+                    <li><a href="#cs-overview"><span class="lang-en">Overview</span><span class="lang-fi">Yleiskatsaus</span></a></li>
+                    <li><a href="#cs-proofs"><span class="lang-en">Three strongest proofs</span><span class="lang-fi">Kolme vahvinta näyttöä</span></a></li>
+                    <li><a href="#cs-problem"><span class="lang-en">Problem and Context</span><span class="lang-fi">Konteksti ja ongelma</span></a></li>
+                    <li><a href="#cs-role"><span class="lang-en">My Role</span><span class="lang-fi">Oma roolini</span></a></li>
+                    <li><a href="#cs-research"><span class="lang-en">Research and Insights</span><span class="lang-fi">Tutkimus ja löydökset</span></a></li>
+                    <li><a href="#cs-options"><span class="lang-en">Solution Options</span><span class="lang-fi">Ratkaisuvaihtoehdot</span></a></li>
+                    <li><a href="#cs-solution"><span class="lang-en">The Solution</span><span class="lang-fi">Lopullinen ratkaisu</span></a></li>
+                    <li><a href="#cs-decisions"><span class="lang-en">Key Design Decisions</span><span class="lang-fi">Keskeiset design-päätökset</span></a></li>
+                    <li><a href="#cs-validation"><span class="lang-en">Validation and Limitations</span><span class="lang-fi">Validointi ja rajoitteet</span></a></li>
+                    <li><a href="#cs-reflection"><span class="lang-en">Reflection</span><span class="lang-fi">Reflektio</span></a></li>
+                    <li><a href="#cs-credits"><span class="lang-en">Credits</span><span class="lang-fi">Krediitit</span></a></li>
                   </ol>
                 </nav>
 
                 <dl class="cs-facts">
-                  <dt>Projekti</dt><dd>Unessa, hyvän unen verkkokauppa</dd>
-                  <dt>Konteksti</dt><dd>Haaga-Helia UAS</dd>
-                  <dt>Kurssi</dt><dd>Verkkokauppa liiketoimintamallina</dd>
-                  <dt>Tiimi</dt><dd>Jan Nässi ja Veera Heikkinen</dd>
-                  <dt>Kohderyhmä</dt><dd>21–50-vuotiaat kuluttajat</dd>
-                  <dt>Menetelmät</dt><dd>Hakusana-analyysi, kilpailija-analyysi, segmentointi, asiakaspersoonat, Shopify-prototypointi, SEO/GEO-sisältösuunnittelu, myyntibudjetointi</dd>
-                  <dt>Tuotokset</dt><dd>Shopify-prototyyppi, tuotevalikoima, sisältöstrategia, maksutapa- ja logistiikkasuunnitelma, alustava myyntibudjetti</dd>
+                  <dt><span class="lang-en">Project</span><span class="lang-fi">Projekti</span></dt>
+                  <dd><span class="lang-en">Unessa, better sleep e-commerce concept</span><span class="lang-fi">Unessa, hyvän unen verkkokauppakonsepti</span></dd>
+                  <dt><span class="lang-en">Context</span><span class="lang-fi">Konteksti</span></dt>
+                  <dd>Haaga-Helia UAS</dd>
+                  <dt><span class="lang-en">Course</span><span class="lang-fi">Kurssi</span></dt>
+                  <dd><span class="lang-en">E-commerce as a business model</span><span class="lang-fi">Verkkokauppa liiketoimintamallina</span></dd>
+                  <dt><span class="lang-en">Team</span><span class="lang-fi">Tiimi</span></dt>
+                  <dd><span class="lang-en">Jan Nässi and Veera Heikkinen</span><span class="lang-fi">Jan Nässi ja Veera Heikkinen</span></dd>
+                  <dt><span class="lang-en">Target group</span><span class="lang-fi">Kohderyhmä</span></dt>
+                  <dd><span class="lang-en">21–50-year-old consumers interested in better sleep, recovery and wellbeing</span><span class="lang-fi">21–50-vuotiaat kuluttajat, jotka ovat kiinnostuneita paremmasta unesta, palautumisesta ja hyvinvoinnista</span></dd>
+                  <dt><span class="lang-en">Methods</span><span class="lang-fi">Menetelmät</span></dt>
+                  <dd><span class="lang-en">Keyword analysis, competitor analysis, segmentation, personas, Shopify prototyping, SEO/GEO content planning, sales budgeting</span><span class="lang-fi">Hakusana-analyysi, kilpailija-analyysi, segmentointi, asiakaspersoonat, Shopify-prototypointi, SEO/GEO-sisältösuunnittelu, myyntibudjetointi</span></dd>
+                  <dt><span class="lang-en">Deliverables</span><span class="lang-fi">Tuotokset</span></dt>
+                  <dd><span class="lang-en">Shopify prototype, product range, content strategy, payment and logistics plan, initial sales budget</span><span class="lang-fi">Shopify-prototyyppi, tuotevalikoima, sisältöstrategia, maksutapa- ja logistiikkasuunnitelma, alustava myyntibudjetti</span></dd>
                 </dl>
               </div>
             </aside>
@@ -444,41 +750,45 @@
         </div>
       </section>
 
+      <!-- 4) ARTIFACTS -->
       <section class="project-section">
         <div class="container">
-          <h2 style="margin-bottom:var(--space-md); text-align:left;">Artefaktit ja linkit</h2>
+          <h2 style="margin-bottom:var(--space-md); text-align:left;">
+            <span class="lang-en">Artifacts and Links</span>
+            <span class="lang-fi">Artefaktit ja linkit</span>
+          </h2>
           <div class="cs-artifacts-grid">
             <a href="https://unessa-store.myshopify.com/" class="cs-artifact" target="_blank" rel="noopener noreferrer">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              Avaa Unessa-verkkokauppa
-            </a>
-            <a href="https://www.figma.com/" class="cs-artifact" target="_blank" rel="noopener noreferrer">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              Avaa Figma-ideointi
+              <span class="lang-en">Open Unessa store</span><span class="lang-fi">Avaa Unessa-verkkokauppa</span>
             </a>
             <a href="https://unessa-store.myshopify.com/blogs/uutiset/oura-ring" class="cs-artifact" target="_blank" rel="noopener noreferrer">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              Avaa blogiartikkeli
+              <span class="lang-en">Open blog article</span><span class="lang-fi">Avaa blogiartikkeli</span>
             </a>
           </div>
-          <p class="cs-artifact-note">Huomio: Shopify-linkki voi lakata toimimasta, jos kaupan maksullinen jakso päättyy. Tallenna ennen sitä kuvakaappaukset ja mahdollinen staattinen demo portfolioon.</p>
+          <p class="cs-artifact-note">
+            <span class="lang-en">Note: the Shopify store may not remain publicly available after the paid Shopify period ends. Screenshots are preserved in this case study.</span>
+            <span class="lang-fi">Huomio: Shopify-kauppa ei välttämättä pysy julkisesti saatavilla maksullisen Shopify-jakson päätyttyä. Kuvakaappaukset on siksi säilytetty tässä case studyssa.</span>
+          </p>
         </div>
       </section>
 
+      <!-- 5) PREV / NEXT -->
       <section class="project-section">
         <div class="container">
           <div class="cs-pager">
             <a href="liikeapuri.html" class="cs-pager-card">
-              <span class="cs-pager-label">← Edellinen</span>
+              <span class="cs-pager-label">← <span class="lang-en">Previous</span><span class="lang-fi">Edellinen</span></span>
               <span class="cs-pager-title">Liikeapuri</span>
             </a>
             <a href="design-sprint-museomatkat.html" class="cs-pager-card cs-pager-card--next">
-              <span class="cs-pager-label">Seuraava →</span>
+              <span class="cs-pager-label"><span class="lang-en">Next</span><span class="lang-fi">Seuraava</span> →</span>
               <span class="cs-pager-title">Design Sprint</span>
             </a>
           </div>
           <div class="cs-back">
-            <a href="../index.html#case-studies">← Takaisin case-tutkimuksiin</a>
+            <a href="../index.html#case-studies">← <span class="lang-en">Back to Case Studies</span><span class="lang-fi">Takaisin case-tutkimuksiin</span></a>
           </div>
         </div>
       </section>
