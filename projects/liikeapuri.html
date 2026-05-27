@@ -436,19 +436,49 @@
                   <div class="visual-callouts-grid">
                     <div class="visual-callout">
                       <h3><span class="lang-en">Visual highlight 1: Sensitive conversation support</span><span class="lang-fi">Visuaalinen nosto 1: Sensitiivinen keskustelutuki</span></h3>
-                      <figure>
-                        <img src="../img/liikeapuri-figma-chat-view.webp" alt="Chat response: sensitive sparring and follow-up question suggestions for the professional" width="800" height="600" loading="lazy" />
-                        <figcaption>
-                          <span class="lang-en">Sensitive sparring response with follow-up question suggestions.</span>
-                          <span class="lang-fi">Sensitiivinen sparrausvastaus jatkokysymysehdotuksilla.</span>
-                        </figcaption>
-                      </figure>
+                      <div class="cs-carousel" role="region" aria-label="Conversation support views / Keskustelutuen näkymät">
+                        <div class="cs-carousel__track">
+                          <div class="cs-carousel__slide cs-carousel__slide--active" aria-hidden="false">
+                            <figure>
+                              <img src="../img/liikeapuri-figma-chat-view.webp" alt="Figma concept: sensitive sparring response with follow-up question suggestions for the professional" width="800" height="600" loading="lazy" />
+                              <figcaption>
+                                <span class="lang-en">The Figma view shows the intended conversation experience: a sensitive sparring response and follow-up question suggestions for the professional.</span>
+                                <span class="lang-fi">Figma-näkymä näyttää tavoitellun keskustelukokemuksen: sensitiivinen sparrausvastaus ja jatkokysymysehdotukset ammattilaiselle.</span>
+                              </figcaption>
+                            </figure>
+                          </div>
+                          <div class="cs-carousel__slide" aria-hidden="true">
+                            <figure>
+                              <img src="../img/React chat-window.webp" alt="React prototype chat view: used to test AI logic, conversation paths and response risks" width="800" height="600" loading="lazy" />
+                              <figcaption>
+                                <span class="lang-en">The React prototype was used to test AI logic, conversation paths and response risks. Its purpose was not polished UI/UX, but observing functional AI behavior.</span>
+                                <span class="lang-fi">React-prototyyppiä käytettiin AI-logiikan, keskustelupolkujen ja vastausten riskien testaamiseen. Sen tarkoitus ei ollut viimeistelty UI/UX, vaan toimivan AI-käyttäytymisen havainnointi.</span>
+                              </figcaption>
+                            </figure>
+                          </div>
+                          <button class="cs-carousel__nav cs-carousel__nav--prev" aria-label="Show previous image / Näytä edellinen kuva" hidden>
+                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3l-5 5 5 5"/></svg>
+                          </button>
+                          <button class="cs-carousel__nav cs-carousel__nav--next" aria-label="Show next image / Näytä seuraava kuva">
+                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
+                          </button>
+                        </div>
+                      </div>
                     </div>
                     <div class="visual-callout">
-                      <h3><span class="lang-en">Visual highlight 2: Local search</span><span class="lang-fi">Visuaalinen nosto 2: Paikallishaku</span></h3>
+                      <h3><span class="lang-en">Visual highlight 2: Local search (React prototype)</span><span class="lang-fi">Visuaalinen nosto 2: Paikallishaku (React-prototyyppi)</span></h3>
                       <div class="cs-carousel" role="region" aria-label="Local search views / Paikallishakunäkymät">
                         <div class="cs-carousel__track">
                           <div class="cs-carousel__slide cs-carousel__slide--active" aria-hidden="false">
+                            <figure>
+                              <img src="../img/liikeapuri-react-permission.webp" alt="Transition to local search: modal explaining that local search uses separate limited data" width="800" height="600" loading="lazy" />
+                              <figcaption>
+                                <span class="lang-en">Before local search, the user is told that the search uses separate limited data.</span>
+                                <span class="lang-fi">Ennen paikallishakua käyttäjälle kerrotaan, että haku käyttää erillistä rajattua dataa.</span>
+                              </figcaption>
+                            </figure>
+                          </div>
+                          <div class="cs-carousel__slide" aria-hidden="true">
                             <figure>
                               <img src="../img/liikeapuri-react-results.webp" alt="Local search – result list with filters and limited result cards" width="1200" height="750" loading="lazy" />
                               <figcaption>
@@ -457,7 +487,7 @@
                               </figcaption>
                             </figure>
                           </div>
-                          <!-- TODO: replace with opened local search result card screenshot (liikeapuri-react-hobby-card.webp) -->
+                          <!-- TODO: replace with opened local search result card screenshot -->
                           <div class="cs-carousel__slide" aria-hidden="true">
                             <figure>
                               <img src="../img/React-hobby-card.webp" alt="Local search – opened result card showing detailed activity information" width="1200" height="750" loading="lazy" />
@@ -467,10 +497,10 @@
                               </figcaption>
                             </figure>
                           </div>
-                          <button class="cs-carousel__nav cs-carousel__nav--prev" aria-label="Show previous local search image / Näytä edellinen paikallishaun kuva" hidden>
+                          <button class="cs-carousel__nav cs-carousel__nav--prev" aria-label="Show previous image / Näytä edellinen kuva" hidden>
                             <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3l-5 5 5 5"/></svg>
                           </button>
-                          <button class="cs-carousel__nav cs-carousel__nav--next" aria-label="Show next local search image / Näytä seuraava paikallishaun kuva">
+                          <button class="cs-carousel__nav cs-carousel__nav--next" aria-label="Show next image / Näytä seuraava kuva">
                             <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
                           </button>
                         </div>
@@ -514,20 +544,50 @@
                       <figure>
                         <img src="../img/liikeapuri-figma-datalibrary.webp" alt="Data library: sources as cards with open source links" width="800" height="600" loading="lazy" />
                         <figcaption>
-                          <span class="lang-en">Data library with source cards and open source links.</span>
-                          <span class="lang-fi">Tietokirjasto lähdekortteina ja avaa lähde -linkeillä.</span>
+                          <span class="lang-en">The data library shows sources as cards and helps evaluate what the information is based on.</span>
+                          <span class="lang-fi">Tietokirjasto näyttää lähteet kortteina ja auttaa arvioimaan, mihin tieto perustuu.</span>
                         </figcaption>
                       </figure>
                     </div>
                     <div class="visual-callout">
-                      <h3><span class="lang-en">Visual highlight 4: Transition to local search</span><span class="lang-fi">Visuaalinen nosto 4: Siirtyminen paikallishakuun</span></h3>
-                      <figure>
-                        <img src="../img/liikeapuri-react-permission.webp" alt="Go to local search modal: explains that local search uses separate limited search data" width="800" height="600" loading="lazy" />
-                        <figcaption>
-                          <span class="lang-en">Permission modal before local search. It communicates that local search uses separate limited data, not AI generation.</span>
-                          <span class="lang-fi">Siirtymismodaali ennen paikallishakua. Se kertoo käyttäjälle, että paikallishaku käyttää erillistä rajattua hakudataa.</span>
-                        </figcaption>
-                      </figure>
+                      <h3><span class="lang-en">Visual highlight 4: Quick use during consultation</span><span class="lang-fi">Visuaalinen nosto 4: Nopea käyttö vastaanottotilanteessa</span></h3>
+                      <div class="cs-carousel" role="region" aria-label="Quick use views / Nopean käytön näkymät">
+                        <div class="cs-carousel__track">
+                          <div class="cs-carousel__slide cs-carousel__slide--active" aria-hidden="false">
+                            <figure>
+                              <img src="../img/figma-categories.webp" alt="Figma: main category view for choosing the situation direction" width="800" height="600" loading="lazy" />
+                              <figcaption>
+                                <span class="lang-en">The professional can start by choosing the situation direction and use categories to support the free text field.</span>
+                                <span class="lang-fi">Ammattilainen voi aloittaa valitsemalla tilanteen suunnan ja käyttää kategorioita vapaan tekstikentän tukena.</span>
+                              </figcaption>
+                            </figure>
+                          </div>
+                          <div class="cs-carousel__slide" aria-hidden="true">
+                            <figure>
+                              <img src="../img/liikeapuri-figma-chat-start.webp" alt="Figma: structured chat start with category selections for talking about physical activity, activity options, motivation" width="800" height="600" loading="lazy" />
+                              <figcaption>
+                                <span class="lang-en">Quick selections, such as low motivation or lack of time, make use faster during the consultation.</span>
+                                <span class="lang-fi">Pikavalinnat, kuten motivaation puute tai ajan puute, nopeuttavat käyttöä vastaanottotilanteessa.</span>
+                              </figcaption>
+                            </figure>
+                          </div>
+                          <div class="cs-carousel__slide" aria-hidden="true">
+                            <figure>
+                              <img src="../img/figma-valinnat.webp" alt="Figma: selected topic added to the text field, professional can add their own detail before sending" width="800" height="600" loading="lazy" />
+                              <figcaption>
+                                <span class="lang-en">The selected topic is added to the text field, and the professional can add their own detail.</span>
+                                <span class="lang-fi">Valittu aihe lisätään tekstikenttään, ja ammattilainen voi täydentää sitä omalla tarkennuksella.</span>
+                              </figcaption>
+                            </figure>
+                          </div>
+                          <button class="cs-carousel__nav cs-carousel__nav--prev" aria-label="Show previous image / Näytä edellinen kuva" hidden>
+                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3l-5 5 5 5"/></svg>
+                          </button>
+                          <button class="cs-carousel__nav cs-carousel__nav--next" aria-label="Show next image / Näytä seuraava kuva">
+                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
+                          </button>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -636,30 +696,6 @@
 
                 </div>
 
-                <div class="visual-callouts">
-                  <div class="visual-callouts-grid">
-                    <div class="visual-callout">
-                      <h3><span class="lang-en">Structured chat start</span><span class="lang-fi">Strukturoitu chat-aloitus</span></h3>
-                      <figure>
-                        <img src="../img/liikeapuri-figma-chat-start.webp" alt="Structured chat view with categories: talking about physical activity, activity options, motivation" width="800" height="600" loading="lazy" />
-                        <figcaption>
-                          <span class="lang-en">Category selections as support for the free text field.</span>
-                          <span class="lang-fi">Kategoriavalinnat vapaan tekstikentän tukena.</span>
-                        </figcaption>
-                      </figure>
-                    </div>
-                    <div class="visual-callout">
-                      <h3><span class="lang-en">Front page</span><span class="lang-fi">Etusivu</span></h3>
-                      <figure>
-                        <img src="../img/liikeapuri-figma-frontpage.webp" alt="Liikeapuri – front page with features: Chat, Local, Sources" width="800" height="600" loading="lazy" />
-                        <figcaption>
-                          <span class="lang-en">Clear feature overview: conversation support, local search, and sources.</span>
-                          <span class="lang-fi">Selkeä toimintojen esittely: keskustelutuki, paikallishaku ja lähteet.</span>
-                        </figcaption>
-                      </figure>
-                    </div>
-                  </div>
-                </div>
               </div>
 
               <div class="cs-divider"></div>
@@ -890,12 +926,94 @@
     <script>
       (function () {
         document.addEventListener('DOMContentLoaded', function () {
+          var overlay = document.getElementById('lb-overlay');
+          if (!overlay) return;
+
+          var lbImg     = overlay.querySelector('.lb-img');
+          var lbCaption = overlay.querySelector('.lb-caption');
+          var lbClose   = overlay.querySelector('.lb-close');
+
+          /* Shared lightbox nav buttons — one pair, reused across all carousels */
+          var lbPrev = document.createElement('button');
+          lbPrev.className = 'lb-nav lb-nav--prev';
+          lbPrev.setAttribute('aria-label', 'Show previous image / Näytä edellinen kuva');
+          lbPrev.innerHTML = '<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3l-5 5 5 5"/></svg>';
+          lbPrev.hidden = true;
+
+          var lbNext = document.createElement('button');
+          lbNext.className = 'lb-nav lb-nav--next';
+          lbNext.setAttribute('aria-label', 'Show next image / Näytä seuraava kuva');
+          lbNext.innerHTML = '<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>';
+          lbNext.hidden = true;
+
+          overlay.appendChild(lbPrev);
+          overlay.appendChild(lbNext);
+
+          /* Lightbox navigation state — shared across all carousels */
+          var lbFigures      = [];
+          var lbIdx          = -1;
+          var lbSyncCarousel = null;
+
+          function lbUpdate(idx) {
+            var fig = lbFigures[idx];
+            var img = fig.querySelector('img');
+            lbImg.src = img.src;
+            lbImg.alt = img.alt || '';
+            var figcaption = fig.querySelector('figcaption');
+            var lang = document.documentElement.lang || 'en';
+            var caption = '';
+            if (figcaption) {
+              var span = figcaption.querySelector('.lang-' + lang);
+              caption = span ? span.textContent.trim() : figcaption.textContent.trim();
+            }
+            lbCaption.textContent = caption;
+            lbCaption.hidden = !caption;
+            lbIdx = idx;
+            lbPrev.hidden = idx === 0;
+            lbNext.hidden = idx === lbFigures.length - 1;
+            if (lbSyncCarousel) lbSyncCarousel(idx);
+          }
+
+          function lbActivate(figures, idx, syncCarousel) {
+            lbFigures      = figures;
+            lbSyncCarousel = syncCarousel || null;
+            lbIdx          = idx;
+            lbPrev.hidden  = idx === 0;
+            lbNext.hidden  = idx === figures.length - 1;
+          }
+
+          function lbReset() {
+            lbPrev.hidden  = true;
+            lbNext.hidden  = true;
+            lbIdx          = -1;
+            lbFigures      = [];
+            lbSyncCarousel = null;
+          }
+
+          lbPrev.addEventListener('click', function () {
+            if (lbIdx > 0) lbUpdate(lbIdx - 1);
+          });
+          lbNext.addEventListener('click', function () {
+            if (lbIdx < lbFigures.length - 1) lbUpdate(lbIdx + 1);
+          });
+          lbClose.addEventListener('click', lbReset);
+          overlay.addEventListener('click', function (e) {
+            if (e.target === overlay) lbReset();
+          });
+          document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') { lbReset(); return; }
+            if (overlay.hidden || lbIdx === -1) return;
+            if (e.key === 'ArrowLeft'  && lbIdx > 0)                       lbUpdate(lbIdx - 1);
+            if (e.key === 'ArrowRight' && lbIdx < lbFigures.length - 1)    lbUpdate(lbIdx + 1);
+          });
+
+          /* Per-carousel setup */
           document.querySelectorAll('.cs-carousel').forEach(function (carousel) {
-            var slides   = carousel.querySelectorAll('.cs-carousel__slide');
-            var navPrev  = carousel.querySelector('.cs-carousel__nav--prev');
-            var navNext  = carousel.querySelector('.cs-carousel__nav--next');
-            var figures  = Array.from(carousel.querySelectorAll('figure'));
-            var current  = 0;
+            var slides  = carousel.querySelectorAll('.cs-carousel__slide');
+            var navPrev = carousel.querySelector('.cs-carousel__nav--prev');
+            var navNext = carousel.querySelector('.cs-carousel__nav--next');
+            var figures = Array.from(carousel.querySelectorAll('figure'));
+            var current = 0;
 
             function goTo(index) {
               slides[current].classList.remove('cs-carousel__slide--active');
@@ -918,82 +1036,25 @@
 
             goTo(0);
 
-            /* --- Lightbox carousel navigation --- */
-            var overlay = document.getElementById('lb-overlay');
-            if (!overlay || figures.length < 2) return;
-
-            var lbImg     = overlay.querySelector('.lb-img');
-            var lbCaption = overlay.querySelector('.lb-caption');
-            var lbClose   = overlay.querySelector('.lb-close');
-            var lbIdx     = -1;
-
-            var lbPrev = document.createElement('button');
-            lbPrev.className = 'lb-nav lb-nav--prev';
-            lbPrev.setAttribute('aria-label', 'Show previous local search image / Näytä edellinen paikallishaun kuva');
-            lbPrev.innerHTML = '<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3l-5 5 5 5"/></svg>';
-            lbPrev.hidden = true;
-
-            var lbNext = document.createElement('button');
-            lbNext.className = 'lb-nav lb-nav--next';
-            lbNext.setAttribute('aria-label', 'Show next local search image / Näytä seuraava paikallishaun kuva');
-            lbNext.innerHTML = '<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>';
-            lbNext.hidden = true;
-
-            overlay.appendChild(lbPrev);
-            overlay.appendChild(lbNext);
-
-            function lbSetNav(idx) {
-              lbIdx = idx;
-              lbPrev.hidden = idx === 0;
-              lbNext.hidden = idx === figures.length - 1;
-            }
-
-            function lbGoTo(idx) {
-              var fig = figures[idx];
-              var img = fig.querySelector('img');
-              lbImg.src = img.src;
-              lbImg.alt = img.alt || '';
-              var figcaption = fig.querySelector('figcaption');
-              var lang = document.documentElement.lang || 'en';
-              var caption = '';
-              if (figcaption) {
-                var span = figcaption.querySelector('.lang-' + lang);
-                caption = span ? span.textContent.trim() : figcaption.textContent.trim();
-              }
-              lbCaption.textContent = caption;
-              lbCaption.hidden = !caption;
-              lbSetNav(idx);
-              goTo(idx);
-            }
-
-            function resetLbNav() {
-              lbPrev.hidden = true;
-              lbNext.hidden = true;
-              lbIdx = -1;
-            }
-
+            /* Hook carousel figures into shared lightbox navigation */
             figures.forEach(function (fig, idx) {
               fig.addEventListener('click', function () {
                 requestAnimationFrame(function () {
-                  if (!overlay.hidden) lbSetNav(idx);
+                  if (!overlay.hidden) lbActivate(figures, idx, goTo);
                 });
               });
             });
+          });
 
-            lbPrev.addEventListener('click', function () { if (lbIdx > 0) lbGoTo(lbIdx - 1); });
-            lbNext.addEventListener('click', function () { if (lbIdx < figures.length - 1) lbGoTo(lbIdx + 1); });
-
-            document.addEventListener('keydown', function (e) {
-              if (e.key === 'Escape') { resetLbNav(); return; }
-              if (overlay.hidden || lbIdx === -1) return;
-              if (e.key === 'ArrowLeft'  && lbIdx > 0)                    lbGoTo(lbIdx - 1);
-              if (e.key === 'ArrowRight' && lbIdx < figures.length - 1)   lbGoTo(lbIdx + 1);
-            });
-
-            lbClose.addEventListener('click', resetLbNav);
-            overlay.addEventListener('click', function (e) {
-              if (e.target === overlay) resetLbNav();
-            });
+          /* Standalone visual-callout figures (no carousel): reset lb nav on open */
+          document.querySelectorAll('.visual-callout figure').forEach(function (fig) {
+            if (!fig.closest('.cs-carousel')) {
+              fig.addEventListener('click', function () {
+                requestAnimationFrame(function () {
+                  if (!overlay.hidden) lbReset();
+                });
+              });
+            }
           });
         });
       }());
