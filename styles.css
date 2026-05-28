@@ -1918,6 +1918,10 @@ body.drawer-open .drawer-backdrop { opacity: 1; }
 
 .cs-section > ul { list-style: disc; }
 
+.cs-section ol > li + li {
+  margin-top: 0.55rem;
+}
+
 /* Typografinen rytmi: väliotsikot cs-section-sisällössä */
 .cs-section h3,
 .cs-section h4 {
