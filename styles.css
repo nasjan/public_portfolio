@@ -2904,6 +2904,52 @@ body.drawer-open .drawer-backdrop { opacity: 1; }
   .cs-toc-mobile { display: none; }
 }
 
+/* --- Mobile project facts dropdown --- */
+.cs-mobile-facts {
+  display: none;
+}
+
+@media (max-width: 959px) {
+  .cs-mobile-facts {
+    display: block;
+    margin-bottom: var(--space-md);
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-md) var(--space-lg);
+  }
+
+  .cs-mobile-facts summary {
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--text);
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .cs-mobile-facts summary::-webkit-details-marker { display: none; }
+
+  .cs-mobile-facts summary::after {
+    content: "+";
+    font-size: 1.125rem;
+    color: var(--accent);
+    transition: transform 0.15s ease;
+  }
+
+  .cs-mobile-facts[open] summary::after { content: "−"; }
+
+  .cs-mobile-facts-card {
+    margin-top: var(--space-sm);
+  }
+
+  .cs-mobile-facts .cs-facts {
+    margin-top: 0;
+  }
+}
+
 /* --- Artifact cards --- */
 .cs-artifacts-grid {
   display: grid;

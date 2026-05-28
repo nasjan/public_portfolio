@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Design Sprint: Museomatkat • Jan Nässi</title>
-    <meta name="description" content="Design Sprint -case study: fyysisestä pop-up-kohtaamisesta digitaaliseen Museomatkat-konversiopolkuun." />
+    <meta name="description" content="Design Sprint -case study: fyysisestä pop-up-kohtaamisesta digitaaliseen personointikyselyyn ja Museomatkat-suositukseen." />
     <link rel="icon" href="img/pixel_me.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,36 +15,26 @@
     <link rel="stylesheet" href="../styles.css?v=7" />
 
     <!-- lang init before paint -->
-    <script>document.documentElement.lang = localStorage.getItem('portfolio-lang') || 'en';</script>
+    <script>document.documentElement.lang = localStorage.getItem('portfolio-lang') || 'fi';</script>
     <style>
-      .wireframe-placeholder {
-        min-height: 360px;
-        border: 1px dashed rgba(15, 23, 42, 0.28);
-        border-radius: 24px;
-        background:
-          linear-gradient(135deg, rgba(148, 163, 184, 0.14) 25%, transparent 25%) -20px 0/40px 40px,
-          linear-gradient(225deg, rgba(148, 163, 184, 0.14) 25%, transparent 25%) -20px 0/40px 40px,
-          linear-gradient(315deg, rgba(148, 163, 184, 0.14) 25%, transparent 25%) 0 0/40px 40px,
-          linear-gradient(45deg, rgba(148, 163, 184, 0.14) 25%, rgba(248, 250, 252, 0.9) 25%) 0 0/40px 40px;
-        display: grid;
-        place-items: center;
-        padding: 32px;
-        text-align: center;
-      }
-      .wireframe-placeholder strong {
-        display: block;
-        font-size: 1.05rem;
-        margin-bottom: 8px;
-      }
-      .wireframe-placeholder span {
-        display: block;
-        max-width: 680px;
-        color: rgba(15, 23, 42, 0.68);
-        line-height: 1.55;
-      }
-      .wireframe-placeholder--wide { min-height: 460px; }
-      .wireframe-placeholder--small { min-height: 260px; }
       .cs-note-list li + li { margin-top: .65rem; }
+
+      .solution-summary-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--space-md);
+        margin-top: var(--space-md);
+      }
+      .solution-summary-card {
+        padding: var(--space-md);
+        border: 1px solid rgba(15, 23, 42, 0.10);
+        border-radius: 20px;
+        background: rgba(248, 250, 252, 0.72);
+      }
+      .solution-summary-card h3 { margin-top: 0; }
+      @media (max-width: 760px) {
+        .solution-summary-grid { grid-template-columns: 1fr; }
+      }
 
       .sprint-day {
         margin-top: var(--space-lg);
@@ -56,24 +46,18 @@
       .sprint-day + .sprint-day { margin-top: var(--space-md); }
       .sprint-day h3 { margin-top: 0.25rem; }
 
-      .cs-carousel-placeholder {
-        min-height: 280px;
-        margin-top: var(--space-md);
-        border: 1px dashed rgba(15, 23, 42, 0.28);
-        border-radius: 20px;
-        background: rgba(248, 250, 252, 0.9);
-        display: grid;
-        place-items: center;
-        padding: 28px;
-        text-align: center;
+      .sprint-day .cs-carousel__media {
+        aspect-ratio: unset;
+        max-height: 340px;
+        background: #f8fafc;
       }
-      .cs-carousel-placeholder strong { display: block; margin-bottom: 8px; }
-      .cs-carousel-placeholder span {
-        display: block;
-        max-width: 680px;
-        color: rgba(15, 23, 42, 0.68);
-        line-height: 1.55;
+      .sprint-day .cs-carousel__media img {
+        width: 100%;
+        height: 100%;
+        max-height: 340px;
+        object-fit: contain;
       }
+
     </style>
     <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
@@ -126,19 +110,10 @@
           </p>
 
           <dl class="cs-hero-meta">
-            <div class="cs-meta-item">
-              <dt>Rooli</dt>
-              <dd>Head of testing, käyttäjätestauksen rakenne, digitaalisen prototyypin suunnittelu ja toteutus yhdessä Vadimin ja Jonen kanssa</dd>
-            </div>
-            <div class="cs-meta-item">
-              <dt>Konteksti</dt>
-              <dd>Design Sprint Days 2026, asiakaslähtöinen kurssiprojekti Museomatkat-palvelulle ja Museokortille</dd>
-            </div>
-            <div class="cs-meta-item"><dt>Menetelmät</dt><dd>Google Design Sprint, käyttäjäpolku, ideointi, prototypointi, käyttäjätestaus, pitchaus toimeksiantajalle</dd></div>
-            <div class="cs-meta-item">
-              <dt>Tiimi</dt>
-              <dd>Jan Nässi, Vadim, Jone, Kajsa, Thao ja Tanja</dd>
-            </div>
+            <div class="cs-meta-item"><dt>Role</dt><dd>Head of testing, digitaalinen prototyyppi</dd></div>
+            <div class="cs-meta-item"><dt>Timeline</dt><dd>5 päivää, 18.–22.5.2026</dd></div>
+            <div class="cs-meta-item"><dt>Tools</dt><dd>Google Design Sprint, Figma, post-it-ideointi</dd></div>
+            <div class="cs-meta-item"><dt>Team</dt><dd>6 hengen tiimi</dd></div>
           </dl>
         </div>
       </section>
@@ -169,6 +144,21 @@
       <section class="project-section cs-body-wrap">
         <div class="container">
 
+          <details class="cs-mobile-facts">
+            <summary>Projektin tiedot</summary>
+            <div class="cs-mobile-facts-card">
+              <dl class="cs-facts">
+                <dt>Projekti</dt><dd>Design Sprint: Museomatkat</dd>
+                <dt>Konteksti</dt><dd>Design Sprint Days 2026</dd>
+                <dt>Toimeksianto</dt><dd>Museomatkat ja Museokortti</dd>
+                <dt>Tiimi</dt><dd>Jan Nässi, Vadim Sorval, Jone Hyttinen, Kajsa Lindroos, Thao Dinh ja Tanja Vatka</dd>
+                <dt>Oma rooli</dt><dd>Head of testing, digitaalinen prototyyppi</dd>
+                <dt>Menetelmät</dt><dd>Google Design Sprint, ideointi, prototypointi, käyttäjätestaus, pitchaus</dd>
+                <dt>Tuotokset</dt><dd>Pop-up-konsepti, flyerit, QR-polku, personointikysely, testilöydökset, asiakasesitys</dd>
+              </dl>
+            </div>
+          </details>
+
           <details class="cs-toc-mobile">
             <summary>Sisällysluettelo</summary>
             <ol class="cs-toc-list">
@@ -193,16 +183,6 @@
                 <h2>Yleiskatsaus</h2>
                 <p>Design Sprint Days 2026 oli viikon mittainen intensiivikurssi, jossa sovellettiin Google Design Sprint -menetelmää todelliseen asiakaslähtöiseen haasteeseen. Sprintti eteni viiden päivän rytmissä: ongelman kartoittaminen, ratkaisujen luonnostelu, päätöksenteko, prototypointi ja käyttäjätestaus.</p>
                 <p>Meidän tiimimme ratkaisu keskittyi Museomatkat-palvelun saavutettavuuteen ja konversiopolkuun. Emme suunnitelleet vain yksittäistä käyttöliittymää, vaan fyysisen ja digitaalisen kohtaamisen yhdistävän palvelupolun: pop-up herättää huomion, QR-koodi vie 6-vaiheiseen kyselyyn ja kysely antaa käyttäjälle henkilökohtaiselta tuntuvan matkasuosituksen.</p>
-
-                <figure class="cs-fig">
-                  <div class="wireframe-placeholder wireframe-placeholder--wide">
-                    <div>
-                      <strong>Lisää hero-kuva kokonaisratkaisusta</strong>
-                      <span>Näytä samassa kuvassa pop-up, flyer, QR-koodi ja 6-vaiheisen kyselyn ensimmäinen näkymä. Kuvan pitää osoittaa, että ratkaisu yhdisti fyysisen ja digitaalisen palvelupolun.</span>
-                    </div>
-                  </div>
-                  <figcaption>Konseptin ydin oli muuttaa fyysinen asiakaskohtaaminen digitaaliseksi jatkopoluksi Museomatkat-palveluun.</figcaption>
-                </figure>
               </div>
 
               <div class="cs-divider"></div>
@@ -217,37 +197,17 @@
 
                 <h3>3. Ratkaisu sai sekä käyttäjä- että toimeksiantajapalautetta</h3>
                 <p>Käyttäjätestaus osoitti, että konsepti koettiin kiinnostavana ja helppokäyttöisenä, mutta se paljasti myös konversion kannalta kriittisiä puutteita. Toimeksiantaja arvioi ratkaisun toiveidensa mukaiseksi, budjettiystävälliseksi ja visuaalisesti miellyttäväksi. Tiimimme voitti projektin neljän ryhmän joukosta.</p>
-
-                <figure class="cs-fig">
-                  <div class="wireframe-placeholder">
-                    <div>
-                      <strong>Lisää sprintin avainartefaktien kooste</strong>
-                      <span>Näytä kolme nostoa: palvelupolun kuva, kyselyn ruutu ja palautteen tärkein nosto. Kuvan tarkoitus on konkretisoida, mitä sprintissä tuotettiin.</span>
-                    </div>
-                  </div>
-                  <figcaption>Kolme vahvinta näyttöä konkretisoitiin artefakteilla, jotka osoittavat palvelupolun, prototyypin ja palautteen.</figcaption>
-                </figure>
               </div>
 
               <div class="cs-divider"></div>
 
               <div id="cs-problem" class="cs-section">
                 <h2>Konteksti ja ongelma</h2>
-                <p>Museomatkat-palvelun haasteena oli, miten palvelun kiinnostavuutta ja löydettävyyttä voidaan kasvattaa fyysisessä kohtaamisessa. Pop-up tai flyer voi herättää huomion, mutta ilman selkeää jatkopolkua kiinnostus jää helposti hetkelliseksi.</p>
-                <p>Liiketoiminnan näkökulmasta haaste liittyi konversioon: miten käyttäjä saadaan fyysisestä tilanteesta digitaaliseen palveluun, miten hänelle annetaan nopeasti relevantti syy jatkaa ja miten Museokortin sekä Museomatkojen yhteys tehdään ymmärrettäväksi.</p>
+                <p>Museomatkat on uusi digitaalinen palvelu Museokortti-brändin alla. Palvelun lanseerauksen yhteydessä avattiin fyysinen Museomatkatoimisto-pop-up, jonka tarkoituksena oli herättää kiinnostus ja ohjata asiakkaita palveluun. Toimeksiantajan haasteena oli kuitenkin se, miten tämä fyysinen kohtaaminen saadaan muutettua konkreettiseksi digitaaliseksi konversioksi ja myynniksi.</p>
+                <p>Sprintin tavoitteena oli ymmärtää, miten pop-up voi tukea digitaalista palvelua, miten asiakas ohjataan kohtaamisesta seuraavaan vaiheeseen ja miten mallia voisi soveltaa muissakin Suomen kaupungeissa. Lopputuotoksiksi toimeksiantaja odotti testattavaa konseptia, realistista prototyyppiä, käyttäjätestauksen löydöksiä ja suosituksia jatkosta.</p>
                 <div class="cs-callout">
-                  <p><strong>Problem statement:</strong> Museomatkoista kiinnostunut käyttäjä tarvitsee nopean ja helposti lähestyttävän tavan löytää itselleen sopiva matka, koska fyysinen kohtaaminen jää helposti irralliseksi ilman selkeää digitaalista jatkopolkua.</p>
+                  <p><strong>Design challenge:</strong> "How might we turn customer journey into digital conversion and sales for Museomatkat and Museokortti?"</p>
                 </div>
-
-                <figure class="cs-fig">
-                  <div class="wireframe-placeholder">
-                    <div>
-                      <strong>Lisää käyttäjäpolun kipupistekuva</strong>
-                      <span>Näytä nykytilanne tai yksinkertainen kaavio, jossa fyysinen kohtaaminen ei vielä johda digitaaliseen jatkopolkuun. Kuvan tarkoitus on tehdä konversiokatkos näkyväksi.</span>
-                    </div>
-                  </div>
-                  <figcaption>Ongelma ei ollut vain näkyvyyden lisääminen, vaan fyysisen kiinnostuksen muuttaminen selkeäksi digitaaliseksi etenemiseksi.</figcaption>
-                </figure>
               </div>
 
               <div class="cs-divider"></div>
@@ -283,80 +243,277 @@
 
                 <h3>4. Luottamus vaati vahvempaa brändiyhteyttä</h3>
                 <p>Museomatkat-nimi yksinään tuntui osalle käyttäjistä irralliselta. Palvelun yhteys Museokorttiin olisi pitänyt tehdä näkyvämmäksi, jotta käyttäjä ymmärtää palvelun virallisuuden ja luotettavuuden nopeammin.</p>
-
-                <figure class="cs-fig">
-                  <div class="wireframe-placeholder">
-                    <div>
-                      <strong>Lisää testilöydösten yhteenvetokuva</strong>
-                      <span>Näytä neljä tärkeintä löydöstä: kysely toimi, hinta oli epäselvä, Museokortin hankintapolku puuttui ja brändiyhteys vaati vahvistusta.</span>
-                    </div>
-                  </div>
-                  <figcaption>Testaus osoitti, että kiinnostava konsepti tarvitsee tuekseen selkeän hinnan, luottamuksen ja seuraavan askeleen.</figcaption>
-                </figure>
               </div>
 
               <div class="cs-divider"></div>
 
               <div id="cs-sprint-days" class="cs-section">
                 <h2>Sprintin eteneminen</h2>
-                <p>Viikko eteni Google Design Sprint -rakenteen mukaisesti: ensin rajattiin ongelma, sitten luonnosteltiin vaihtoehtoja, valittiin testattava ratkaisu, rakennettiin prototyyppi ja lopuksi testattiin se käyttäjillä. Päiväkohtainen eteneminen auttoi tiimiä pitämään työn konkreettisena ja tekemään päätöksiä nopeasti epävarmuudesta huolimatta.</p>
+                <p>Kurssi eteni Google Design Sprint -rakenteen mukaisesti viiden päivän aikana. Maanantaina rajattiin ongelma ja valittiin fokus, tiistaina luonnosteltiin ratkaisuja, keskiviikkona päätettiin testattava suunta, torstaina rakennettiin prototyyppi ja perjantaina testattiin konsepti käyttäjillä sekä esitettiin löydökset toimeksiantajalle. Tämä rakenne auttoi tiimiä siirtymään nopeasti epävarmasta haasteesta konkreettiseen, testattavaan palvelukonseptiin.</p>
 
                 <div class="sprint-day">
-                  <span class="decision-card__label">Day 1</span>
-                  <h3>Map &amp; Target: ongelman rajaaminen</h3>
-                  <p>Ensimmäisenä päivänä muodostimme yhteisen ymmärryksen toimeksiannosta, Museomatkojen asiakaspolusta ja siitä, mihin kohtaan fyysisen ja digitaalisen kohtaamisen yhdistäminen voisi tuottaa eniten arvoa. Tavoitteena oli tunnistaa käyttäjäpolun kriittinen kohta: miten pop-up-kohtaamisesta syntyy riittävän selkeä ja houkutteleva siirtymä digitaaliseen palveluun.</p>
-                  <div class="cs-carousel-placeholder" role="img" aria-label="Kuvakaruselli: Day 1">
-                    <div>
-                      <strong>Kuvakaruselli: Day 1</strong>
-                      <span>Lisää kuvat sprint mapista, HMW-lapuista, käyttäjäpolusta, long-term goalista ja valitusta fokusalueesta. Kuvien tarkoitus on näyttää, miten ongelma rajattiin ennen ratkaisujen ideointia.</span>
+                  <span class="decision-card__label">Day 1, Monday</span>
+                  <h3>Map &amp; Target: ongelman rajaaminen ja fokuksen valinta</h3>
+                  <p>Ensimmäinen päivä keskittyi yhteisen ymmärryksen rakentamiseen toimeksiannon pohjalta. Päivään kuuluivat toimeksiannon läpikäynti, asiantuntijan kuuleminen, long-term goal, sprinttikysymykset, käyttäjäpolun kartoitus sekä HMW-kysymykset ja kohteen valinta. Toimeksiantajan design challenge, jossa kysyttiin miten fyysinen asiakaspolku muutetaan digitaaliseksi konversioksi ja myynniksi, ohjasi fokuksen valintaa: tiimin piti päättää, mihin kohtaan palvelupolkua sprintin ratkaisu kohdistetaan.</p>
+                  <div class="cs-carousel cs-carousel--compact" role="region" aria-label="Day 1 artefaktit: pop-up, käyttäjäpolku, long-term goal, sprinttikysymykset ja HMW-ideointi" style="margin-top: var(--space-md);">
+                    <div class="cs-carousel__track">
+                      <div class="cs-carousel__slide cs-carousel__slide--active" aria-hidden="false">
+                        <figure>
+                          <div class="cs-carousel__media">
+                            <img src="../img/design-sprint/Customer%20Journey%20day-1.webp" alt="Käyttäjäpolun kartoitus fläppitaululle" loading="lazy" />
+                          </div>
+                          <figcaption>Käyttäjäpolun kartoitus: tiimi hahmotti, missä kohdissa fyysinen kohtaaminen katkeaa tai jatkuu digitaalisesti.</figcaption>
+                        </figure>
+                      </div>
+                      <div class="cs-carousel__slide" aria-hidden="true">
+                        <figure>
+                          <div class="cs-carousel__media">
+                            <img src="../img/design-sprint/Long%20term%20goal%20-%20day%201.webp" alt="Long-term goal -kirjoitusharjoituksen tulos" loading="lazy" />
+                          </div>
+                          <figcaption>Long-term goal: tiimi muotoili, mihin suuntaan palvelun tulisi kehittyä kahden vuoden aikajänteellä.</figcaption>
+                        </figure>
+                      </div>
+                      <div class="cs-carousel__slide" aria-hidden="true">
+                        <figure>
+                          <div class="cs-carousel__media">
+                            <img src="../img/design-sprint/Sprint%20Questions.webp" alt="Sprinttikysymykset kirjattuna seinälle" loading="lazy" />
+                          </div>
+                          <figcaption>Sprinttikysymykset: tiimi tunnisti, mitä epävarmuuksia sprintin pitää ratkaista.</figcaption>
+                        </figure>
+                      </div>
+                      <div class="cs-carousel__slide" aria-hidden="true">
+                        <figure>
+                          <div class="cs-carousel__media">
+                            <img src="../img/design-sprint/How%20Might%20We%20-Ideation-day-1.webp" alt="How Might We -ideointi post-it-lapuilla" loading="lazy" />
+                          </div>
+                          <figcaption>HMW-ideointi: ryhmä muotoili mahdollisuuksia "Miten voisimme..." -muotoon ennen fokuskohteen valintaa.</figcaption>
+                        </figure>
+                      </div>
+                      <button class="cs-carousel__nav cs-carousel__nav--prev" aria-label="Edellinen kuva" hidden>
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3l-5 5 5 5"/></svg>
+                      </button>
+                      <button class="cs-carousel__nav cs-carousel__nav--next" aria-label="Seuraava kuva">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
+                      </button>
                     </div>
                   </div>
                 </div>
 
                 <div class="sprint-day">
-                  <span class="decision-card__label">Day 2</span>
-                  <h3>Sketch: ratkaisujen luonnostelu</h3>
-                  <p>Toisena päivänä tuotimme vaihtoehtoisia ratkaisuja ennen yhteistä päätöksentekoa. Ideoissa tutkittiin, miten pop-up, flyerit, QR-koodi ja digitaalinen visa voisivat toimia yhtenä palvelupolkuna. Tavoitteena ei ollut valita ensimmäistä ideaa, vaan tuottaa riittävästi vaihtoehtoja, joista voitaisiin valita testattavin ja käyttäjälle selkein konsepti.</p>
-                  <div class="cs-carousel-placeholder" role="img" aria-label="Kuvakaruselli: Day 2">
-                    <div>
-                      <strong>Kuvakaruselli: Day 2</strong>
-                      <span>Lisää kuvat luonnoksista, Crazy 8 -ideoista, solution sketcheistä ja vaihtoehtoisista palvelupoluista. Kuvien tarkoitus on osoittaa, että lopullinen ratkaisu syntyi vaihtoehtojen vertailun kautta.</span>
+                  <span class="decision-card__label">Day 2, Tuesday</span>
+                  <h3>Sketch: inspiraatiosta vaihtoehtoisiin ratkaisuihin</h3>
+                  <p>Toinen päivä keskittyi ratkaisujen luonnosteluun. Aikataulun mukaan päivään kuuluivat lightning demot, hyvien ideoiden kerääminen, divide or swarm -valinta sekä Four-Step Sketch -vaiheet: notes, ideas, Crazy 8s ja solution sketch. Museomatkat-casessa tiimi tutki, miten pop-up, flyerit, QR-koodi ja digitaalinen personointikysely voisivat muodostaa selkeän palvelupolun.</p>
+                  <div class="cs-carousel cs-carousel--compact" role="region" aria-label="Day 2 artefaktit: lightning demot ja solution sketch -luonnokset" style="margin-top: var(--space-md);">
+                    <div class="cs-carousel__track">
+                      <div class="cs-carousel__slide cs-carousel__slide--active" aria-hidden="false">
+                        <figure>
+                          <div class="cs-carousel__media">
+                            <img src="../img/design-sprint/Lightning%20Demos-day2.webp" alt="Lightning Demos -inspiraatiokierroksen tulokset seinällä" loading="lazy" />
+                          </div>
+                          <figcaption>Lightning Demos: tiimi keräsi esimerkkejä toimivista ratkaisuista muilta toimialoilta.</figcaption>
+                        </figure>
+                      </div>
+                      <div class="cs-carousel__slide" aria-hidden="true">
+                        <figure>
+                          <div class="cs-carousel__media">
+                            <img src="../img/design-sprint/day2-lightning-demos.webp" alt="Lightning Demos -vaiheen muistiinpanot ja inspiraatiomateriaalit" loading="lazy" />
+                          </div>
+                          <figcaption>Lightning Demos -muistiinpanot: parhaat ideat kerättiin jatkoideoinnin pohjaksi.</figcaption>
+                        </figure>
+                      </div>
+                      <div class="cs-carousel__slide" aria-hidden="true">
+                        <figure>
+                          <div class="cs-carousel__media">
+                            <img src="../img/design-sprint/storyboard-ideat-day-3.webp" alt="Solution sketch -luonnoksia tiimin ideointivaiheesta" loading="lazy" />
+                          </div>
+                          <figcaption>Solution sketch -ideat: tiimi luonnosteli useita vaihtoehtoisia ratkaisuja ennen suunnan valintaa.</figcaption>
+                        </figure>
+                      </div>
+                      <button class="cs-carousel__nav cs-carousel__nav--prev" aria-label="Edellinen kuva" hidden>
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3l-5 5 5 5"/></svg>
+                      </button>
+                      <button class="cs-carousel__nav cs-carousel__nav--next" aria-label="Seuraava kuva">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
+                      </button>
                     </div>
                   </div>
                 </div>
 
                 <div class="sprint-day">
-                  <span class="decision-card__label">Day 3</span>
-                  <h3>Decide: testattavan konseptin valinta</h3>
-                  <p>Kolmantena päivänä vertailimme vaihtoehtoja ja valitsimme konseptin, joka yhdisti fyysisen kohtaamisen digitaaliseen jatkopolkuun. Valinta perustui siihen, että ratkaisu oli testattavissa nopeasti, ymmärrettävä käyttäjälle ja realistinen toteuttaa sprintin aikataulussa. Päätöksenteossa painotettiin erityisesti sitä, että käyttäjä voisi ymmärtää palvelun arvon ilman pitkää selittämistä.</p>
-                  <div class="cs-carousel-placeholder" role="img" aria-label="Kuvakaruselli: Day 3">
-                    <div>
-                      <strong>Kuvakaruselli: Day 3</strong>
-                      <span>Lisää kuvat äänestyksestä, priorisoinnista, valitusta konseptista, storyboardista tai prototyypin rakennesuunnitelmasta. Kuvien tarkoitus on näyttää, miksi valittu suunta oli paras kompromissi käyttäjäarvon, liiketoimintahyödyn ja toteutettavuuden välillä.</span>
+                  <span class="decision-card__label">Day 3, Wednesday</span>
+                  <h3>Decide: suunnan valinta ja storyboardin rakentaminen</h3>
+                  <p>Kolmas päivä keskittyi päätöksentekoon. Kurssiaikataulussa päivään kuuluivat Sticky Decision -rakenne, ratkaisujen arviointi, voittavan suunnan valinta sekä roadmapin ja storyboardin rakentaminen. Päätöksenteossa käytettiin heat map -äänestystä, speed critique -keskustelua, straw pollia ja supervotea.</p>
+                  <p>Museomatkat-casessa päätöksentekoon saatiin mukaan myös toimeksiantajan näkökulma. Keskiviikkona toimeksiantaja tuli paikan päälle katsomaan tiimin ideoita ja antoi äänensä ominaisuuksille, jotka vastasivat parhaiten heidän tavoitteitaan. Tämän jälkeen tarkensimme suuntaa jatkokysymyksillä ja pyysimme toimeksiantajaa priorisoimaan, mitkä yhdestä kolmeen ominaisuutta heidän näkökulmastaan olisi vähintään tärkeää saada mukaan prototyyppiin.</p>
+                  <p>Tämän palautteen pohjalta valittu suunta rajattiin kokonaisuudeksi, jossa pop-up, QR-koodi, personointikysely ja museomatkasuositus muodostivat yhden testattavan palvelupolun.</p>
+                  <div class="cs-carousel cs-carousel--compact" role="region" aria-label="Day 3 artefaktit: HMW-äänestys, storyboard ja valittu konsepti" style="margin-top: var(--space-md);">
+                    <div class="cs-carousel__track">
+                      <div class="cs-carousel__slide cs-carousel__slide--active" aria-hidden="false">
+                        <figure>
+                          <div class="cs-carousel__media">
+                            <img src="../img/design-sprint/HMW%20ja%20storyboard.webp" alt="HMW-äänestys ja storyboard seinällä" loading="lazy" />
+                          </div>
+                          <figcaption>HMW-äänestys ja storyboard: tiimi äänesti tärkeimmistä mahdollisuuksista ja rakensi valitusta suunnasta storyboardin.</figcaption>
+                        </figure>
+                      </div>
+                      <div class="cs-carousel__slide" aria-hidden="true">
+                        <figure>
+                          <div class="cs-carousel__media">
+                            <img src="../img/design-sprint/storyboard-ideat-day-3.webp" alt="Storyboard-ideoinnin luonnoksia" loading="lazy" />
+                          </div>
+                          <figcaption>Storyboard-ideointi: konsepti purettiin konkreettisiksi askelmerkeiksi ennen prototyypin rakentamista.</figcaption>
+                        </figure>
+                      </div>
+                      <div class="cs-carousel__slide" aria-hidden="true">
+                        <figure>
+                          <div class="cs-carousel__media">
+                            <img src="../img/design-sprint/Sprint%20Questions%202-day1.webp" alt="Tarkennetut sprinttikysymykset päätöksenteon tueksi" loading="lazy" />
+                          </div>
+                          <figcaption>Sprinttikysymysten tarkennus: valittu suunta tarkistettiin suhteessa sprintin kriittisiin oletuksiin.</figcaption>
+                        </figure>
+                      </div>
+                      <button class="cs-carousel__nav cs-carousel__nav--prev" aria-label="Edellinen kuva" hidden>
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3l-5 5 5 5"/></svg>
+                      </button>
+                      <button class="cs-carousel__nav cs-carousel__nav--next" aria-label="Seuraava kuva">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
+                      </button>
                     </div>
                   </div>
                 </div>
 
                 <div class="sprint-day">
-                  <span class="decision-card__label">Day 4</span>
+                  <span class="decision-card__label">Day 4, Thursday</span>
                   <h3>Prototype: fyysisen ja digitaalisen prototyypin rakentaminen</h3>
-                  <p>Neljäntenä päivänä rakensimme testattavan prototyypin. Minä, Vadim ja Jone keskityimme digitaaliseen mobiilivisaan, kun taas Kajsa, Thao ja Tanja työstivät fyysisiä flyereitä ja pop-upin materiaaleja. Päivän tavoite oli saada aikaan riittävän uskottava kokonaisuus käyttäjätestausta varten, ei valmis tuotantotason palvelu.</p>
-                  <div class="cs-carousel-placeholder" role="img" aria-label="Kuvakaruselli: Day 4">
-                    <div>
-                      <strong>Kuvakaruselli: Day 4</strong>
-                      <span>Lisää kuvat digitaalisesta protosta, mobiilinäkymistä, QR-polusta, flyeriluonnoksista ja pop-up-materiaaleista. Kuvien tarkoitus on näyttää, miten fyysinen ja digitaalinen kosketuspiste yhdistettiin testattavaksi kokonaisuudeksi.</span>
+                  <p>Neljäs päivä käytettiin prototyypin rakentamiseen. Aikataulun mukaan päivään kuuluivat työkalujen valinta, työn jakaminen, prototyypin rakentaminen, osien yhdistäminen, esitysohjeet, trial run sekä testiaikataulun ja haastattelurungon viimeistely. Minä, Vadim ja Jone keskityimme digitaaliseen personointikyselyyn, kun taas Kajsa, Thao ja Tanja työstivät fyysisiä flyereitä ja pop-up-materiaaleja. Tavoitteena oli riittävän uskottava prototyyppi käyttäjätestausta varten, ei valmis tuotantotason palvelu.</p>
+                  <div class="cs-carousel cs-carousel--compact" role="region" aria-label="Day 4 artefaktit: pop-up, tulostetut flyerit ja personointikyselyn näkymät" style="margin-top: var(--space-md);">
+                    <div class="cs-carousel__track">
+                      <div class="cs-carousel__slide cs-carousel__slide--active" aria-hidden="false">
+                        <figure>
+                          <div class="cs-carousel__media">
+                            <img src="../img/design-sprint/1.%20pop-up.webp" alt="Pop-up-myyntipisteen rakentaminen ja valmistelu" loading="lazy" />
+                          </div>
+                          <figcaption>Pop-up-kohtaamispiste: fyysinen prototyyppi rakennettiin testiä varten.</figcaption>
+                        </figure>
+                      </div>
+                      <div class="cs-carousel__slide" aria-hidden="true">
+                        <figure>
+                          <div class="cs-carousel__media">
+                            <img src="../img/design-sprint/Flyer.webp" alt="Museomatkat-flyerin suunnitelma" loading="lazy" />
+                          </div>
+                          <figcaption>Flyerin suunnittelu: fyysinen markkinointimateriaali, joka ohjaa käyttäjän QR-koodin kautta digitaaliseen kyselyyn.</figcaption>
+                        </figure>
+                      </div>
+                      <div class="cs-carousel__slide" aria-hidden="true">
+                        <figure>
+                          <div class="cs-carousel__media">
+                            <img src="../img/design-sprint/flyerit-printattuna.webp" alt="Tulostetut Museomatkat-flyerit pöydällä" loading="lazy" />
+                          </div>
+                          <figcaption>Tulostetut flyerit: fyysiset prototyypit olivat valmiita käyttäjätestausta varten.</figcaption>
+                        </figure>
+                      </div>
+                      <div class="cs-carousel__slide" aria-hidden="true">
+                        <figure>
+                          <div class="cs-carousel__media">
+                            <img src="../img/design-sprint/muumiflyer.webp" alt="Muumi-teemainen Museomatkat-flyer" loading="lazy" />
+                          </div>
+                          <figcaption>Muumi-teemainen flyer: yksi testatuista flyeriversioista pop-up-kohtaamiseen.</figcaption>
+                        </figure>
+                      </div>
+                      <div class="cs-carousel__slide" aria-hidden="true">
+                        <figure>
+                          <div class="cs-carousel__media">
+                            <img src="../img/design-sprint/QR.webp" alt="QR-koodi, joka johtaa digitaaliseen kyselyyn" loading="lazy" />
+                          </div>
+                          <figcaption>QR-koodi: fyysisen ja digitaalisen polun yhdistävä siirtymäpiste.</figcaption>
+                        </figure>
+                      </div>
+                      <div class="cs-carousel__slide" aria-hidden="true">
+                        <figure>
+                          <div class="cs-carousel__media">
+                            <img src="../img/design-sprint/start-quiz.webp" alt="Personointikyselyn aloitusnäkymä" loading="lazy" />
+                          </div>
+                          <figcaption>Kyselyn aloitusnäkymä: käyttäjä ohjataan QR-koodin kautta suoraan kyselyyn.</figcaption>
+                        </figure>
+                      </div>
+                      <div class="cs-carousel__slide" aria-hidden="true">
+                        <figure>
+                          <div class="cs-carousel__media">
+                            <img src="../img/design-sprint/kysymys1.webp" alt="Kyselyn ensimmäinen kysymys matkakumppanista" loading="lazy" />
+                          </div>
+                          <figcaption>Kysymys 1: käyttäjältä kysytään matkakumppanista, jotta suositus voi ottaa huomioon seuralaisen.</figcaption>
+                        </figure>
+                      </div>
+                      <div class="cs-carousel__slide" aria-hidden="true">
+                        <figure>
+                          <div class="cs-carousel__media">
+                            <img src="../img/design-sprint/kysymys6.webp" alt="Kyselyn kuudes kysymys budjetista" loading="lazy" />
+                          </div>
+                          <figcaption>Kysymys 6: budjetti on yksi keskeisimmistä suositusta ohjaavista tekijöistä.</figcaption>
+                        </figure>
+                      </div>
+                      <div class="cs-carousel__slide" aria-hidden="true">
+                        <figure>
+                          <div class="cs-carousel__media">
+                            <img src="../img/design-sprint/last%20question.webp" alt="Kyselyn viimeinen kysymys ennen suositusta" loading="lazy" />
+                          </div>
+                          <figcaption>Viimeinen kysymys: käyttäjä on lähes valmis saamaan oman museomatkasuosituksensa.</figcaption>
+                        </figure>
+                      </div>
+                      <button class="cs-carousel__nav cs-carousel__nav--prev" aria-label="Edellinen kuva" hidden>
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3l-5 5 5 5"/></svg>
+                      </button>
+                      <button class="cs-carousel__nav cs-carousel__nav--next" aria-label="Seuraava kuva">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
+                      </button>
                     </div>
                   </div>
                 </div>
 
                 <div class="sprint-day">
-                  <span class="decision-card__label">Day 5</span>
-                  <h3>Test: käyttäjätestaus ja pitchaus asiakkaalle</h3>
-                  <p>Viimeisenä päivänä testasimme konseptia käyttäjillä ja kokosimme löydökset asiakasesitykseen. Testaus osoitti, että konsepti oli kiinnostava ja helppo ymmärtää, mutta hinnoittelun, Museokortti-yhteyden ja personoinnin olisi pitänyt olla selkeämpiä. Päivän lopuksi esitimme ratkaisun toimeksiantajalle, ja tiimimme voitti projektin neljän ryhmän joukosta.</p>
-                  <div class="cs-carousel-placeholder" role="img" aria-label="Kuvakaruselli: Day 5">
-                    <div>
-                      <strong>Kuvakaruselli: Day 5</strong>
-                      <span>Lisää kuvat testitilanteesta, palautteen ryhmittelystä, tärkeimmistä löydöksistä, pitch-deckistä ja lopullisesta ratkaisunäkymästä. Kuvien tarkoitus on yhdistää testaus, oppiminen ja lopullinen asiakasesitys.</span>
+                  <span class="decision-card__label">Day 5, Friday</span>
+                  <h3>Test: käyttäjähaastattelut, löydökset ja pitch</h3>
+                  <p>Viides päivä keskittyi testaukseen ja asiakasesitykseen. Aamupäivällä valmisteltiin haastattelut ja haastateltiin käyttäjiä. Haastattelujen jälkeen palautteesta etsittiin toistuvia kaavoja: mikä oli positiivista, negatiivista ja neutraalia. Iltapäivällä tiimi valmisteli pitchin ja esitti ratkaisun toimeksiantajalle. Testaus osoitti, että konsepti oli kiinnostava ja helppo ymmärtää, mutta hinnoittelun, Museokortti-yhteyden ja personoinnin olisi pitänyt olla selkeämpiä.</p>
+                  <p class="muted" style="margin-top: var(--space-md); font-size: 0.85rem;">Varsinaisia testitilannekuvia ei ollut käytettävissä. Käyttäjätestauksen löydökset esitetään tekstissä.</p>
+                  <div class="cs-carousel cs-carousel--compact" role="region" aria-label="Day 5 artefaktit: testauksen prototyyppinäkymät ja tulokset" style="margin-top: var(--space-sm);">
+                    <div class="cs-carousel__track">
+                      <div class="cs-carousel__slide cs-carousel__slide--active" aria-hidden="false">
+                        <figure>
+                          <div class="cs-carousel__media">
+                            <img src="../img/design-sprint/results.webp" alt="Käyttäjätestauksen tulosyhteenveto" loading="lazy" />
+                          </div>
+                          <figcaption>Testauksen tulokset: toistuvia teemoja käyttäjien palautteesta koottuna.</figcaption>
+                        </figure>
+                      </div>
+                      <div class="cs-carousel__slide" aria-hidden="true">
+                        <figure>
+                          <div class="cs-carousel__media">
+                            <img src="../img/design-sprint/results2.webp" alt="Käyttäjätestauksen löydösten ryhmittely" loading="lazy" />
+                          </div>
+                          <figcaption>Löydösten ryhmittely: palaute jaettiin positiivisiin, negatiivisiin ja neutraaleihin havaintoihin.</figcaption>
+                        </figure>
+                      </div>
+                      <div class="cs-carousel__slide" aria-hidden="true">
+                        <figure>
+                          <div class="cs-carousel__media">
+                            <img src="../img/design-sprint/last%20question.webp" alt="Kyselyn viimeinen näkymä testitilanteessa" loading="lazy" />
+                          </div>
+                          <figcaption>Prototyypin viimeinen kysymys testitilanteessa: käyttäjä on lähellä suosituksen saamista.</figcaption>
+                        </figure>
+                      </div>
+                      <div class="cs-carousel__slide" aria-hidden="true">
+                        <figure>
+                          <div class="cs-carousel__media">
+                            <img src="../img/design-sprint/QR.webp" alt="QR-koodi käyttäjätestauksen testitilanteessa" loading="lazy" />
+                          </div>
+                          <figcaption>QR-koodi testitilanteessa: testattiin, ymmärtävätkö käyttäjät QR-siirtymän luontevasti pop-upista kyselyyn.</figcaption>
+                        </figure>
+                      </div>
+                      <button class="cs-carousel__nav cs-carousel__nav--prev" aria-label="Edellinen kuva" hidden>
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3l-5 5 5 5"/></svg>
+                      </button>
+                      <button class="cs-carousel__nav cs-carousel__nav--next" aria-label="Seuraava kuva">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -367,7 +524,7 @@
 
               <div id="cs-options" class="cs-section">
                 <h2>Ratkaisuvaihtoehdot ja priorisointi</h2>
-                <p>Sprintissä vertailimme eri tapoja ohjata käyttäjä Museomatkat-palveluun. Valittu ratkaisu yhdisti fyysisen herätteen ja digitaalisen personoinnin, koska se oli toteutettavissa nopeasti, budjettiystävällisesti ja riittävän uskottavasti käyttäjätestausta varten.</p>
+                <p>Sprintissä vertailimme eri tapoja ohjata käyttäjä Museomatkat-palveluun. Valittu ratkaisu yhdisti fyysisen herätteen ja digitaalisen personoinnin, koska se oli toteutettavissa nopeasti, budjettiystävällisesti ja riittävän uskottavasti käyttäjätestausta varten. Toimeksiannon rajauksen mukaan tehtävänä ei ollut tehdä kansallista rollout-suunnitelmaa, AR/VR-mallia, logistiikkasuunnitelmaa tai täyttä business casea, vaan tavoitteena oli asiakaskeskeinen ja realistisesti prototypoitava konsepti.</p>
 
                 <div class="option-grid">
                   <div class="option-card">
@@ -401,56 +558,22 @@
                 <p>Lopullinen ratkaisu oli fyysisen ja digitaalisen palvelupolun yhdistävä konsepti. Pop-up ja flyer toimivat huomion herättäjinä, QR-koodi madalsi siirtymää digitaaliseen palveluun ja 6-vaiheinen kysely auttoi käyttäjää löytämään itselleen sopivan museomatkan nopeasti.</p>
                 <p>Kyselyssä käyttäjä vastasi noin kuuteen kysymykseen. Kysymysten tarkoitus oli tehdä valinnasta kevyempi ja luoda tunne siitä, että suositus perustuu käyttäjän omiin kiinnostuksiin, aikatauluun ja matkustustyyliin.</p>
 
-                <div class="visual-callouts">
-                  <div class="visual-callouts-grid">
-                    <div class="visual-callout">
-                      <h3>Pop-up herättää huomion</h3>
-                      <figure>
-                        <div class="wireframe-placeholder wireframe-placeholder--small">
-                          <div>
-                            <strong>Lisää kuva pop-upista</strong>
-                            <span>Näytä fyysinen kohtaamispiste ja miten se houkuttelee käyttäjän lähemmäs.</span>
-                          </div>
-                        </div>
-                        <figcaption>Pop-upin tehtävä oli pysäyttää käyttäjä ja tehdä Museomatkat näkyväksi fyysisessä ympäristössä.</figcaption>
-                      </figure>
-                    </div>
-                    <div class="visual-callout">
-                      <h3>Flyer ja QR-koodi luovat jatkopolun</h3>
-                      <figure>
-                        <div class="wireframe-placeholder wireframe-placeholder--small">
-                          <div>
-                            <strong>Lisää kuva flyeristä ja QR-koodista</strong>
-                            <span>Näytä miten fyysinen materiaali ohjaa digitaaliseen kyselyyn.</span>
-                          </div>
-                        </div>
-                        <figcaption>QR-koodi muutti passiivisen markkinointimateriaalin toiminnalliseksi sisäänkäynniksi.</figcaption>
-                      </figure>
-                    </div>
-                    <div class="visual-callout">
-                      <h3>6-vaiheinen kysely keventää päätöstä</h3>
-                      <figure>
-                        <div class="wireframe-placeholder wireframe-placeholder--small">
-                          <div>
-                            <strong>Lisää kyselyn näkymä</strong>
-                            <span>Näytä yksi kysymysnäkymä, progress bar ja selkeät vastausvaihtoehdot.</span>
-                          </div>
-                        </div>
-                        <figcaption>Kyselyn tehtävä oli tehdä palveluun tutustumisesta nopeaa, henkilökohtaista ja matalan kynnyksen toimintaa.</figcaption>
-                      </figure>
-                    </div>
-                    <div class="visual-callout">
-                      <h3>Suositus ohjaa kohti ostoa</h3>
-                      <figure>
-                        <div class="wireframe-placeholder wireframe-placeholder--small">
-                          <div>
-                            <strong>Lisää suositusnäkymä</strong>
-                            <span>Näytä museomatkasuositus, hinnan sisältö ja selkeä seuraava toimintakehote.</span>
-                          </div>
-                        </div>
-                        <figcaption>Suositusnäkymän piti muuttaa kiinnostus konkreettiseksi seuraavaksi askeleeksi.</figcaption>
-                      </figure>
-                    </div>
+                <div class="solution-summary-grid">
+                  <div class="solution-summary-card">
+                    <h3>1. Fyysinen huomio</h3>
+                    <p>Pop-up ja flyer tekivät Museomatkat-palvelun näkyväksi fyysisessä ympäristössä.</p>
+                  </div>
+                  <div class="solution-summary-card">
+                    <h3>2. Digitaalinen siirtymä</h3>
+                    <p>QR-koodi muutti fyysisen kohtaamisen mitattavaksi digitaaliseksi jatkopoluksi.</p>
+                  </div>
+                  <div class="solution-summary-card">
+                    <h3>3. Personointikysely</h3>
+                    <p>6-vaiheinen kysely kevensi valintaa ja auttoi käyttäjää etenemään kohti suositusta.</p>
+                  </div>
+                  <div class="solution-summary-card">
+                    <h3>4. Museomatkasuositus</h3>
+                    <p>Suositusnäkymän tehtävä oli muuttaa kiinnostus seuraavaksi toimintakehotteeksi.</p>
                   </div>
                 </div>
               </div>
@@ -473,9 +596,9 @@
                     <span class="decision-card__label">Päätös 2</span>
                     <h3 class="decision-card__name">Kysely ennen laajaa matkavalikoimaa</h3>
                     <dl class="decision-card__details">
-                      <dt>Vaihtoehdot</dt><dd>Suora matkavalikoima tai lyhyt suositusvisa</dd>
-                      <dt>Lopullinen päätös</dt><dd>Lyhyt mobiilivisa</dd>
-                      <dt>Perustelu</dt><dd>Visa madalsi kynnystä ja auttoi käyttäjää aloittamaan valinnan ilman koko tarjonnan selaamista.</dd>
+                      <dt>Vaihtoehdot</dt><dd>Suora matkavalikoima tai lyhyt personointikysely</dd>
+                      <dt>Lopullinen päätös</dt><dd>Lyhyt personointikysely</dd>
+                      <dt>Perustelu</dt><dd>Kysely madalsi kynnystä ja auttoi käyttäjää aloittamaan valinnan ilman koko tarjonnan selaamista.</dd>
                     </dl>
                   </div>
                   <div class="decision-card">
@@ -497,28 +620,18 @@
                     </dl>
                   </div>
                 </div>
-
-                <figure class="cs-fig">
-                  <div class="wireframe-placeholder">
-                    <div>
-                      <strong>Lisää päätöksiä tukeva kuva</strong>
-                      <span>Näytä esimerkiksi ennen/jälkeen-ruutu, jossa brändiyhteys Museokorttiin näkyy selkeämmin, tai visuointi QR-polun selkeytymisestä.</span>
-                    </div>
-                  </div>
-                  <figcaption>Kuvan tarkoitus on näyttää, miten päätökset vaikuttivat palvelupolun selkeyteen ja luottamukseen.</figcaption>
-                </figure>
               </div>
 
               <div class="cs-divider"></div>
 
               <div id="cs-validation" class="cs-section">
                 <h2>Validointi, vaikutus ja rajoitteet</h2>
-                <p>Projektin lopputuloksena syntyi testattava konsepti ja prototyyppi, jotka esitettiin toimeksiantajalle sprintin lopuksi. Käyttäjätestaus antoi laadullista näyttöä siitä, että visamuoto ja selkeä eteneminen kiinnostivat käyttäjiä.</p>
+                <p>Projektin lopputuloksena syntyi testattava konsepti ja prototyyppi, jotka esitettiin toimeksiantajalle sprintin lopuksi. Käyttäjätestaus antoi laadullista näyttöä siitä, että kyselymuoto ja selkeä eteneminen kiinnostivat käyttäjiä. Toimeksiantajan odottamat tuotokset olivat sprintin fokus, konsepti, prototyyppi, testilöydökset ja jatkosuositukset. Kaikki valmistuivat viikon aikana.</p>
                 <div class="cs-callout">
                   <p><strong>Huomio:</strong> Projektissa ei ollut käytettävissä julkaisun jälkeistä analytiikkaa. Ratkaisun vaikutusta ei voi väittää mitatuksi konversioparannukseksi.</p>
                 </div>
                 <h3>Laadullinen vaikutus</h3>
-                <p>Tiimimme voitti kurssiprojektin neljän ryhmän joukosta. Toimeksiantajan palaute korosti, että ratkaisu noudatti heidän toiveitaan, oli budjettiystävällinen, visuaalisesti miellyttävä ja sisälsi myyntiä tukevia liiketoiminnallisia ideoita.</p>
+                <p>Tiimimme voitti kurssiprojektin neljän ryhmän joukosta. Toimeksiantajan palaute korosti, että ratkaisu noudatti heidän toiveitaan, oli budjettiystävällinen, visuaalisesti miellyttävä ja sisälsi myyntiä tukevia liiketoiminnallisia ideoita. Konseptin rakenne, eli pop-up, QR-koodi, kysely ja suositus, on periaatteessa siirrettävissä myös muihin Suomen kaupunkeihin, mikä oli yksi toimeksiantajan alkuperäisistä kiinnostuksen kohteista.</p>
                 <h3>Rajoitteet ja sokeat pisteet</h3>
                 <ul class="cs-note-list">
                   <li><strong>Personointi:</strong> prototyypin suosituslogiikka ei vielä todistanut, että käyttäjä saisi aidosti yksilöllisen tuloksen.</li>
@@ -527,17 +640,8 @@
                   <li><strong>Luottamus:</strong> Museomatkojen yhteys Museokorttiin pitäisi näyttää vahvemmin jo ensimmäisissä näkymissä.</li>
                 </ul>
                 <h3>Seuraava järkevä testi</h3>
-                <p>Pienin järkevä seuraava testi olisi mitata QR-skannauksia, visan aloituksia, visan läpäisyastetta, suositusnäkymän klikkauksia ja Museokortin ostoon siirtymistä pienessä pop-up-pilotissa.</p>
-
-                <figure class="cs-fig">
-                  <div class="wireframe-placeholder">
-                    <div>
-                      <strong>Lisää mittauspolun kuva</strong>
-                      <span>Näytä funnel: pop-up-havainto, QR-skannaus, visan aloitus, visan läpäisy, suositus, ostoon siirtyminen.</span>
-                    </div>
-                  </div>
-                  <figcaption>Seuraavassa vaiheessa konseptin arvo pitäisi todentaa käyttäytymisdatalla, ei pelkällä laadullisella palautteella.</figcaption>
-                </figure>
+                <p>Pienin järkevä seuraava testi olisi mitata QR-skannauksia, kyselyn aloituksia, kyselyn läpäisyastetta, suositusnäkymän klikkauksia ja Museokortin ostoon siirtymistä pienessä pop-up-pilotissa.</p>
+                <p class="muted">Projektin yksityiskohtaisia artefakteja ei julkaista ennen julkaisuluvan varmistumista.</p>
               </div>
 
               <div class="cs-divider"></div>
@@ -548,7 +652,7 @@
                 <p>Projektissa onnistui erityisesti fyysisen ja digitaalisen polun yhdistäminen. Ratkaisu oli riittävän kevyt toteutettavaksi sprintissä, mutta samalla tarpeeksi konkreettinen, jotta käyttäjiltä ja toimeksiantajalta saatiin relevanttia palautetta.</p>
 
                 <h3>Mikä jäi epävarmaksi?</h3>
-                <p>Suurin epävarmuus liittyi siihen, riittäisikö visan suosituslogiikka aidosti lisäämään ostohalukkuutta. Käyttäjätestaus osoitti kiinnostusta, mutta ei todistanut todellista konversiota tai maksuhalukkuutta.</p>
+                <p>Suurin epävarmuus liittyi siihen, riittäisikö kyselyn suosituslogiikka aidosti lisäämään ostohalukkuutta. Käyttäjätestaus osoitti kiinnostusta, mutta ei todistanut todellista konversiota tai maksuhalukkuutta.</p>
 
                 <h3>Mitä opin?</h3>
                 <ul>
@@ -562,14 +666,14 @@
                 <p>Jos aloittaisin projektin uudelleen, nostaisin hinnan, paketin sisällön ja Museokortin hankintapolun mukaan prototyyppiin aiemmin. Näin testaus olisi voinut tuottaa tarkempaa näyttöä siitä, missä kohtaa ostoaikomus syntyy tai katkeaa.</p>
 
                 <h3>Krediitit</h3>
-                <p>Tämä projekti syntyi yhteistyössä Vadimin, Jonen, Kajsan, Thaon ja Tanjan kanssa osana Design Sprint Days 2026 -kurssia.</p>
+                <p>Tämä projekti syntyi yhteistyössä Vadim Sorvalin, Jone Hyttisen, Kajsa Lindroosin, Thao Dinhin ja Tanja Vatkan kanssa osana Design Sprint Days 2026 -kurssia.</p>
                 <ul>
-                  <li><strong>Jan Nässi:</strong> Head of testing, käyttäjätestauksen rakenne, digitaalinen prototyyppi yhdessä Vadimin ja Jonen kanssa</li>
-                  <li><strong>Vadim:</strong> digitaalinen prototyyppi</li>
-                  <li><strong>Jone:</strong> digitaalinen prototyyppi</li>
-                  <li><strong>Kajsa:</strong> fyysiset flyerit ja pop-up</li>
-                  <li><strong>Thao:</strong> fyysiset flyerit ja pop-up</li>
-                  <li><strong>Tanja:</strong> fyysiset flyerit ja pop-up</li>
+                  <li><strong>Jan Nässi:</strong> Head of testing, digitaalinen prototyyppi</li>
+                  <li><strong>Vadim Sorval:</strong> digitaalinen prototyyppi</li>
+                  <li><strong>Jone Hyttinen:</strong> digitaalinen prototyyppi</li>
+                  <li><strong>Kajsa Lindroos:</strong> fyysiset flyerit ja pop-up</li>
+                  <li><strong>Thao Dinh:</strong> fyysiset flyerit ja pop-up</li>
+                  <li><strong>Tanja Vatka:</strong> fyysiset flyerit ja pop-up</li>
                 </ul>
               </div>
 
@@ -598,35 +702,14 @@
                   <dt>Projekti</dt><dd>Design Sprint: Museomatkat</dd>
                   <dt>Konteksti</dt><dd>Design Sprint Days 2026</dd>
                   <dt>Toimeksianto</dt><dd>Museomatkat ja Museokortti</dd>
-                  <dt>Tiimi</dt><dd>Jan Nässi, Vadim, Jone, Kajsa, Thao ja Tanja</dd>
+                  <dt>Tiimi</dt><dd>Jan Nässi, Vadim Sorval, Jone Hyttinen, Kajsa Lindroos, Thao Dinh ja Tanja Vatka</dd>
                   <dt>Oma rooli</dt><dd>Head of testing, digitaalinen prototyyppi</dd>
                   <dt>Menetelmät</dt><dd>Google Design Sprint, ideointi, prototypointi, käyttäjätestaus, pitchaus</dd>
-                  <dt>Tuotokset</dt><dd>Pop-up-konsepti, flyerit, QR-polku, mobiilivisa, testilöydökset, asiakasesitys</dd>
+                  <dt>Tuotokset</dt><dd>Pop-up-konsepti, flyerit, QR-polku, personointikysely, testilöydökset, asiakasesitys</dd>
                 </dl>
               </div>
             </aside>
           </div>
-        </div>
-      </section>
-
-      <section class="project-section">
-        <div class="container">
-          <h2 style="margin-bottom:var(--space-md); text-align:left;">Artefaktit ja linkit</h2>
-          <div class="cs-artifacts-grid">
-            <a href="#" class="cs-artifact">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              Lisää linkki digitaaliseen prototyyppiin
-            </a>
-            <a href="#" class="cs-artifact">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              Lisää kuvat flyeristä ja pop-upista
-            </a>
-            <a href="#" class="cs-artifact">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              Lisää pitch-esityksen tai testikoosteen linkki
-            </a>
-          </div>
-          <p class="cs-artifact-note">Huomio: pidä julkisessa portfoliossa vain sellaiset materiaalit, joiden julkaisemiseen on lupa. Sisäiset muistiinpanot, raaka testidata ja toimeksiantajan ei-julkiset materiaalit kannattaa jättää pois tai yleistää.</p>
         </div>
       </section>
 
@@ -677,6 +760,39 @@
         </div>
       </div>
     </footer>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.cs-carousel').forEach(function (carousel) {
+          var slides  = Array.from(carousel.querySelectorAll('.cs-carousel__slide'));
+          var navPrev = carousel.querySelector('.cs-carousel__nav--prev');
+          var navNext = carousel.querySelector('.cs-carousel__nav--next');
+          var current = 0;
+
+          function goTo(index) {
+            slides[current].classList.remove('cs-carousel__slide--active');
+            slides[current].setAttribute('aria-hidden', 'true');
+            current = index;
+            slides[current].classList.add('cs-carousel__slide--active');
+            slides[current].setAttribute('aria-hidden', 'false');
+            if (navPrev) navPrev.hidden = current === 0;
+            if (navNext) navNext.hidden = current === slides.length - 1;
+          }
+
+          if (navPrev) navPrev.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (current > 0) goTo(current - 1);
+          });
+          if (navNext) navNext.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (current < slides.length - 1) goTo(current + 1);
+          });
+
+          goTo(0);
+        });
+      });
+    </script>
     <script defer src="../main.js"></script>
     <script src="../consent.js"></script>
   </body>
