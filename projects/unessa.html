@@ -297,7 +297,7 @@
                       <div class="cs-carousel__slide" aria-hidden="true">
                         <figure class="persona-slide">
                           <div class="persona-slide__media">
-                            <img src="../img/Persoonat-unessa/oona-opiskelija.webp" alt="Unessa-asiakaspersoona Oona Opiskelija" width="1200" height="750" loading="lazy" data-lightbox-type="persona" />
+                            <img src="../img/Persoonat-unessa/Oona%20opiskelija.webp" alt="Unessa-asiakaspersoona Oona Opiskelija" width="1200" height="750" loading="lazy" data-lightbox-type="persona" />
                           </div>
                           <figcaption class="persona-slide__caption">
                             <span class="lang-en">Oona highlighted irregular routines and the need for low-threshold sleep habits, supporting affordable entry products and practical evening routine content.</span>
@@ -308,7 +308,7 @@
                       <div class="cs-carousel__slide" aria-hidden="true">
                         <figure class="persona-slide">
                           <div class="persona-slide__media">
-                            <img src="../img/Persoonat-unessa/some-sofia.webp" alt="Unessa-asiakaspersoona Some-Sofia" width="1200" height="750" loading="lazy" data-lightbox-type="persona" />
+                            <img src="../img/Persoonat-unessa/Some%20Sofia.webp" alt="Unessa-asiakaspersoona Some-Sofia" width="1200" height="750" loading="lazy" data-lightbox-type="persona" />
                           </div>
                           <figcaption class="persona-slide__caption">
                             <span class="lang-en">Some-Sofia highlighted trend-aware users looking for easy, visually appealing experiments, shaping the brand feel and accessible entry points.</span>
@@ -319,7 +319,7 @@
                       <div class="cs-carousel__slide" aria-hidden="true">
                         <figure class="persona-slide">
                           <div class="persona-slide__media">
-                            <img src="../img/Persoonat-unessa/data-timo.webp" alt="Unessa-asiakaspersoona Data Timo" width="1200" height="750" loading="lazy" data-lightbox-type="persona" />
+                            <img src="../img/Persoonat-unessa/Data-timo.webp" alt="Unessa-asiakaspersoona Data Timo" width="1200" height="750" loading="lazy" data-lightbox-type="persona" />
                           </div>
                           <figcaption class="persona-slide__caption">
                             <span class="lang-en">Data Timo represented analytical users who track sleep but need help turning data into actions, supporting Oura-related content and reasoned product copy.</span>
@@ -330,7 +330,7 @@
                       <div class="cs-carousel__slide" aria-hidden="true">
                         <figure class="persona-slide">
                           <div class="persona-slide__media">
-                            <img src="../img/Persoonat-unessa/pekka-perheenisa.webp" alt="Unessa-asiakaspersoona Pekka Perheenisä" width="1200" height="750" loading="lazy" data-lightbox-type="persona" />
+                            <img src="../img/Persoonat-unessa/Pekka%20perheenis%C3%A4.webp" alt="Unessa-asiakaspersoona Pekka Perheenisä" width="1200" height="750" loading="lazy" data-lightbox-type="persona" />
                           </div>
                           <figcaption class="persona-slide__caption">
                             <span class="lang-en">Pekka emphasized reliable, expert-backed and easy-to-integrate solutions for busy parents with disrupted sleep.</span>
@@ -341,7 +341,7 @@
                       <div class="cs-carousel__slide" aria-hidden="true">
                         <figure class="persona-slide">
                           <div class="persona-slide__media">
-                            <img src="../img/Persoonat-unessa/stressi-sanna.webp" alt="Unessa-asiakaspersoona Stressi Sanna" width="1200" height="750" loading="lazy" data-lightbox-type="persona" />
+                            <img src="../img/Persoonat-unessa/Stressi%20Sanna.webp" alt="Unessa-asiakaspersoona Stressi Sanna" width="1200" height="750" loading="lazy" data-lightbox-type="persona" />
                           </div>
                           <figcaption class="persona-slide__caption">
                             <span class="lang-en">Stressi Sanna highlighted stress, responsibility and exhaustion, shaping the calm tone of voice, trust cues and recovery-focused content.</span>
@@ -1012,9 +1012,7 @@
           function lbActivate(figures, idx, syncCarousel) {
             lbFigures      = figures;
             lbSyncCarousel = syncCarousel || null;
-            lbIdx          = idx;
-            lbPrev.hidden  = idx === 0;
-            lbNext.hidden  = idx === figures.length - 1;
+            lbUpdate(idx);
           }
 
           function lbReset() {
