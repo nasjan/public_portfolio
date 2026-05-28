@@ -45,6 +45,35 @@
       .wireframe-placeholder--wide { min-height: 460px; }
       .wireframe-placeholder--small { min-height: 260px; }
       .cs-note-list li + li { margin-top: .65rem; }
+
+      .sprint-day {
+        margin-top: var(--space-lg);
+        padding: var(--space-lg);
+        border: 1px solid rgba(15, 23, 42, 0.10);
+        border-radius: 24px;
+        background: rgba(248, 250, 252, 0.72);
+      }
+      .sprint-day + .sprint-day { margin-top: var(--space-md); }
+      .sprint-day h3 { margin-top: 0.25rem; }
+
+      .cs-carousel-placeholder {
+        min-height: 280px;
+        margin-top: var(--space-md);
+        border: 1px dashed rgba(15, 23, 42, 0.28);
+        border-radius: 20px;
+        background: rgba(248, 250, 252, 0.9);
+        display: grid;
+        place-items: center;
+        padding: 28px;
+        text-align: center;
+      }
+      .cs-carousel-placeholder strong { display: block; margin-bottom: 8px; }
+      .cs-carousel-placeholder span {
+        display: block;
+        max-width: 680px;
+        color: rgba(15, 23, 42, 0.68);
+        line-height: 1.55;
+      }
     </style>
     <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
@@ -148,6 +177,7 @@
               <li><a href="#cs-problem">Konteksti ja ongelma</a></li>
               <li><a href="#cs-role">Oma roolini</a></li>
               <li><a href="#cs-research">Tutkimus ja löydökset</a></li>
+              <li><a href="#cs-sprint-days">Sprintin eteneminen</a></li>
               <li><a href="#cs-options">Ratkaisuvaihtoehdot</a></li>
               <li><a href="#cs-solution">Lopullinen ratkaisu</a></li>
               <li><a href="#cs-decisions">Design-päätökset</a></li>
@@ -263,6 +293,74 @@
                   </div>
                   <figcaption>Testaus osoitti, että kiinnostava konsepti tarvitsee tuekseen selkeän hinnan, luottamuksen ja seuraavan askeleen.</figcaption>
                 </figure>
+              </div>
+
+              <div class="cs-divider"></div>
+
+              <div id="cs-sprint-days" class="cs-section">
+                <h2>Sprintin eteneminen</h2>
+                <p>Viikko eteni Google Design Sprint -rakenteen mukaisesti: ensin rajattiin ongelma, sitten luonnosteltiin vaihtoehtoja, valittiin testattava ratkaisu, rakennettiin prototyyppi ja lopuksi testattiin se käyttäjillä. Päiväkohtainen eteneminen auttoi tiimiä pitämään työn konkreettisena ja tekemään päätöksiä nopeasti epävarmuudesta huolimatta.</p>
+
+                <div class="sprint-day">
+                  <span class="decision-card__label">Day 1</span>
+                  <h3>Map &amp; Target: ongelman rajaaminen</h3>
+                  <p>Ensimmäisenä päivänä muodostimme yhteisen ymmärryksen toimeksiannosta, Museomatkojen asiakaspolusta ja siitä, mihin kohtaan fyysisen ja digitaalisen kohtaamisen yhdistäminen voisi tuottaa eniten arvoa. Tavoitteena oli tunnistaa käyttäjäpolun kriittinen kohta: miten pop-up-kohtaamisesta syntyy riittävän selkeä ja houkutteleva siirtymä digitaaliseen palveluun.</p>
+                  <div class="cs-carousel-placeholder" role="img" aria-label="Kuvakaruselli: Day 1">
+                    <div>
+                      <strong>Kuvakaruselli: Day 1</strong>
+                      <span>Lisää kuvat sprint mapista, HMW-lapuista, käyttäjäpolusta, long-term goalista ja valitusta fokusalueesta. Kuvien tarkoitus on näyttää, miten ongelma rajattiin ennen ratkaisujen ideointia.</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="sprint-day">
+                  <span class="decision-card__label">Day 2</span>
+                  <h3>Sketch: ratkaisujen luonnostelu</h3>
+                  <p>Toisena päivänä tuotimme vaihtoehtoisia ratkaisuja ennen yhteistä päätöksentekoa. Ideoissa tutkittiin, miten pop-up, flyerit, QR-koodi ja digitaalinen visa voisivat toimia yhtenä palvelupolkuna. Tavoitteena ei ollut valita ensimmäistä ideaa, vaan tuottaa riittävästi vaihtoehtoja, joista voitaisiin valita testattavin ja käyttäjälle selkein konsepti.</p>
+                  <div class="cs-carousel-placeholder" role="img" aria-label="Kuvakaruselli: Day 2">
+                    <div>
+                      <strong>Kuvakaruselli: Day 2</strong>
+                      <span>Lisää kuvat luonnoksista, Crazy 8 -ideoista, solution sketcheistä ja vaihtoehtoisista palvelupoluista. Kuvien tarkoitus on osoittaa, että lopullinen ratkaisu syntyi vaihtoehtojen vertailun kautta.</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="sprint-day">
+                  <span class="decision-card__label">Day 3</span>
+                  <h3>Decide: testattavan konseptin valinta</h3>
+                  <p>Kolmantena päivänä vertailimme vaihtoehtoja ja valitsimme konseptin, joka yhdisti fyysisen kohtaamisen digitaaliseen jatkopolkuun. Valinta perustui siihen, että ratkaisu oli testattavissa nopeasti, ymmärrettävä käyttäjälle ja realistinen toteuttaa sprintin aikataulussa. Päätöksenteossa painotettiin erityisesti sitä, että käyttäjä voisi ymmärtää palvelun arvon ilman pitkää selittämistä.</p>
+                  <div class="cs-carousel-placeholder" role="img" aria-label="Kuvakaruselli: Day 3">
+                    <div>
+                      <strong>Kuvakaruselli: Day 3</strong>
+                      <span>Lisää kuvat äänestyksestä, priorisoinnista, valitusta konseptista, storyboardista tai prototyypin rakennesuunnitelmasta. Kuvien tarkoitus on näyttää, miksi valittu suunta oli paras kompromissi käyttäjäarvon, liiketoimintahyödyn ja toteutettavuuden välillä.</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="sprint-day">
+                  <span class="decision-card__label">Day 4</span>
+                  <h3>Prototype: fyysisen ja digitaalisen prototyypin rakentaminen</h3>
+                  <p>Neljäntenä päivänä rakensimme testattavan prototyypin. Minä, Vadim ja Jone keskityimme digitaaliseen mobiilivisaan, kun taas Kajsa, Thao ja Tanja työstivät fyysisiä flyereitä ja pop-upin materiaaleja. Päivän tavoite oli saada aikaan riittävän uskottava kokonaisuus käyttäjätestausta varten, ei valmis tuotantotason palvelu.</p>
+                  <div class="cs-carousel-placeholder" role="img" aria-label="Kuvakaruselli: Day 4">
+                    <div>
+                      <strong>Kuvakaruselli: Day 4</strong>
+                      <span>Lisää kuvat digitaalisesta protosta, mobiilinäkymistä, QR-polusta, flyeriluonnoksista ja pop-up-materiaaleista. Kuvien tarkoitus on näyttää, miten fyysinen ja digitaalinen kosketuspiste yhdistettiin testattavaksi kokonaisuudeksi.</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="sprint-day">
+                  <span class="decision-card__label">Day 5</span>
+                  <h3>Test: käyttäjätestaus ja pitchaus asiakkaalle</h3>
+                  <p>Viimeisenä päivänä testasimme konseptia käyttäjillä ja kokosimme löydökset asiakasesitykseen. Testaus osoitti, että konsepti oli kiinnostava ja helppo ymmärtää, mutta hinnoittelun, Museokortti-yhteyden ja personoinnin olisi pitänyt olla selkeämpiä. Päivän lopuksi esitimme ratkaisun toimeksiantajalle, ja tiimimme voitti projektin neljän ryhmän joukosta.</p>
+                  <div class="cs-carousel-placeholder" role="img" aria-label="Kuvakaruselli: Day 5">
+                    <div>
+                      <strong>Kuvakaruselli: Day 5</strong>
+                      <span>Lisää kuvat testitilanteesta, palautteen ryhmittelystä, tärkeimmistä löydöksistä, pitch-deckistä ja lopullisesta ratkaisunäkymästä. Kuvien tarkoitus on yhdistää testaus, oppiminen ja lopullinen asiakasesitys.</span>
+                    </div>
+                  </div>
+                </div>
+
               </div>
 
               <div class="cs-divider"></div>
@@ -487,6 +585,7 @@
                     <li><a href="#cs-problem">Konteksti ja ongelma</a></li>
                     <li><a href="#cs-role">Oma roolini</a></li>
                     <li><a href="#cs-research">Tutkimus ja löydökset</a></li>
+                    <li><a href="#cs-sprint-days">Sprintin eteneminen</a></li>
                     <li><a href="#cs-options">Ratkaisuvaihtoehdot</a></li>
                     <li><a href="#cs-solution">Lopullinen ratkaisu</a></li>
                     <li><a href="#cs-decisions">Design-päätökset</a></li>
