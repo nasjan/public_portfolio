@@ -1918,6 +1918,61 @@ body.drawer-open .drawer-backdrop { opacity: 1; }
 
 .cs-section > ul { list-style: disc; }
 
+/* Typografinen rytmi: väliotsikot cs-section-sisällössä */
+.cs-section h3,
+.cs-section h4 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.cs-section h3 + ul,
+.cs-section h4 + ul,
+.cs-section h3 + ol,
+.cs-section h4 + ol {
+  margin-top: 0;
+}
+
+.cs-section h3 + p,
+.cs-section h4 + p {
+  margin-top: 0;
+}
+
+/* H2:n jälkeen tuleva ensimmäinen alaotsikko ei tarvitse omaa ylämarginaalia */
+.cs-section h2 + h3,
+.cs-section h2 + h4 {
+  margin-top: 0;
+}
+
+/* Sama kielivaihtoehtoisen wrapperissa (lang-en / lang-fi -rakenne) */
+.cs-section > .lang-en > h3:first-child,
+.cs-section > .lang-fi > h3:first-child,
+.cs-section > .lang-en > h4:first-child,
+.cs-section > .lang-fi > h4:first-child {
+  margin-top: 0;
+}
+
+@media (max-width: 640px) {
+  .cs-section h3,
+  .cs-section h4 {
+    margin-top: 1.75rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .cs-section h2 + h3,
+  .cs-section h2 + h4 {
+    margin-top: 0;
+  }
+
+  .cs-section h3 + ul,
+  .cs-section h4 + ul,
+  .cs-section h3 + ol,
+  .cs-section h4 + ol,
+  .cs-section h3 + p,
+  .cs-section h4 + p {
+    margin-top: 0;
+  }
+}
+
 @media (max-width: 640px) {
   .cs-section ul,
   .cs-section ol {
