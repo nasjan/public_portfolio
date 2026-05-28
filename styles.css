@@ -20,7 +20,7 @@
 
   /* sectioneiden taustat */
   --section-bg: rgba(255, 255, 255, 0.322);
-  --section-bg-light: #ffffff8a;
+  --section-bg-light: #ffffffa9;
   --section-bg-dark: #f6f7ef2d;
 
   --hero-bg: var(--section-bg-light);
@@ -1917,6 +1917,23 @@ body.drawer-open .drawer-backdrop { opacity: 1; }
 }
 
 .cs-section > ul { list-style: disc; }
+
+@media (max-width: 640px) {
+  .cs-section ul,
+  .cs-section ol {
+    padding-left: 1.1rem;
+    margin-left: 0;
+  }
+
+  .cs-section li {
+    padding-left: 0.1rem;
+    margin-bottom: 0.45rem;
+  }
+
+  .cs-section li::marker {
+    font-size: 0.72em;
+  }
+}
 
 /* Callout */
 .cs-callout {
