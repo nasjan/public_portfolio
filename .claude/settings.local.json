@@ -24,7 +24,8 @@
       "Bash(mv \"img/Persoonat-unessa/Pekka perheenisä.webp\" \"img/Persoonat-unessa/pekka-perheenisa.webp\")",
       "Bash(mv \"img/Persoonat-unessa/Stressi Sanna.webp\" \"img/Persoonat-unessa/stressi-sanna.webp\")",
       "PowerShell(git -C \"c:\\\\Users\\\\Nassi\\\\Documents\\\\Koodit\\\\Portfolio\\\\enchanted\" status --short)",
-      "PowerShell(git -C \"c:\\\\Users\\\\Nassi\\\\Documents\\\\Koodit\\\\Portfolio\\\\enchanted\" ls-files --error-unmatch \"img/Persoonat-unessa/Data-timo.webp\" 2>&1)"
+      "PowerShell(git -C \"c:\\\\Users\\\\Nassi\\\\Documents\\\\Koodit\\\\Portfolio\\\\enchanted\" ls-files --error-unmatch \"img/Persoonat-unessa/Data-timo.webp\" 2>&1)",
+      "PowerShell(git -C \"c:\\\\Users\\\\Nassi\\\\Documents\\\\Koodit\\\\Portfolio\\\\enchanted\" ls-files \"img/Persoonat-unessa/\")"
     ]
   }
 }
