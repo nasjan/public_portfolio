@@ -17,7 +17,12 @@
       "PowerShell(Rename-Item \"C:\\\\Users\\\\Nassi\\\\Documents\\\\Koodit\\\\Portfolio\\\\enchanted\\\\Unessa\\\\img\\\\Hi-Fi.webp\" \"hi-fi.webp\")",
       "Bash(git config *)",
       "Bash(git add *)",
-      "Bash(git rm *)"
+      "Bash(git rm *)",
+      "Bash(mv \"img/Persoonat-unessa/Oona opiskelija.webp\" \"img/Persoonat-unessa/oona-opiskelija.webp\")",
+      "Bash(mv \"img/Persoonat-unessa/Some Sofia.webp\" \"img/Persoonat-unessa/some-sofia.webp\")",
+      "Bash(mv \"img/Persoonat-unessa/Data-timo.webp\" \"img/Persoonat-unessa/data-timo.webp\")",
+      "Bash(mv \"img/Persoonat-unessa/Pekka perheenisä.webp\" \"img/Persoonat-unessa/pekka-perheenisa.webp\")",
+      "Bash(mv \"img/Persoonat-unessa/Stressi Sanna.webp\" \"img/Persoonat-unessa/stressi-sanna.webp\")"
     ]
   }
 }
