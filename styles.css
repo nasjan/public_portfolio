@@ -2647,9 +2647,9 @@ body.drawer-open .drawer-backdrop { opacity: 1; }
 }
 
 .option-step--selected {
-  border-color: rgba(82, 115, 255, 0.42);
-  background: #f8f9ff;
-  box-shadow: 0 6px 20px rgba(82, 115, 255, 0.1);
+  border-color: rgba(0, 96, 96, 0.35);
+  background: #f0f7f7;
+  box-shadow: 0 6px 20px rgba(0, 96, 96, 0.08);
 }
 
 .option-step .option-decision {
@@ -2719,7 +2719,7 @@ body.drawer-open .drawer-backdrop { opacity: 1; }
 }
 
 .option-step--selected .option-decision {
-  color: #5273ff;
+  color: var(--accent);
 }
 
 @media (max-width: 860px) {
