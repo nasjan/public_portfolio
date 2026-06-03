@@ -77,7 +77,7 @@
               <dt><span class="lang-en">Timeline</span><span class="lang-fi">Aikataulu</span></dt>
               <dd><span class="lang-en">March to May 2026, ~7 weeks</span><span class="lang-fi">27.3.–15.5.2026, noin 7 viikkoa</span></dd>
             </div>
-            <div class="cs-meta-item"><dt>Tools</dt><dd>Figma, FigJam, React + Vite, Mistral API, VS Code, GitHub, Miro</dd></div>
+            <div class="cs-meta-item"><dt><span class="lang-fi">Työkalut</span><span class="lang-en">Tools</span></dt><dd>Figma, FigJam, React + Vite, Mistral API, VS Code, GitHub, Miro</dd></div>
             <div class="cs-meta-item">
               <dt><span class="lang-en">Team</span><span class="lang-fi">Tiimi</span></dt>
               <dd><span class="lang-en">5 person team</span><span class="lang-fi">5 hengen tiimi</span></dd>
@@ -410,20 +410,8 @@
                 </div>
 
                 <p>
-                  <span class="lang-en">The idea of local activity search became stronger after an interview with a physical activity advisor. From that perspective, even a simple activity search could be useful if it offered up-to-date information about local activity options. In a production version, this would require real-time data or otherwise well-maintained up-to-date data. In the pilot, this was simulated with a limited internal knowledge base so that the local search logic could be tested without real-time web search.</span>
-                  <span class="lang-fi">Paikallisen harrastushaun idea vahvistui liikuntaneuvojan haastattelussa. Hänen näkökulmastaan pelkkä harrastushaku voisi olla hyödyllinen ratkaisu, jos se tarjoaisi ajantasaista tietoa paikallisista harrastusmahdollisuuksista. Tuotantoversiossa tämä edellyttäisi reaaliaikaista tai muuten ajantasaisesti ylläpidettyä tietoa. Pilotissa tätä simuloitiin rajatulla omalla tietopankilla, jotta paikallishaun logiikkaa voitiin testata ilman reaaliaikaista internethakua.</span>
-                </p>
-                <p>
-                  <span class="lang-en">This created an important boundary: local information search and AI conversation support could not use the same logic. Local information needed to be separated from free language model generation.</span>
-                  <span class="lang-fi">Tämä rajaus nosti esiin tärkeän päätöksen: paikallisen tiedon haku ja AI:n keskustelutuki eivät voi toimia samalla logiikalla. Paikallistieto piti erottaa kielimallin vapaasta generoinnista.</span>
-                </p>
-                <p>
-                  <span class="lang-en">The chosen solution was a combination: AI-assisted conversation support, structuring activity ideas and separate local search. This matched the client's original goal of supporting the professional during guidance work, but it clarified the solution into three tasks: supporting the sensitive conversation, structuring activity ideas and finding concrete local options. Local search was separated from AI conversation so that local information would not be invented by the language model.</span>
-                  <span class="lang-fi">Valittu ratkaisu oli yhdistelmä: AI-avusteinen keskustelutuki, liikuntaideoiden jäsentäminen ja erillinen paikallishaku. Tämä vastasi toimeksiantajan alkuperäiseen tavoitteeseen tukea ammattilaista neuvontatilanteessa, mutta tarkensi ratkaisun kolmeen tehtävään: keskustelun sensitiiviseen tukemiseen, liikuntaideoiden jäsentämiseen ja konkreettisten paikallisten vaihtoehtojen löytämiseen. Paikallishaku erotettiin AI-keskustelusta, jotta paikallistietoa ei jätettäisi kielimallin keksittäväksi.</span>
-                </p>
-                <p>
-                  <span class="lang-en">The key trade-off was that local search was built in the pilot with limited test data. This does not solve production-level data maintenance, but it made the search structure, filters and risks testable within the project timeline.</span>
-                  <span class="lang-fi">Keskeinen kompromissi oli se, että paikallishaku toteutettiin pilotissa rajatulla testidatalla. Tämä ei ratkaise tuotantotason tiedon ylläpitoa, mutta se teki hakutulosten rakenteen, suodattimet ja riskit testattaviksi projektin aikataulussa.</span>
+                  <span class="lang-en">The idea of local activity search was strengthened by an interview with a physical activity advisor. A list of activities alone did not solve the challenge of sensitive conversation, and AI conversation support alone did not help find concrete local options. For this reason, the chosen solution combined three tasks: supporting the sensitive conversation, structuring activity ideas and a separate local search. The key boundary was that local information was not left for the language model to generate freely. In the pilot, local search was simulated with limited test data, which made the search structure, filters and risks testable without a production-level data integration.</span>
+                  <span class="lang-fi">Paikallisen harrastushaun idea vahvistui liikuntaneuvojan haastattelussa. Pelkkä harrastuslista ei kuitenkaan ratkaissut sensitiivisen puheeksioton haastetta, eikä pelkkä AI-keskustelutuki auttanut löytämään konkreettisia paikallisia vaihtoehtoja. Siksi valittu ratkaisu yhdisti kolme tehtävää: sensitiivisen keskustelun tukemisen, liikuntaideoiden jäsentämisen ja erillisen paikallishaun. Tärkein rajaus oli, että paikallistietoa ei jätetty kielimallin vapaasti generoitavaksi. Pilotissa paikallishakua simuloitiin rajatulla testidatalla, mikä teki hakutulosten rakenteen, suodattimet ja riskit testattaviksi ilman tuotantotason dataintegraatiota.</span>
                 </p>
               </div>
 
@@ -435,24 +423,22 @@
                   <p>The final solution was an AI-assisted sparring tool. It supports professionals in sensitive physical activity conversations and offers local activity search as a separate, limited feature.</p>
                   <p>The solution had three main parts:</p>
                   <ol>
-                    <li><strong>Sensitive conversation support:</strong> AI suggests opening phrases, follow-up questions and small next steps. It does not diagnose or make decisions for the professional. The model uses mini-intervention thinking: the professional gets short, situation-specific openings and small next steps, not a complete solution for the young person.</li>
-                    <li><strong>Separate local search:</strong> Local options are fetched from limited test data and shown as cards. The model is not allowed to invent places that do not exist.</li>
+                    <li><strong>Sensitive conversation support:</strong> AI suggests opening phrases, follow-up questions and small next steps. It does not diagnose or make decisions for the professional.</li>
+                    <li><strong>Separate local search:</strong> Local activity options are shown as cards fetched from limited test data. The model is not allowed to invent places.</li>
                     <li><strong>Visibility of sources and boundaries:</strong> The user can see when information is based on sources, a limited knowledge base or local search data.</li>
                   </ol>
-                  <p>An important usability decision was keyword-based quick selections. When the professional selects a topic such as "low motivation" or "lack of time", the choice is added directly into the text field. The professional can send it as it is or add their own detail to the prompt. This reduces typing during the consultation and leaves more attention for the conversation.</p>
-                  <p>The responses also needed to offer 2 to 3 concrete follow-up questions or next steps. The goal was that at least one option would fit the situation without the professional needing to ask for a new response again and again. The professional can also adjust response length in settings.</p>
+                  <p>An important usability decision was keyword-based quick selections. When the professional selects a topic such as "low motivation" or "lack of time", the choice is added directly into the text field. This reduces typing during the consultation. How the response logic, situation modes and safety boundaries were built is described in the technical section below.</p>
                   <p><strong>Functional AI prototype:</strong> The React prototype can be tested with your own API key. It supports Mistral and GPT-compatible API keys, and the key is added in the app settings. The demo is meant to show AI logic, conversation paths and response risks. It is not meant to present a polished final UI or UX solution.</p>
                 </div>
                 <div class="lang-fi">
                   <p>Lopullinen ratkaisu oli AI-avusteinen sparraustyökalu, joka tukee ammattilaista sensitiivisessä liikuntakeskustelussa ja tarjoaa paikallisen harrastushaun omana, rajattuna toimintona.</p>
                   <p>Ratkaisun ydin oli kolmeosainen:</p>
                   <ol>
-                    <li><strong>Sensitiivinen keskustelutuki:</strong> AI ehdottaa avausfraaseja, jatkokysymyksiä ja pieniä etenemisaskeleita. Se ei tee diagnoosia eikä päätä ammattilaisen puolesta. Toimintamalli hyödyntää mini-interventioajattelua: ammattilainen saa lyhyitä, tilanteeseen sopivia avauksia ja pieniä seuraavia askeleita, ei valmista ratkaisua nuoren puolesta.</li>
-                    <li><strong>Erillinen paikallishaku:</strong> Paikalliset vaihtoehdot haetaan rajatusta testidatasta ja näytetään kortteina. Malli ei saa keksiä olemattomia paikkoja.</li>
+                    <li><strong>Sensitiivinen keskustelutuki:</strong> AI ehdottaa avausfraaseja, jatkokysymyksiä ja pieniä etenemisaskeleita. Se ei tee diagnoosia eikä päätä ammattilaisen puolesta.</li>
+                    <li><strong>Erillinen paikallishaku:</strong> Paikalliset harrastusvaihtoehdot näytetään kortteina rajatusta testidatasta. Malli ei saa keksiä olemattomia paikkoja.</li>
                     <li><strong>Lähteiden ja rajojen näkyvyys:</strong> Käyttäjälle tehdään näkyväksi, milloin tieto perustuu lähteisiin, rajattuun tietopohjaan tai paikalliseen hakudataan.</li>
                   </ol>
-                  <p>Käytettävyyden kannalta tärkeä ratkaisu oli avainsanoihin perustuvat pikavalinnat. Kun ammattilainen valitsee esimerkiksi "motivaation puute" tai "ajan puute", valinta lisätään suoraan tekstikenttään. Ammattilainen voi lähettää sen sellaisenaan tai jatkaa promptia omalla tarkennuksella. Tämä vähentää kirjoittamista vastaanottotilanteessa ja jättää enemmän huomiota itse keskustelulle.</p>
-                  <p>Vastausten tuli myös tarjota 2–3 konkreettista jatkokysymystä tai seuraavaa askelta. Tavoitteena oli, että jokin vaihtoehdoista sopisi tilanteeseen ilman, että ammattilaisen täytyy pyytää jatkuvasti uutta vastausta. Lisäksi ammattilainen voi säätää vastausten pituutta asetuksista.</p>
+                  <p>Käytettävyyden kannalta tärkeä ratkaisu oli avainsanoihin perustuvat pikavalinnat. Kun ammattilainen valitsee esimerkiksi "motivaation puute" tai "ajan puute", valinta lisätään suoraan tekstikenttään. Tämä vähentää kirjoittamista vastaanottotilanteessa. Miten vastauslogiikka, tilannemoodit ja turvallisuusrajaukset rakennettiin, kuvataan alla olevassa teknisessä osiossa.</p>
                   <p><strong>Toimiva AI-prototyyppi:</strong> React-prototyyppiä voi kokeilla omalla API-avaimella. Prototyyppi tukee Mistral- ja GPT-yhteensopivia API-avaimia, ja avain lisätään sovelluksen asetuksista. Demo on tarkoitettu AI-logiikan, keskustelupolkujen ja vastausten riskien havainnointiin, ei viimeistellyn UI/UX-ratkaisun esittelyyn.</p>
                 </div>
 
@@ -645,15 +631,15 @@
                   <div class="decision-item">
                     <div class="decision-item__id">
                       <span class="decision-item__label"><span class="lang-en">Decision 1</span><span class="lang-fi">Päätös 1</span></span>
-                      <h3 class="decision-item__name"><span class="lang-en">AI stays as background support for the professional</span><span class="lang-fi">AI pysyy ammattilaisen taustatukena</span></h3>
+                      <h3 class="decision-item__name"><span class="lang-en">AI was limited to background support and guided by situation</span><span class="lang-fi">AI rajattiin taustatueksi ja ohjattiin tilanteen mukaan</span></h3>
                     </div>
                     <div class="decision-item__alts">
                       <span class="decision-item__meta-label"><span class="lang-en">Alternatives</span><span class="lang-fi">Vaihtoehdot</span></span>
-                      <p><span class="lang-en">Background support for the professional, or response logic that starts to guide decisions too strongly.</span><span class="lang-fi">Taustatuki, joka tukee ammattilaista, tai vastauslogiikka, joka alkaa ohjata päätöksiä liian vahvasti.</span></p>
+                      <p><span class="lang-en">One general prompt with shared response logic, or situation-specific rules with different modes for sensitive conversation, activity mapping and local search.</span><span class="lang-fi">Yksi yleinen prompti yhteisellä vastauslogiikalla tai tilanteen mukaan vaihtuvat säännöt eri moodeille: sensitiiviselle keskustelulle, harrastuskartoitukselle ja paikallishaulle.</span></p>
                     </div>
                     <div class="decision-item__rationale">
                       <span class="decision-item__meta-label"><span class="lang-en">Reason</span><span class="lang-fi">Perustelu</span></span>
-                      <p><span class="lang-en">The client's starting point was that the tool supports the professional and does not replace professional judgement. Because of this, we kept checking that AI responses did not start to sound like decision-making or guide the situation on behalf of the professional.</span><span class="lang-fi">Toimeksiantajan lähtökohta oli, että työkalu tukee ammattilaista eikä korvaa hänen arviointiaan. Siksi prototyypissä seurattiin jatkuvasti, ettei AI-vastaus ala kuulostaa päätöksentekijältä tai ohjaa tilannetta ammattilaisen puolesta.</span></p>
+                      <p><span class="lang-en">Sensitive conversation, activity mapping and local search cannot use the same ruleset. Situation-specific guidance reduced wrong assumptions and kept the professional's decision responsibility visible. The client's starting point was that the tool supports the professional and does not replace professional judgement.</span><span class="lang-fi">Sensitiivinen keskustelu, harrastuskartoitus ja paikallishaku eivät voi toimia samalla säännöstöllä. Tilannekohtainen ohjaus vähensi virheellisiä oletuksia ja piti ammattilaisen päätösvastuun näkyvissä. Toimeksiantajan lähtökohta oli, että työkalu tukee ammattilaista eikä korvaa hänen arviointiaan.</span></p>
                     </div>
                   </div>
 
@@ -690,21 +676,6 @@
                   <div class="decision-item">
                     <div class="decision-item__id">
                       <span class="decision-item__label"><span class="lang-en">Decision 4</span><span class="lang-fi">Päätös 4</span></span>
-                      <h3 class="decision-item__name"><span class="lang-en">Different situations use different response logic</span><span class="lang-fi">Eri tilanteet käyttävät eri vastauslogiikkaa</span></h3>
-                    </div>
-                    <div class="decision-item__alts">
-                      <span class="decision-item__meta-label"><span class="lang-en">Alternatives</span><span class="lang-fi">Vaihtoehdot</span></span>
-                      <p><span class="lang-en">One general prompt or situation-specific rules.</span><span class="lang-fi">Yksi yleinen prompti tai tilanteen mukaan vaihtuvat säännöt.</span></p>
-                    </div>
-                    <div class="decision-item__rationale">
-                      <span class="decision-item__meta-label"><span class="lang-en">Reason</span><span class="lang-fi">Perustelu</span></span>
-                      <p><span class="lang-en">Sensitive conversation, activity mapping and local search cannot use the same ruleset. Mode-specific guidance and code safeguards reduced wrong assumptions.</span><span class="lang-fi">Sensitiivinen keskustelu, harrastuskartoitus ja paikallishaku eivät voi toimia samalla säännöstöllä. Moodikohtainen ohjaus ja koodisuojaukset vähensivät virheellisiä oletuksia.</span></p>
-                    </div>
-                  </div>
-
-                  <div class="decision-item">
-                    <div class="decision-item__id">
-                      <span class="decision-item__label"><span class="lang-en">Decision 5</span><span class="lang-fi">Päätös 5</span></span>
                       <h3 class="decision-item__name"><span class="lang-en">Quick selections make use faster during consultation</span><span class="lang-fi">Pikavalinnat nopeuttavat käyttöä vastaanottotilanteessa</span></h3>
                     </div>
                     <div class="decision-item__alts">
@@ -866,8 +837,7 @@
                   <p>I succeeded in helping turn the client's original tool idea into a clear and testable concept for the team. The starting point was already a digital tool that supports the professional's work, but during the project we needed to define what was most useful to test in the pilot: information search, activity ideas, conversation support or a combination of these. The final concept became a combination of sensitive conversation support and separate local search.</p>
                   <p>Another success was that the AI prototype was not treated only as a technical experiment. I used it as a definition tool. A bad AI response was not only a bug. It was a signal about what needed to be limited, guided or documented for the next development phase.</p>
                   <h3>What remained uncertain?</h3>
-                  <p>The biggest uncertainty is the real consultation context. We did not have time to validate the tool with enough real school nurses in a consultation-like situation. Because of this, the impact is expected and qualitatively supported, not measured.</p>
-                  <p>Another open question is local data maintenance. Limited test data was enough to demonstrate the search logic, but production would need clear answers to who updates the data, how it is checked and how the user sees if the information is up to date.</p>
+                  <p>The biggest uncertainty was the real consultation context and local data maintenance. We did not have time to validate the tool with enough real school nurses in a consultation-like situation, so the impact is qualitatively supported, not measured. A production version would also need clear answers to who maintains the local data, how it is checked and how the user sees whether the information is up to date.</p>
                   <h3>What I learned?</h3>
                   <ul>
                     <li>AI experience does not come from one good prompt. It comes from the combination of UI, data, application logic, prompts and safety boundaries.</li>
@@ -887,8 +857,7 @@
                   <p>Onnistuin siinä, että autoin tarkentamaan toimeksiantajan alkuperäisen työkalutoiveen tiimille selkeäksi ja testattavaksi konseptiksi. Lähtökohta oli jo valmiiksi ammattilaisen työtä tukeva digitaalinen työkalu, mutta projektin aikana piti rajata, mitä pilotissa kannattaa oikeasti testata: tiedonhakua, liikuntaideoita, keskustelun tukemista vai näiden yhdistelmää. Lopputuloksena konsepti tarkentui ammattilaisen sensitiivisen keskustelutuen ja erillisen paikallishaun yhdistelmäksi.</p>
                   <p>Toinen onnistuminen oli se, että AI-prototyyppiä ei käsitelty vain teknisenä kokeiluna. Käytin sitä määrittelyn työkaluna: huono AI-vastaus ei ollut vain virhe, vaan signaali siitä, mitä pitää rajata, ohjata tai dokumentoida seuraavaa kehitysvaihetta varten.</p>
                   <h3>Mikä jäi epävarmaksi?</h3>
-                  <p>Suurin epävarmuus liittyy todelliseen käyttötilanteeseen. Emme ehtineet validoida työkalua riittävällä määrällä oikeita terveydenhoitajia vastaanoton kaltaisessa tilanteessa. Siksi vaikutus on tässä vaiheessa odotettu ja laadullisesti perusteltu, ei mitattu.</p>
-                  <p>Toinen avoin kysymys on paikallisen tiedon ylläpito. Pilotissa rajattu testidata riitti hakulogiikan demonstrointiin, mutta tuotantotasolla pitäisi ratkaista, kuka ylläpitää tietoa, miten se tarkistetaan ja miten käyttäjälle näytetään tiedon ajantasaisuus.</p>
+                  <p>Suurin epävarmuus liittyi todelliseen käyttötilanteeseen ja paikallisen tiedon ylläpitoon. Emme ehtineet validoida työkalua riittävällä määrällä oikeita terveydenhoitajia vastaanoton kaltaisessa tilanteessa, ja tuotantoversiossa pitäisi ratkaista, kuka ylläpitää paikallista dataa, miten se tarkistetaan ja miten ajantasaisuus näytetään käyttäjälle.</p>
                   <h3>Mitä opin?</h3>
                   <ul>
                     <li>AI-kokemus ei synny yhdestä hyvästä promptista, vaan käyttöliittymän, datan, sovelluslogiikan, promptien ja turvallisuusrajausten yhdistelmästä.</li>
@@ -1154,6 +1123,30 @@
             });
 
             goTo(0);
+
+            /* Swipe support */
+            var touchStartX = 0;
+            var touchStartY = 0;
+            var touchMoved  = false;
+
+            carousel.addEventListener('touchstart', function (e) {
+              touchStartX = e.touches[0].clientX;
+              touchStartY = e.touches[0].clientY;
+              touchMoved  = false;
+            }, { passive: true });
+
+            carousel.addEventListener('touchmove', function (e) {
+              touchMoved = true;
+            }, { passive: true });
+
+            carousel.addEventListener('touchend', function (e) {
+              if (!touchMoved) return;
+              var dx = e.changedTouches[0].clientX - touchStartX;
+              var dy = e.changedTouches[0].clientY - touchStartY;
+              if (Math.abs(dx) < 40 || Math.abs(dx) <= Math.abs(dy)) return;
+              if (dx < 0 && current < slides.length - 1) goTo(current + 1);
+              if (dx > 0 && current > 0) goTo(current - 1);
+            }, { passive: true });
 
             /* Hook carousel figures into shared lightbox navigation */
             figures.forEach(function (fig, idx) {
