@@ -27,9 +27,10 @@
       }
       .solution-summary-card {
         padding: var(--space-md);
-        border: 1px solid rgba(15, 23, 42, 0.10);
+        border: 1px solid rgba(148, 163, 184, 0.24);
         border-radius: 20px;
-        background: rgba(248, 250, 252, 0.72);
+        background: #ffffff;
+        box-shadow: 0 14px 34px rgba(15, 23, 42, 0.07);
       }
       .solution-summary-card h3 { margin-top: 0; }
       @media (max-width: 760px) {
@@ -788,10 +789,115 @@
     </footer>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
+        var overlay = document.getElementById('lb-overlay');
+        if (!overlay) return;
+
+        var lbImg     = overlay.querySelector('.lb-img');
+        var lbCaption = overlay.querySelector('.lb-caption');
+        var lbClose   = overlay.querySelector('.lb-close');
+
+        /* Lightbox nav buttons */
+        var lbPrev = document.createElement('button');
+        lbPrev.className = 'lb-nav lb-nav--prev';
+        lbPrev.setAttribute('aria-label', 'Previous image');
+        lbPrev.innerHTML = '<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3l-5 5 5 5"/></svg>';
+        lbPrev.hidden = true;
+
+        var lbNext = document.createElement('button');
+        lbNext.className = 'lb-nav lb-nav--next';
+        lbNext.setAttribute('aria-label', 'Next image');
+        lbNext.innerHTML = '<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>';
+        lbNext.hidden = true;
+
+        overlay.appendChild(lbPrev);
+        overlay.appendChild(lbNext);
+
+        /* Lightbox navigation state */
+        var lbFigures      = [];
+        var lbIdx          = -1;
+        var lbSyncCarousel = null;
+
+        function lbUpdate(idx) {
+          var fig = lbFigures[idx];
+          var img = fig.querySelector('img');
+          lbImg.src = img.src;
+          lbImg.alt = img.alt || '';
+          var figcaption = fig.querySelector('figcaption');
+          var lang = document.documentElement.lang || 'fi';
+          var caption = '';
+          if (figcaption) {
+            var span = figcaption.querySelector('.lang-' + lang);
+            caption = span ? span.textContent.trim() : figcaption.textContent.trim();
+          }
+          lbCaption.textContent = caption;
+          lbCaption.hidden = !caption;
+          lbIdx = idx;
+          lbPrev.hidden = idx === 0;
+          lbNext.hidden = idx === lbFigures.length - 1;
+          if (lbSyncCarousel) lbSyncCarousel(idx);
+        }
+
+        function lbActivate(figures, idx, syncCarousel) {
+          lbFigures      = figures;
+          lbSyncCarousel = syncCarousel || null;
+          lbUpdate(idx);
+        }
+
+        function lbReset() {
+          lbPrev.hidden  = true;
+          lbNext.hidden  = true;
+          lbIdx          = -1;
+          lbFigures      = [];
+          lbSyncCarousel = null;
+        }
+
+        lbPrev.addEventListener('click', function () {
+          if (lbIdx > 0) lbUpdate(lbIdx - 1);
+        });
+        lbNext.addEventListener('click', function () {
+          if (lbIdx < lbFigures.length - 1) lbUpdate(lbIdx + 1);
+        });
+        lbClose.addEventListener('click', lbReset);
+        overlay.addEventListener('click', function (e) {
+          if (e.target === overlay) lbReset();
+        });
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape') { lbReset(); return; }
+          if (overlay.hidden || lbIdx === -1) return;
+          if (e.key === 'ArrowLeft'  && lbIdx > 0)                       lbUpdate(lbIdx - 1);
+          if (e.key === 'ArrowRight' && lbIdx < lbFigures.length - 1)    lbUpdate(lbIdx + 1);
+        });
+
+        /* Lightbox swipe support */
+        var lbTouchStartX = 0;
+        var lbTouchStartY = 0;
+        var lbTouchMoved  = false;
+
+        overlay.addEventListener('touchstart', function (e) {
+          lbTouchStartX = e.touches[0].clientX;
+          lbTouchStartY = e.touches[0].clientY;
+          lbTouchMoved  = false;
+        }, { passive: true });
+
+        overlay.addEventListener('touchmove', function () {
+          lbTouchMoved = true;
+        }, { passive: true });
+
+        overlay.addEventListener('touchend', function (e) {
+          if (overlay.hidden || lbIdx === -1 || !lbTouchMoved) return;
+          var dx = e.changedTouches[0].clientX - lbTouchStartX;
+          var dy = e.changedTouches[0].clientY - lbTouchStartY;
+          if (Math.abs(dx) < 40 || Math.abs(dx) <= Math.abs(dy)) return;
+          if (dx < 0 && lbIdx < lbFigures.length - 1) lbUpdate(lbIdx + 1);
+          if (dx > 0 && lbIdx > 0)                    lbUpdate(lbIdx - 1);
+        }, { passive: true });
+
+        /* Per-carousel setup */
         document.querySelectorAll('.cs-carousel').forEach(function (carousel) {
           var slides  = Array.from(carousel.querySelectorAll('.cs-carousel__slide'));
           var navPrev = carousel.querySelector('.cs-carousel__nav--prev');
           var navNext = carousel.querySelector('.cs-carousel__nav--next');
+          var figures = Array.from(carousel.querySelectorAll('figure'));
           var current = 0;
 
           function goTo(index) {
@@ -817,7 +923,7 @@
 
           goTo(0);
 
-          /* Swipe support */
+          /* Carousel swipe support */
           var touchStartX = 0;
           var touchStartY = 0;
           var touchMoved  = false;
@@ -840,6 +946,15 @@
             if (dx < 0 && current < slides.length - 1) goTo(current + 1);
             if (dx > 0 && current > 0) goTo(current - 1);
           }, { passive: true });
+
+          /* Hook figures into shared lightbox */
+          figures.forEach(function (fig, idx) {
+            fig.addEventListener('click', function () {
+              requestAnimationFrame(function () {
+                if (!overlay.hidden) lbActivate(figures, idx, goTo);
+              });
+            });
+          });
         });
       });
     </script>
