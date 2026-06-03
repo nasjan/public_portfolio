@@ -67,7 +67,7 @@
         padding: var(--space-md);
         border: 1px solid rgba(15, 23, 42, 0.10);
         border-radius: 20px;
-        background: linear-gradient(135deg, rgba(248, 250, 252, 0.92), rgba(239, 246, 255, 0.78));
+        background: rgba(248, 250, 252, 0.82);
       }
 
       .prototype-cta__text {
@@ -94,23 +94,10 @@
         line-height: 1.45;
       }
 
-      .prototype-cta__button {
+      .prototype-cta__actions {
         flex: 0 0 auto;
-        display: inline-flex;
+        display: flex;
         align-items: center;
-        justify-content: center;
-        padding: 0.8rem 1rem;
-        border-radius: 999px;
-        background: #0f172a;
-        color: #fff;
-        font-weight: 800;
-        text-decoration: none;
-        white-space: nowrap;
-      }
-
-      .prototype-cta__button:hover,
-      .prototype-cta__button:focus-visible {
-        transform: translateY(-1px);
       }
 
       @media (max-width: 720px) {
@@ -119,8 +106,27 @@
           flex-direction: column;
         }
 
-        .prototype-cta__button {
+        .prototype-cta__actions,
+        .prototype-cta__actions .btn {
           width: 100%;
+        }
+
+        .prototype-cta__actions .btn {
+          justify-content: center;
+        }
+      }
+
+      .overview-cta {
+        margin-top: var(--space-md);
+        display: flex;
+        align-items: center;
+        gap: var(--space-sm);
+      }
+
+      @media (max-width: 720px) {
+        .overview-cta .btn {
+          width: 100%;
+          justify-content: center;
         }
       }
 
@@ -250,6 +256,12 @@
                 <h2>Yleiskatsaus</h2>
                 <p>Design Sprint Days 2026 oli viikon mittainen intensiivikurssi, jossa sovellettiin Google Design Sprint -menetelmää todelliseen asiakaslähtöiseen haasteeseen. Sprintti eteni viiden päivän rytmissä: ongelman kartoittaminen, ratkaisujen luonnostelu, päätöksenteko, prototypointi ja käyttäjätestaus.</p>
                 <p>Meidän tiimimme ratkaisu keskittyi Museomatkat-palvelun saavutettavuuteen ja konversiopolkuun. Emme suunnitelleet vain yksittäistä kyselyn käyttöliittymää, vaan fyysisen ja digitaalisen kohtaamisen yhdistävän palvelupolun. Pop-up herättää huomion, QR-koodi vie 6-vaiheiseen personointikyselyyn ja kysely antaa käyttäjälle henkilökohtaiselta tuntuvan museomatkasuosituksen.</p>
+                <div class="overview-cta">
+                  <a class="btn btn-primary btn-inline" href="#day-4-prototype">
+                    Katso prototyyppi
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
+                  </a>
+                </div>
               </div>
 
               <div class="cs-divider"></div>
@@ -450,7 +462,7 @@
                   </div>
                 </div>
 
-                <div class="sprint-day">
+                <div class="sprint-day" id="day-4-prototype">
                   <span class="decision-card__label">Day 4, Thursday</span>
                   <h3>Prototype: fyysisen ja digitaalisen prototyypin rakentaminen</h3>
                   <p>Neljäs päivä käytettiin prototyypin rakentamiseen. Aikataulun mukaan päivään kuuluivat työkalujen valinta, työn jakaminen, prototyypin rakentaminen, osien yhdistäminen, esitysohjeet, trial run sekä testiaikataulun ja haastattelurungon viimeistely. Minä, Vadim ja Jone keskityimme digitaaliseen personointikyselyyn, kun taas Kajsa, Thao ja Tanja työstivät fyysisiä flyereitä ja pop-up-materiaaleja. Tavoitteena oli riittävän uskottava prototyyppi käyttäjätestausta varten, ei valmis tuotantotason palvelu. Päätimme jakaa tiimin kahteen päävastuualueeseen, koska pelkkä digitaalinen kysely tai pelkkä fyysinen flyer ei olisi yksin vastannut toimeksiannon ytimeen: pop-up-lähtöisen kohtaamisen muuttamiseen digitaaliseksi jatkopoluksi.</p>
@@ -469,15 +481,15 @@
                       <div class="cs-carousel__slide" aria-hidden="true">
                         <figure>
                           <div class="cs-carousel__media">
-                            <img src="../img/design-sprint/QR.webp" alt="QR-koodi, joka johtaa digitaaliseen kyselyyn" loading="lazy" />
+                            <img src="../img/design-sprint/Quiz-QR%20-%20Portoflio.webp" alt="QR-koodi personointikyselyyn" loading="lazy" />
                           </div>
-                          <figcaption>QR-koodi: fyysisen ja digitaalisen polun yhdistävä siirtymäpiste.</figcaption>
+                          <figcaption>QR-koodi: fyysisen ja digitaalisen polun yhdistävä siirtymäpiste. Voit skannata koodin puhelimellasi ja kokeilla kyselyä suoraan.</figcaption>
                         </figure>
                       </div>
                       <div class="cs-carousel__slide" aria-hidden="true">
                         <figure>
                           <div class="cs-carousel__media">
-                            <img src="../img/design-sprint/start-quiz.webp" alt="Personointikyselyn aloitusnäkymä" loading="lazy" />
+                            <img src="../img/design-sprint/Personalized-portfolio.webp" alt="Personointikyselyn aloitusnäkymä portfolioesittelyssä" loading="lazy" />
                           </div>
                           <figcaption>Kyselyn aloitusnäkymä: käyttäjä ohjataan QR-koodin kautta suoraan kyselyyn.</figcaption>
                         </figure>
@@ -485,17 +497,17 @@
                       <div class="cs-carousel__slide" aria-hidden="true">
                         <figure>
                           <div class="cs-carousel__media">
-                            <img src="../img/design-sprint/kysymys1.webp" alt="Kyselyn ensimmäinen kysymys matkakumppanista" loading="lazy" />
+                            <img src="../img/design-sprint/Example-question-portfoli.webp" alt="Esimerkki personointikyselyn kysymysnäkymästä" loading="lazy" />
                           </div>
-                          <figcaption>Kysymys 1: käyttäjältä kysytään matkakumppanista, jotta suositus voi ottaa huomioon seuralaisen.</figcaption>
+                          <figcaption>Kysymysnäkymä: kysely kerää käyttäjältä tietoa matkustusmieltymyksistä suosituksen muodostamista varten.</figcaption>
                         </figure>
                       </div>
                       <div class="cs-carousel__slide" aria-hidden="true">
                         <figure>
                           <div class="cs-carousel__media">
-                            <img src="../img/design-sprint/results.webp" alt="Käyttäjätestauksen tulosyhteenveto" loading="lazy" />
+                            <img src="../img/design-sprint/sample-portolio-recommend.webp" alt="Esimerkki personoidusta museomatkasuosituksesta" loading="lazy" />
                           </div>
-                          <figcaption>Testauksen tulokset: toistuvia teemoja käyttäjien palautteesta koottuna.</figcaption>
+                          <figcaption>Suositusnäkymä: kyselyn perusteella käyttäjälle näytetään museomatkasuositus.</figcaption>
                         </figure>
                       </div>
                       <button class="cs-carousel__nav cs-carousel__nav--prev" aria-label="Edellinen kuva" hidden>
@@ -512,10 +524,12 @@
                       <h4>Kokeile personointikyselyn prototyyppiä</h4>
                       <p>Prototyyppi näyttää kyselyn rakenteen yleistetyllä sisällöllä. Optimoitu mobiilille, toimii myös desktopilla.</p>
                     </div>
-                    <a class="prototype-cta__button" href="https://satin-fizzy-46724575.figma.site" target="_blank" rel="noopener noreferrer">
-                      Avaa prototyyppi
-                      <span class="sr-only">avautuu uuteen välilehteen</span>
-                    </a>
+                    <div class="prototype-cta__actions">
+                      <a class="btn btn-primary" href="https://satin-fizzy-46724575.figma.site" target="_blank" rel="noopener noreferrer">
+                        Avaa prototyyppi <span aria-hidden="true">›</span>
+                        <span class="sr-only">avautuu uuteen välilehteen</span>
+                      </a>
+                    </div>
                   </div>
                 </div>
 
