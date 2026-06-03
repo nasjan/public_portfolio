@@ -58,6 +58,72 @@
         object-fit: contain;
       }
 
+      .prototype-cta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-md);
+        margin-top: var(--space-md);
+        padding: var(--space-md);
+        border: 1px solid rgba(15, 23, 42, 0.10);
+        border-radius: 20px;
+        background: linear-gradient(135deg, rgba(248, 250, 252, 0.92), rgba(239, 246, 255, 0.78));
+      }
+
+      .prototype-cta__text {
+        min-width: 0;
+      }
+
+      .prototype-cta__eyebrow {
+        margin: 0 0 0.25rem;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(15, 23, 42, 0.62);
+      }
+
+      .prototype-cta h4 {
+        margin: 0;
+        font-size: 1rem;
+      }
+
+      .prototype-cta p:not(.prototype-cta__eyebrow) {
+        margin: 0.35rem 0 0;
+        color: rgba(15, 23, 42, 0.72);
+        line-height: 1.45;
+      }
+
+      .prototype-cta__button {
+        flex: 0 0 auto;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.8rem 1rem;
+        border-radius: 999px;
+        background: #0f172a;
+        color: #fff;
+        font-weight: 800;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+
+      .prototype-cta__button:hover,
+      .prototype-cta__button:focus-visible {
+        transform: translateY(-1px);
+      }
+
+      @media (max-width: 720px) {
+        .prototype-cta {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        .prototype-cta__button {
+          width: 100%;
+        }
+      }
+
     </style>
     <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
@@ -113,7 +179,7 @@
           <dl class="cs-hero-meta">
             <div class="cs-meta-item"><dt>Role</dt><dd>Head of testing, digitaalinen prototyyppi</dd></div>
             <div class="cs-meta-item"><dt>Timeline</dt><dd>5 päivää, 18.–22.5.2026</dd></div>
-            <div class="cs-meta-item"><dt>Tools</dt><dd>Google Design Sprint, Figma, post-it-ideointi</dd></div>
+            <div class="cs-meta-item"><dt>Tools</dt><dd>Google Design Sprint, Figma Make, Canva, post-it-ideointi</dd></div>
             <div class="cs-meta-item"><dt>Team</dt><dd>6 hengen tiimi</dd></div>
           </dl>
         </div>
@@ -388,38 +454,16 @@
                   <span class="decision-card__label">Day 4, Thursday</span>
                   <h3>Prototype: fyysisen ja digitaalisen prototyypin rakentaminen</h3>
                   <p>Neljäs päivä käytettiin prototyypin rakentamiseen. Aikataulun mukaan päivään kuuluivat työkalujen valinta, työn jakaminen, prototyypin rakentaminen, osien yhdistäminen, esitysohjeet, trial run sekä testiaikataulun ja haastattelurungon viimeistely. Minä, Vadim ja Jone keskityimme digitaaliseen personointikyselyyn, kun taas Kajsa, Thao ja Tanja työstivät fyysisiä flyereitä ja pop-up-materiaaleja. Tavoitteena oli riittävän uskottava prototyyppi käyttäjätestausta varten, ei valmis tuotantotason palvelu. Päätimme jakaa tiimin kahteen päävastuualueeseen, koska pelkkä digitaalinen kysely tai pelkkä fyysinen flyer ei olisi yksin vastannut toimeksiannon ytimeen: pop-up-lähtöisen kohtaamisen muuttamiseen digitaaliseksi jatkopoluksi.</p>
-                  <div class="cs-carousel cs-carousel--compact" role="region" aria-label="Day 4 artefaktit: pop-up, tulostetut flyerit ja personointikyselyn näkymät" style="margin-top: var(--space-md);">
+                  <p>Digitaalisen prototyypin rakentaminen alkoi Museomatkojen visuaalisen suunnan tarkastelulla ja kyselyn rakenteen ideoinnilla. Hyödynsimme Figma Makea nopeaan prototypointiin: jokainen digiprototyypin parissa työskennellyt teki ensin oman versionsa, minkä jälkeen valitsimme koko tiimin kanssa toimivimmat komponentit, tyyliratkaisut ja kyselyn etenemisen yhteen lopulliseen prototyyppiin.</p>
+                  <p>Lopuksi viimeistelimme kysymyksiä, kuvia, rytmiä ja käyttöliittymän yksityiskohtia manuaalisesti, jotta prototyyppi tuntui riittävän yhtenäiseltä ja uskottavalta käyttäjätestausta varten.</p>
+                  <div class="cs-carousel cs-carousel--compact" role="region" aria-label="Day 4 artefaktit: tulostetut flyerit, QR-koodi ja personointikyselyn näkymät" style="margin-top: var(--space-md);">
                     <div class="cs-carousel__track">
                       <div class="cs-carousel__slide cs-carousel__slide--active" aria-hidden="false">
-                        <figure>
-                          <div class="cs-carousel__media">
-                            <img src="../img/design-sprint/1.%20pop-up.webp" alt="Pop-up-myyntipisteen rakentaminen ja valmistelu" loading="lazy" />
-                          </div>
-                          <figcaption>Pop-up-kohtaamispiste: fyysinen prototyyppi rakennettiin testiä varten.</figcaption>
-                        </figure>
-                      </div>
-                      <div class="cs-carousel__slide" aria-hidden="true">
-                        <figure>
-                          <div class="cs-carousel__media">
-                            <img src="../img/design-sprint/Flyer.webp" alt="Museomatkat-flyerin suunnitelma" loading="lazy" />
-                          </div>
-                          <figcaption>Flyerin suunnittelu: fyysinen markkinointimateriaali, joka ohjaa käyttäjän QR-koodin kautta digitaaliseen kyselyyn.</figcaption>
-                        </figure>
-                      </div>
-                      <div class="cs-carousel__slide" aria-hidden="true">
                         <figure>
                           <div class="cs-carousel__media">
                             <img src="../img/design-sprint/flyerit-printattuna.webp" alt="Tulostetut Museomatkat-flyerit pöydällä" loading="lazy" />
                           </div>
                           <figcaption>Tulostetut flyerit: fyysiset prototyypit olivat valmiita käyttäjätestausta varten.</figcaption>
-                        </figure>
-                      </div>
-                      <div class="cs-carousel__slide" aria-hidden="true">
-                        <figure>
-                          <div class="cs-carousel__media">
-                            <img src="../img/design-sprint/muumiflyer.webp" alt="Muumi-teemainen Museomatkat-flyer" loading="lazy" />
-                          </div>
-                          <figcaption>Muumi-teemainen flyer: yksi testatuista flyeriversioista pop-up-kohtaamiseen.</figcaption>
                         </figure>
                       </div>
                       <div class="cs-carousel__slide" aria-hidden="true">
@@ -449,17 +493,9 @@
                       <div class="cs-carousel__slide" aria-hidden="true">
                         <figure>
                           <div class="cs-carousel__media">
-                            <img src="../img/design-sprint/kysymys6.webp" alt="Kyselyn kuudes kysymys budjetista" loading="lazy" />
+                            <img src="../img/design-sprint/results.webp" alt="Käyttäjätestauksen tulosyhteenveto" loading="lazy" />
                           </div>
-                          <figcaption>Kysymys 6: budjetti on yksi keskeisimmistä suositusta ohjaavista tekijöistä.</figcaption>
-                        </figure>
-                      </div>
-                      <div class="cs-carousel__slide" aria-hidden="true">
-                        <figure>
-                          <div class="cs-carousel__media">
-                            <img src="../img/design-sprint/last%20question.webp" alt="Kyselyn viimeinen kysymys ennen suositusta" loading="lazy" />
-                          </div>
-                          <figcaption>Viimeinen kysymys: käyttäjä on lähes valmis saamaan oman museomatkasuosituksensa.</figcaption>
+                          <figcaption>Testauksen tulokset: toistuvia teemoja käyttäjien palautteesta koottuna.</figcaption>
                         </figure>
                       </div>
                       <button class="cs-carousel__nav cs-carousel__nav--prev" aria-label="Edellinen kuva" hidden>
@@ -469,6 +505,17 @@
                         <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
                       </button>
                     </div>
+                  </div>
+                  <div class="prototype-cta">
+                    <div class="prototype-cta__text">
+                      <p class="prototype-cta__eyebrow">Rajattu portfolioesikatselu</p>
+                      <h4>Kokeile personointikyselyn prototyyppiä</h4>
+                      <p>Prototyyppi näyttää kyselyn rakenteen yleistetyllä sisällöllä. Optimoitu mobiilille, toimii myös desktopilla.</p>
+                    </div>
+                    <a class="prototype-cta__button" href="https://satin-fizzy-46724575.figma.site" target="_blank" rel="noopener noreferrer">
+                      Avaa prototyyppi
+                      <span class="sr-only">avautuu uuteen välilehteen</span>
+                    </a>
                   </div>
                 </div>
 
@@ -476,49 +523,6 @@
                   <span class="decision-card__label">Day 5, Friday</span>
                   <h3>Test: käyttäjähaastattelut, löydökset ja pitch</h3>
                   <p>Testaus käynnistyi jo torstai-iltapäivänä, kun prototyyppi oli riittävän pitkällä ja aikatauluun jäi tilaa. Perjantaina jatkoimme käyttäjähaastatteluja, kokosimme havainnot yhteen ja jalostimme niistä selkeät löydökset asiakasesitystä varten. Käytimme puolistrukturoitua haastattelutapaa: yksi haastatteli ja toinen havainnoi, jotta kaikki haastattelut etenivät vertailukelpoisen kaavan mukaan. Testaus osoitti, että konsepti oli kiinnostava ja helppo ymmärtää, mutta hinnoittelun, Museokortti-yhteyden ja personoinnin olisi pitänyt olla selkeämpiä.</p>
-                  <p class="muted" style="margin-top: var(--space-md); font-size: 0.85rem;">Varsinaisia testitilannekuvia ei ollut käytettävissä. Käyttäjätestauksen löydökset esitetään tekstissä.</p>
-                  <div class="cs-carousel cs-carousel--compact" role="region" aria-label="Day 5 artefaktit: testauksen prototyyppinäkymät ja tulokset" style="margin-top: var(--space-sm);">
-                    <div class="cs-carousel__track">
-                      <div class="cs-carousel__slide cs-carousel__slide--active" aria-hidden="false">
-                        <figure>
-                          <div class="cs-carousel__media">
-                            <img src="../img/design-sprint/results.webp" alt="Käyttäjätestauksen tulosyhteenveto" loading="lazy" />
-                          </div>
-                          <figcaption>Testauksen tulokset: toistuvia teemoja käyttäjien palautteesta koottuna.</figcaption>
-                        </figure>
-                      </div>
-                      <div class="cs-carousel__slide" aria-hidden="true">
-                        <figure>
-                          <div class="cs-carousel__media">
-                            <img src="../img/design-sprint/results2.webp" alt="Käyttäjätestauksen löydösten ryhmittely" loading="lazy" />
-                          </div>
-                          <figcaption>Löydösten ryhmittely: palaute jaettiin positiivisiin, negatiivisiin ja neutraaleihin havaintoihin.</figcaption>
-                        </figure>
-                      </div>
-                      <div class="cs-carousel__slide" aria-hidden="true">
-                        <figure>
-                          <div class="cs-carousel__media">
-                            <img src="../img/design-sprint/last%20question.webp" alt="Kyselyn viimeinen näkymä testitilanteessa" loading="lazy" />
-                          </div>
-                          <figcaption>Prototyypin viimeinen kysymys testitilanteessa: käyttäjä on lähellä suosituksen saamista.</figcaption>
-                        </figure>
-                      </div>
-                      <div class="cs-carousel__slide" aria-hidden="true">
-                        <figure>
-                          <div class="cs-carousel__media">
-                            <img src="../img/design-sprint/QR.webp" alt="QR-koodi käyttäjätestauksen testitilanteessa" loading="lazy" />
-                          </div>
-                          <figcaption>QR-koodi testitilanteessa: testattiin, ymmärtävätkö käyttäjät QR-siirtymän luontevasti pop-upista kyselyyn.</figcaption>
-                        </figure>
-                      </div>
-                      <button class="cs-carousel__nav cs-carousel__nav--prev" aria-label="Edellinen kuva" hidden>
-                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3l-5 5 5 5"/></svg>
-                      </button>
-                      <button class="cs-carousel__nav cs-carousel__nav--next" aria-label="Seuraava kuva">
-                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
-                      </button>
-                    </div>
-                  </div>
                 </div>
 
               </div>
@@ -638,8 +642,9 @@
                 <h3>Laadullinen vaikutus</h3>
                 <p>Tiimimme voitti kurssiprojektin neljän ryhmän joukosta. Toimeksiantajan palaute korosti, että ratkaisu noudatti heidän toiveitaan, oli budjettiystävällinen, visuaalisesti miellyttävä ja sisälsi jatkokehityksen kannalta hyödyllisiä ideoita. Konseptin rakenne, eli pop-up, QR-koodi, kysely ja suositus, on periaatteessa siirrettävissä myös muihin Suomen kaupunkeihin, mikä oli yksi toimeksiantajan alkuperäisistä kiinnostuksen kohteista.</p>
                 <h3>Rajoitteet ja sokeat pisteet</h3>
+                <p><strong>Prototyypin rajaus:</strong> Muutaman tunnin prototypointiajassa emme rakentaneet täyttä personointilogiikkaa. Kysely testasi suosituspolun ymmärrettävyyttä ja kiinnostavuutta, mutta ohjasi käyttäjän samaan esimerkkisuositukseen vastausvalinnoista riippumatta.</p>
                 <ul class="cs-note-list">
-                  <li><strong>Personointi:</strong> prototyypin suosituslogiikka ei vielä todistanut, että käyttäjä saisi aidosti yksilöllisen tuloksen.</li>
+                  <li><strong>Personointi:</strong> prototyyppi havainnollisti personoinnin ideaa, mutta ei vielä todistanut, että eri vastauspolut tuottaisivat aidosti yksilöllisiä suosituksia.</li>
                   <li><strong>Hinnan ymmärrettävyys:</strong> paketin sisällön ja hinnan suhde pitäisi selittää selkeämmin ennen ostoon ohjaamista.</li>
                   <li><strong>Museokortin hankintapolku:</strong> käyttäjä tarvitsee selkeän reitin Museokortin ostamiseen, jos hänellä ei vielä ole sitä.</li>
                   <li><strong>Luottamus:</strong> Museomatkojen yhteys Museokorttiin pitäisi näyttää vahvemmin jo ensimmäisissä näkymissä.</li>
@@ -718,6 +723,23 @@
               </div>
             </aside>
           </div>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <div class="container">
+          <h2 style="margin-bottom:var(--space-md); text-align:left;">Artefaktit ja linkit</h2>
+          <div class="cs-artifacts-grid">
+            <a href="https://satin-fizzy-46724575.figma.site" class="cs-artifact" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              <span>
+                <strong>Kokeile prototyyppiä</strong>
+                <small>Rajattu portfolioesikatselu personointikyselyn rakenteesta. Optimoitu mobiilille, toimii myös desktopilla.</small>
+              </span>
+              <span class="sr-only">avautuu uuteen välilehteen</span>
+            </a>
+          </div>
+          <p class="cs-artifact-note">Prototyyppi on yleisluontoinen portfolioesikatselu. Sisältö, kysymykset ja suosituslogiikka on muokattu julkista esittelyä varten.</p>
         </div>
       </section>
 
