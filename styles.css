@@ -2587,15 +2587,14 @@ body.drawer-open .drawer-backdrop { opacity: 1; }
 .decision-item__id,
 .decision-item__alts,
 .decision-item__rationale {
-  display: grid;
-  grid-template-rows: auto 1fr;
-  align-content: start;
-  gap: 0.65rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
   min-width: 0;
 }
 
 .decision-item__id {
-  gap: 0.2rem;
+  gap: 0.5rem;
 }
 
 .decision-item__label {
@@ -2610,12 +2609,15 @@ body.drawer-open .drawer-backdrop { opacity: 1; }
 }
 
 .decision-item__name {
-  margin: 0;
   max-width: 16rem;
   font-size: clamp(1.05rem, 1.4vw, 1.25rem);
   font-weight: 700;
   line-height: 1.18;
   color: #0f172a;
+}
+
+.decision-item .decision-item__name {
+  margin: 0;
 }
 
 .decision-item__meta-label {
