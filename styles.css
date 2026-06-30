@@ -3394,6 +3394,14 @@ figure.bento-image::after {
   color: var(--text-body);
 }
 
+.de-visual-card__meta {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
 .de-visual-card__cta {
   display: inline-flex;
   align-items: center;

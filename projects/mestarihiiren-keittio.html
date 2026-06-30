@@ -1,0 +1,753 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mestarihiiren keittiö — Case Study • Jan Nässi</title>
+  <meta name="description" content="Personal recipe and shopping list assistant. UX/UI design and React + Firebase implementation by Jan Nässi. Scaling serving sizes without manual calculation." />
+  <link rel="icon" href="../img/pixel_me.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"></noscript>
+  <link rel="preload" href="../styles.css?v=7" as="style" />
+  <link rel="stylesheet" href="../styles.css?v=7" />
+  <script>document.documentElement.lang = localStorage.getItem('portfolio-lang') || 'en';</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container cluster cluster-space-between">
+      <a class="logo" href="../index.html">Jan Nässi</a>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="../index.html#about"><span class="lang-en">About</span><span class="lang-fi">Tietoa</span></a></li>
+          <li><a href="../index.html#case-studies"><span class="lang-en">Case Studies</span><span class="lang-fi">Projektit</span></a></li>
+          <li><a href="../index.html#contact"><span class="lang-en">Contact</span><span class="lang-fi">Yhteystiedot</span></a></li>
+        </ul>
+      </nav>
+      <button class="lang-toggle" aria-label="Vaihda suomeksi">FI</button>
+      <button id="menu-toggle" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer"></button>
+    </div>
+  </header>
+
+  <nav id="mobile-drawer" class="mobile-drawer" hidden aria-label="Mobile">
+    <ul class="drawer-list">
+      <li><a href="../index.html#about"><span class="lang-en">About</span><span class="lang-fi">Tietoa</span></a></li>
+      <li><a href="../index.html#case-studies"><span class="lang-en">Case Studies</span><span class="lang-fi">Projektit</span></a></li>
+      <li><a href="../index.html#contact"><span class="lang-en">Contact</span><span class="lang-fi">Yhteystiedot</span></a></li>
+    </ul>
+    <div class="drawer-lang" role="group" aria-label="Language / Kieli">
+      <p class="drawer-lang__label" aria-hidden="true"><span class="lang-en">Language</span><span class="lang-fi">Kieli</span></p>
+      <div class="drawer-lang__pills">
+        <button class="drawer-lang__pill" data-lang="fi" aria-pressed="false" aria-label="Suomi">Suomi</button>
+        <button class="drawer-lang__pill" data-lang="en" aria-pressed="false" aria-label="English">English</button>
+      </div>
+    </div>
+  </nav>
+  <div id="drawer-backdrop" class="drawer-backdrop" hidden></div>
+
+  <main id="main">
+
+    <!-- ===== HERO ===== -->
+    <section class="cs-hero">
+      <div class="container">
+
+        <h1>Mestarihiiren keittiö</h1>
+        <p class="cs-hero-subtitle">
+          <span class="lang-en">Recipe and shopping list app</span>
+          <span class="lang-fi">Resepti- ja ostoslistasovellus</span>
+        </p>
+
+        <p class="cs-hero-summary">
+          <span class="lang-en">A mobile-first web app that grew out of a concrete everyday problem: my partner had no easy place to store their own recipes and no tool to scale serving sizes without manual calculation. I designed and built it to do three things well: store recipes, scale ingredient amounts, and generate a shareable shopping list.</span>
+          <span class="lang-fi">Mobiilipainotteinen web-sovellus, joka syntyi konkreettisesta arjen ongelmasta: kumppanillani ei ollut helppoa paikkaa omille resepteille eikä työkalua annosmäärien muuttamiseen ilman käsin laskemista. Suunnittelin ja rakensin sen tekemään kolme asiaa hyvin: tallentamaan reseptejä, skaalaamaan ainesosat ja muodostamaan jaettavan kauppalistan.</span>
+        </p>
+
+        <dl class="cs-hero-meta">
+          <div class="cs-meta-item">
+            <dt><span class="lang-en">Role</span><span class="lang-fi">Rooli</span></dt>
+            <dd><span class="lang-en">Product concept, UX/UI design, frontend implementation</span><span class="lang-fi">Tuotekonsepti, UX/UI-suunnittelu, frontend-toteutus</span></dd>
+          </div>
+          <div class="cs-meta-item">
+            <dt><span class="lang-en">Timeline</span><span class="lang-fi">Aikataulu</span></dt>
+            <dd><span class="lang-en">June 2026 onwards (work in progress)</span><span class="lang-fi">Kesäkuu 2026 alkaen (työn alla)</span></dd>
+          </div>
+          <div class="cs-meta-item">
+            <dt><span class="lang-en">Tools</span><span class="lang-fi">Työkalut</span></dt>
+            <dd>React, TypeScript, Vite, Firebase, Figma</dd>
+          </div>
+          <div class="cs-meta-item">
+            <dt><span class="lang-en">Team</span><span class="lang-fi">Tiimi</span></dt>
+            <dd><span class="lang-en">Solo project</span><span class="lang-fi">Oma projekti</span></dd>
+          </div>
+        </dl>
+
+      </div>
+    </section>
+
+    <!-- ===== HERO IMAGE ===== -->
+    <section class="project-section" style="padding-top: 0; padding-bottom: 0;">
+      <div class="container">
+        <figure style="margin: 0; text-align: center; background: #f8f6f2; border-radius: 16px; overflow: hidden;">
+          <img
+            src="../img/maskotti-header.png"
+            alt="Mestarihiiren keittiö -maskotti"
+            width="1200"
+            height="480"
+            loading="eager"
+            style="width: 100%; height: auto; display: block; max-height: 360px; object-fit: cover; object-position: center;"
+          />
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== OVERVIEW CARDS ===== -->
+    <section class="project-section cs-overview">
+      <div class="container">
+        <div class="cs-overview-grid">
+          <div class="cs-ov-card">
+            <p class="cs-ov-label"><span class="lang-en">Problem</span><span class="lang-fi">Ongelma</span></p>
+            <p>
+              <span class="lang-en">Recipes were scattered across websites, screenshots, and notes. Scaling portions required manual calculation, and shopping lists were shared as screenshots rather than usable text.</span>
+              <span class="lang-fi">Reseptit olivat hajallaan verkkosivuilla, kuvakaappauksissa ja muistiinpanoissa. Annosmäärän muuttaminen vaati käsin laskemista, ja kauppalista lähetettiin kuvakaappauksena selkeän tekstin sijaan.</span>
+            </p>
+          </div>
+          <div class="cs-ov-card">
+            <p class="cs-ov-label"><span class="lang-en">Goal</span><span class="lang-fi">Tavoite</span></p>
+            <p>
+              <span class="lang-en">A focused, mobile-first recipe notebook: store recipes in one place, scale ingredient amounts for any serving size, and generate a shareable shopping list as text.</span>
+              <span class="lang-fi">Rauhallinen, mobiilipainotteinen reseptimuistio: tallentaa reseptit yhteen paikkaan, skaalata ainesosat halutulle annosmäärälle ja muodostaa kauppalista, jonka voi jakaa tekstinä.</span>
+            </p>
+          </div>
+          <div class="cs-ov-card">
+            <p class="cs-ov-label"><span class="lang-en">My Role</span><span class="lang-fi">Roolini</span></p>
+            <p>
+              <span class="lang-en">Concept, information architecture, user flows, visual direction, component design, and frontend implementation. Continuous usability testing with one primary user.</span>
+              <span class="lang-fi">Konsepti, informaatioarkkitehtuuri, käyttäjävirrat, visuaalinen suunta, komponenttisuunnittelu ja frontend-toteutus. Jatkuva käytettävyystestaus yhden ensisijaisen käyttäjän kanssa.</span>
+            </p>
+          </div>
+          <div class="cs-ov-card">
+            <p class="cs-ov-label"><span class="lang-en">Status</span><span class="lang-fi">Tila</span></p>
+            <p>
+              <span class="lang-en">Work in progress. The app has been useful since early versions and is iterated based on real everyday use. A live link will be added when the app is ready for wider use.</span>
+              <span class="lang-fi">Työn alla. Sovellus on ollut hyödyllinen jo varhaisista versioista lähtien ja sitä kehitetään arjen käytössä havaittujen kitkakohtien perusteella. Linkki lisätään, kun sovellus on valmis laajempaan käyttöön.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BODY WRAP ===== -->
+    <section class="project-section cs-body-wrap">
+      <div class="container">
+
+        <details class="cs-mobile-facts">
+          <summary><span class="lang-en">Project Details</span><span class="lang-fi">Projektin tiedot</span></summary>
+          <div class="cs-mobile-facts-card">
+            <dl class="cs-facts">
+              <dt><span class="lang-en">Platform</span><span class="lang-fi">Alusta</span></dt>
+              <dd><span class="lang-en">Mobile-first web app (PWA)</span><span class="lang-fi">Mobiilipainotteinen selainpohjainen sovellus (PWA)</span></dd>
+              <dt>Stack</dt>
+              <dd>React, TypeScript, Vite, Firebase Auth, Firestore</dd>
+              <dt><span class="lang-en">Testing</span><span class="lang-fi">Testaus</span></dt>
+              <dd>Vitest, @firebase/rules-unit-testing</dd>
+              <dt><span class="lang-en">Design</span><span class="lang-fi">Suunnittelu</span></dt>
+              <dd>Figma (tokens, components, views)</dd>
+              <dt><span class="lang-en">Status</span><span class="lang-fi">Tila</span></dt>
+              <dd><span class="lang-en">Work in progress</span><span class="lang-fi">Työn alla</span></dd>
+            </dl>
+          </div>
+        </details>
+
+        <details class="cs-toc-mobile">
+          <summary><span class="lang-en">Table of Contents</span><span class="lang-fi">Sisällysluettelo</span></summary>
+          <ol class="cs-toc-list">
+            <li><a href="#cs-overview"><span class="lang-en">Overview</span><span class="lang-fi">Tiivistelmä</span></a></li>
+            <li><a href="#cs-problem"><span class="lang-en">Problem</span><span class="lang-fi">Ongelma</span></a></li>
+            <li><a href="#cs-solution"><span class="lang-en">Solution</span><span class="lang-fi">Ratkaisu</span></a></li>
+            <li><a href="#cs-ui"><span class="lang-en">UI &amp; Screens</span><span class="lang-fi">Käyttöliittymä</span></a></li>
+            <li><a href="#cs-decisions"><span class="lang-en">Design Decisions</span><span class="lang-fi">Suunnittelupäätökset</span></a></li>
+            <li><a href="#cs-testing"><span class="lang-en">User Testing</span><span class="lang-fi">Käyttäjätestaus</span></a></li>
+            <li><a href="#cs-learnings"><span class="lang-en">Learnings &amp; Next Steps</span><span class="lang-fi">Mitä opin &amp; seuraavat askeleet</span></a></li>
+          </ol>
+        </details>
+
+        <div class="cs-body">
+          <div class="cs-main">
+
+            <!-- ===== OVERVIEW ===== -->
+            <div id="cs-overview" class="cs-section">
+              <h2><span class="lang-en">Overview</span><span class="lang-fi">Tiivistelmä</span></h2>
+
+              <div class="cs-callout">
+                <p>
+                  <strong><span class="lang-en">Work in progress:</span><span class="lang-fi">Työn alla:</span></strong>
+                  <span class="lang-en"> This case study describes an ongoing personal project. The UI, features and technical decisions are still evolving.</span>
+                  <span class="lang-fi"> Tämä case kuvaa käynnissä olevaa vapaa-ajan projektia. Käyttöliittymä, ominaisuudet ja tekniset ratkaisut kehittyvät edelleen.</span>
+                </p>
+              </div>
+
+              <div class="lang-en">
+                <p>Mestarihiiren keittiö is a personal recipe and shopping list assistant that grew out of a very concrete everyday problem. The app lets users save recipes, choose the desired serving size and get ingredients scaled automatically. Ingredients from one or more recipes can be added to a shopping list, where they are grouped and can be shared or copied as clean text, for example to a messaging app or notes.</p>
+                <p>The goal was not to build a general meal planning service. It is intentionally small, personal and mobile-first: a tool for one user, not a kitchen management system.</p>
+              </div>
+              <div class="lang-fi">
+                <p>Mestarihiiren keittiö on henkilökohtainen resepti- ja kauppalista-apuri, joka syntyi hyvin konkreettisesta arjen ongelmasta. Sovelluksessa käyttäjä voi tallentaa reseptejä, valita halutun annosmäärän ja saada ainesosat automaattisesti skaalattuina. Yhden tai useamman reseptin ainekset voi lisätä kauppalistalle, jossa ne ryhmitellään ja voidaan jakaa tai kopioida selkeänä tekstinä esimerkiksi viestisovellukseen tai muistiinpanoihin.</p>
+                <p>Projektin tavoitteena ei ole rakentaa yleistä meal planning -palvelua. Se on tarkoituksella pieni, henkilökohtainen ja mobiilipainotteinen työkalu yhdelle käyttäjälle, ei keittiön hallintajärjestelmä.</p>
+              </div>
+            </div>
+
+            <div class="cs-divider"></div>
+
+            <!-- ===== PROBLEM ===== -->
+            <div id="cs-problem" class="cs-section">
+              <h2><span class="lang-en">Problem</span><span class="lang-fi">Ongelma</span></h2>
+
+              <div class="lang-en">
+                <p>Recipes are often scattered across websites, screenshots, chats and notes. When the same dish needs to be made for a different number of people, the ingredients have to be calculated by hand. Shopping lists tend to emerge as screenshots or free text that is inconvenient for another person to use in the store.</p>
+                <p>The original need came from my partner:</p>
+                <ul>
+                  <li>recipes needed their own easy-to-use storage</li>
+                  <li>serving sizes needed to change quickly, for two, four or eight people</li>
+                  <li>ingredients needed to become a clear shopping list without hand-writing</li>
+                  <li>the shopping list needed to be sent as text, not as a screenshot</li>
+                </ul>
+              </div>
+              <div class="lang-fi">
+                <p>Reseptit ovat usein hajallaan verkkosivuilla, kuvakaappauksissa, keskusteluissa ja muistiinpanoissa. Kun sama ruoka halutaan tehdä eri annosmäärälle, ainesosat pitää laskea käsin. Kauppalista syntyy helposti kuvakaappauksina tai vapaana tekstinä, jota toisen henkilön on hankala käyttää kaupassa.</p>
+                <p>Alkuperäinen tarve tuli kumppaniltani:</p>
+                <ul>
+                  <li>resepteille tarvittiin oma, helposti käytettävä säilytyspaikka</li>
+                  <li>annosmäärää piti voida muuttaa nopeasti: kahdelle, neljälle tai kahdeksalle</li>
+                  <li>ainesosista piti saada selkeä kauppalista ilman käsin kirjoittamista</li>
+                  <li>kauppalista piti voida lähettää tekstinä, ei kuvakaappauksena</li>
+                </ul>
+              </div>
+
+              <div class="cs-callout">
+                <p>
+                  <span class="lang-en"><strong>Design question:</strong> How can personal recipes be made quickly usable at different serving sizes and converted into a clear, shareable shopping list, without the user having to calculate amounts or format lists by hand?</span>
+                  <span class="lang-fi"><strong>Suunnittelukysymys:</strong> Miten henkilökohtaisista resepteistä voidaan tehdä nopeasti käytettäviä eri annosmäärille ja muuntaa niiden ainekset selkeäksi, jaettavaksi kauppalistaksi ilman, että käyttäjän täytyy laskea määriä tai muotoilla listoja käsin?</span>
+                </p>
+              </div>
+
+              <h3><span class="lang-en">User and use cases</span><span class="lang-fi">Käyttäjä ja käyttötilanteet</span></h3>
+              <div class="lang-en">
+                <p>The primary user has a short fuse. The interface therefore emphasises one clear primary action per view, large touch targets, plain-language button text, as few settings and decisions as possible, and visible feedback for saving, adding and deleting. The app is used in three situations in particular:</p>
+                <ol>
+                  <li><strong>When adding a recipe:</strong> the user copies ingredients from a recipe page or adds them one at a time.</li>
+                  <li><strong>When planning a meal:</strong> the user picks a recipe and changes the serving size.</li>
+                  <li><strong>In the store or when sending the list:</strong> the user ticks items as bought and shares the list as clean text.</li>
+                </ol>
+              </div>
+              <div class="lang-fi">
+                <p>Ensisijaisella käyttäjällä on lyhyt pinna. Siksi käyttöliittymässä korostuvat yksi selkeä ensisijainen toiminto per näkymä, suuret kosketuskohteet, selkokieliset painiketekstit, mahdollisimman vähän asetuksia ja päätöksiä sekä näkyvä palaute tallennuksesta, lisäyksestä ja poistosta. Sovellusta käytetään erityisesti kolmessa tilanteessa:</p>
+                <ol>
+                  <li><strong>Reseptiä lisätessä:</strong> käyttäjä kopioi ainesosia reseptisivulta tai lisää niitä yksittäin.</li>
+                  <li><strong>Ruokaa suunnitellessa:</strong> käyttäjä valitsee reseptin ja muuttaa annosmäärää.</li>
+                  <li><strong>Kaupassa tai listaa lähettäessä:</strong> käyttäjä merkitsee tuotteita ostetuiksi ja jakaa listan selkeänä tekstinä.</li>
+                </ol>
+              </div>
+            </div>
+
+            <div class="cs-divider"></div>
+
+            <!-- ===== SOLUTION ===== -->
+            <div id="cs-solution" class="cs-section">
+              <h2><span class="lang-en">Solution</span><span class="lang-fi">Ratkaisu</span></h2>
+
+              <div class="lang-en">
+                <p>Mestarihiiren keittiö combines a recipe library, a serving calculator and a shopping list into one lightweight flow. The scope was deliberately kept small: a personal tool, not a kitchen management system.</p>
+              </div>
+              <div class="lang-fi">
+                <p>Mestarihiiren keittiö yhdistää reseptikirjaston, annoslaskurin ja kauppalistan yhteen kevyeen käyttövirtaan. Rajaus pidettiin tarkoituksella pienenä: henkilökohtainen apuri, ei keittiön hallintajärjestelmä.</p>
+              </div>
+
+              <h3><span class="lang-en">Key features</span><span class="lang-fi">Keskeiset ominaisuudet</span></h3>
+              <div class="lang-en">
+                <ul>
+                  <li>Save recipes to a personal account with real-time sync across devices</li>
+                  <li>Set a base serving size and adjust it; ingredients scale automatically</li>
+                  <li>Deterministic ingredient scaling using a simple ratio</li>
+                  <li>Paste ingredients from free text; a rule-based parser structures them automatically</li>
+                  <li>Optional AI bridge for cleaning up messy recipe text before parsing</li>
+                  <li>Categorise recipes; category-based grouping in the list</li>
+                  <li>Add ingredients from one or more recipes to a shopping list; same ingredients are combined into a common unit</li>
+                  <li>Group the shopping list by store section</li>
+                  <li>Tick items as bought; they move to the bottom of the list</li>
+                  <li>Share the list via the native share menu or copy to clipboard as plain text</li>
+                  <li>Offline support and installable as a PWA</li>
+                  <li>In-app help for each main view</li>
+                </ul>
+              </div>
+              <div class="lang-fi">
+                <ul>
+                  <li>Reseptien tallennus henkilökohtaisen käyttäjätilin alle ja reaaliaikainen synkronointi laitteiden välillä</li>
+                  <li>Reseptin perusannosmäärä ja annosmäärän säätäminen — ainesosat skaalautuvat automaattisesti</li>
+                  <li>Deterministinen ainesosien skaalaus yksinkertaisella kertoimella</li>
+                  <li>Ainesosien liittäminen vapaasta tekstistä; sääntöpohjainen parseri jäsentää ne automaattisesti</li>
+                  <li>Valinnainen tekoälysilta ainesluettelon siistimiseen ennen parseria</li>
+                  <li>Reseptien luokittelu kategorioilla; kategoriapohjainen ryhmittely listalla</li>
+                  <li>Yhden tai useamman reseptin ainekset kauppalistalle; samat ainekset yhdistetään yhteismitallisiksi</li>
+                  <li>Kauppalistan ryhmittely kaupan osastoihin</li>
+                  <li>Ostosten merkitseminen tehdyiksi; ne siirtyvät listan loppuun</li>
+                  <li>Listan jakaminen laitteen jakovalikolla tai kopiointi leikepöydälle plain text -muodossa</li>
+                  <li>Offline-käyttö ja asennettavuus aloitusnäytölle (PWA)</li>
+                  <li>Jokaisen päänäkymän sisäiset ohjeet</li>
+                </ul>
+              </div>
+
+              <h3><span class="lang-en">Main views</span><span class="lang-fi">Päänäkymät</span></h3>
+              <div class="lang-en">
+                <ol>
+                  <li><strong>New Recipe</strong>: choose base servings, add ingredients (paste or one by one), write instructions and notes, name the recipe and set an optional category at the bottom of the form.</li>
+                  <li><strong>Recipes</strong>: personal recipe library, grouped by category; search when the library grows; open, edit and back up recipes.</li>
+                  <li><strong>Recipe view</strong>: open recipe with serving size control; ingredients scale instantly; add to shopping list at the chosen serving size.</li>
+                  <li><strong>Shopping list</strong>: recipe-generated grouped list; tick items; share or copy as plain text.</li>
+                </ol>
+              </div>
+              <div class="lang-fi">
+                <ol>
+                  <li><strong>Uusi resepti</strong>: valitaan perusannokset, lisätään ainekset (kerralla tai yksittäin), kirjoitetaan ohjeet ja huomiot, annetaan nimi ja valinnainen kategoria lomakkeen lopussa.</li>
+                  <li><strong>Reseptit</strong>: henkilökohtainen reseptikirjasto ryhmiteltynä kategorioittain; haku kun kirjasto kasvaa; reseptin avaaminen, muokkaaminen ja varmuuskopiointi.</li>
+                  <li><strong>Reseptin näkymä</strong>: avattu resepti, jossa annosmäärää säädetään ja ainesosat skaalautuvat välittömästi; reseptin lisääminen kauppalistaan valitulla annosmäärällä.</li>
+                  <li><strong>Kauppalista</strong>: resepteistä muodostettu, ryhmitelty ostoslista; valittavat ostosrivit; jakaminen ja kopiointi plain text -muodossa.</li>
+                </ol>
+              </div>
+            </div>
+
+            <div class="cs-divider"></div>
+
+            <!-- ===== UI & SCREENS ===== -->
+            <div id="cs-ui" class="cs-section">
+              <h2><span class="lang-en">UI &amp; Screens</span><span class="lang-fi">Käyttöliittymä</span></h2>
+
+              <div class="lang-en">
+                <p>The visual goal is a personal kitchen notebook, not a food retail campaign page. The design uses a warm light background, green as the action accent colour, Montserrat as the UI font, minimal hierarchy and few heavy cards. The mascot acts as a small brand identifier, not a dominant UI element.</p>
+              </div>
+              <div class="lang-fi">
+                <p>Visuaalinen tavoite on henkilökohtainen keittiömuistio, ei ruokakaupan kampanjasivu. Suunnittelussa käytetään lämmintä vaaleaa taustaa, vihreää toiminnallisena korostevärinä, Montserrattia käyttöliittymäfonttina, kevyttä hierarkiaa ja vähän vahvoja kortteja. Maskotti toimii pienessä roolissa bränditunnisteena, ei käyttöliittymän hallitsevana elementtinä.</p>
+              </div>
+
+              <!-- Carousel 1: Recipe views — placeholder for mobile screenshots -->
+              <h3><span class="lang-en">Recipe library &amp; new recipe</span><span class="lang-fi">Reseptikirjasto &amp; uusi resepti</span></h3>
+              <div class="cs-carousel" data-carousel>
+                <div class="cs-carousel__track">
+                  <!-- Lisää mobiilikuvat tähän / Add mobile screenshots here -->
+                  <div class="cs-carousel__item">
+                    <figure class="cs-carousel__media" style="background: #f8f6f2; display: flex; align-items: center; justify-content: center; min-height: 280px;">
+                      <img
+                        src="../img/maskotti-header.png"
+                        alt="Placeholder — mobile screenshots coming"
+                        loading="lazy"
+                        style="max-height: 220px; width: auto; object-fit: contain; padding: 1rem;"
+                      />
+                      <figcaption class="sr-only"><span class="lang-en">Screenshots of the recipe library and new recipe view (coming soon).</span><span class="lang-fi">Kuvakaappaukset reseptikirjastosta ja uuden reseptin näkymästä (tulossa pian).</span></figcaption>
+                    </figure>
+                  </div>
+                  <!-- Lisää lisää kuvia tähän -->
+                </div>
+                <div class="cs-carousel__caption" aria-live="polite">
+                  <p>
+                    <span class="lang-en">Mobile screenshots of the recipe library, grouped by category, and the new recipe form (coming soon).</span>
+                    <span class="lang-fi">Mobiilikuvat reseptikirjastosta, kategoriaryhmittelystä ja uuden reseptin lomakkeesta (tulossa pian).</span>
+                  </p>
+                </div>
+              </div>
+
+              <!-- Carousel 2: Shopping list — placeholder for mobile screenshots -->
+              <h3><span class="lang-en">Recipe view &amp; shopping list</span><span class="lang-fi">Reseptin näkymä &amp; kauppalista</span></h3>
+              <div class="cs-carousel" data-carousel>
+                <div class="cs-carousel__track">
+                  <!-- Lisää mobiilikuvat tähän / Add mobile screenshots here -->
+                  <div class="cs-carousel__item">
+                    <figure class="cs-carousel__media" style="background: #f8f6f2; display: flex; align-items: center; justify-content: center; min-height: 280px;">
+                      <img
+                        src="../img/maskotti-header.png"
+                        alt="Placeholder — mobile screenshots coming"
+                        loading="lazy"
+                        style="max-height: 220px; width: auto; object-fit: contain; padding: 1rem;"
+                      />
+                      <figcaption class="sr-only"><span class="lang-en">Screenshots of the recipe view and shopping list (coming soon).</span><span class="lang-fi">Kuvakaappaukset reseptin näkymästä ja kauppalistasta (tulossa pian).</span></figcaption>
+                    </figure>
+                  </div>
+                  <!-- Lisää lisää kuvia tähän -->
+                </div>
+                <div class="cs-carousel__caption" aria-live="polite">
+                  <p>
+                    <span class="lang-en">Mobile screenshots of the recipe view with serving size adjustment, and the shopping list with plain-text sharing (coming soon).</span>
+                    <span class="lang-fi">Mobiilikuvat reseptin annosmäärän säätämisestä ja kauppalistasta plain text -jakamisineen (tulossa pian).</span>
+                  </p>
+                </div>
+              </div>
+
+              <h3><span class="lang-en">Design system (Figma)</span><span class="lang-fi">Suunnittelujärjestelmä (Figma)</span></h3>
+              <div class="lang-en">
+                <p>A lightweight design system was assembled in Figma alongside the implementation, derived directly from the code's styles to keep design and implementation in sync:</p>
+                <ul>
+                  <li><strong>Tokens:</strong> CSS variables (colours, spacing, border-radius) exported as Figma variables with Dev Mode code syntax, plus Montserrat text styles and shadow styles.</li>
+                  <li><strong>Components:</strong> buttons, form fields, serving size control, list rows, bottom navigation, notifications and other recurring elements built with auto-layout and bound to tokens.</li>
+                  <li><strong>Views:</strong> main views plus states and modals assembled from the same components.</li>
+                </ul>
+              </div>
+              <div class="lang-fi">
+                <p>Toteutuksen rinnalle koottiin Figmaan kevyt suunnittelujärjestelmä, joka on johdettu suoraan koodin tyyleistä, jotta suunnittelu ja toteutus pysyvät synkassa:</p>
+                <ul>
+                  <li><strong>Tokenit:</strong> CSS-muuttujat (värit, välistykset, kulmapyöristykset) vietiin Figma-muuttujiksi Dev Mode -koodisyntaksilla sekä Montserrat-tekstityylit ja varjotyylit.</li>
+                  <li><strong>Komponentit:</strong> napit, lomakekentät, annosmäärän säädin, listarivit, alanavigaatio, ilmoitukset ja muut toistuvat osat rakennettiin auto-layoutilla ja sidottiin tokeneihin.</li>
+                  <li><strong>Näkymät:</strong> päänäkymät sekä eri tilat ja modaalit koottiin samoista komponenteista.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="cs-divider"></div>
+
+            <!-- ===== DESIGN DECISIONS ===== -->
+            <div id="cs-decisions" class="cs-section">
+              <h2><span class="lang-en">Key Design Decisions</span><span class="lang-fi">Keskeiset suunnittelupäätökset</span></h2>
+
+              <div class="decision-list">
+
+                <div class="decision-item">
+                  <div class="decision-item__id">
+                    <span class="decision-item__label">01</span>
+                    <span class="decision-item__name"><span class="lang-en">Serving calculation is deterministic, not AI-powered</span><span class="lang-fi">Annoslaskenta on deterministinen, ei tekoälypohjainen</span></span>
+                  </div>
+                  <div class="decision-item__alts">
+                    <span class="decision-item__meta-label"><span class="lang-en">What</span><span class="lang-fi">Mitä</span></span>
+                    <p><span class="lang-en">Scaling uses a fixed rule: factor = desired servings ÷ base servings. AI is only used to clean up raw recipe text before parsing, never to calculate amounts.</span><span class="lang-fi">Skaalaus perustuu sääntöön: kerroin = halutut annokset ÷ perusannokset. Tekoäly auttaa vain siistimään raakatekstiä ennen jäsennystä, ei laskemaan määriä.</span></p>
+                  </div>
+                  <div class="decision-item__rationale">
+                    <span class="decision-item__meta-label"><span class="lang-en">Why</span><span class="lang-fi">Miksi</span></span>
+                    <p><span class="lang-en">The user must be able to trust the numbers. Deterministic logic is predictable and testable. It always produces the same result for the same input, with no model drift.</span><span class="lang-fi">Käyttäjän pitää pystyä luottamaan lukuihin. Deterministinen logiikka on ennakoitavaa ja testattavaa. Sama syöte tuottaa aina saman tuloksen ilman mallin vaihtelua.</span></p>
+                  </div>
+                </div>
+
+                <div class="decision-item">
+                  <div class="decision-item__id">
+                    <span class="decision-item__label">02</span>
+                    <span class="decision-item__name"><span class="lang-en">Amounts stored as computable fractions and ranges</span><span class="lang-fi">Määrät säilytetään laskettavina murtolukuina ja väleinä</span></span>
+                  </div>
+                  <div class="decision-item__alts">
+                    <span class="decision-item__meta-label"><span class="lang-en">What</span><span class="lang-fi">Mitä</span></span>
+                    <p><span class="lang-en">The amount model separates an exact quantity (¼, 1½), a range (1–2) and a verbal amount (pinch, to taste). Numeric values are handled as rational numbers to avoid floating-point errors.</span><span class="lang-fi">Määrämallissa erotetaan tarkka määrä (¼, 1½), määräväli (1–2) ja sanallinen määrä (ripaus, maun mukaan). Numeeriset arvot käsitellään rationaalilukuina liukulukuvirheiltä välttymiseksi.</span></p>
+                  </div>
+                  <div class="decision-item__rationale">
+                    <span class="decision-item__meta-label"><span class="lang-en">Why</span><span class="lang-fi">Miksi</span></span>
+                    <p><span class="lang-en">Recipes contain amounts like ¼ tsp, 1½ tbsp, 1–2 tbsp, or "a pinch." A plain decimal is not enough if values need to be scaled reliably and displayed in an understandable form in the kitchen.</span><span class="lang-fi">Reseptit sisältävät määriä kuten ¼ tl, 1½ rkl, 1–2 rkl tai ripaus. Pelkkä desimaali ei riitä, jos arvoja halutaan skaalata luotettavasti ja näyttää keittiössä ymmärrettävässä muodossa.</span></p>
+                  </div>
+                </div>
+
+                <div class="decision-item">
+                  <div class="decision-item__id">
+                    <span class="decision-item__label">03</span>
+                    <span class="decision-item__name"><span class="lang-en">User picks the input method first</span><span class="lang-fi">Käyttäjä valitsee ensin lisäystavan</span></span>
+                  </div>
+                  <div class="decision-item__alts">
+                    <span class="decision-item__meta-label"><span class="lang-en">What</span><span class="lang-fi">Mitä</span></span>
+                    <p><span class="lang-en">Two clear options ("Paste all at once" or "Add one by one") open progressively under the same button. Only one is open at a time. Added ingredients move to a separate list.</span><span class="lang-fi">Kaksi selkeää vaihtoehtoa (Liitä ainekset kerralla tai Lisää yksittäin) avautuvat progressiivisesti saman painikkeen alle. Vain yksi on auki kerrallaan. Lisätyt ainekset siirtyvät omaan listaan.</span></p>
+                  </div>
+                  <div class="decision-item__rationale">
+                    <span class="decision-item__meta-label"><span class="lang-en">Why</span><span class="lang-fi">Miksi</span></span>
+                    <p><span class="lang-en">Removes ambiguity. The user does not need to first see a large form and figure out how to use it. Previous iteration led to a long, constantly growing list of form rows.</span><span class="lang-fi">Poistaa epäselvyyden. Käyttäjän ei tarvitse ensin nähdä suurta lomaketta ja päätellä, miten sitä käytetään. Aiempi ratkaisu johti pitkään, jatkuvasti kasvavaan lomakerivilistaan.</span></p>
+                  </div>
+                </div>
+
+                <div class="decision-item">
+                  <div class="decision-item__id">
+                    <span class="decision-item__label">04</span>
+                    <span class="decision-item__name"><span class="lang-en">Ingredient list separated from the input form</span><span class="lang-fi">Ainesosalista erotettu syöttölomakkeesta</span></span>
+                  </div>
+                  <div class="decision-item__alts">
+                    <span class="decision-item__meta-label"><span class="lang-en">What</span><span class="lang-fi">Mitä</span></span>
+                    <p><span class="lang-en">After adding an ingredient the user gets confirmation and sees the result in a clean list. Quantity and ingredient are in separate columns for fast scanning while cooking or shopping.</span><span class="lang-fi">Lisäyksen jälkeen käyttäjä saa vahvistuksen ja näkee tuloksen selkeässä listassa. Listassa määrä ja ainesosa erotetaan omiin sarakkeisiin nopeaa silmäilyä varten keittiössä ja kaupassa.</span></p>
+                  </div>
+                  <div class="decision-item__rationale">
+                    <span class="decision-item__meta-label"><span class="lang-en">Why</span><span class="lang-fi">Miksi</span></span>
+                    <p><span class="lang-en">The earlier solution, where each added ingredient remained as an open form card, made the page grow long and hard to scan. Separating the list keeps the form focused.</span><span class="lang-fi">Aiempi ratkaisu, jossa jokainen lisätty ainesosa jäi avoimeksi lomakekortiksi, teki sivusta pitkän ja vaikeasti silmäiltävän. Lista erillään pitää lomakkeen fokusoituneena.</span></p>
+                  </div>
+                </div>
+
+                <div class="decision-item">
+                  <div class="decision-item__id">
+                    <span class="decision-item__label">05</span>
+                    <span class="decision-item__name"><span class="lang-en">Shopping list shared as text, not as an image</span><span class="lang-fi">Kauppalista jaetaan tekstinä, ei kuvana</span></span>
+                  </div>
+                  <div class="decision-item__alts">
+                    <span class="decision-item__meta-label"><span class="lang-en">What</span><span class="lang-fi">Mitä</span></span>
+                    <p><span class="lang-en">The app generates one consistent plain text version of the list that can be shared via the native share menu, sent to WhatsApp, saved to Notes or copied to clipboard.</span><span class="lang-fi">Sovellus muodostaa samasta listasta yhden johdonmukaisen plain text -version, jota voidaan jakaa laitteen jakovalikolla, lähettää WhatsAppiin, tallentaa muistiinpanoihin tai kopioida leikepöydälle.</span></p>
+                  </div>
+                  <div class="decision-item__rationale">
+                    <span class="decision-item__meta-label"><span class="lang-en">Why</span><span class="lang-fi">Miksi</span></span>
+                    <p><span class="lang-en">This directly solves the original problem: the shopping list no longer needs to be sent as a screenshot. Text is usable anywhere: another person can read it in a store without needing the app.</span><span class="lang-fi">Tämä ratkaisee suoraan alkuperäisen ongelman: kauppalistaa ei tarvitse enää lähettää kuvakaappauksena. Teksti on käytettävissä kaikkialla: toinen henkilö voi lukea sen kaupassa ilman sovellusta.</span></p>
+                  </div>
+                </div>
+
+                <div class="decision-item">
+                  <div class="decision-item__id">
+                    <span class="decision-item__label">06</span>
+                    <span class="decision-item__name"><span class="lang-en">Long forms are views; small tasks are modals</span><span class="lang-fi">Pitkät lomakkeet ovat näkymiä, pienet tehtävät ovat modaaleja</span></span>
+                  </div>
+                  <div class="decision-item__alts">
+                    <span class="decision-item__meta-label"><span class="lang-en">What</span><span class="lang-fi">Mitä</span></span>
+                    <p><span class="lang-en">New recipe and editing are full views, not large modals. Modals are used only for limited, short tasks: adding a single ingredient, previewing instructions, or confirming deletion.</span><span class="lang-fi">Uusi resepti ja muokkaus ovat sovelluksen omia näkymiä, eivät suuria modaaleja. Modaaleja käytetään vain rajattuihin lyhyisiin tehtäviin: yksittäisen ainesosan lisääminen, ohjeiden esikatselu tai poiston vahvistaminen.</span></p>
+                  </div>
+                  <div class="decision-item__rationale">
+                    <span class="decision-item__meta-label"><span class="lang-en">Why</span><span class="lang-fi">Miksi</span></span>
+                    <p><span class="lang-en">Modal + mobile + keyboard is a bad combination for long content. Full views support natural scrolling, proper keyboard focus and better context. Recipe name and category moved to the form, removing a separate dialog entirely.</span><span class="lang-fi">Modaali + mobiili + näppäimistö on huono yhdistelmä pitkälle sisällölle. Kokonaiset näkymät tukevat luontevaa vieritystä, kunnollista näppäimistöfokusta ja parempaa kontekstia. Reseptin nimi ja kategoria siirrettiin lomakkeelle, mikä poisti erillisen dialogin kokonaan.</span></p>
+                  </div>
+                </div>
+
+                <div class="decision-item">
+                  <div class="decision-item__id">
+                    <span class="decision-item__label">07</span>
+                    <span class="decision-item__name"><span class="lang-en">All functionality explained inside the app</span><span class="lang-fi">Kaikki toiminta selitetään sovelluksen sisällä</span></span>
+                  </div>
+                  <div class="decision-item__alts">
+                    <span class="decision-item__meta-label"><span class="lang-en">What</span><span class="lang-fi">Mitä</span></span>
+                    <p><span class="lang-en">Every main view has its own help view describing exactly that view's functions in the user's own terms — kept in sync with the current UI. Texts refer to exactly the same buttons visible on screen.</span><span class="lang-fi">Jokaisella päänäkymällä on oma Ohjeet-näkymänsä, joka kuvaa juuri sen näkymän toiminnot käyttäjän omin termein — pidetään ajan tasalla käyttöliittymän kanssa. Tekstit viittaavat täsmälleen samoihin painikkeisiin, jotka näytöllä näkyvät.</span></p>
+                  </div>
+                  <div class="decision-item__rationale">
+                    <span class="decision-item__meta-label"><span class="lang-en">Why</span><span class="lang-fi">Miksi</span></span>
+                    <p><span class="lang-en">The primary user gets frustrated easily. The app cannot assume prior knowledge. A new user should be able to read the help and succeed without outside guidance.</span><span class="lang-fi">Ensisijainen käyttäjä turhautuu helposti. Sovellus ei voi olettaa aiemmin opittua. Uuden käyttäjän pitää pystyä lukemaan ohjeet ja onnistua ilman ulkopuolista neuvontaa.</span></p>
+                  </div>
+                </div>
+
+                <div class="decision-item">
+                  <div class="decision-item__id">
+                    <span class="decision-item__label">08</span>
+                    <span class="decision-item__name"><span class="lang-en">Free-text parsing is rule-based; AI is optional</span><span class="lang-fi">Vapaan tekstin jäsentäminen sääntöpohjaisesti, tekoäly valinnaisena</span></span>
+                  </div>
+                  <div class="decision-item__alts">
+                    <span class="decision-item__meta-label"><span class="lang-en">What</span><span class="lang-fi">Mitä</span></span>
+                    <p><span class="lang-en">A rule-based parser recognises amounts, units, packaging sizes (jars, cans), fractions, ranges and verbal amounts. AI can optionally pre-clean the text; it is never integrated directly and never sends user data automatically.</span><span class="lang-fi">Sääntöpohjainen parseri tunnistaa määrän, yksikön, pakkauskoot (tlk, prk), murtoluvut, välit ja sanalliset määrät. Tekoäly voi valinnaisesti siistiä tekstin ennen jäsennystä; sitä ei integroida sovellukseen eikä se lähetä käyttäjädataa automaattisesti.</span></p>
+                  </div>
+                  <div class="decision-item__rationale">
+                    <span class="decision-item__meta-label"><span class="lang-en">Why</span><span class="lang-fi">Miksi</span></span>
+                    <p><span class="lang-en">The parser is predictable, testable, and works offline. AI adds value only when the source text is unusually messy. For structured, reliable operations like scaling and list merging, deterministic rules are the right tool.</span><span class="lang-fi">Parseri on ennakoitavaa, testattavaa ja toimii offline. Tekoäly tuo lisäarvoa vain poikkeuksellisen sekavaan tekstiin. Rakenteisiin, luotettaviin toimintoihin, kuten skaalaukseen ja listan yhdistelyyn, deterministiset säännöt ovat oikea työkalu.</span></p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="cs-divider"></div>
+
+            <!-- ===== USER TESTING ===== -->
+            <div id="cs-testing" class="cs-section">
+              <h2><span class="lang-en">User Testing &amp; Iteration</span><span class="lang-fi">Käyttäjätestaus ja iterointi</span></h2>
+
+              <div class="lang-en">
+                <p>The app solved the primary user's original problem from an early stage: a dedicated place for recipes, faster serving size calculation and a shopping list that could be sent as text rather than a screenshot. That was not the end of testing.</p>
+                <p>I use the app as the subject of ongoing lightweight user testing with the primary user. The goal is not to collect formal research data, but to notice in everyday use where things slow down, where the user hesitates or where the UI feels too heavy. Changes are made in response to observed use situations, not visual preference alone.</p>
+              </div>
+              <div class="lang-fi">
+                <p>Sovellus ratkaisi ensisijaisen käyttäjän alkuperäisen ongelman jo varhaisessa vaiheessa: resepteille syntyi oma paikka, annosmäärien laskeminen nopeutui ja kauppalistan pystyi lähettämään tekstinä kuvakaappauksen sijaan. Se ei kuitenkaan ollut testauksen päätepiste.</p>
+                <p>Käytän sovellusta jatkuvan, kevyen käyttäjätestauksen kohteena ensisijaisen käyttäjän kanssa. Tavoite ei ole kerätä muodollista tutkimusaineistoa, vaan havaita arjen käytössä kohdat, joissa käyttö hidastuu, käyttäjä epäröi tai käyttöliittymä tuntuu liian raskaalta. Muutokset tehdään havaittuihin käyttötilanteisiin, ei vain visuaalisen mieltymyksen perusteella.</p>
+              </div>
+
+              <h3><span class="lang-en">Changes driven by testing</span><span class="lang-fi">Testauksesta syntyneitä muutoksia</span></h3>
+              <div class="lang-en">
+                <ul>
+                  <li><strong>Bought items to the bottom:</strong> Ticked items can be moved lower on the shopping list so remaining purchases are easy to scan.</li>
+                  <li><strong>New recipe in bottom nav:</strong> Adding a recipe was promoted to its own first nav item so the common task is reachable without a separate button from the library.</li>
+                  <li><strong>Recipe name and category onto the form:</strong> Both fields were moved from a save modal to the end of the recipe form. All recipe data is now in one place, saving happens in one step and the fields work the same way in the edit view.</li>
+                  <li><strong>Group recipes by category:</strong> Recipes in the list are grouped by user-given categories, making navigation easier as the library grows.</li>
+                  <li><strong>Two clear ingredient input options:</strong> The user first chooses either "Paste all at once" or "Add one by one." Only one is open at a time.</li>
+                  <li><strong>Feedback must not shift page content:</strong> Add and delete notifications appear as floating toasts that don't push other elements. A single-ingredient deletion can be undone from a temporary snackbar.</li>
+                  <li><strong>Amount and ingredient in separate columns:</strong> Clearer scanning while cooking and in the store.</li>
+                  <li><strong>Logo always returns to recipe list:</strong> The header mascot logo became a button that returns the user to the recipe library from any view.</li>
+                </ul>
+              </div>
+              <div class="lang-fi">
+                <ul>
+                  <li><strong>Ostetut tuotteet listan loppuun:</strong> Merkityt tuotteet voidaan pudottaa alemmas, jotta jäljellä olevat ostokset ovat nopeasti silmäiltävissä.</li>
+                  <li><strong>Uusi resepti alanavigaatioon:</strong> Reseptin lisääminen nostettiin omaksi ensimmäiseksi navigaatiokohdakseen, jotta yleinen tehtävä löytyy ilman erillistä painiketta reseptikirjastosta.</li>
+                  <li><strong>Reseptin nimi ja kategoria lomakkeelle:</strong> Molemmat kentät siirrettiin tallennusmodaalista reseptilomakkeen loppuun. Nyt kaikki reseptin tiedot näkyvät samassa paikassa, tallennus tapahtuu yhdellä painalluksella ja kenttä toimii samalla tavalla muokkausnäkymässä.</li>
+                  <li><strong>Reseptien ryhmittely kategorioittain:</strong> Reseptit ryhmitellään käyttäjän antamien kategorioiden mukaan, mikä helpottaa navigointia kirjaston kasvaessa.</li>
+                  <li><strong>Ainesosien lisäys kahdeksi vaihtoehdoksi:</strong> Käyttäjä valitsee ensin joko Liitä ainekset kerralla tai Lisää yksittäin. Vain yksi on auki kerrallaan.</li>
+                  <li><strong>Palaute ei saa siirtää sivun sisältöä:</strong> Lisäys- ja poistoilmoitukset näytetään kelluvina ilmoituksina. Yksittäisen ainesosan poiston voi perua väliaikaisesta snackbarista.</li>
+                  <li><strong>Määrä ja ainesosa omiin sarakkeisiin:</strong> Nopeampaa silmäilyä reseptiä tehdessä ja kaupassa.</li>
+                  <li><strong>Logo vie aina reseptilistalle:</strong> Headerin maskottilogosta tuli painike, joka palauttaa käyttäjän reseptikirjastoon mistä tahansa näkymästä.</li>
+                </ul>
+              </div>
+
+              <div class="cs-callout">
+                <p>
+                  <span class="lang-en"><strong>Scope note:</strong> This is continuous usability testing with one primary user, not broad user research. It shows well whether the product solves the original everyday problem and works for that user, but does not yet demonstrate that the solution would work equally well for everyone. Before wider release, the app should be tested with other users, especially for recipe input, mobile use and backup features.</span>
+                  <span class="lang-fi"><strong>Laajuushuomio:</strong> Kyse on yhden ensisijaisen käyttäjän jatkuvasta käytettävyystestauksesta, ei laajasta käyttäjätutkimuksesta. Se kertoo hyvin, ratkaiseeko tuote alkuperäisen arjen ongelman, mutta ei vielä osoita, että ratkaisu toimisi yhtä hyvin kaikille. Ennen laajempaa käyttöä sovellus pitäisi testata myös muilla käyttäjillä, erityisesti reseptien lisäyksen, mobiilikäytön ja varmuuskopioinnin osalta.</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="cs-divider"></div>
+
+            <!-- ===== LEARNINGS & NEXT STEPS ===== -->
+            <div id="cs-learnings" class="cs-section">
+              <h2><span class="lang-en">Learnings &amp; Next Steps</span><span class="lang-fi">Mitä opin &amp; seuraavat askeleet</span></h2>
+
+              <h3><span class="lang-en">A small personal problem can be a good product challenge</span><span class="lang-fi">Pieni henkilökohtainen ongelma voi olla hyvä tuotehaaste</span></h3>
+              <div class="lang-en">
+                <p>The starting point was mundane, but it contained several genuinely interesting product design questions: reliable calculation, parsing free-form recipe text, mobile form interaction, data sharing and a user's trust in their own data.</p>
+              </div>
+              <div class="lang-fi">
+                <p>Projektin lähtökohta oli arkinen, mutta se sisälsi useita aidosti kiinnostavia tuotesuunnittelun kysymyksiä: luotettava laskenta, vapaamuotoisen reseptitekstin jäsentäminen, mobiilin lomakekäyttö, tiedon jakaminen ja henkilön luottamus omaan dataansa.</p>
+              </div>
+
+              <h3><span class="lang-en">Flow clarity matters more than the number of features</span><span class="lang-fi">Käyttäjävirran selkeys on tärkeämpää kuin ominaisuuksien määrä</span></h3>
+              <div class="lang-en">
+                <p>Several UI changes came from noticing that the user had to make too many decisions at the same time. For example, ingredient input became clearer when paste and single-entry were separated into two distinct, alternative flows. Continuous use with the primary user also showed that a working core idea does not mean a finished user experience. Details like navigation order, where bought items go, and when to name a recipe affected whether use felt calm or interrupting.</p>
+              </div>
+              <div class="lang-fi">
+                <p>Useat käyttöliittymämuutokset syntyivät siitä havainnosta, että käyttäjä joutui tekemään liian monta päätöstä samanaikaisesti. Ainesosien lisääminen selkeni, kun tuonti ja yksittäinen lisäys erotettiin omiksi, vaihtoehtoisiksi tavoikseen. Jatkuva käyttö ensisijaisen käyttäjän kanssa osoitti myös, että toimiva ydinidea ei tarkoita valmista käyttökokemusta. Yksityiskohdat, kuten navigaation järjestys, ostettujen tuotteiden sijoittuminen ja reseptin nimeämisen ajankohta, vaikuttivat siihen, tuntuiko käyttö rauhalliselta vai keskeyttävältä.</p>
+              </div>
+
+              <h3><span class="lang-en">AI should be bounded to where it adds value</span><span class="lang-fi">Tekoäly kannattaa rajata kohtaan, jossa se tuo lisäarvoa</span></h3>
+              <div class="lang-en">
+                <p>AI is a useful aid for cleaning up recipe text, and was implemented deliberately as a lightweight, optional bridge to an external language model, not as an integrated, data-sending service. It is not the right solution for scaling amounts, merging shopping lists, or managing user data. Reliable core operations benefit from deterministic rules; AI handles only the part where fuzzy text needs to be cleaned up before parsing.</p>
+              </div>
+              <div class="lang-fi">
+                <p>Tekoäly on hyödyllinen apu reseptitekstin siistimisessä, ja se toteutettiin tarkoituksella kevyenä, valinnaisena siltana ulkoiseen kielimalliin, ei sovellukseen sidottuna ja dataa lähettävänä integraationa. Se ei ole oikea ratkaisu annosmäärien laskentaan, kauppalistan yhdistelyyn tai käyttäjän datan hallintaan. Luotettavuutta vaativat ydintoiminnot hyötyvät deterministisistä säännöistä; tekoäly hoitaa vain sen osan, jossa sumea teksti pitää siistiä ennen jäsennystä.</p>
+              </div>
+
+              <h3><span class="lang-en">Next steps</span><span class="lang-fi">Seuraavat askeleet</span></h3>
+              <div class="lang-en">
+                <ol>
+                  <li>Finalise the recipe input flow and test it with the primary user.</li>
+                  <li>Strengthen ingredient grouping with Finnish alias and product-specific rules.</li>
+                  <li>Implement backup so the personal recipe library is not tied to a single system.</li>
+                  <li>Assess whether full AI-assisted recipe parsing is reliable enough as an additional feature.</li>
+                  <li>Conduct a systematic WCAG and mobile usability audit before wider use.</li>
+                </ol>
+              </div>
+              <div class="lang-fi">
+                <ol>
+                  <li>Viimeistellä reseptin lisäyksen käyttövirta ja testata se oikealla käyttäjällä.</li>
+                  <li>Koventaa ainesosien ryhmittelyä suomenkielisillä alias- ja tuotekohtaisilla säännöillä.</li>
+                  <li>Toteuttaa varmuuskopiointi, jotta henkilökohtainen reseptikirjasto ei jää vain yhden järjestelmän varaan.</li>
+                  <li>Arvioida, onko koko reseptin tekoälyavusteinen jäsentäminen tarpeeksi luotettava lisäominaisuudeksi.</li>
+                  <li>Tehdä systemaattinen WCAG- ja mobiilikäytettävyysauditointi ennen laajempaa käyttöä.</li>
+                </ol>
+              </div>
+            </div>
+
+          </div><!-- /cs-main -->
+
+          <!-- SIDEBAR -->
+          <aside class="cs-sidebar">
+            <div class="cs-toc" aria-label="Table of contents">
+              <p class="cs-toc-heading"><span class="lang-en">On this page</span><span class="lang-fi">Tällä sivulla</span></p>
+              <nav>
+                <ol class="cs-toc-list">
+                  <li><a href="#cs-overview"><span class="lang-en">Overview</span><span class="lang-fi">Tiivistelmä</span></a></li>
+                  <li><a href="#cs-problem"><span class="lang-en">Problem</span><span class="lang-fi">Ongelma</span></a></li>
+                  <li><a href="#cs-solution"><span class="lang-en">Solution</span><span class="lang-fi">Ratkaisu</span></a></li>
+                  <li><a href="#cs-ui"><span class="lang-en">UI &amp; Screens</span><span class="lang-fi">Käyttöliittymä</span></a></li>
+                  <li><a href="#cs-decisions"><span class="lang-en">Design Decisions</span><span class="lang-fi">Suunnittelupäätökset</span></a></li>
+                  <li><a href="#cs-testing"><span class="lang-en">User Testing</span><span class="lang-fi">Käyttäjätestaus</span></a></li>
+                  <li><a href="#cs-learnings"><span class="lang-en">Learnings &amp; Next Steps</span><span class="lang-fi">Mitä opin &amp; seuraavat askeleet</span></a></li>
+                </ol>
+              </nav>
+
+              <dl class="cs-facts">
+                <dt><span class="lang-en">Platform</span><span class="lang-fi">Alusta</span></dt>
+                <dd><span class="lang-en">Mobile-first web app (PWA)</span><span class="lang-fi">Mobiilipainotteinen selainpohjainen sovellus (PWA)</span></dd>
+                <dt>Stack</dt>
+                <dd>React, TypeScript, Vite, Firebase Auth, Firestore</dd>
+                <dt><span class="lang-en">Testing</span><span class="lang-fi">Testaus</span></dt>
+                <dd>Vitest, @firebase/rules-unit-testing</dd>
+                <dt><span class="lang-en">Design</span><span class="lang-fi">Suunnittelu</span></dt>
+                <dd>Figma</dd>
+                <dt><span class="lang-en">Status</span><span class="lang-fi">Tila</span></dt>
+                <dd><span class="lang-en">Work in progress</span><span class="lang-fi">Työn alla</span></dd>
+              </dl>
+            </div>
+          </aside>
+
+        </div><!-- /cs-body -->
+      </div>
+    </section>
+
+    <!-- ===== ARTIFACTS ===== -->
+    <section class="project-section">
+      <div class="container">
+        <h2 style="margin-bottom: var(--space-md); text-align: left;">
+          <span class="lang-en">Artifacts &amp; Links</span>
+          <span class="lang-fi">Artefaktit ja linkit</span>
+        </h2>
+        <div class="cs-callout">
+          <p>
+            <span class="lang-en">A link to the live app will be added when the app is ready for wider use.</span>
+            <span class="lang-fi">Linkki live-sovellukseen lisätään, kun sovellus on valmis laajempaan käyttöön.</span>
+          </p>
+        </div>
+        <!-- Lisää sovelluksen linkki tähän / Add app link here -->
+        <!--
+        <div class="cs-artifacts-grid">
+          <a href="#" class="cs-artifact" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            <span class="lang-en">Live app</span>
+            <span class="lang-fi">Live-sovellus</span>
+          </a>
+        </div>
+        -->
+      </div>
+    </section>
+
+    <!-- ===== PAGER ===== -->
+    <section class="project-section">
+      <div class="container">
+        <div class="cs-pager">
+          <a href="makroni.html" class="cs-pager-card">
+            <span class="cs-pager-label">← <span class="lang-en">Previous</span><span class="lang-fi">Edellinen</span></span>
+            <span class="cs-pager-title">Makroni</span>
+          </a>
+          <a href="design-explorations.html" class="cs-pager-card cs-pager-card--next">
+            <span class="cs-pager-label"><span class="lang-en">Next</span><span class="lang-fi">Seuraava</span> →</span>
+            <span class="cs-pager-title"><span class="lang-en">Other</span><span class="lang-fi">Muut</span></span>
+          </a>
+        </div>
+        <div class="cs-back">
+          <a href="../index.html#case-studies">← <span class="lang-en">Back to Case Studies</span><span class="lang-fi">Takaisin projekteihin</span></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-meta">
+          <p class="footer-copyright">© <span id="year"></span> Jan Nässi</p>
+          <a id="cookie-settings" href="#" aria-label="Muuta evästeasetuksia">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path>
+              <path d="M8.5 8.5v.01"></path><path d="M16 15.5v.01"></path>
+              <path d="M12 12v.01"></path><path d="M11 17v.01"></path><path d="M7 14v.01"></path>
+            </svg>
+            <span class="cookie-text">Evästeasetukset</span>
+          </a>
+        </div>
+        <nav aria-label="Footer navigation">
+          <ul>
+            <li><a href="../index.html#about"><span class="lang-en">About</span><span class="lang-fi">Tietoa</span></a></li>
+            <li><a href="../index.html#case-studies"><span class="lang-en">Case Studies</span><span class="lang-fi">Projektit</span></a></li>
+            <li><a href="../index.html#contact"><span class="lang-en">Contact</span><span class="lang-fi">Yhteystiedot</span></a></li>
+          </ul>
+        </nav>
+        <a href="https://www.linkedin.com/in/jannassi" target="_blank" rel="noopener noreferrer" class="footer-linkedin">
+          LinkedIn <span class="sr-only">(opens in new tab)</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script defer src="../main.js?v=4"></script>
+  <script src="../consent.js"></script>
+
+</body>
+</html>
