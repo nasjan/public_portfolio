@@ -55,14 +55,10 @@
       <div class="container">
 
         <h1>Mestarihiiren keittiö</h1>
-        <p class="cs-hero-subtitle">
-          <span class="lang-en">Recipe and shopping list app</span>
-          <span class="lang-fi">Resepti- ja ostoslistasovellus</span>
-        </p>
 
         <p class="cs-hero-summary">
-          <span class="lang-en">A mobile-first web app that grew out of a concrete everyday problem: my partner had no easy place to store their own recipes and no tool to scale serving sizes without manual calculation. I designed and built it to do three things well: store recipes, scale ingredient amounts, and generate a shareable shopping list.</span>
-          <span class="lang-fi">Mobiilipainotteinen web-sovellus, joka syntyi konkreettisesta arjen ongelmasta: kumppanillani ei ollut helppoa paikkaa omille resepteille eikä työkalua annosmäärien muuttamiseen ilman käsin laskemista. Suunnittelin ja rakensin sen tekemään kolme asiaa hyvin: tallentamaan reseptejä, skaalaamaan ainesosat ja muodostamaan jaettavan kauppalistan.</span>
+         <span class="lang-en">A mobile-first recipe app built to solve a real everyday problem: storing personal recipes, scaling ingredient amounts, and creating shareable shopping lists.</span>
+          <span class="lang-fi">Mobiilipainotteinen reseptisovellus, joka ratkaisee arjen ongelman: omien reseptien tallentamisen, ainesosien skaalaamisen ja jaettavien kauppalistojen luomisen.</span>
         </p>
 
         <dl class="cs-hero-meta">
@@ -87,21 +83,6 @@
       </div>
     </section>
 
-    <!-- ===== HERO IMAGE ===== -->
-    <section class="project-section" style="padding-top: 0; padding-bottom: 0;">
-      <div class="container">
-        <figure style="margin: 0; text-align: center; background: #f8f6f2; border-radius: 16px; overflow: hidden;">
-          <img
-            src="../img/maskotti-header.png"
-            alt="Mestarihiiren keittiö -maskotti"
-            width="1200"
-            height="480"
-            loading="eager"
-            style="width: 100%; height: auto; display: block; max-height: 360px; object-fit: cover; object-position: center;"
-          />
-        </figure>
-      </div>
-    </section>
 
     <!-- ===== OVERVIEW CARDS ===== -->
     <section class="project-section cs-overview">
@@ -131,8 +112,8 @@
           <div class="cs-ov-card">
             <p class="cs-ov-label"><span class="lang-en">Status</span><span class="lang-fi">Tila</span></p>
             <p>
-              <span class="lang-en">Work in progress. The app has been useful since early versions and is iterated based on real everyday use. A live link will be added when the app is ready for wider use.</span>
-              <span class="lang-fi">Työn alla. Sovellus on ollut hyödyllinen jo varhaisista versioista lähtien ja sitä kehitetään arjen käytössä havaittujen kitkakohtien perusteella. Linkki lisätään, kun sovellus on valmis laajempaan käyttöön.</span>
+              <span class="lang-en">In daily use and iterated based on real everyday observations. A public demo with example recipes is available: <a href="https://ruokalaskuri-demo.web.app" target="_blank" rel="noopener noreferrer">try the demo</a>. The production version runs on personal accounts.</span>
+              <span class="lang-fi">Päivittäisessä käytössä, ja sovellusta kehitetään arjen käytössä havaittujen kitkakohtien perusteella. Julkinen demo esimerkkiresepteineen on kokeiltavissa: <a href="https://ruokalaskuri-demo.web.app" target="_blank" rel="noopener noreferrer">kokeile demoa</a>. Tuotantoversio toimii henkilökohtaisilla käyttäjätileillä.</span>
             </p>
           </div>
         </div>
@@ -274,8 +255,11 @@
                   <li>Paste ingredients from free text; a rule-based parser structures them automatically</li>
                   <li>Optional AI bridge for cleaning up messy recipe text before parsing</li>
                   <li>Categorise recipes; category-based grouping in the list</li>
+                  <li>Optional per-serving nutrition values, shown in the recipe library and the recipe view</li>
+                  <li>Duplicate a recipe as a base for a variation; back up recipes as text</li>
                   <li>Add ingredients from one or more recipes to a shopping list; same ingredients are combined into a common unit</li>
-                  <li>Group the shopping list by store section</li>
+                  <li>Group the shopping list by store section; an item can be moved to another section</li>
+                  <li>Add products to the list by hand alongside recipe items</li>
                   <li>Tick items as bought; they move to the bottom of the list</li>
                   <li>Share the list via the native share menu or copy to clipboard as plain text</li>
                   <li>Offline support and installable as a PWA</li>
@@ -285,13 +269,16 @@
               <div class="lang-fi">
                 <ul>
                   <li>Reseptien tallennus henkilökohtaisen käyttäjätilin alle ja reaaliaikainen synkronointi laitteiden välillä</li>
-                  <li>Reseptin perusannosmäärä ja annosmäärän säätäminen — ainesosat skaalautuvat automaattisesti</li>
+                  <li>Reseptin perusannosmäärä ja annosmäärän säätäminen; ainesosat skaalautuvat automaattisesti</li>
                   <li>Deterministinen ainesosien skaalaus yksinkertaisella kertoimella</li>
                   <li>Ainesosien liittäminen vapaasta tekstistä; sääntöpohjainen parseri jäsentää ne automaattisesti</li>
                   <li>Valinnainen tekoälysilta ainesluettelon siistimiseen ennen parseria</li>
                   <li>Reseptien luokittelu kategorioilla; kategoriapohjainen ryhmittely listalla</li>
+                  <li>Valinnaiset annoskohtaiset ravintoarvot, jotka näkyvät reseptikirjastossa ja reseptin näkymässä</li>
+                  <li>Reseptin monistaminen muunnelman pohjaksi; reseptien varmuuskopiointi tekstinä</li>
                   <li>Yhden tai useamman reseptin ainekset kauppalistalle; samat ainekset yhdistetään yhteismitallisiksi</li>
-                  <li>Kauppalistan ryhmittely kaupan osastoihin</li>
+                  <li>Kauppalistan ryhmittely kaupan osastoihin; tuotteen voi siirtää toiseen osastoon</li>
+                  <li>Tuotteiden lisääminen listalle myös käsin reseptiainesten rinnalle</li>
                   <li>Ostosten merkitseminen tehdyiksi; ne siirtyvät listan loppuun</li>
                   <li>Listan jakaminen laitteen jakovalikolla tai kopiointi leikepöydälle plain text -muodossa</li>
                   <li>Offline-käyttö ja asennettavuus aloitusnäytölle (PWA)</li>
@@ -331,54 +318,105 @@
                 <p>Visuaalinen tavoite on henkilökohtainen keittiömuistio, ei ruokakaupan kampanjasivu. Suunnittelussa käytetään lämmintä vaaleaa taustaa, vihreää toiminnallisena korostevärinä, Montserrattia käyttöliittymäfonttina, kevyttä hierarkiaa ja vähän vahvoja kortteja. Maskotti toimii pienessä roolissa bränditunnisteena, ei käyttöliittymän hallitsevana elementtinä.</p>
               </div>
 
-              <!-- Carousel 1: Recipe views — placeholder for mobile screenshots -->
+              <!-- Carousel 1: Recipe library and new recipe form -->
               <h3><span class="lang-en">Recipe library &amp; new recipe</span><span class="lang-fi">Reseptikirjasto &amp; uusi resepti</span></h3>
               <div class="cs-carousel" data-carousel>
                 <div class="cs-carousel__track">
-                  <!-- Lisää mobiilikuvat tähän / Add mobile screenshots here -->
                   <div class="cs-carousel__item">
-                    <figure class="cs-carousel__media" style="background: #f8f6f2; display: flex; align-items: center; justify-content: center; min-height: 280px;">
+                    <figure class="cs-carousel__media" style="background: #f8f6f2; display: flex; align-items: center; justify-content: center;">
                       <img
-                        src="../img/maskotti-header.png"
-                        alt="Placeholder — mobile screenshots coming"
+                        src="../img/mestarihiiren-keittio-kuvat/mk-reseptit-tyhja.jpeg"
+                        alt="Reseptit-näkymä tyhjänä, kehottaa lisäämään ensimmäisen reseptin"
                         loading="lazy"
-                        style="max-height: 220px; width: auto; object-fit: contain; padding: 1rem;"
+                        style="max-height: 520px; width: auto; object-fit: contain; padding: 1rem;"
                       />
-                      <figcaption class="sr-only"><span class="lang-en">Screenshots of the recipe library and new recipe view (coming soon).</span><span class="lang-fi">Kuvakaappaukset reseptikirjastosta ja uuden reseptin näkymästä (tulossa pian).</span></figcaption>
+                      <figcaption class="sr-only"><span class="lang-en">Empty recipe library — prompts the user to add their first recipe.</span><span class="lang-fi">Tyhjä reseptikirjasto — kehottaa lisäämään ensimmäisen reseptin.</span></figcaption>
                     </figure>
                   </div>
-                  <!-- Lisää lisää kuvia tähän -->
+                  <div class="cs-carousel__item">
+                    <figure class="cs-carousel__media" style="background: #f8f6f2; display: flex; align-items: center; justify-content: center;">
+                      <img
+                        src="../img/mestarihiiren-keittio-kuvat/mk-reseptilista.jpeg"
+                        alt="Reseptikirjasto kategorioittain ryhmiteltynä: Aamiainen, Jälkiruoka, Keitto, Pääruoka"
+                        loading="lazy"
+                        style="max-height: 520px; width: auto; object-fit: contain; padding: 1rem;"
+                      />
+                      <figcaption class="sr-only"><span class="lang-en">Recipe library grouped by category with per-serving calories on each row.</span><span class="lang-fi">Reseptikirjasto ryhmiteltynä kategorioittain, riveillä annoskohtaiset kalorit.</span></figcaption>
+                    </figure>
+                  </div>
+                  <div class="cs-carousel__item">
+                    <figure class="cs-carousel__media" style="background: #f8f6f2; display: flex; align-items: center; justify-content: center;">
+                      <img
+                        src="../img/mestarihiiren-keittio-kuvat/mk-lisaa-resepti-lomake.jpeg"
+                        alt="Uusi resepti -lomake: käyttäjä valitsee Liitä resepti tai Lisää yksittäin"
+                        loading="lazy"
+                        style="max-height: 520px; width: auto; object-fit: contain; padding: 1rem;"
+                      />
+                      <figcaption class="sr-only"><span class="lang-en">New recipe form — user chooses between pasting a recipe at once or adding ingredients one by one.</span><span class="lang-fi">Uuden reseptin lomake — käyttäjä valitsee liittämisen tai yksittäisen lisäyksen välillä.</span></figcaption>
+                    </figure>
+                  </div>
+                  <div class="cs-carousel__item">
+                    <figure class="cs-carousel__media" style="background: #f8f6f2; display: flex; align-items: center; justify-content: center;">
+                      <img
+                        src="../img/mestarihiiren-keittio-kuvat/mk-uusi-resepti-lomake.jpeg"
+                        alt="Uusi resepti -lomake: ohjeet, nimi, kategoria ja Tallenna resepti -nappi"
+                        loading="lazy"
+                        style="max-height: 520px; width: auto; object-fit: contain; padding: 1rem;"
+                      />
+                      <figcaption class="sr-only"><span class="lang-en">New recipe form — instructions field, recipe name, optional category and the save action.</span><span class="lang-fi">Uuden reseptin lomake — ohjeet, nimi, valinnainen kategoria ja tallennus.</span></figcaption>
+                    </figure>
+                  </div>
                 </div>
                 <div class="cs-carousel__caption" aria-live="polite">
                   <p>
-                    <span class="lang-en">Mobile screenshots of the recipe library, grouped by category, and the new recipe form (coming soon).</span>
-                    <span class="lang-fi">Mobiilikuvat reseptikirjastosta, kategoriaryhmittelystä ja uuden reseptin lomakkeesta (tulossa pian).</span>
+                    <span class="lang-en">Empty state on first visit, recipe library grouped by category, and the new recipe form where the user picks the ingredient input method before filling in instructions.</span>
+                    <span class="lang-fi">Tyhjä tila ensimmäisellä käynnillä, reseptikirjasto kategorioittain sekä uuden reseptin lomake, jossa valitaan ensin ainesosien lisäystapa ennen ohjeiden täyttöä.</span>
                   </p>
                 </div>
               </div>
 
-              <!-- Carousel 2: Shopping list — placeholder for mobile screenshots -->
+              <!-- Carousel 2: Recipe view and shopping list -->
               <h3><span class="lang-en">Recipe view &amp; shopping list</span><span class="lang-fi">Reseptin näkymä &amp; kauppalista</span></h3>
               <div class="cs-carousel" data-carousel>
                 <div class="cs-carousel__track">
-                  <!-- Lisää mobiilikuvat tähän / Add mobile screenshots here -->
                   <div class="cs-carousel__item">
-                    <figure class="cs-carousel__media" style="background: #f8f6f2; display: flex; align-items: center; justify-content: center; min-height: 280px;">
+                    <figure class="cs-carousel__media" style="background: #f8f6f2; display: flex; align-items: center; justify-content: center;">
                       <img
-                        src="../img/maskotti-header.png"
-                        alt="Placeholder — mobile screenshots coming"
+                        src="../img/mestarihiiren-keittio-kuvat/mk-resepti-annosskaalaus.jpeg"
+                        alt="Marjainen tuorepuuro -resepti skaalattuna 4 annokselle, alkuperäinen 2 annosta"
                         loading="lazy"
-                        style="max-height: 220px; width: auto; object-fit: contain; padding: 1rem;"
+                        style="max-height: 520px; width: auto; object-fit: contain; padding: 1rem;"
                       />
-                      <figcaption class="sr-only"><span class="lang-en">Screenshots of the recipe view and shopping list (coming soon).</span><span class="lang-fi">Kuvakaappaukset reseptin näkymästä ja kauppalistasta (tulossa pian).</span></figcaption>
+                      <figcaption class="sr-only"><span class="lang-en">Recipe view — serving size scaled from 2 to 4, all ingredients updated automatically.</span><span class="lang-fi">Reseptin näkymä — annosmäärä skaalattu kahdesta neljään, kaikki ainesosat päivittyvät automaattisesti.</span></figcaption>
                     </figure>
                   </div>
-                  <!-- Lisää lisää kuvia tähän -->
+                  <div class="cs-carousel__item">
+                    <figure class="cs-carousel__media" style="background: #f8f6f2; display: flex; align-items: center; justify-content: center;">
+                      <img
+                        src="../img/mestarihiiren-keittio-kuvat/mk-kauppalista-taynna.jpeg"
+                        alt="Kauppalista tuotteilla täytettynä, ryhmitelty kategorioihin: Kuivatarvikkeet, Maitotuotteet, Muut"
+                        loading="lazy"
+                        style="max-height: 520px; width: auto; object-fit: contain; padding: 1rem;"
+                      />
+                      <figcaption class="sr-only"><span class="lang-en">Shopping list grouped by store section with share and copy actions at the bottom.</span><span class="lang-fi">Kauppalista ryhmiteltynä kaupan osastoihin, jaa- ja kopiointitoiminnot alhaalla.</span></figcaption>
+                    </figure>
+                  </div>
+                  <div class="cs-carousel__item">
+                    <figure class="cs-carousel__media" style="background: #f8f6f2; display: flex; align-items: center; justify-content: center;">
+                      <img
+                        src="../img/mestarihiiren-keittio-kuvat/mk-kauppalista-tyhja.jpeg"
+                        alt="Kauppalista tyhjänä, ohje lisätä tuotteita tai reseptejä"
+                        loading="lazy"
+                        style="max-height: 520px; width: auto; object-fit: contain; padding: 1rem;"
+                      />
+                      <figcaption class="sr-only"><span class="lang-en">Empty shopping list — prompts adding products or importing from a recipe.</span><span class="lang-fi">Tyhjä kauppalista — kehottaa lisäämään tuotteita tai tuomaan reseptistä.</span></figcaption>
+                    </figure>
+                  </div>
                 </div>
                 <div class="cs-carousel__caption" aria-live="polite">
                   <p>
-                    <span class="lang-en">Mobile screenshots of the recipe view with serving size adjustment, and the shopping list with plain-text sharing (coming soon).</span>
-                    <span class="lang-fi">Mobiilikuvat reseptin annosmäärän säätämisestä ja kauppalistasta plain text -jakamisineen (tulossa pian).</span>
+                    <span class="lang-en">The recipe view with automatic ingredient scaling as serving size changes, and the shopping list grouped by store section with plain-text sharing.</span>
+                    <span class="lang-fi">Reseptin näkymä, jossa ainesosat skaalautuvat annosmäärää muutettaessa, sekä kaupan osastoihin ryhmitelty kauppalista tekstijakoineen.</span>
                   </p>
                 </div>
               </div>
@@ -507,7 +545,7 @@
                   </div>
                   <div class="decision-item__alts">
                     <span class="decision-item__meta-label"><span class="lang-en">What</span><span class="lang-fi">Mitä</span></span>
-                    <p><span class="lang-en">Every main view has its own help view describing exactly that view's functions in the user's own terms — kept in sync with the current UI. Texts refer to exactly the same buttons visible on screen.</span><span class="lang-fi">Jokaisella päänäkymällä on oma Ohjeet-näkymänsä, joka kuvaa juuri sen näkymän toiminnot käyttäjän omin termein — pidetään ajan tasalla käyttöliittymän kanssa. Tekstit viittaavat täsmälleen samoihin painikkeisiin, jotka näytöllä näkyvät.</span></p>
+                    <p><span class="lang-en">Every main view has its own help view describing exactly that view's functions in the user's own terms, kept in sync with the current UI. Texts refer to exactly the same buttons visible on screen.</span><span class="lang-fi">Jokaisella päänäkymällä on oma Ohjeet-näkymänsä, joka kuvaa juuri sen näkymän toiminnot käyttäjän omin termein ja pidetään ajan tasalla käyttöliittymän kanssa. Tekstit viittaavat täsmälleen samoihin painikkeisiin, jotka näytöllä näkyvät.</span></p>
                   </div>
                   <div class="decision-item__rationale">
                     <span class="decision-item__meta-label"><span class="lang-en">Why</span><span class="lang-fi">Miksi</span></span>
@@ -617,7 +655,7 @@
                 <ol>
                   <li>Finalise the recipe input flow and test it with the primary user.</li>
                   <li>Strengthen ingredient grouping with Finnish alias and product-specific rules.</li>
-                  <li>Implement backup so the personal recipe library is not tied to a single system.</li>
+                  <li>Extend the text-based backup with restore, so the personal recipe library is not tied to a single system.</li>
                   <li>Assess whether full AI-assisted recipe parsing is reliable enough as an additional feature.</li>
                   <li>Conduct a systematic WCAG and mobile usability audit before wider use.</li>
                 </ol>
@@ -626,7 +664,7 @@
                 <ol>
                   <li>Viimeistellä reseptin lisäyksen käyttövirta ja testata se oikealla käyttäjällä.</li>
                   <li>Koventaa ainesosien ryhmittelyä suomenkielisillä alias- ja tuotekohtaisilla säännöillä.</li>
-                  <li>Toteuttaa varmuuskopiointi, jotta henkilökohtainen reseptikirjasto ei jää vain yhden järjestelmän varaan.</li>
+                  <li>Laajentaa tekstipohjaista varmuuskopiointia palautustoiminnolla, jotta henkilökohtainen reseptikirjasto ei jää vain yhden järjestelmän varaan.</li>
                   <li>Arvioida, onko koko reseptin tekoälyavusteinen jäsentäminen tarpeeksi luotettava lisäominaisuudeksi.</li>
                   <li>Tehdä systemaattinen WCAG- ja mobiilikäytettävyysauditointi ennen laajempaa käyttöä.</li>
                 </ol>
@@ -679,20 +717,17 @@
         </h2>
         <div class="cs-callout">
           <p>
-            <span class="lang-en">A link to the live app will be added when the app is ready for wider use.</span>
-            <span class="lang-fi">Linkki live-sovellukseen lisätään, kun sovellus on valmis laajempaan käyttöön.</span>
+            <span class="lang-en">The demo works without sign-in: example recipes are preloaded, and all changes stay in the visitor's own browser. It opens with a one-tap start screen in place of the production sign-in. The production version uses Firebase Auth and Firestore with per-user security rules.</span>
+            <span class="lang-fi">Demo toimii ilman kirjautumista: esimerkkireseptit ovat valmiina ja kaikki muutokset jäävät kävijän omaan selaimeen. Se avautuu yhden painalluksen aloitusnäyttöön tuotannon kirjautumissivun paikalla. Tuotantoversio käyttää Firebase Authia ja Firestorea käyttäjäkohtaisilla tietoturvasäännöillä.</span>
           </p>
         </div>
-        <!-- Lisää sovelluksen linkki tähän / Add app link here -->
-        <!--
         <div class="cs-artifacts-grid">
-          <a href="#" class="cs-artifact" target="_blank" rel="noopener noreferrer">
+          <a href="https://ruokalaskuri-demo.web.app" class="cs-artifact" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            <span class="lang-en">Live app</span>
-            <span class="lang-fi">Live-sovellus</span>
+            <span class="lang-en">Try the demo</span>
+            <span class="lang-fi">Kokeile demoa</span>
           </a>
         </div>
-        -->
       </div>
     </section>
 
