@@ -230,17 +230,37 @@
           if (current < slides.length - 1) show(current + 1);
         });
       }
+
+      // Touch swipe on the carousel itself
+      var touchStartX = 0;
+      var touchStartY = 0;
+      var touchMoved  = false;
+      carousel.addEventListener('touchstart', function (e) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        touchMoved  = false;
+      }, { passive: true });
+      carousel.addEventListener('touchmove', function () {
+        touchMoved = true;
+      }, { passive: true });
+      carousel.addEventListener('touchend', function (e) {
+        if (!touchMoved) return;
+        var dx = e.changedTouches[0].clientX - touchStartX;
+        var dy = e.changedTouches[0].clientY - touchStartY;
+        if (Math.abs(dx) < 40 || Math.abs(dx) <= Math.abs(dy)) return;
+        if (dx < 0 && current < slides.length - 1) show(current + 1);
+        if (dx > 0 && current > 0) show(current - 1);
+      }, { passive: true });
     });
   })();
 
   /* ------------------------------------------------------------
-     4) Image lightbox — cs-main figures
+     4) Image lightbox — cs-main figures (carousel nav + swipe)
      ------------------------------------------------------------ */
   (function () {
     var csMain = document.querySelector('.cs-main');
     if (!csMain) return;
 
-    // Make every figure keyboard-navigable
     csMain.querySelectorAll('figure').forEach(function (figure) {
       var img = figure.querySelector('img');
       if (!img) return;
@@ -249,7 +269,6 @@
       figure.setAttribute('aria-label', 'View image larger' + (img.alt ? ': ' + img.alt : ''));
     });
 
-    // Build overlay once
     var overlay = document.createElement('div');
     overlay.id = 'lb-overlay';
     overlay.className = 'lb-overlay';
@@ -258,27 +277,46 @@
     overlay.setAttribute('aria-label', 'Image viewer');
     overlay.hidden = true;
     overlay.innerHTML =
+      '<button class="lb-nav lb-nav--prev" aria-label="Previous image / Edellinen kuva" hidden>' +
+      '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3l-5 5 5 5"/></svg>' +
+      '</button>' +
       '<div class="lb-dialog">' +
       '<button class="lb-close" aria-label="Close image viewer">×</button>' +
       '<img class="lb-img" src="" alt="" />' +
       '<p class="lb-caption"></p>' +
-      '</div>';
+      '</div>' +
+      '<button class="lb-nav lb-nav--next" aria-label="Next image / Seuraava kuva" hidden>' +
+      '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>' +
+      '</button>';
     document.body.appendChild(overlay);
 
     var lbImg     = overlay.querySelector('.lb-img');
     var lbCaption = overlay.querySelector('.lb-caption');
     var lbClose   = overlay.querySelector('.lb-close');
+    var lbPrev    = overlay.querySelector('.lb-nav--prev');
+    var lbNext    = overlay.querySelector('.lb-nav--next');
     var lastFocused = null;
+    var lbFigures = [];
+    var lbIndex   = 0;
 
-    function openLb(figure) {
+    function collectFigures(figure) {
+      var slide = figure.closest('.cs-carousel__slide');
+      if (!slide) return [figure];
+      var track = slide.closest('.cs-carousel__track');
+      if (!track) return [figure];
+      var figures = [];
+      track.querySelectorAll('.cs-carousel__slide').forEach(function (s) {
+        var f = s.querySelector('figure');
+        if (f && f.querySelector('img')) figures.push(f);
+      });
+      return figures.length ? figures : [figure];
+    }
+
+    function showAt(index) {
+      var figure = lbFigures[index];
       var img = figure.querySelector('img');
-      if (!img) return;
-      lastFocused = figure;
-
-      lbImg.src = img.src;
-      lbImg.alt = img.alt || '';
-
-      // Prefer current-language figcaption; fall back to full text
+      lbImg.src = img ? img.src : '';
+      lbImg.alt = img ? (img.alt || '') : '';
       var figcaption = figure.querySelector('figcaption');
       var caption = '';
       if (figcaption) {
@@ -288,7 +326,18 @@
       }
       lbCaption.textContent = caption;
       lbCaption.hidden = !caption;
+      lbIndex = index;
+      lbPrev.hidden = lbFigures.length < 2 || index === 0;
+      lbNext.hidden = lbFigures.length < 2 || index === lbFigures.length - 1;
+    }
 
+    function openLb(figure) {
+      if (!figure.querySelector('img')) return;
+      lastFocused = figure;
+      lbFigures = collectFigures(figure);
+      lbIndex = lbFigures.indexOf(figure);
+      if (lbIndex < 0) lbIndex = 0;
+      showAt(lbIndex);
       overlay.hidden = false;
       document.body.style.overflow = 'hidden';
       requestAnimationFrame(function () { lbClose.focus(); });
@@ -298,33 +347,60 @@
     function closeLb() {
       overlay.hidden = true;
       document.body.style.overflow = '';
+      lbFigures = [];
       document.removeEventListener('keydown', onKey, true);
       if (lastFocused instanceof HTMLElement) lastFocused.focus();
     }
 
     function onKey(e) {
-      if (e.key === 'Escape') { e.preventDefault(); closeLb(); }
+      if (e.key === 'Escape') { e.preventDefault(); closeLb(); return; }
+      if (e.key === 'ArrowLeft'  && lbIndex > 0)                       { e.preventDefault(); showAt(lbIndex - 1); return; }
+      if (e.key === 'ArrowRight' && lbIndex < lbFigures.length - 1)    { e.preventDefault(); showAt(lbIndex + 1); }
     }
 
-    // Click anywhere inside a figure
     csMain.addEventListener('click', function (e) {
       var figure = e.target.closest('figure');
       if (figure && figure.querySelector('img')) openLb(figure);
     });
 
-    // Keyboard: Enter or Space on a focused figure
     csMain.addEventListener('keydown', function (e) {
       if (e.key !== 'Enter' && e.key !== ' ') return;
       var figure = e.target.closest('figure[tabindex]');
       if (figure && figure.querySelector('img')) { e.preventDefault(); openLb(figure); }
     });
 
-    // Backdrop click
     overlay.addEventListener('click', function (e) {
       if (e.target === overlay) closeLb();
     });
 
     lbClose.addEventListener('click', closeLb);
+
+    lbPrev.addEventListener('click', function (e) {
+      e.stopPropagation();
+      if (lbIndex > 0) showAt(lbIndex - 1);
+    });
+
+    lbNext.addEventListener('click', function (e) {
+      e.stopPropagation();
+      if (lbIndex < lbFigures.length - 1) showAt(lbIndex + 1);
+    });
+
+    // Touch swipe
+    var swipeX = 0;
+    var swipeY = 0;
+    overlay.addEventListener('touchstart', function (e) {
+      swipeX = e.touches[0].clientX;
+      swipeY = e.touches[0].clientY;
+    }, { passive: true });
+    overlay.addEventListener('touchend', function (e) {
+      var dx = e.changedTouches[0].clientX - swipeX;
+      var dy = e.changedTouches[0].clientY - swipeY;
+      if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
+        if (dx < 0 && lbIndex < lbFigures.length - 1) showAt(lbIndex + 1);
+        if (dx > 0 && lbIndex > 0) showAt(lbIndex - 1);
+      }
+    }, { passive: true });
+
   })();
 
 })();
