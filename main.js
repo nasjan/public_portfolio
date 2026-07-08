@@ -197,7 +197,44 @@
   }
 
   /* ------------------------------------------------------------
-     3) Image lightbox — cs-main figures
+     3) Carousels — cs-carousel
+     ------------------------------------------------------------ */
+  (function () {
+    document.querySelectorAll('.cs-carousel').forEach(function (carousel) {
+      var slides = Array.from(carousel.querySelectorAll('.cs-carousel__slide'));
+      if (slides.length < 2) return;
+
+      var prevBtn = carousel.querySelector('.cs-carousel__nav--prev');
+      var nextBtn = carousel.querySelector('.cs-carousel__nav--next');
+      var current = 0;
+
+      function show(index) {
+        slides[current].classList.remove('cs-carousel__slide--active');
+        slides[current].setAttribute('aria-hidden', 'true');
+        current = index;
+        slides[current].classList.add('cs-carousel__slide--active');
+        slides[current].setAttribute('aria-hidden', 'false');
+        if (prevBtn) prevBtn.hidden = current === 0;
+        if (nextBtn) nextBtn.hidden = current === slides.length - 1;
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          if (current > 0) show(current - 1);
+        });
+      }
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          if (current < slides.length - 1) show(current + 1);
+        });
+      }
+    });
+  })();
+
+  /* ------------------------------------------------------------
+     4) Image lightbox — cs-main figures
      ------------------------------------------------------------ */
   (function () {
     var csMain = document.querySelector('.cs-main');
