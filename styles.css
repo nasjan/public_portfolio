@@ -2570,6 +2570,9 @@ body.drawer-open .drawer-backdrop { opacity: 1; }
   display: grid;
   gap: 1rem;
   margin-bottom: var(--space-lg);
+  /* Query container: cards collapse based on their own available width,
+     not the viewport, so they never overflow onto the TOC sidebar. */
+  container-type: inline-size;
 }
 
 .decision-item {
@@ -2638,7 +2641,10 @@ body.drawer-open .drawer-backdrop { opacity: 1; }
   line-height: 1.55;
 }
 
-@media (max-width: 900px) {
+/* Collapse to a single column once the card's own width drops below the
+   ~840px the three columns need — before the third column can overflow
+   the sidebar. Tied to the .decision-list container, not the viewport. */
+@container (max-width: 860px) {
   .decision-item {
     grid-template-columns: 1fr;
     gap: 1.25rem;
