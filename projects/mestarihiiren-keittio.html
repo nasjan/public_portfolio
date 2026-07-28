@@ -203,7 +203,7 @@
               <h2><span class="lang-en">Problem</span><span class="lang-fi">Ongelma</span></h2>
 
               <div class="lang-en">
-                <p>Recipes are often scattered across websites, screenshots, chats and notes. When the same dish needs to be made for a different number of people, the ingredients have to be calculated by hand. Shopping lists tend to emerge as screenshots or free text that is inconvenient for another person to use in the store.</p>
+                <p>Recipes are often scattered across websites, screenshots, chats and notes. When the same dish needs to be made for a different number of people, the ingredients have to be calculated by hand. A shopping list is often made as screenshots or as messy free-form text, which makes it hard for another person to scan while shopping.</p>
                 <p>The original need came from my partner:</p>
                 <ul>
                   <li>recipes needed their own easy-to-use storage</li>
@@ -213,7 +213,7 @@
                 </ul>
               </div>
               <div class="lang-fi">
-                <p>Reseptit ovat usein hajallaan verkkosivuilla, kuvakaappauksissa, keskusteluissa ja muistiinpanoissa. Kun sama ruoka halutaan tehdä eri annosmäärälle, ainesosat pitää laskea käsin. Kauppalista syntyy helposti kuvakaappauksina tai vapaana tekstinä, jota toisen henkilön on hankala käyttää kaupassa.</p>
+                <p>Reseptit ovat usein hajallaan verkkosivuilla, kuvakaappauksissa, keskusteluissa ja muistiinpanoissa. Kun sama ruoka halutaan tehdä eri annosmäärälle, ainesosat pitää laskea käsin. Kauppalista tehdään usein kuvakaappauksina tai vapaamuotoisena sekavana tekstinä, jolloin toisen henkilön on hankala selata sitä kauppareissullaan.</p>
                 <p>Alkuperäinen tarve tuli kumppaniltani:</p>
                 <ul>
                   <li>resepteille tarvittiin oma, helposti käytettävä säilytyspaikka</li>
@@ -269,7 +269,7 @@
                   <li>Set a base serving size and adjust it; ingredients scale automatically</li>
                   <li>Deterministic ingredient scaling using a simple ratio</li>
                   <li>Paste ingredients from free text; a rule-based parser structures them automatically</li>
-                  <li>Optional AI bridge for cleaning up messy recipe text before parsing</li>
+                  <li>Optional AI assistance for cleaning up the ingredient list before parsing</li>
                   <li>Categorise recipes; category-based grouping in the list</li>
                   <li>Optional per-serving nutrition values, shown in the recipe library and the recipe view</li>
                   <li>Duplicate a recipe as a base for a variation; back up recipes as text</li>
@@ -288,7 +288,7 @@
                   <li>Reseptin perusannosmäärä ja annosmäärän säätäminen; ainesosat skaalautuvat automaattisesti</li>
                   <li>Deterministinen ainesosien skaalaus yksinkertaisella kertoimella</li>
                   <li>Ainesosien liittäminen vapaasta tekstistä; sääntöpohjainen parseri jäsentää ne automaattisesti</li>
-                  <li>Valinnainen tekoälysilta ainesluettelon siistimiseen ennen parseria</li>
+                  <li>Valinnainen tekoälyopastus ainesluettelon siistimiseen ennen parseria</li>
                   <li>Reseptien luokittelu kategorioilla; kategoriapohjainen ryhmittely listalla</li>
                   <li>Valinnaiset annoskohtaiset ravintoarvot, jotka näkyvät reseptikirjastossa ja reseptin näkymässä</li>
                   <li>Reseptin monistaminen muunnelman pohjaksi; reseptien varmuuskopiointi tekstinä</li>
@@ -376,10 +376,18 @@
                         </div>
                         <div class="cs-carousel__slide" aria-hidden="true">
                           <figure>
-                            <div style="height: 280px; width: 155px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 6px; border: 2px dashed #bbb; background: #f8f6f2; margin: 0 auto; padding: 1rem; box-sizing: border-box;">
-                              <p style="font-size: 0.75rem; color: #999; text-align: center; margin: 0;"><span class="lang-en">Screenshot coming soon:<br/>paste ingredient text</span><span class="lang-fi">Kuvakaappaus tulossa:<br/>tekstin liittäminen</span></p>
-                            </div>
+                            <img src="../img/mestarihiiren-keittio-kuvat/liitä-resepti-reseptinluonti-näkymä.jpeg"
+                              alt="Liitä resepti -näkymä: koko resepti liitetään kerralla tekstikenttään reseptin luontia varten"
+                              loading="lazy" style="max-height: 280px; width: auto; display: block; margin: 0 auto; border-radius: 6px;" />
                             <figcaption><span class="lang-en">Paste all ingredients at once: the rule-based parser structures them automatically.</span><span class="lang-fi">Liitä kaikki ainekset kerralla: sääntöpohjainen parseri jäsentää ne automaattisesti.</span></figcaption>
+                          </figure>
+                        </div>
+                        <div class="cs-carousel__slide" aria-hidden="true">
+                          <figure>
+                            <img src="../img/mestarihiiren-keittio-kuvat/muotoile-ainekset-tekoälyllä-ohje-modal-näkymä.jpeg"
+                              alt="Ohje-modaali, joka neuvoo muotoilemaan sekavat ainekset tekoälyllä ennen liittämistä ja jäsennystä"
+                              loading="lazy" style="max-height: 280px; width: auto; display: block; margin: 0 auto; border-radius: 6px;" />
+                            <figcaption><span class="lang-en">Optional AI help modal: guidance for tidying up messy ingredient text before it is parsed.</span><span class="lang-fi">Valinnainen tekoälyopastus: ohje-modaali neuvoo siistimään sekavan ainestekstin ennen jäsennystä.</span></figcaption>
                           </figure>
                         </div>
                         <div class="cs-carousel__slide" aria-hidden="true">
@@ -559,7 +567,7 @@
                   </div>
                   <div class="decision-item__alts">
                     <span class="decision-item__meta-label"><span class="lang-en">What</span><span class="lang-fi">Mitä</span></span>
-                    <p><span class="lang-en">New recipe and editing are full views, not large modals. Modals are used only for limited, short tasks: adding a single ingredient, previewing instructions, or confirming deletion.</span><span class="lang-fi">Uusi resepti ja muokkaus ovat sovelluksen omia näkymiä, eivät suuria modaaleja. Modaaleja käytetään vain rajattuihin lyhyisiin tehtäviin: yksittäisen ainesosan lisääminen, ohjeiden esikatselu tai poiston vahvistaminen.</span></p>
+                    <p><span class="lang-en">New recipe and editing are full views, not large modals. Modals are used only for limited, short tasks: previewing a recipe, reading instructions, or confirming deletion.</span><span class="lang-fi">Uusi resepti ja muokkaus ovat sovelluksen omia näkymiä, eivät suuria modaaleja. Modaaleja käytetään vain rajattuihin lyhyisiin tehtäviin: reseptin esikatselu, ohjeiden lukeminen tai poiston vahvistaminen.</span></p>
                   </div>
                   <div class="decision-item__rationale">
                     <span class="decision-item__meta-label"><span class="lang-en">Why</span><span class="lang-fi">Miksi</span></span>
@@ -686,6 +694,8 @@
                   <li>Strengthen ingredient grouping with Finnish alias and product-specific rules.</li>
                   <li>Extend the text-based backup with restore, so the personal recipe library is not tied to a single system.</li>
                   <li>Assess whether full AI-assisted recipe parsing is reliable enough as an additional feature.</li>
+                  <li>Force saved recipe and ingredient names to lowercase, including the first letter, so the library stays visually consistent and mixed capitalisation does not disturb scanning.</li>
+                  <li>Sort recipes and categories alphabetically to make browsing a growing library more predictable.</li>
                   <li>Conduct a systematic WCAG and mobile usability audit before wider use.</li>
                 </ol>
               </div>
@@ -695,6 +705,8 @@
                   <li>Koventaa ainesosien ryhmittelyä suomenkielisillä alias- ja tuotekohtaisilla säännöillä.</li>
                   <li>Laajentaa tekstipohjaista varmuuskopiointia palautustoiminnolla, jotta henkilökohtainen reseptikirjasto ei jää vain yhden järjestelmän varaan.</li>
                   <li>Arvioida, onko koko reseptin tekoälyavusteinen jäsentäminen tarpeeksi luotettava lisäominaisuudeksi.</li>
+                  <li>Pakottaa tallennettujen reseptien ja ainesosien nimet aina pieniksi kirjaimiksi, myös alkukirjain, jotta reseptikirjasto pysyy visuaalisesti yhtenäisenä eivätkä vaihtelevat kirjainkoot häiritse silmäilyä.</li>
+                  <li>Järjestää reseptit ja kategoriat aakkosjärjestykseen, jotta kasvavan kirjaston selaaminen on ennakoitavampaa.</li>
                   <li>Tehdä systemaattinen WCAG- ja mobiilikäytettävyysauditointi ennen laajempaa käyttöä.</li>
                 </ol>
               </div>
